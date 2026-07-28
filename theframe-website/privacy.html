@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="سياسة الخصوصية لتطبيق The Frame — تعرّف كيف نجمع بياناتك ونحميها ونستخدمها.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="سياسة الخصوصية | The Frame">
+  <meta property="og:url" content="https://theframeapp.site/privacy.html">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#000000">
+  <title>سياسة الخصوصية | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/privacy.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000000; --red: #FF003C; --red-dim: rgba(255,0,60,0.12);
+      --red-border: rgba(255,0,60,0.25); --glass-bg: rgba(18,18,22,0.82);
+      --text: #F0F0F0; --muted: #ABABAB; --radius: 12px;
+    }
+    body { background: var(--black); color: var(--text); font-family: 'Cairo', sans-serif; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; background: rgba(0,0,0,0.92); border-bottom: 1px solid var(--red-border); backdrop-filter: blur(12px); }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo { height: 44px; width: auto; mix-blend-mode: lighten; }
+    .nav-title { display: none; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 600; letter-spacing: 1px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--red); }
+
+    .page-hero { padding: 80px 40px 48px; text-align: center; border-bottom: 1px solid var(--red-border); }
+    .page-label { font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    .page-title { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 12px; }
+    .page-meta { color: var(--muted); font-size: 0.85rem; }
+
+    .content { max-width: 820px; margin: 0 auto; padding: 60px 40px 80px; }
+
+    .section-block { background: var(--glass-bg); border: 1px solid var(--red-border); border-radius: var(--radius); padding: 32px 36px; margin-bottom: 24px; }
+    .section-block h2 { font-family: 'Oswald', sans-serif; font-size: 1.15rem; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    .section-block h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 20px 0 8px; }
+    .section-block p { color: var(--muted); margin-bottom: 14px; line-height: 1.85; }
+    .section-block ul { color: var(--muted); padding-right: 20px; margin-bottom: 14px; }
+    .section-block ul li { margin-bottom: 8px; line-height: 1.75; }
+    .section-block a { color: var(--red); text-decoration: none; }
+    .section-block a:hover { text-decoration: underline; }
+
+    .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .badge { background: var(--red-dim); border: 1px solid var(--red-border); border-radius: 6px; padding: 4px 12px; font-size: 0.78rem; color: var(--text); font-weight: 600; }
+
+    .highlight-box { background: rgba(255,0,60,0.07); border: 1px solid var(--red); border-radius: 10px; padding: 18px 22px; margin: 16px 0; }
+    .highlight-box p { color: var(--text); margin: 0; }
+
+    footer { border-top: 1px solid var(--red-border); padding: 32px 40px; text-align: center; }
+    .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 12px 0; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--red); }
+    .footer-copy { color: var(--muted); font-size: 0.78rem; }
+    .footer-logo { font-family: 'Oswald', sans-serif; font-size: 0.9rem; letter-spacing: 2px; color: var(--text); margin-bottom: 10px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .page-hero { padding: 60px 20px 36px; }
+      .content { padding: 40px 20px 60px; }
+      .section-block { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="ar.html" class="nav-brand">
+    <img src="./assets/logo.png" alt="The Frame" class="nav-logo">
+    <span class="nav-title">The Frame</span>
+  </a>
+  <div class="nav-links">
+    <a href="blog.html">المدونة</a>
+    <a href="terms.html">الشروط</a>
+    <a href="ar.html">← الرئيسية</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-label">القانوني</div>
+  <h1 class="page-title">سياسة الخصوصية</h1>
+  <p class="page-meta">آخر تحديث: 28 يوليو 2026 · تطبيق The Frame</p>
+</div>
+
+<div class="content">
+
+  <div class="highlight-box">
+    <p>تطبيق The Frame مُصمَّم للرجال الباحثين عن تحسين أنفسهم. نحن نجمع الحد الأدنى من البيانات اللازمة لتشغيل التطبيق، ولا نبيع بياناتك لأي طرف ثالث.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>١. مقدمة وهوية المتحكم بالبيانات</h2>
+    <p>تصف هذه السياسة كيف يجمع تطبيق <strong>The Frame</strong> ويستخدم ويحفظ بياناتك الشخصية عند استخدامك للتطبيق على نظام Android (Google Play) أو iOS.</p>
+    <p><strong>المطوّر:</strong> AFRAOUA YASSINE<br>
+    <strong>البريد الإلكتروني:</strong> <a href="mailto:abdessamadi607@gmail.com">abdessamadi607@gmail.com</a><br>
+    <strong>الموقع:</strong> theframeapp.site</p>
+    <p>باستخدامك للتطبيق، فأنت توافق على شروط هذه السياسة.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>٢. البيانات التي نجمعها</h2>
+
+    <h3>أ. بيانات الحساب (عبر Clerk)</h3>
+    <p>عند إنشاء حساب أو تسجيل الدخول، نجمع:</p>
+    <ul>
+      <li>عنوان البريد الإلكتروني (أو رقم الهاتف إذا اخترت التحقق برقم الهاتف)</li>
+      <li>معرّف الحساب الفريد</li>
+      <li>بيانات الدخول عبر Google (الاسم والبريد الإلكتروني إذا اخترت تسجيل الدخول بـ Google)</li>
+      <li>رصيد الرسائل وبيانات الاستخدام المرتبطة بحسابك</li>
+    </ul>
+
+    <h3>ب. محادثات الذكاء الاصطناعي (عبر Google Gemini)</h3>
+    <p>الرسائل التي تُرسلها للمساعد الذكي تُعالَج بواسطة واجهة برمجة تطبيقات Google Gemini. هذه الرسائل ترسل إلى خوادم Google لتوليد الردود. راجع <a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a> لمزيد من التفاصيل.</p>
+    <p><strong>ملاحظة:</strong> لا نخزن محادثاتك على خوادمنا — تُحفَظ محلياً على جهازك فقط.</p>
+
+    <h3>ج. بيانات الإعلانات (عبر Google AdMob)</h3>
+    <p>للمستخدمين في الخطة المجانية، نعرض إعلانات بواسطة Google AdMob. AdMob قد يجمع:</p>
+    <ul>
+      <li>معرّف الإعلان للجهاز (Advertising ID / IDFA)</li>
+      <li>بيانات الاستخدام والتفاعل مع الإعلانات</li>
+      <li>معلومات الجهاز الأساسية (النوع، الإصدار)</li>
+    </ul>
+    <div class="badge-row">
+      <span class="badge">Google AdMob</span>
+      <span class="badge">إعلانات مكافأة</span>
+      <span class="badge">Advertising ID</span>
+    </div>
+
+    <h3>د. بيانات الاشتراك (عبر RevenueCat)</h3>
+    <p>إذا اشتركت في الخطة المدفوعة، تتم معالجة الدفع عبر Google Play أو App Store. نستخدم RevenueCat لإدارة حالة الاشتراك (نشط/منتهي) دون الوصول إلى تفاصيل بطاقتك.</p>
+
+    <h3>ه. البيانات المحلية على الجهاز</h3>
+    <p>نحفظ محلياً على جهازك (بدون رفع للسحابة):</p>
+    <ul>
+      <li>سجل المحادثات (SQLite)</li>
+      <li>إعدادات التطبيق والتفضيلات</li>
+      <li>رصيد الرسائل (مزامَن مع حسابك)</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>٣. كيف نستخدم بياناتك</h2>
+    <ul>
+      <li>تشغيل خدمة الذكاء الاصطناعي وتوليد الردود</li>
+      <li>إدارة حسابك ورصيد رسائلك عبر الأجهزة</li>
+      <li>عرض الإعلانات المناسبة للمستخدمين المجانيين</li>
+      <li>معالجة وإدارة الاشتراكات المدفوعة</li>
+      <li>تحسين أداء التطبيق وتجربة المستخدم</li>
+      <li>الامتثال للمتطلبات القانونية</li>
+    </ul>
+    <p><strong>لا نستخدم بياناتك للأغراض التالية:</strong> لا نبيع بياناتك، ولا نشاركها مع جهات تسويقية خارجية، ولا نستخدمها لإنشاء ملفات تعريفية إعلانية مستقلة.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>٤. الأطراف الثالثة ومعالجو البيانات</h2>
+    <p>نشارك بياناتك فقط مع مزوّدي الخدمة الضروريين لتشغيل التطبيق:</p>
+    <ul>
+      <li><strong>Clerk (clerk.com):</strong> إدارة المصادقة والحسابات — <a href="https://clerk.com/privacy" target="_blank">سياسة خصوصية Clerk</a></li>
+      <li><strong>Google Gemini API:</strong> معالجة محادثات الذكاء الاصطناعي — <a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a></li>
+      <li><strong>Google AdMob:</strong> عرض الإعلانات وتحقيق الدخل — <a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a></li>
+      <li><strong>RevenueCat (revenuecat.com):</strong> إدارة الاشتراكات والمشتريات — <a href="https://www.revenuecat.com/privacy" target="_blank">سياسة خصوصية RevenueCat</a></li>
+    </ul>
+    <p>جميع هؤلاء المعالجون ملزمون باتفاقيات معالجة البيانات المناسبة ويلتزمون بالمعايير الدولية لحماية البيانات.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>٥. حقوق المستخدم</h2>
+    <p>بموجب اللوائح المعمول بها (GDPR وغيرها)، لديك الحق في:</p>
+    <ul>
+      <li><strong>الوصول:</strong> طلب نسخة من بياناتك الشخصية</li>
+      <li><strong>التصحيح:</strong> تصحيح بيانات غير دقيقة</li>
+      <li><strong>الحذف:</strong> طلب حذف حسابك وبياناتك ("الحق في النسيان")</li>
+      <li><strong>قابلية النقل:</strong> الحصول على بياناتك في صيغة قابلة للقراءة الآلية</li>
+      <li><strong>الاعتراض:</strong> الاعتراض على معالجة بيانات معينة</li>
+    </ul>
+    <div class="highlight-box">
+      <p>لحذف حسابك وجميع بياناتك، أرسل بريداً إلكترونياً إلى: <a href="mailto:abdessamadi607@gmail.com">abdessamadi607@gmail.com</a> بعنوان "طلب حذف الحساب". سنعالج طلبك خلال 30 يوماً.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>٦. حماية خصوصية الأطفال</h2>
+    <p>تطبيق The Frame مخصص للمستخدمين <strong>الذين تجاوزوا 13 عاماً</strong> (17+ في بعض المناطق). نحن لا نجمع عمداً بيانات شخصية من الأطفال دون السن المقررة.</p>
+    <p>إذا علمت بأن طفلاً قدّم لنا بيانات شخصية، يرجى التواصل معنا فوراً وسنحذف هذه البيانات.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>٧. أمان البيانات</h2>
+    <p>نتخذ إجراءات أمنية معقولة لحماية بياناتك:</p>
+    <ul>
+      <li>الاتصالات مشفرة عبر HTTPS/TLS</li>
+      <li>المصادقة تتم عبر Clerk مع دعم المصادقة الثنائية</li>
+      <li>البيانات المحلية محفوظة في قاعدة بيانات SQLite المشفرة على الجهاز</li>
+    </ul>
+    <p>لا يوجد نظام آمن 100%. في حال اكتشاف أي اختراق يؤثر على بياناتك، سنخطرك فوراً.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>٨. الاحتفاظ بالبيانات</h2>
+    <ul>
+      <li><strong>بيانات الحساب:</strong> محفوظة حتى تطلب حذف الحساب</li>
+      <li><strong>سجل المحادثات:</strong> محفوظ محلياً على جهازك فقط</li>
+      <li><strong>بيانات الإعلانات:</strong> يتحكم فيها Google وفق سياستهم</li>
+      <li><strong>بيانات الاشتراك:</strong> محفوظة طوال فترة الاشتراك + 90 يوماً</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>٩. الإعلانات وإلغاء الاشتراك</h2>
+    <p>يمكنك إلغاء الاشتراك في الإعلانات المخصصة عبر:</p>
+    <ul>
+      <li><strong>Android:</strong> الإعدادات &gt; Google &gt; الإعلانات &gt; إلغاء تخصيص الإعلانات</li>
+      <li><strong>iOS:</strong> الإعدادات &gt; الخصوصية &gt; الإعلانات &gt; تعطيل تتبع الإعلانات</li>
+    </ul>
+    <p>الاشتراك بالخطة المدفوعة يُوقف عرض الإعلانات كلياً.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>١٠. التحديثات على هذه السياسة</h2>
+    <p>قد نحدّث سياسة الخصوصية هذه بشكل دوري. سنخطرك بأي تغييرات جوهرية عبر إشعار داخل التطبيق أو بريد إلكتروني على عنوانك المسجّل.</p>
+    <p>استمرارك في استخدام التطبيق بعد نشر التغييرات يعني قبولك للسياسة المحدّثة.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>١١. التواصل معنا</h2>
+    <p>لأي استفسار حول هذه السياسة أو لممارسة حقوقك:</p>
+    <ul>
+      <li><strong>البريد الإلكتروني:</strong> <a href="mailto:abdessamadi607@gmail.com">abdessamadi607@gmail.com</a></li>
+      <li><strong>الموقع:</strong> <a href="https://theframeapp.site">theframeapp.site</a></li>
+    </ul>
+    <p>سنردّ على جميع الاستفسارات خلال <strong>72 ساعة عمل</strong>.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-logo">The Frame · مستشار علاقات بالذكاء الاصطناعي</p>
+  <div class="footer-links">
+    <a href="privacy.html">سياسة الخصوصية</a>
+    <a href="terms.html">شروط الاستخدام</a>
+    <a href="blog.html">المدونة</a>
+    <a href="/app-ads.txt">app-ads.txt</a>
+    <a href="index.html">English</a>
+  </div>
+  <p class="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة. theframeapp.site</p>
+</footer>
+
+</body>
+</html>
