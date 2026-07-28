@@ -225,7 +225,7 @@
     <a href="/app-ads.txt">app-ads.txt</a>
     <a href="index.html">English</a>
   </div>
-  <p class="footer-copy">© 2026 The Frame. Todos los derechos reservados. theframeapp.site</p>
+  <p class="footer-copy">© <span class="current-year"></span> The Frame. Todos los derechos reservados. theframeapp.site</p>
 </footer>
 
 <script>
@@ -238,5 +238,6 @@
   if (document.readyState === 'complete') { setTimeout(loadHeroVideo, 300); }
   else { window.addEventListener('load', function(){ setTimeout(loadHeroVideo, 300); }); }
 </script>
+<script>document.querySelectorAll(".current-year").forEach(el => el.textContent = new Date().getFullYear());</script>
 </body>
 </html>

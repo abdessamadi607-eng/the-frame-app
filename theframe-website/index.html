@@ -602,7 +602,7 @@
     <a href="/app-ads.txt">app-ads.txt</a>
     <a href="ar.html">العربية</a>
   </div>
-  <p class="footer-copy">© 2026 The Frame. All rights reserved. theframeapp.site</p>
+  <p class="footer-copy">© <span class="current-year"></span> The Frame. All rights reserved. theframeapp.site</p>
 </footer>
 
 <script>
@@ -632,5 +632,6 @@
   }
 </script>
 
+<script>document.querySelectorAll(".current-year").forEach(el => el.textContent = new Date().getFullYear());</script>
 </body>
 </html>
