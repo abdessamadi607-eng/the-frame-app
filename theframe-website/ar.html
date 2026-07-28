@@ -66,12 +66,36 @@
       color: var(--text);
       padding: 7px 16px;
       border-radius: var(--radius);
-      text-decoration: none;
-      font-size: 0.82rem; font-weight: 600; letter-spacing: 1px;
+      cursor: pointer;
+      font-size: 0.82rem; font-weight: 700;
       transition: background 0.2s, border-color 0.2s;
       backdrop-filter: blur(8px);
+      font-family: 'Cairo', sans-serif;
     }
     .lang-btn:hover { background: var(--red-dim); border-color: var(--red); }
+
+    .lang-switcher { position: relative; }
+    .lang-menu {
+      display: none;
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: rgba(10,10,14,0.97);
+      border: 1px solid var(--red-border);
+      border-radius: var(--radius);
+      overflow: hidden; min-width: 148px;
+      backdrop-filter: blur(16px);
+      z-index: 200;
+      text-align: right;
+    }
+    .lang-switcher:hover .lang-menu,
+    .lang-switcher:focus-within .lang-menu { display: block; }
+    .lang-menu a {
+      display: block; padding: 10px 16px;
+      color: var(--text); text-decoration: none;
+      font-size: 0.88rem; font-weight: 600;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-menu a:hover { background: var(--red-dim); color: #fff; }
+    .lang-menu a.active { color: var(--red); }
 
     /* ─── HERO ────────────────────────────────────── */
     .hero {
@@ -351,12 +375,21 @@
     <img src="./assets/logo.png" alt="The Frame" class="nav-logo">
     <span class="nav-title">The Frame</span>
   </a>
-  <a href="index.html" class="lang-btn">
-    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
-    </svg>
-    English
-  </a>
+  <div class="lang-switcher">
+    <button class="lang-btn" type="button">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+      </svg>
+      عربي ▾
+    </button>
+    <div class="lang-menu">
+      <a href="ar.html" class="active">العربية</a>
+      <a href="index.html">English</a>
+      <a href="es.html">Español</a>
+      <a href="hi.html">हिन्दी</a>
+      <a href="fr.html">Français</a>
+    </div>
+  </div>
 </nav>
 
 <!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
