@@ -3,35 +3,573 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Frame App</title>
+    <title>The Frame | Stop Drifting. Start Building.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: system-ui, -apple-system, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        :root {
+            --bg-black: #030303;
+            --bg-gray: #262626;
+            --text-white: #F2F2F2;
+            --accent-red: #F20000;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .text-red { color: var(--accent-red); }
+        .bg-black { background-color: var(--bg-black); }
+        .bg-gray { background-color: var(--bg-gray); }
+        .bg-white { background-color: var(--text-white); color: var(--bg-black); }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 80px;
+            text-align: center;
+            border-bottom: 1px solid rgba(242, 242, 242, 0.1);
+        }
+
+        .hero-img {
+            max-width: 350px;
+            width: 100%;
+            margin-bottom: -10px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            letter-spacing: 2px;
+        }
+
+        .hero p.subheadline {
+            font-size: 1.25rem;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero p.bold-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-white);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: var(--text-white);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-red);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-red);
+            box-shadow: 0 0 20px rgba(242, 0, 0, 0.4);
+        }
+
+        .platforms {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background-color: var(--accent-red);
+            color: var(--text-white);
+            text-align: center;
+            padding: 24px 0;
+            font-weight: 600;
+        }
+
+        .stars {
+            color: #030303;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* The Problem */
+        .section-pad {
+            padding: 100px 0;
+        }
+
+        .problem-section {
+            background-color: var(--bg-gray);
             text-align: center;
         }
-        .container {
-            background: rgba(30, 30, 35, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(20px);
+
+        .problem-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
         }
-        h1 { margin: 0 0 10px 0; font-size: 2rem; }
-        p { color: #888; margin: 0; }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            text-align: left;
+            align-items: center;
+        }
+
+        .problem-text p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        /* Value Props */
+        .value-props {
+            background-color: var(--bg-black);
+            text-align: center;
+        }
+
+        .value-props h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--text-white);
+            color: var(--bg-black);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--accent-red);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card p {
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        /* Features */
+        .features {
+            background-color: var(--bg-gray);
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .feature-item {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feature-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-white);
+        }
+
+        .feature-item p {
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        /* Benefits */
+        .benefits {
+            background-color: var(--bg-black);
+            text-align: center;
+        }
+        
+        .benefits h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .benefit-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .benefit-list li {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            padding-left: 40px;
+            position: relative;
+            color: #ddd;
+        }
+
+        .benefit-list li::before {
+            content: '■';
+            color: var(--accent-red);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .benefit-highlight {
+            margin-top: 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+
+        /* Philosophy */
+        .philosophy {
+            background-color: var(--text-white);
+            color: var(--bg-black);
+            text-align: center;
+        }
+
+        .philosophy h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .philosophy p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #333;
+        }
+
+        .philosophy .highlight {
+            font-weight: 700;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--bg-gray);
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .test-card {
+            background-color: var(--bg-black);
+            padding: 30px;
+            border-left: 4px solid var(--accent-red);
+        }
+
+        .test-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .test-author {
+            font-weight: 700;
+            color: var(--text-white);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background-color: var(--bg-black);
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .final-cta p {
+            font-size: 1.25rem;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+
+        .final-cta .decision {
+            font-size: 1.5rem;
+            color: var(--text-white);
+            font-weight: 700;
+            margin: 40px 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-black);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #111;
+            color: #666;
+        }
+
+        .footer p { margin-bottom: 10px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .problem-grid, .cards-grid, .test-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>The Frame</h1>
-        <p>Your Ultimate AI Chat Experience.</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <img src="assets/logo.png" alt="The Frame" class="hero-img">
+            <h1>Stop Drifting. <span class="text-red">Start Building.</span></h1>
+            <p class="subheadline">
+                Most men don't fail because they lack talent.<br>
+                They fail because they never learned to control their attention.
+            </p>
+            <p class="bold-text">
+                The Frame is the system that changes that.
+            </p>
+            <p class="subheadline" style="margin-bottom: 50px;">
+                Track your discipline. Kill your distractions. Build the man you said you'd become.
+            </p>
+            <a href="#" class="btn">Download The Frame - Free</a>
+            <div class="platforms">Available on iOS & Android</div>
+        </div>
+    </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof">
+        <div class="container">
+            <div class="stars">★★★★★</div>
+            "Built for men who are done making excuses."<br>
+            <span style="font-size: 0.9rem; font-weight: 400; opacity: 0.9; margin-top: 8px; display: inline-block;">Rated by 10,000+ men reclaiming their edge</span>
+        </div>
     </div>
+
+    <!-- The Problem Section -->
+    <section class="problem-section section-pad">
+        <div class="container problem-grid">
+            <div class="problem-text">
+                <h2>You Already Know<br>What's Wrong.</h2>
+                <p>Every morning you wake up with intention.<br>
+                By noon, you've been pulled in six directions.<br>
+                By night, you've built nothing.</p>
+                <p><strong>It's not weakness. It's architecture.</strong></p>
+                <p>Your environment is designed to steal your focus - your phone, your habits, the noise around you.</p>
+            </div>
+            <div class="problem-text" style="background: var(--bg-black); padding: 40px; border-left: 4px solid var(--accent-red);">
+                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">The Counter-Architecture</h3>
+                <p>The Frame gives you a counter-architecture.</p>
+                <p>A daily system that sharpens discipline, builds real skills, and makes distraction the enemy it always was.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Propositions -->
+    <section class="value-props section-pad">
+        <div class="container">
+            <h2>Three Things. One Standard.</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3><span class="text-red">■</span> Discipline</h3>
+                    <p>Build unbreakable daily habits through structured routines and accountability tracking.</p>
+                </div>
+                <div class="card">
+                    <h3><span class="text-red">■</span> Focus</h3>
+                    <p>Block distractions, enter deep work mode, and measure where your attention actually goes.</p>
+                </div>
+                <div class="card">
+                    <h3><span class="text-red">■</span> Skill</h3>
+                    <p>Learn and log the skills that matter - and watch compound progress over weeks and months.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="features section-pad">
+        <div class="container" style="max-width: 800px;">
+            <h2>What's Inside The Frame</h2>
+            
+            <div class="feature-item">
+                <h3>🧱 Daily Discipline Stack</h3>
+                <p>A structured morning-to-night system that turns vague intentions into measurable action. Build your stack, track your streak, own your day.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3>🎯 Deep Focus Mode</h3>
+                <p>Silence everything. Set a target. Lock in. The Frame's focus sessions use timed blocks to train your concentration the way a gym trains your body - progressively, relentlessly.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3>📈 Skill Tracker</h3>
+                <p>Every skill you're building - logged, tracked, visualized. From cold exposure to reading to strength training. Mastery is a long game. The Frame keeps the score.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3>🚫 Distraction Audit</h3>
+                <p>See exactly where your time is going. Not an estimate - a record. The Frame surfaces your patterns so you can cut what's costing you.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3>🔥 Streak System</h3>
+                <p>Discipline compounds. Every streak you build becomes a standard you refuse to break. Miss it - you feel it. Maintain it - you become it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits section-pad">
+        <div class="container">
+            <h2>What Changes When You Use The Frame</h2>
+            <ul class="benefit-list">
+                <li>You stop reacting and start executing on your own terms.</li>
+                <li>Your mornings get sharper - no more decision fog, no more wasted hours.</li>
+                <li>Distractions lose their grip because you've built a system stronger than impulse.</li>
+                <li>Skills you've "always meant to learn" actually get learned - logged, tracked, owned.</li>
+                <li>You become someone other men notice - not because of what you say, but how you move.</li>
+            </ul>
+            <div class="benefit-highlight">
+                The Frame doesn't motivate you.<br>
+                It builds you into someone who doesn't need motivation.
+            </div>
+        </div>
+    </section>
+
+    <!-- The Philosophy -->
+    <section class="philosophy section-pad">
+        <div class="container">
+            <h2>Discipline Is a Structure, Not a Feeling.</h2>
+            <p>Motivation comes and goes.</p>
+            <p>Discipline is a practice - and every practice needs a frame.</p>
+            <p>The best version of you isn't waiting for the right moment.<br>He's waiting for the right system.</p>
+            <div class="highlight">This is the system.</div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section-pad">
+        <div class="container">
+            <div class="test-grid">
+                <div class="test-card">
+                    <p class="test-quote">"I deleted three apps the day I downloaded this one."</p>
+                    <p class="test-author">Marcus, 29 | Entrepreneur</p>
+                </div>
+                <div class="test-card">
+                    <p class="test-quote">"The Distraction Audit alone changed how I spend my weekends."</p>
+                    <p class="test-author">James, 34 | Engineer</p>
+                </div>
+                <div class="test-card">
+                    <p class="test-quote">"First app that actually made me feel accountable to myself."</p>
+                    <p class="test-author">Darius, 26 | Athlete</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta section-pad">
+        <div class="container">
+            <h2>The Man You Want to Be Isn't a Mystery.</h2>
+            <p>He's a decision.</p>
+            <p>Every day you wait is a day he falls further behind.</p>
+            <p>Every day you use The Frame, he gets closer.</p>
+            
+            <div class="decision">One download. One decision. One frame for everything.</div>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn" style="background: var(--bg-gray); border-color: var(--bg-gray);">Download on the App Store</a>
+                <a href="#" class="btn">Get it on Google Play</a>
+            </div>
+            
+            <p style="margin-top: 20px; font-weight: 600; color: #888;">Free to start. Built to last. No excuses.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: var(--text-white); margin-bottom: 16px;">The Frame - Built for men who hold themselves to a higher standard.</p>
+            <p>Discipline. Focus. Skill. Daily.</p>
+            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.5;">theframeapp.site</p>
+        </div>
+    </footer>
+
 </body>
 </html>
