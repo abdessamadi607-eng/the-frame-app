@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Frame | Stop Drifting. Start Building.</title>
+    <title>The Frame | توقف عن الانجراف. ابدأ بالبناء.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-black: #030303;
@@ -24,7 +24,7 @@
         body {
             background-color: var(--bg-black);
             color: var(--text-white);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Cairo', sans-serif;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
@@ -32,7 +32,7 @@
         .lang-switcher {
             position: absolute;
             top: 24px;
-            right: 24px;
+            left: 24px;
             z-index: 100;
         }
         
@@ -44,7 +44,7 @@
             border-radius: 4px;
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
         }
 
@@ -54,9 +54,15 @@
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
+            font-weight: 800;
             line-height: 1.2;
+        }
+        
+        /* Oswald for english words like 'The Frame' */
+        .en-word {
+            font-family: 'Oswald', sans-serif;
+            direction: ltr;
+            display: inline-block;
         }
 
         .text-red { color: var(--accent-red); }
@@ -87,7 +93,6 @@
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 24px;
-            letter-spacing: 2px;
         }
 
         .hero p.subheadline {
@@ -108,13 +113,10 @@
             display: inline-block;
             background-color: var(--accent-red);
             color: var(--text-white);
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
             text-decoration: none;
             padding: 18px 40px;
             font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-weight: 800;
             border-radius: 4px;
             transition: all 0.3s ease;
             border: 2px solid var(--accent-red);
@@ -131,8 +133,6 @@
             margin-top: 16px;
             font-size: 0.9rem;
             color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         /* Social Proof */
@@ -141,7 +141,7 @@
             color: var(--text-white);
             text-align: center;
             padding: 24px 0;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .stars {
@@ -170,7 +170,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            text-align: left;
+            text-align: right;
             align-items: center;
         }
 
@@ -202,7 +202,7 @@
             color: var(--bg-black);
             padding: 40px 30px;
             border-radius: 8px;
-            text-align: left;
+            text-align: right;
             position: relative;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -212,7 +212,7 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             width: 100%;
             height: 4px;
             background-color: var(--accent-red);
@@ -279,13 +279,13 @@
             list-style: none;
             max-width: 800px;
             margin: 0 auto;
-            text-align: left;
+            text-align: right;
         }
 
         .benefit-list li {
             font-size: 1.2rem;
             margin-bottom: 24px;
-            padding-left: 40px;
+            padding-right: 40px;
             position: relative;
             color: #ddd;
         }
@@ -294,7 +294,7 @@
             content: '■';
             color: var(--accent-red);
             position: absolute;
-            left: 0;
+            right: 0;
             top: 2px;
             font-size: 1rem;
         }
@@ -328,7 +328,7 @@
         }
 
         .philosophy .highlight {
-            font-weight: 700;
+            font-weight: 800;
             margin-top: 40px;
             font-size: 1.5rem;
         }
@@ -347,7 +347,8 @@
         .test-card {
             background-color: var(--bg-black);
             padding: 30px;
-            border-left: 4px solid var(--accent-red);
+            border-right: 4px solid var(--accent-red);
+            text-align: right;
         }
 
         .test-quote {
@@ -360,9 +361,7 @@
         .test-author {
             font-weight: 700;
             color: var(--text-white);
-            text-transform: uppercase;
             font-size: 0.9rem;
-            letter-spacing: 1px;
         }
 
         /* Final CTA */
@@ -416,27 +415,28 @@
     </style>
 </head>
 <body>
+
     <div class="lang-switcher">
-        <a href="ar.html" class="lang-btn">عربي</a>
+        <a href="index.html" class="lang-btn">English</a>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <img src="assets/logo.png" alt="The Frame" class="hero-img">
-            <h1>Stop Drifting. <span class="text-red">Start Building.</span></h1>
+            <h1>توقف عن الانجراف. <span class="text-red">ابدأ بالبناء.</span></h1>
             <p class="subheadline">
-                Most men don't fail because they lack talent.<br>
-                They fail because they never learned to control their attention.
+                معظم الرجال لا يفشلون لافتقارهم للموهبة.<br>
+                يفشلون لأنهم لم يتعلموا أبداً السيطرة على انتباههم.
             </p>
             <p class="bold-text">
-                The Frame is the system that changes that.
+                <span class="en-word">The Frame</span> هو النظام الذي يغير ذلك.
             </p>
             <p class="subheadline" style="margin-bottom: 50px;">
-                Track your discipline. Kill your distractions. Build the man you said you'd become.
+                تتبع انضباطك. اقضِ على مشتتاتك. ابنِ الرجل الذي قلت أنك ستكونه.
             </p>
-            <a href="#" class="btn">Download The Frame - Free</a>
-            <div class="platforms">Available on iOS & Android</div>
+            <a href="#" class="btn">حمل <span class="en-word">The Frame</span> مجاناً</a>
+            <div class="platforms">متوفر على iOS & Android</div>
         </div>
     </section>
 
@@ -444,8 +444,8 @@
     <div class="social-proof">
         <div class="container">
             <div class="stars">★★★★★</div>
-            "Built for men who are done making excuses."<br>
-            <span style="font-size: 0.9rem; font-weight: 400; opacity: 0.9; margin-top: 8px; display: inline-block;">Rated by 10,000+ men reclaiming their edge</span>
+            "صُنع للرجال الذين انتهوا من اختلاق الأعذار."<br>
+            <span style="font-size: 0.9rem; font-weight: 500; opacity: 0.9; margin-top: 8px; display: inline-block;">مُقيّم بواسطة أكثر من 10,000 رجل يستعيدون أفضليتهم</span>
         </div>
     </div>
 
@@ -453,17 +453,17 @@
     <section class="problem-section section-pad">
         <div class="container problem-grid">
             <div class="problem-text">
-                <h2>You Already Know<br>What's Wrong.</h2>
-                <p>Every morning you wake up with intention.<br>
-                By noon, you've been pulled in six directions.<br>
-                By night, you've built nothing.</p>
-                <p><strong>It's not weakness. It's architecture.</strong></p>
-                <p>Your environment is designed to steal your focus - your phone, your habits, the noise around you.</p>
+                <h2>أنت تعرف مسبقاً<br>ما هو الخطأ.</h2>
+                <p>كل صباح تستيقظ بنية.<br>
+                بحلول الظهيرة، تُسحب في ستة اتجاهات.<br>
+                بحلول الليل، لم تبنِ شيئاً.</p>
+                <p><strong>إنه ليس ضعفاً. إنها البنية المفتقرة.</strong></p>
+                <p>بيئتك مصممة لسرقة تركيزك - هاتفك، عاداتك، الضجيج من حولك.</p>
             </div>
-            <div class="problem-text" style="background: var(--bg-black); padding: 40px; border-left: 4px solid var(--accent-red);">
-                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">The Counter-Architecture</h3>
-                <p>The Frame gives you a counter-architecture.</p>
-                <p>A daily system that sharpens discipline, builds real skills, and makes distraction the enemy it always was.</p>
+            <div class="problem-text" style="background: var(--bg-black); padding: 40px; border-right: 4px solid var(--accent-red);">
+                <h3 style="margin-bottom: 20px; font-size: 1.8rem;">البنية المعاكسة</h3>
+                <p>يمنحك <span class="en-word">The Frame</span> البنية المعاكسة.</p>
+                <p>نظام يومي يشحذ الانضباط، يبني مهارات حقيقية، ويجعل التشتت العدو الذي كان عليه دائماً.</p>
             </div>
         </div>
     </section>
@@ -471,19 +471,19 @@
     <!-- Value Propositions -->
     <section class="value-props section-pad">
         <div class="container">
-            <h2>Three Things. One Standard.</h2>
+            <h2>ثلاثة أشياء. معيار واحد.</h2>
             <div class="cards-grid">
                 <div class="card">
-                    <h3><span class="text-red">■</span> Discipline</h3>
-                    <p>Build unbreakable daily habits through structured routines and accountability tracking.</p>
+                    <h3><span class="text-red">■</span> الانضباط</h3>
+                    <p>ابنِ عادات يومية لا تقهر عبر روتين منظم وتتبع دقيق للالتزام.</p>
                 </div>
                 <div class="card">
-                    <h3><span class="text-red">■</span> Focus</h3>
-                    <p>Block distractions, enter deep work mode, and measure where your attention actually goes.</p>
+                    <h3><span class="text-red">■</span> التركيز</h3>
+                    <p>احجب المشتتات، ادخل وضع العمل العميق، وقس أين يذهب انتباهك فعلياً.</p>
                 </div>
                 <div class="card">
-                    <h3><span class="text-red">■</span> Skill</h3>
-                    <p>Learn and log the skills that matter - and watch compound progress over weeks and months.</p>
+                    <h3><span class="text-red">■</span> المهارة</h3>
+                    <p>تعلم وسجل المهارات التي تهمك - وشاهد التقدم التراكمي عبر الأسابيع والأشهر.</p>
                 </div>
             </div>
         </div>
@@ -491,32 +491,32 @@
 
     <!-- Feature Highlights -->
     <section class="features section-pad">
-        <div class="container" style="max-width: 800px;">
-            <h2>What's Inside The Frame</h2>
+        <div class="container" style="max-width: 800px; text-align: right;">
+            <h2 style="text-align: center;">ماذا يوجد داخل الإطار</h2>
             
             <div class="feature-item">
-                <h3>🧱 Daily Discipline Stack</h3>
-                <p>A structured morning-to-night system that turns vague intentions into measurable action. Build your stack, track your streak, own your day.</p>
+                <h3>🧱 حزمة الانضباط اليومي</h3>
+                <p>نظام منظم من الصباح لليل يحول النوايا المبهمة إلى أفعال قابلة للقياس. صمم حزمتك، تتبع سلسلتك، وتحكم بيومك.</p>
             </div>
 
             <div class="feature-item">
-                <h3>🎯 Deep Focus Mode</h3>
-                <p>Silence everything. Set a target. Lock in. The Frame's focus sessions use timed blocks to train your concentration the way a gym trains your body - progressively, relentlessly.</p>
+                <h3>🎯 وضع التركيز العميق</h3>
+                <p>صمّت كل شيء. حدد هدفاً. ثبت تركيزك. جلسات التركيز تدرب انتباهك كما تدرب الصالة الرياضية جسدك - تدريجياً، وبلا هوادة.</p>
             </div>
 
             <div class="feature-item">
-                <h3>📈 Skill Tracker</h3>
-                <p>Every skill you're building - logged, tracked, visualized. From cold exposure to reading to strength training. Mastery is a long game. The Frame keeps the score.</p>
+                <h3>📈 متتبع المهارات</h3>
+                <p>كل مهارة تبنيها - مسجلة، متتبعة، ومرئية. من التعرض للبرودة إلى القراءة إلى تدريبات القوة. الإتقان لعبة طويلة المدى، و<span class="en-word">The Frame</span> يحفظ نتيجتك.</p>
             </div>
 
             <div class="feature-item">
-                <h3>🚫 Distraction Audit</h3>
-                <p>See exactly where your time is going. Not an estimate - a record. The Frame surfaces your patterns so you can cut what's costing you.</p>
+                <h3>🚫 تدقيق المشتتات</h3>
+                <p>انظر بالضبط أين يذهب وقتك. ليس تقديراً - بل سجلاً. يبرز لك التطبيق أنماطك لتتمكن من التخلص مما يكلفك الكثير.</p>
             </div>
 
             <div class="feature-item">
-                <h3>🔥 Streak System</h3>
-                <p>Discipline compounds. Every streak you build becomes a standard you refuse to break. Miss it - you feel it. Maintain it - you become it.</p>
+                <h3>🔥 نظام السلاسل (Streaks)</h3>
+                <p>الانضباط يتراكم. كل سلسلة تبنيها تصبح معياراً ترفض كسره. إن فوتها - ستشعر بذلك. وإن حافظت عليها - ستصبح جزءاً منك.</p>
             </div>
         </div>
     </section>
@@ -524,17 +524,17 @@
     <!-- Benefits Section -->
     <section class="benefits section-pad">
         <div class="container">
-            <h2>What Changes When You Use The Frame</h2>
+            <h2>ماذا يتغير عندما تستخدم <span class="en-word">The Frame</span></h2>
             <ul class="benefit-list">
-                <li>You stop reacting and start executing on your own terms.</li>
-                <li>Your mornings get sharper - no more decision fog, no more wasted hours.</li>
-                <li>Distractions lose their grip because you've built a system stronger than impulse.</li>
-                <li>Skills you've "always meant to learn" actually get learned - logged, tracked, owned.</li>
-                <li>You become someone other men notice - not because of what you say, but how you move.</li>
+                <li>تتوقف عن ردود الفعل وتبدأ بالتنفيذ بشروطك الخاصة.</li>
+                <li>صباحك يصبح أكثر حدة - لا مزيد من ضبابية القرارات، لا مزيد من الساعات المهدرة.</li>
+                <li>المشتتات تفقد قبضتها لأنك بنيت نظاماً أقوى من الاندفاع.</li>
+                <li>المهارات التي "نويت دائماً تعلمها" تُتعلم فعلياً - تُسجل، وتُتتبع.</li>
+                <li>تصبح شخصاً يلاحظه الرجال الآخرون - ليس بسبب ما تقوله، بل كيف تتحرك.</li>
             </ul>
             <div class="benefit-highlight">
-                The Frame doesn't motivate you.<br>
-                It builds you into someone who doesn't need motivation.
+                <span class="en-word">The Frame</span> لا يحفزك.<br>
+                بل يبنيك لتصبح شخصاً لا يحتاج للتحفيز.
             </div>
         </div>
     </section>
@@ -542,11 +542,11 @@
     <!-- The Philosophy -->
     <section class="philosophy section-pad">
         <div class="container">
-            <h2>Discipline Is a Structure, Not a Feeling.</h2>
-            <p>Motivation comes and goes.</p>
-            <p>Discipline is a practice - and every practice needs a frame.</p>
-            <p>The best version of you isn't waiting for the right moment.<br>He's waiting for the right system.</p>
-            <div class="highlight">This is the system.</div>
+            <h2>الانضباط هو هيكل، وليس شعوراً.</h2>
+            <p>التحفيز يأتي ويذهب.</p>
+            <p>الانضباط ممارسة - وكل ممارسة تحتاج إلى إطار.</p>
+            <p>أفضل نسخة منك لا تنتظر اللحظة المناسبة.<br>إنها تنتظر النظام المناسب.</p>
+            <div class="highlight">هذا هو النظام.</div>
         </div>
     </section>
 
@@ -555,16 +555,16 @@
         <div class="container">
             <div class="test-grid">
                 <div class="test-card">
-                    <p class="test-quote">"I deleted three apps the day I downloaded this one."</p>
-                    <p class="test-author">Marcus, 29 | Entrepreneur</p>
+                    <p class="test-quote">"قمت بحذف ثلاثة تطبيقات في اليوم الذي حملت فيه هذا التطبيق."</p>
+                    <p class="test-author">ماركوس، 29 | رائد أعمال</p>
                 </div>
                 <div class="test-card">
-                    <p class="test-quote">"The Distraction Audit alone changed how I spend my weekends."</p>
-                    <p class="test-author">James, 34 | Engineer</p>
+                    <p class="test-quote">"تدقيق المشتتات وحده غير الطريقة التي أقضي بها عطلات نهاية الأسبوع."</p>
+                    <p class="test-author">جيمس، 34 | مهندس</p>
                 </div>
                 <div class="test-card">
-                    <p class="test-quote">"First app that actually made me feel accountable to myself."</p>
-                    <p class="test-author">Darius, 26 | Athlete</p>
+                    <p class="test-quote">"أول تطبيق يجعلني أشعر فعلياً بالمسؤولية تجاه نفسي."</p>
+                    <p class="test-author">داريوس، 26 | رياضي</p>
                 </div>
             </div>
         </div>
@@ -573,27 +573,27 @@
     <!-- Final CTA Section -->
     <section class="final-cta section-pad">
         <div class="container">
-            <h2>The Man You Want to Be Isn't a Mystery.</h2>
-            <p>He's a decision.</p>
-            <p>Every day you wait is a day he falls further behind.</p>
-            <p>Every day you use The Frame, he gets closer.</p>
+            <h2>الرجل الذي تريد أن تكونه ليس لغزاً.</h2>
+            <p>إنه قرار.</p>
+            <p>كل يوم تنتظره هو يوم يتأخر فيه أكثر.</p>
+            <p>كل يوم تستخدم فيه <span class="en-word">The Frame</span>، يقترب منك أكثر.</p>
             
-            <div class="decision">One download. One decision. One frame for everything.</div>
+            <div class="decision">تحميل واحد. قرار واحد. إطار واحد لكل شيء.</div>
             
             <div class="cta-buttons">
-                <a href="#" class="btn" style="background: var(--bg-gray); border-color: var(--bg-gray);">Download on the App Store</a>
-                <a href="#" class="btn">Get it on Google Play</a>
+                <a href="#" class="btn" style="background: var(--bg-gray); border-color: var(--bg-gray);">تحميل لـ iOS</a>
+                <a href="#" class="btn">تحميل لـ Android</a>
             </div>
             
-            <p style="margin-top: 20px; font-weight: 600; color: #888;">Free to start. Built to last. No excuses.</p>
+            <p style="margin-top: 20px; font-weight: 600; color: #888;">مجاني للبدء. مصمم ليدوم. لا للأعذار.</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p style="font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: var(--text-white); margin-bottom: 16px;">The Frame - Built for men who hold themselves to a higher standard.</p>
-            <p>Discipline. Focus. Skill. Daily.</p>
+            <p style="font-family: 'Oswald', sans-serif; font-size: 1.2rem; color: var(--text-white); margin-bottom: 16px;">The Frame - صُنع للرجال الذين يُلزمون أنفسهم بمعايير عليا.</p>
+            <p>انضباط. تركيز. مهارة. يومياً.</p>
             <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.5;">theframeapp.site</p>
         </div>
     </footer>
