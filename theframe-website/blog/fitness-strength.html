@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تدريب القوة: لماذا رفع الأثقال أحد أفضل قرارات الرجل. الفوائد العلمية لبناء القوة على الجسد والعقل والهرمونات والثقة بالنفس.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>تدريب القوة: لماذا رفع الأثقال يُغيِّر كل شيء | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/fitness-strength.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="fitness-body.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel1">جسدك رسالتك</span></a>
+      <a class="related-card" href="fitness-sleep.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel2">النوم: السلاح السري</span></a>
+      <a class="related-card" href="discipline-habits.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel3">العادات الذرية</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'تدريب القوة: لماذا رفع الأثقال قرار يُغيِّر حياتك من الداخل والخارج',
+  cat:'اللياقة',date:'يوليو 2026',readTime:'14 دقيقة قراءة',
+  excerpt:'تدريب القوة ليس مجرد بناء عضل للمظهر — هو تحويل هرموني ونفسي وعقلي. العلم يُثبِت أن رفع الأثقال يُغيِّر كيمياء دماغك وتستوستيرونك وعلاقتك بالانضباط والصعوبة.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['جسدك رسالتك','النوم: السلاح السري','العادات الذرية'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>ما يعرفه العلم وما لا يُعلَّم في المدرسة</h2>
+<p>حين تذكر "تدريب القوة" يتبادر إلى ذهن معظم الناس صورة نمطية: الصالة، الأوزان الثقيلة، الإيغو والمكملات الغذائية. هذه الصورة تُخفي حقيقة أعمق بكثير: <strong>تدريب القوة من أكثر الأدوات العلمية المُثبَتة فعالاً لتحسين الصحة الجسدية، العقلية، الهرمونية، والنفسية في وقت واحد</strong>.</p>
+<p>ليس مبالغة. هذا ما تقوله الأبحاث المنشورة في أرقى المجلات العلمية. المشكلة أن هذه المعلومات لا تصل لأغلب الناس — تصلهم بدلاً منها صور Instagram والمبالغات الإعلانية.</p>
+
+<h2>الفوائد الهرمونية: التستوستيرون والنمو</h2>
+<p>تدريب القوة يُحفِّز إفراز هرمونات بناء الجسم بشكل مباشر:</p>
+<ul>
+  <li><strong>التستوستيرون:</strong> تمارين القوة المركّبة (خاصةً السكواتس والديدليفت) ترفع مستويات التستوستيرون بشكل حاد مباشرة بعد الجلسة، وتدريب القوة المنتظم على المدى البعيد يُحسِّن الطليحة الأساسية للتستوستيرون</li>
+  <li><strong>هرمون النمو (HGH):</strong> يُحفَّز بشكل كبير بتمارين القوة المكثفة، خاصةً مع فترات راحة قصيرة — يُعزِّز بناء العضل وحرق الدهون</li>
+  <li><strong>IGF-1:</strong> عامل النمو الشبيه بالأنسولين — يُفرَز استجابةً للتمرين ويُساعِد في بناء وإصلاح الأنسجة العضلية</li>
+</ul>
+<p>عكس ذلك: نمط حياة الخمول يرتبط ارتباطاً وثيقاً بانخفاض مستويات التستوستيرون. الرجل الخامل ليس مُهدَّداً من تمرين يفوته — هو مُهدَّد من أسلوب حياة يُفقِده أحد أساسيات إفراز الهرمونات المفيدة.</p>
+
+<h2>التأثير على الدماغ: ما لا يُقال</h2>
+<p>تدريب القوة يُغيِّر دماغك بطرق حقيقية:</p>
+
+<h3>زيادة BDNF</h3>
+<p>عامل النمو العصبي المُشتق من الدماغ (Brain-Derived Neurotrophic Factor) يُطلَق عليه أحياناً "سماد الدماغ" — يُعزِّز نمو الخلايا العصبية الجديدة، يُحسِّن الذاكرة والتعلم، ويُقاوِم الاكتئاب. تدريب القوة يرفع BDNF بشكل ملحوظ — بعض الدراسات تُشير إلى تأثير يُقارن مع بعض مضادات الاكتئاب.</p>
+
+<h3>تحسين الوظائف التنفيذية</h3>
+<p>الوظائف التنفيذية — التخطيط، ضبط النفس، مقاومة الإغراء، القدرة على التركيز — ترتبط بنشاط الفص الأمامي (Prefrontal Cortex). تدريب القوة المنتظم يُقوِّي هذه الوظائف بيولوجياً — وهذا لماذا كثير من المتدربين يُلاحِظون تحسناً في قدرتهم على التركيز والانضباط في الحياة بشكل عام.</p>
+
+<h3>مكافحة القلق والاكتئاب</h3>
+<p>دراسات متعددة تُثبِت أن تدريب القوة فعّال في تقليل أعراض القلق المزمن والاكتئاب الخفيف إلى المتوسط. الآليات متعددة: إفراز الإندورفين، تقليل الكورتيزول (هرمون التوتر)، تحسين الصورة الذاتية، والشعور بالإنجاز الملموس بعد كل جلسة.</p>
+
+<h2>التمارين الأساسية: ما يجب أن تعرفه كمبتدئ</h2>
+
+<h3>الحركات الستة الكبرى</h3>
+<p>كل برنامج تدريبي فعّال يستند إلى ست حركات أساسية. إتقانها يُعطيك 80% من النتائج:</p>
+<ul>
+  <li><strong>الضغط (Push):</strong> Bench Press، Overhead Press — بناء الصدر والكتفين والتراي</li>
+  <li><strong>السحب (Pull):</strong> Pullups، Rows — بناء الظهر والبايسبس والكتفين الخلفية</li>
+  <li><strong>القرفصاء (Squat):</strong> الملك المطلق لتمارين الأرجل — فخذين، مؤخرة، وعضلات جوهرية</li>
+  <li><strong>الرفعة الميتة (Deadlift):</strong> تُحرِّك أكثر عضلات الجسم في تمرين واحد</li>
+  <li><strong>الطعن (Lunge/Split Squat):</strong> تقوية وتوازن الأرجل بشكل أحادي</li>
+  <li><strong>الحمل (Carry):</strong> Farmer's Walk — قوة الإمساك، ثبات الجذع، تدريب وظيفي</li>
+</ul>
+
+<h3>البرامج المُجرَّبة للمبتدئ</h3>
+<p>أفضل برامج المبتدئين تتشارك مبدأً واحداً: <strong>بساطة + تكرار + تقدم منهجي</strong>. من أشهرها:</p>
+<ul>
+  <li><strong>Starting Strength (Mark Rippetoe):</strong> 3 أيام أسبوعياً، يركز على الحركات الكبرى بزيادة وزن في كل جلسة</li>
+  <li><strong>StrongLifts 5×5:</strong> نفس المنطق، أبسط في التنفيذ</li>
+  <li><strong>GZCLP:</strong> مرونة أكبر، يناسب من لا يريد التقيد بجدول صارم</li>
+</ul>
+<p>كلها تعتمد على نفس المبدأ: تمارين مركّبة + تحميل تدريجي + اتساق = تقدم حقيقي.</p>
+
+<h2>الأخطاء الشائعة التي تُبطئ التقدم</h2>
+
+<h3>الخطأ 1: إهمال التقنية الصحيحة</h3>
+<p>المبتدئ المتحمس يريد رفع الثقل الأكبر في أسرع وقت. النتيجة: تقنية سيئة تُسبِّب إصابات تُوقِف التقدم لأسابيع. الاستثمار في تعلم التقنية الصحيحة من البداية يوفر عليك أشهراً من التعطل لاحقاً.</p>
+
+<h3>الخطأ 2: البرنامج المعقد من البداية</h3>
+<p>برامج متقدمة مخصصة للمتقدمين — المبتدئ يستفيد من البساطة. أي برنامج بسيط يُطبَّق باتساق يتفوق على أي برنامج معقد يُطبَّق بعدم انتظام.</p>
+
+<h3>الخطأ 3: إهمال التغذية</h3>
+<p>لا يمكن بناء عضل بدون بروتين كافٍ. الحد الأدنى: 1.6 غرام من البروتين لكل كيلو من وزن الجسم. المصادر الجيدة: البيض، الدجاج، اللحم، السمك، الحمص، التوفو. لا تحتاج مكملات غذائية معقدة — الطعام الحقيقي يُؤدي المهمة.</p>
+
+<h3>الخطأ 4: التوقف قبل رؤية النتائج</h3>
+<p>التكيّفات الهرمونية والعصبية الكبرى تبدأ بعد 3-6 أشهر من التدريب المنتظم. كثيرون يتوقفون قبل هذه النقطة ويستنتجون أن "التدريب لا يفيدهم" — بينما كانوا على بُعد أسابيع من التحول الحقيقي.</p>
+
+<div class="callout"><p><strong>حقيقة مدهشة:</strong> دراسة نُشِرت في JAMA Psychiatry وجدت أن تدريب القوة يُقلِّل أعراض الاكتئاب بمعدل 32-33% في المتوسط — وكان التأثير أقوى لمن يعانون من اكتئاب أشد حدةً. هذا تأثير يُنافِس كثيراً من الأدوية بدون أعراض جانبية.</p></div>
+
+<h2>الحاجز النفسي: الجزء الذي لا يُذكَر</h2>
+<p>أحد أهم جوانب تدريب القوة ما لا يُرى بالعين: تعلم العلاقة مع الصعوبة. حين ترفع وزناً ثقيلاً وتشعر أن جسدك يرفض، وتقرر الاستمرار — هذا تدريب للإرادة قبل أن يكون تدريباً للعضلة.</p>
+<p>هذا الانتقال النفسي ينعكس على بقية الحياة: المهمة الصعبة، المحادثة الصعبة، القرار الذي يتطلب تخطي الراحة. الشخص الذي تعلم الاستمرار تحت الوزن لديه مرجعية داخلية مختلفة.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>تدريب القوة يرفع التستوستيرون وهرمون النمو بشكل حقيقي وعلمي</li>
+    <li>يُحسِّن الوظائف التنفيذية للدماغ: تركيز، ضبط نفس، انضباط</li>
+    <li>فعّال ضد القلق والاكتئاب — تأثير يُنافِس بعض الأدوية بدون أعراض جانبية</li>
+    <li>الحركات الستة الكبرى: سحب، دفع، سكواتس، رفعة ميتة، طعن، حمل</li>
+    <li>المبتدئ يحتاج بساطة + اتساق — لا تعقيد</li>
+    <li>التقدم الحقيقي يظهر بعد 3-6 أشهر — لا تتوقف قبل هذه النقطة</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: أداة واحدة، فوائد متعددة</h2>
+<p>إذا كنت ستختار نشاطاً جسدياً واحداً تُضيفه لحياتك، تدريب القوة هو المرشح الأقوى من حيث تعدد الفوائد المُثبَتة: هرمونات، دماغ، صحة نفسية، بنية جسد، انضباط، وعلاقة صحية مع الصعوبة. كل هذا في نشاط واحد.</p>
+<p>ابدأ بسيطاً. ثلاث أيام في الأسبوع. حركات أساسية بتقنية صحيحة. زيادة تدريجية. استمر لستة أشهر. ثم قارن من كنت ومن أصبحت.</p>`
+},
+en:{
+  dir:'ltr',title:'Strength Training: Why Lifting Weights Changes Everything Inside and Out',
+  cat:'Fitness',date:'July 2026',readTime:'14 min read',
+  excerpt:"Strength training isn't just about building muscle for appearance — it's a hormonal, psychological, and mental transformation. Science proves that lifting weights changes your brain chemistry, testosterone, and your relationship with discipline and difficulty.",
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Your Body Is Your Message','Sleep: The Secret Weapon','Atomic Habits'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>Hormonal Benefits: Testosterone and Growth</h2>
+<p>Strength training directly stimulates the release of anabolic hormones. Compound exercises (especially squats and deadlifts) sharply raise testosterone levels immediately after a session. Regular strength training long-term improves baseline testosterone levels. Growth Hormone (HGH) and IGF-1 are also significantly stimulated — enhancing muscle building and fat burning.</p>
+
+<h2>Brain Impact: What Goes Unsaid</h2>
+
+<h3>Increasing BDNF</h3>
+<p>Brain-Derived Neurotrophic Factor is sometimes called "brain fertilizer" — it enhances new neuron growth, improves memory and learning, and resists depression. Strength training significantly raises BDNF — some studies suggest an effect comparable to certain antidepressants.</p>
+
+<h3>Improving Executive Functions</h3>
+<p>Planning, self-control, impulse resistance, focus — all linked to Prefrontal Cortex activity. Regular strength training biologically strengthens these functions — why many trainees notice improvement in their ability to focus and maintain discipline in life generally.</p>
+
+<h2>The Six Big Movements</h2>
+<ul>
+  <li><strong>Push:</strong> Bench Press, Overhead Press — chest, shoulders, triceps</li>
+  <li><strong>Pull:</strong> Pullups, Rows — back, biceps, rear shoulders</li>
+  <li><strong>Squat:</strong> The absolute king of leg exercises</li>
+  <li><strong>Deadlift:</strong> Activates more muscles in one exercise than almost anything else</li>
+  <li><strong>Lunge/Split Squat:</strong> Single-leg strength and balance</li>
+  <li><strong>Carry:</strong> Farmer's Walk — grip strength, core stability, functional training</li>
+</ul>
+
+<div class="callout"><p><strong>Stunning Fact:</strong> A study published in JAMA Psychiatry found that strength training reduces depression symptoms by an average of 32-33% — and the effect was stronger for those with more severe depression. This rivals many medications without side effects.</p></div>
+
+<h2>The Psychological Barrier: The Part That Goes Unmentioned</h2>
+<p>One of the most important aspects of strength training is invisible: learning a relationship with difficulty. When you lift a heavy weight and your body resists, and you decide to continue — that's willpower training before it's muscle training. This psychological shift reflects across the rest of life.</p>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Strength training raises testosterone and growth hormone in a real, scientific way</li>
+    <li>Improves brain executive functions: focus, self-control, discipline</li>
+    <li>Effective against anxiety and depression — rivals medications without side effects</li>
+    <li>Six big movements: pull, push, squat, deadlift, lunge, carry</li>
+    <li>Beginners need simplicity + consistency — not complexity</li>
+    <li>Real progress appears after 3-6 months — don't stop before that point</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Entrenamiento de Fuerza: Por Qué Levantar Pesas lo Cambia Todo por Dentro y por Fuera',
+  cat:'Fitness',date:'Julio 2026',readTime:'14 min',
+  excerpt:'El entrenamiento de fuerza no es solo construir músculo para la apariencia — es una transformación hormonal, psicológica y mental. La ciencia prueba que levantar pesas cambia la química de tu cerebro, testosterona y tu relación con la disciplina.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Tu Cuerpo es Tu Mensaje','El Sueño: El Arma Secreta','Hábitos Atómicos'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>Beneficios Hormonales</h2>
+<p>El entrenamiento de fuerza estimula directamente la liberación de hormonas anabólicas. Los ejercicios compuestos (especialmente sentadillas y peso muerto) elevan agudamente los niveles de testosterona inmediatamente después de una sesión. El entrenamiento regular a largo plazo mejora los niveles basales de testosterona.</p>
+
+<h2>Impacto en el Cerebro</h2>
+<p>El entrenamiento de fuerza aumenta el BDNF ("fertilizante del cerebro") — mejora el crecimiento de nuevas neuronas, la memoria y el aprendizaje, y resiste la depresión. También mejora las funciones ejecutivas: planificación, autocontrol, resistencia a impulsos, concentración.</p>
+
+<h2>Los Seis Grandes Movimientos</h2>
+<ul>
+  <li><strong>Empuje:</strong> Press de banca, Press militar</li>
+  <li><strong>Tracción:</strong> Dominadas, Remo</li>
+  <li><strong>Sentadilla:</strong> El rey absoluto de los ejercicios de pierna</li>
+  <li><strong>Peso Muerto:</strong> Activa más músculos en un ejercicio que casi cualquier otro</li>
+  <li><strong>Zancada:</strong> Fuerza y equilibrio de una sola pierna</li>
+  <li><strong>Cargada:</strong> Farmer's Walk — fuerza de agarre, estabilidad del core</li>
+</ul>
+
+<div class="callout"><p><strong>Hecho Sorprendente:</strong> Un estudio en JAMA Psychiatry encontró que el entrenamiento de fuerza reduce los síntomas de depresión en un promedio de 32-33%. Esto rivaliza con muchos medicamentos sin efectos secundarios.</p></div>
+
+<h2>Conclusión</h2>
+<p>Si fueras a elegir una actividad física para añadir a tu vida, el entrenamiento de fuerza es el candidato más fuerte en términos de beneficios múltiples probados: hormonas, cerebro, salud mental, estructura corporal, disciplina. <strong>Empieza simple. Tres días a la semana. Movimientos básicos con técnica correcta. Progresión gradual. Mantén seis meses.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Entraînement de Force: Pourquoi Soulever des Poids Change Tout de l\'Intérieur et de l\'Extérieur',
+  cat:'Fitness',date:'Juillet 2026',readTime:'14 min',
+  excerpt:"L'entraînement de force ne consiste pas seulement à construire du muscle pour l'apparence — c'est une transformation hormonale, psychologique et mentale. La science prouve que soulever des poids change la chimie de ton cerveau, ta testostérone et ta relation à la discipline.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Ton Corps Est Ton Message','Le Sommeil: L\'Arme Secrète','Habitudes Atomiques'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Avantages Hormonaux</h2>
+<p>L'entraînement de force stimule directement la libération d'hormones anabolisantes. Les exercices composés (surtout les squats et le soulevé de terre) élèvent fortement les niveaux de testostérone immédiatement après une séance. L'entraînement régulier à long terme améliore les niveaux basaux de testostérone.</p>
+
+<h2>Impact sur le Cerveau</h2>
+<p>L'entraînement de force augmente le BDNF ("engrais du cerveau") — améliore la croissance de nouveaux neurones, la mémoire et l'apprentissage. Il améliore aussi les fonctions exécutives: planification, autocontrôle, résistance aux impulsions, concentration.</p>
+
+<h2>Les Six Grands Mouvements</h2>
+<ul>
+  <li><strong>Poussée:</strong> Développé couché, Développé militaire</li>
+  <li><strong>Tirage:</strong> Tractions, Rowing</li>
+  <li><strong>Squat:</strong> Le roi absolu des exercices de jambes</li>
+  <li><strong>Soulevé de terre:</strong> Active plus de muscles en un exercice que presque tout autre</li>
+  <li><strong>Fente:</strong> Force et équilibre d'une seule jambe</li>
+  <li><strong>Porter:</strong> Farmer's Walk — force de préhension, stabilité du gainage</li>
+</ul>
+
+<div class="callout"><p><strong>Fait Surprenant:</strong> Une étude publiée dans JAMA Psychiatry a trouvé que l'entraînement de force réduit les symptômes de dépression en moyenne de 32-33%. Cela rivalise avec de nombreux médicaments sans effets secondaires.</p></div>
+
+<h2>Conclusion</h2>
+<p>Si tu devais choisir une seule activité physique, l'entraînement de force est le candidat le plus fort en termes d'avantages multiples prouvés. <strong>Commence simple. Trois jours par semaine. Mouvements de base avec bonne technique. Progression graduelle. Tiens six mois.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'शक्ति प्रशिक्षण: वजन उठाना अंदर और बाहर से सब कुछ क्यों बदलता है',
+  cat:'फिटनेस',date:'जुलाई 2026',readTime:'14 मिनट',
+  excerpt:'शक्ति प्रशिक्षण सिर्फ दिखावे के लिए मांसपेशी बनाने के बारे में नहीं है — यह हार्मोनल, मनोवैज्ञानिक और मानसिक परिवर्तन है। विज्ञान साबित करता है कि वजन उठाना तुम्हारे मस्तिष्क की रसायन विज्ञान, टेस्टोस्टेरोन और अनुशासन के साथ संबंध को बदलता है।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['तुम्हारा शरीर तुम्हारा संदेश है','नींद: गुप्त हथियार','परमाणु आदतें'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>हार्मोनल लाभ</h2>
+<p>शक्ति प्रशिक्षण सीधे एनाबॉलिक हार्मोन जारी करने को उत्तेजित करता है। कंपाउंड व्यायाम (विशेष रूप से स्क्वैट्स और डेडलिफ्ट) एक सत्र के तुरंत बाद टेस्टोस्टेरोन स्तर को तेजी से बढ़ाते हैं।</p>
+
+<h2>मस्तिष्क पर प्रभाव</h2>
+<p>शक्ति प्रशिक्षण BDNF ("मस्तिष्क उर्वरक") को बढ़ाता है — नए न्यूरॉन्स के विकास, स्मृति और सीखने में सुधार करता है। यह कार्यकारी कार्यों में भी सुधार करता है: योजना बनाना, आत्म-नियंत्रण, एकाग्रता।</p>
+
+<h2>छह बड़े आंदोलन</h2>
+<ul>
+  <li><strong>पुश:</strong> बेंच प्रेस, ओवरहेड प्रेस</li>
+  <li><strong>पुल:</strong> पुलअप्स, रोइंग</li>
+  <li><strong>स्क्वैट:</strong> पैर व्यायाम का परम राजा</li>
+  <li><strong>डेडलिफ्ट:</strong> एक व्यायाम में सबसे अधिक मांसपेशियों को सक्रिय करता है</li>
+  <li><strong>लंज:</strong> एकल-पैर की ताकत और संतुलन</li>
+  <li><strong>कैरी:</strong> Farmer's Walk — पकड़ की ताकत, कोर स्थिरता</li>
+</ul>
+
+<div class="callout"><p><strong>आश्चर्यजनक तथ्य:</strong> JAMA Psychiatry में प्रकाशित एक अध्ययन में पाया गया कि शक्ति प्रशिक्षण अवसाद के लक्षणों को औसतन 32-33% तक कम करता है — बिना किसी दुष्प्रभाव के।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>अगर तुम्हें अपने जीवन में एक शारीरिक गतिविधि जोड़नी हो, तो शक्ति प्रशिक्षण सिद्ध कई लाभों के मामले में सबसे मजबूत उम्मीदवार है। <strong>सरल से शुरू करो। सप्ताह में तीन दिन। सही तकनीक के साथ बुनियादी हलचलें। क्रमिक प्रगति। छह महीने तक जारी रखो।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

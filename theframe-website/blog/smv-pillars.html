@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تحليل معمّق للأعمدة الأربعة للـ SMV — المظهر الجسدي، المال، المكانة الاجتماعية، والشخصية. تعلّم كيف تبني كل عمود بمنهجية علمية.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الأعمدة الأربعة للـ SMV: دليل بناء القيمة الذكورية | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/smv-pillars.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link">
+    <img src="../assets/logo.png" alt="The Frame" class="nav-logo">
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle">
+        <span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero" id="article-hero"></div>
+
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="smv-basics.html"><span class="related-cat">SMV</span><span class="related-title" id="rel1">دليل SMV الشامل</span></a>
+      <a class="related-card" href="smv-perception.html"><span class="related-cat">SMV</span><span class="related-title" id="rel2">الانطباع الأول في 7 ثوانٍ</span></a>
+      <a class="related-card" href="discipline-system.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel3">الانضباط كنظام</span></a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+const LANGS = ['ar','en','es','fr','hi'];
+const FLAGS = {ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES = {ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+
+const CONTENT = {
+ar: {
+  dir:'rtl', title:'الأعمدة الأربعة للـ SMV: التحليل العلمي الكامل لبناء القيمة الذكورية',
+  cat:'SMV', date:'يوليو 2026', readTime:'12 دقيقة قراءة',
+  excerpt:'تحليل معمّق لكل عمود من أعمدة القيمة الذكورية الأربعة — العلم وراء كل واحد، كيف يتفاعل مع البقية، والمنهجية العملية لبنائه من الصفر.',
+  backLabel:'← المدونة', homeLabel:'الرئيسية', homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['دليل SMV الشامل','الانطباع الأول في 7 ثوانٍ','الانضباط كنظام'],
+  ctaTitle:'طبّق ما تعلمته الآن', ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.', ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية', footerTerms:'شروط الاستخدام', footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>لماذا الأعمدة الأربعة وليس عاملاً واحداً؟</h2>
+<p>الخطأ الشائع الذي يقع فيه معظم الرجال هو ربط قيمتهم بعامل وحيد — الوسامة، أو المال، أو الذكاء. هذا التبسيط المُخِل يُفضي إلى استراتيجيات مشوّهة ونتائج محبطة. الحقيقة أن القيمة الذكورية الحقيقية هي <strong>بنية متعددة الأبعاد تتشابك عواملها وتتعزز بعضها بعضاً</strong>.</p>
+<p>علم النفس الاجتماعي يُشير إلى ظاهرة تُعرف بـ"تأثير الهالة" (Halo Effect): حين يتفوق شخص في مجال واحد بشكل لافت، يميل الآخرون إلى افتراض كفاءته في مجالات أخرى. لكن هذا التأثير محدود ومؤقت — حين يكتشف الناس التناقض الحقيقي بين الجانب المتفوق والجوانب المهملة، تنهار الصورة الكاملة بسرعة.</p>
+<p>الأعمدة الأربعة لم تُختَرع — هي نتيجة تركيب ما يُجمع عليه العلم التطوري والبحث الاجتماعي وعلم النفس السلوكي حول ما يُشكّل القيمة الفعلية للذكر في السياقات الإنسانية عبر الثقافات والتاريخ.</p>
+
+<h2>العمود الأول: المظهر الجسدي — العلم والتطبيق</h2>
+<p>يرفض بعض الرجال الاعتراف بأهمية المظهر الجسدي ظناً منهم أن الاهتمام به يدل على السطحية. هذا موقف ساذج يتجاهل حقيقة بيولوجية راسخة. المظهر الجسدي هو القناة التواصلية الأسرع والأوسع انتشاراً — نقل معلومات أساسية عنك في جزء من الثانية قبل أي تبادل لفظي.</p>
+
+<h3>ما يُقيِّمه الدماغ في لحظة واحدة</h3>
+<p>أبحاث علم الأعصاب أثبتت أن الدماغ البشري يُشكِّل أحكاماً أولية حول الأشخاص في أقل من 100 ميلي ثانية — أسرع من رمشة العين. ما الذي يُقيَّم في هذا الوقت القصير؟</p>
+<ul>
+  <li><strong>التهديد أم السلامة:</strong> هل هذا الشخص يمثل خطراً؟ الجسم المُدرَّب والوضعية المنتصبة تبعث بإشارة قوة وسيطرة</li>
+  <li><strong>الصحة:</strong> الوزن الطبيعي، الجلد النظي، الحيوية الجسدية — كلها مؤشرات بيولوجية للصحة</li>
+  <li><strong>الكفاءة والانضباط:</strong> الجسم المُصان يُشير لا شعورياً إلى قدرة على الانضباط الذاتي ومقاومة الإغراءات الفورية</li>
+  <li><strong>الاستعداد للتحديات:</strong> اللياقة الجسدية تُعزز الصورة الذهنية لشخص قادر على التعامل مع الصعاب</li>
+</ul>
+
+<h3>ماذا تعني "الجاذبية الجسدية" فعلاً؟</h3>
+<p>الجاذبية الجسدية للرجل لا تعني امتلاك "ملامح مثالية" — هذا عنصر يكاد يكون ثابتاً وغير قابل للتغيير. ما هو قابل للتغيير بالكامل:</p>
+<ul>
+  <li><strong>التناسق الجسدي:</strong> نسبة الخصر إلى الكتف (Waist-to-Shoulder Ratio) هي أحد أقوى المؤشرات الجسدية للجاذبية الذكورية حسب الدراسات</li>
+  <li><strong>نسبة الدهون:</strong> الوصول لنسبة دهون بين 10-15% يُحسِّن الملامح الوجهية وإبراز العضلات بشكل كبير</li>
+  <li><strong>الوضعية والطول الوظيفي:</strong> الكثير من الرجال يفقدون 3-5 سنتيمترات بسبب سوء الوضعية — إصلاحها مجاني ويستغرق أسابيع</li>
+  <li><strong>الأناقة والعناية:</strong> الشعر المُرتَّب، الملابس المناسبة للجسم، رائحة جيدة — كلها قابلة للتحسين الفوري</li>
+</ul>
+
+<h3>خطة المظهر العملية</h3>
+<p>المستوى الأول (0-3 أشهر): إصلاح الأساسيات — وضعية الجسم، الحلاقة المنتظمة، الملابس المناسبة للمقاس، وتنظيم النوم. هذه التحسينات لا تكلف شيئاً تقريباً لكن أثرها فوري وكبير.</p>
+<p>المستوى الثاني (3-12 شهراً): بناء القاعدة الجسدية — برنامج تدريبي منتظم 3-4 مرات أسبوعياً، نظام تغذية واضح، الوصول لنسبة دهون صحية. هذا المستوى يُغيِّر انطباع الناس عنك تغييراً جذرياً.</p>
+<p>المستوى الثالث (12 شهراً فأكثر): التحسين المستمر — التخصص في التمارين، بناء العضلات في المناطق الاستراتيجية، الاهتمام بتفاصيل الأناقة والأسلوب.</p>
+
+<h2>العمود الثاني: المال والموارد — أعمق مما تظن</h2>
+<p>التناول السطحي لدور المال في قيمة الرجل يقع في إحدى الهاويتين: إما التهوين ("المال لا يشتري السعادة") أو المبالغة ("كل شيء يُحل بالمال"). كلاهما خاطئ.</p>
+
+<h3>المال كأداة لا كهدف</h3>
+<p>الفارق الجوهري بين الرجل الذي يعمل "لكسب المال" والرجل الذي يعمل "لبناء الحرية" هو فارق في الهوية والتفكير. الأول يرى المال غاية، والثاني يراه وسيلة. هذا الفارق يُؤثر على كل قرار مالي يتخذه.</p>
+<ul>
+  <li><strong>الحرية السلبية:</strong> القدرة على رفض ما لا تريده — وظيفة تُذلك، علاقة تستنزفك، بيئة تُقيدك</li>
+  <li><strong>الحرية الإيجابية:</strong> القدرة على اختيار ما تريده — المشاريع التي تُشعلك، الأماكن التي تعيش فيها، الوقت الذي تُخصصه لما يهمك</li>
+  <li><strong>الأمان كمنصة:</strong> الاستقرار المالي يُحرر طاقة ذهنية هائلة كانت تُهدر في القلق — يمكن توجيهها للنمو والإبداع</li>
+</ul>
+
+<h3>مراحل البناء المالي للرجل</h3>
+<p>المرحلة الأولى — الدفاع: القضاء على الديون الاستهلاكية، بناء صندوق الطوارئ (3-6 أشهر من النفقات)، والتحكم في الإنفاق. أي جهد في بناء الثروة قبل هذه المرحلة هو بناء فوق رمال متحركة.</p>
+<p>المرحلة الثانية — الهجوم: تطوير المهارات المُدرّة للدخل، زيادة الدخل الرئيسي، إضافة مصدر دخل ثانوي. الدخل لا ينمو بالتمني — ينمو بالمهارة القابلة للتسعير في السوق.</p>
+<p>المرحلة الثالثة — الاستثمار: تحويل الدخل إلى أصول تعمل بدلاً عنك. الوقت + الانضباط + الاستثمار الصحيح = الحرية المالية.</p>
+
+<div class="callout"><p><strong>القاعدة الذهبية:</strong> لا تُقيِّم قيمتك المالية بكمية ما تملكه اليوم — قيِّمها بالمسار الذي أنت عليه. رجل يكسب 3,000 دولار ويدّخر 20% ويستثمر منتظماً أكثر قيمة مالياً من رجل يكسب 10,000 ويُنفق كل شيء.</p></div>
+
+<h2>العمود الثالث: المكانة الاجتماعية — الهرم الذي لا يراه الجميع</h2>
+<p>المكانة الاجتماعية هي العمود الأكثر تأثيراً والأقل فهماً. يُخطئ كثيرون في اعتبارها مجرد الثروة أو الشهرة — وهي أعمق من ذلك بكثير.</p>
+
+<h3>تعريف المكانة الحقيقية</h3>
+<p>المكانة الاجتماعية هي <strong>التقييم الذي يمنحه مجتمعك لك بناءً على مساهمتك وقيادتك وتأثيرك</strong>. هي ليست ما تعتقده عن نفسك — هي ما يعتقده الآخرون عنك في غيابك.</p>
+<ul>
+  <li><strong>المكانة الداخلية (Inner Status):</strong> كيف تُقيِّم نفسك مقارنة بالآخرين، مدى ثقتك بقيمتك</li>
+  <li><strong>المكانة الخارجية (Outer Status):</strong> كيف يُقيِّمك الآخرون فعلياً بناءً على سلوكك وإنجازاتك وتأثيرك</li>
+  <li><strong>المكانة السياقية (Contextual Status):</strong> تتغير بحسب البيئة — قد تكون الأعلى مكانة في بيئة العمل والأدنى في مجموعة اجتماعية جديدة</li>
+</ul>
+
+<h3>كيف تبني المكانة فعلياً؟</h3>
+<p>المكانة لا تُبنى بالإعلان عن النفس — تُبنى بالإنجاز المتسق والملاحَظ عبر الزمن.</p>
+<ul>
+  <li><strong>الكفاءة الظاهرة:</strong> أن تكون الشخص الذي يُحل المشاكل لا الشخص الذي يُضيفها. الكفاءة تُلاحَظ دائماً حتى حين لا يُعلَن عنها</li>
+  <li><strong>القيادة الهادئة:</strong> قيادة المجموعات والمشاريع والمواقف — حتى حين لا يكون اللقب رسمياً</li>
+  <li><strong>الموثوقية المطلقة:</strong> أن تُوصف بـ"الشخص الذي يفعل ما يقول" هي من أقوى الصفات المُبنية للمكانة</li>
+  <li><strong>الانتقاء الاجتماعي:</strong> التعامل الانتقائي مع الناس يُرسل إشارة مكانة أقوى بكثير من الحاجة الاجتماعية لقبول الجميع</li>
+</ul>
+
+<h2>العمود الرابع: الشخصية والإطار — الأقوى والأصعب بناءً</h2>
+<p>هذا العمود هو ما يُميِّز الرجل العادي من الرجل الاستثنائي. المظهر يُمكن تحسينه بأشهر، المال يُمكن بناؤه بسنوات، المكانة تأتي مع الإنجاز — لكن الشخصية والإطار يتطلبان عملاً داخلياً عميقاً لا تقاس نتائجه بمقاييس واضحة.</p>
+
+<h3>ما هو "الإطار" (Frame)؟</h3>
+<p>الإطار هو <strong>منظومة قيمك وواقعيتك الداخلية التي تُفسِّر من خلالها العالم وتتفاعل معه</strong>. كل إنسان لديه إطار — السؤال هو: هل إطارك قوي بما يكفي ليُبقيك ثابتاً حين يحاول الآخرون فرض إطارهم عليك؟</p>
+<p>في كل تفاعل اجتماعي، يحدث تفاوض ضمني بين إطارات المتفاعلين. الشخص الذي يحتفظ بإطاره يُشعر الآخرين بثقة وقوة. الشخص الذي يتخلى عن إطاره تحت الضغط الاجتماعي يُرسل إشارة ضعف حتى حين يبدو أنه "يتوافق" مع الآخرين.</p>
+
+<h3>الفرق بين الثقة الحقيقية والمزيفة</h3>
+<p>الثقة المزيفة تحتاج تأكيد الآخرين — تتضخم بالمديح وتنهار بالنقد. الثقة الحقيقية تأتي من داخل وتبقى ثابتة بغض النظر عن ردود الفعل الخارجية.</p>
+<ul>
+  <li>الثقة المزيفة: تُفرِط في التبرير حين تُنتقَد</li>
+  <li>الثقة الحقيقية: تُصغي، تُقيِّم بموضوعية، وتُقرر دون حاجة لإقناع الناقد</li>
+  <li>الثقة المزيفة: تتغير رأيها بناءً على ما يريد الجمهور سماعه</li>
+  <li>الثقة الحقيقية: تُعبِّر عن موقفها بوضوح وتقبل الاختلاف دون قلق</li>
+</ul>
+
+<h3>تقوية الشخصية: المنهجية العملية</h3>
+<p>الشخصية لا تُبنى بقراءة الكتب وحدها — تُبنى بالتعرض للمواقف الصعبة ومعالجتها بوعي:</p>
+<ul>
+  <li><strong>الانكشاف المقصود:</strong> اطرح نفسك باستمرار على مواقف مريحة تخرج منها — خطاب أمام جمهور، قيادة مجموعة، مواجهة شخص ترهبه</li>
+  <li><strong>المبادئ الصريحة:</strong> اكتب قيمك ومبادئك كنص مكتوب. حين تكون مكتوبة تصبح أوضح وأصعب انتهاكاً</li>
+  <li><strong>التأمل الصادق:</strong> راجع قراراتك يومياً — متى تصرفت من موقع الخوف؟ متى من القوة؟</li>
+  <li><strong>قول لا:</strong> كل مرة ترفض فيها ما لا يتوافق مع قيمك تُقوِّي إطارك تلقائياً</li>
+</ul>
+
+<h2>التفاعل بين الأعمدة: المضاعف والمُقيِّد</h2>
+<p>الأعمدة الأربعة لا تعمل بشكل مستقل — كل منها يُعزز البقية أو يُقيدها. فهم هذا التفاعل هو مفتاح استراتيجية البناء الصحيحة.</p>
+<ul>
+  <li><strong>المظهر + الشخصية:</strong> رجل ذو مظهر قوي وشخصية واثقة — أثره مضاعف. مظهر قوي مع شخصية هشة — تأثير سطحي ومؤقت</li>
+  <li><strong>المال + المكانة:</strong> المال بدون مكانة هو ثروة بلا تأثير. المكانة بدون مال هي تأثير محدود الأدوات</li>
+  <li><strong>الشخصية + المكانة:</strong> الشخصية القوية تُحوِّل أي مكانة عادية لمكانة استثنائية. الشخصية الضعيفة تُهدر أعلى مكانة</li>
+  <li><strong>المظهر + المال + المكانة + الشخصية:</strong> حين تتكامل الأعمدة الأربعة بمستوى معقول، يُخلق تأثير يفوق مجموع أجزائه بكثير</li>
+</ul>
+
+<h2>استراتيجية بناء الأعمدة: من أين تبدأ؟</h2>
+<p>السؤال العملي الأكثر أهمية: إذا كنت ستبدأ من الصفر أو شبه الصفر — ما ترتيب الأولويات؟</p>
+
+<h3>القاعدة العامة: ابدأ بما يُعطيك أسرع عائد مرئي</h3>
+<p>النتائج المرئية تُغذي الدافعية. الدافعية تُستمر الجهد. الجهد المستمر يُنتج النتائج الكبيرة. لهذا السبب المظهر الجسدي هو نقطة البداية المثالية لمعظم الرجال:</p>
+<ul>
+  <li>التغييرات تبدأ بالظهور في 4-8 أسابيع</li>
+  <li>تُحسِّن الصحة النفسية وتزيد الدوبامين والتستوستيرون — مما يُحسِّن أداءك في الأعمدة الأخرى تلقائياً</li>
+  <li>التمرين يُعلِّم الانضباط — مهارة قابلة للنقل لكل مجال آخر</li>
+</ul>
+
+<h3>الخطة المرحلية</h3>
+<p>الشهور 1-3: المظهر والأساسيات. الشهور 4-8: تطوير مهارة مُدرّة للدخل. الشهور 9-15: بناء المكانة في مجال محدد. السنة الثانية فصاعداً: تعميق الشخصية وتوسيع الأعمدة.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>القيمة الذكورية بنية متعددة الأبعاد — لا يعوّض عمود عن آخر</li>
+    <li>المظهر: قابل للتغيير الكامل في أشهر قليلة بالإرادة والمنهجية</li>
+    <li>المال: أداة للحرية لا للتفاخر — ابنِه كمسار لا كهدف</li>
+    <li>المكانة: تُبنى بالإنجاز المتسق والقيادة الهادئة لا بالإعلان</li>
+    <li>الشخصية: الأقوى والأصعب — تُبنى بالتعرض الواعي لا بالنظرية</li>
+    <li>الأعمدة تتفاعل وتتعزز — كل تحسن في عمود يرفع البقية</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: البناء المتوازن هو الاستراتيجية الوحيدة</h2>
+<p>ليس عليك أن تصل للكمال في كل عمود — الكمال وهم مُعطِّل. لكن عليك أن تعمل على الأربعة بمنهجية وصدق. الرجل الذي يُكرس 6 أشهر لإصلاح جسده، ثم 6 أشهر لتطوير مهاراته المالية، ثم سنة لبناء مكانته في مجاله، ثم يعمل باستمرار على تعميق شخصيته — هذا الرجل يتحول تحولاً لا يمكن تجاهله.</p>
+<p>لا تنتظر الإلهام أو الظروف المثالية. ابدأ بالعمود الأضعف لديك اليوم. خطوة واحدة صحيحة الآن تُساوي ألف خطوة مؤجلة.</p>`
+},
+en: {
+  dir:'ltr', title:'The Four Pillars of Male SMV: A Scientific Deep Dive Into Building Real Value',
+  cat:'SMV', date:'July 2026', readTime:'12 min read',
+  excerpt:'A deep analysis of each pillar of male value — the science behind each one, how they interact, and the practical methodology for building them from scratch.',
+  backLabel:'← Blog', homeLabel:'Home', homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['The Complete SMV Guide','First Impressions in 7 Seconds','Discipline as a System'],
+  ctaTitle:'Apply What You Learned', ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.', ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy', footerTerms:'Terms of Use', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>Why Four Pillars and Not One Factor?</h2>
+<p>The most common mistake men make is reducing their value to a single variable — looks, money, or intelligence. This oversimplification leads to distorted strategies and frustrating results. Real male value is a <strong>multidimensional structure where pillars reinforce each other</strong>.</p>
+<p>Social psychology points to the Halo Effect: when someone excels in one visible area, others tend to assume competence across other domains. But this effect is limited and temporary — once people discover the gap between the shining pillar and the neglected others, the whole image collapses quickly.</p>
+
+<h2>Pillar 1: Physical Appearance — Science and Application</h2>
+<p>Your body communicates before you open your mouth. In less than 100 milliseconds, the human brain forms initial judgments. What gets evaluated in that instant?</p>
+<ul>
+  <li><strong>Threat vs. safety:</strong> A trained body and upright posture signal strength and control</li>
+  <li><strong>Health indicators:</strong> Healthy weight, clear skin, physical vitality — all biological health markers</li>
+  <li><strong>Discipline and self-mastery:</strong> A maintained body subconsciously signals the capacity for delayed gratification</li>
+  <li><strong>Challenge readiness:</strong> Physical fitness projects an image of competence under pressure</li>
+</ul>
+<p>Male physical attractiveness does not mean "movie star features" — these are largely fixed. What is fully changeable: body composition, waist-to-shoulder ratio, body fat percentage, posture, and grooming. A man can transform his physical signal within 6-12 months of consistent effort.</p>
+
+<h2>Pillar 2: Wealth and Resources — Deeper Than You Think</h2>
+<p>The superficial take on money falls into one of two traps: dismissing it ("money can't buy happiness") or overvaluing it ("money solves everything"). Both are wrong.</p>
+<p>Money is not a goal — it's a tool for freedom. The financially independent man operates from choice, not necessity. He can say no without fear. This changes everything about how he shows up: his decisions become cleaner, his boundaries become firmer, his presence becomes calmer.</p>
+<ul>
+  <li><strong>Defensive phase:</strong> Eliminate consumer debt, build emergency fund (3-6 months of expenses). All wealth-building before this is sand-castle construction</li>
+  <li><strong>Offensive phase:</strong> Develop income-generating skills, raise primary income, add secondary income stream</li>
+  <li><strong>Compounding phase:</strong> Convert income into assets that work without you — the beginning of actual financial freedom</li>
+</ul>
+
+<h2>Pillar 3: Social Status — The Hierarchy Everyone Feels</h2>
+<p>Status is the evaluation your social environment assigns to you based on your contribution, leadership, and influence. It is not what you think about yourself — it is what others think about you when you are not in the room.</p>
+<ul>
+  <li><strong>Demonstrated competence:</strong> Being the person who solves problems. Competence is always noticed even without announcement</li>
+  <li><strong>Quiet leadership:</strong> Leading groups, projects, and situations — even without a formal title</li>
+  <li><strong>Absolute reliability:</strong> Being described as "the person who does what they say" is one of the most powerful status-building traits</li>
+  <li><strong>Social selectivity:</strong> Selective engagement signals high status far more powerfully than needing everyone's approval</li>
+</ul>
+
+<h2>Pillar 4: Personality and Frame — The Strongest and Hardest to Build</h2>
+<p>Frame is your internal system of values and reality through which you interpret the world. In every social interaction, there is an implicit negotiation between frames. The person who maintains their frame signals confidence and strength. The person who abandons their frame under social pressure signals weakness — even when they call it "being flexible."</p>
+<p>Real confidence needs no external validation — it stays stable regardless of praise or criticism. Building it requires deliberate exposure to challenging situations, not reading books about confidence.</p>
+
+<h2>The Interaction: How Pillars Amplify or Limit Each Other</h2>
+<ul>
+  <li>Strong appearance + strong personality: The effect is multiplicative, not additive</li>
+  <li>Money without status: Wealth without influence — a thick wallet with no social gravity</li>
+  <li>Status without personality: Influence that evaporates the moment people get to know you</li>
+  <li>All four at a reasonable level: The combined effect vastly exceeds the sum of its parts</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Male value is multidimensional — no single pillar compensates for others</li>
+    <li>Physical appearance: fully changeable in months with the right approach</li>
+    <li>Money: build it as a path to freedom, not a trophy to display</li>
+    <li>Status: built through consistent achievement and quiet leadership, never through self-promotion</li>
+    <li>Personality: the most powerful, built through conscious exposure to challenge</li>
+    <li>Start with your weakest pillar — one improvement lifts all the others</li>
+  </ul>
+</div>`
+},
+es: {
+  dir:'ltr', title:'Los Cuatro Pilares del SMV: Análisis Científico Profundo del Valor Masculino',
+  cat:'SMV', date:'Julio 2026', readTime:'12 min',
+  excerpt:'Un análisis profundo de cada pilar del valor masculino — la ciencia detrás de cada uno, cómo interactúan y la metodología práctica para construirlos desde cero.',
+  backLabel:'← Blog', homeLabel:'Inicio', homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Guía completa del SMV','Primera impresión en 7 segundos','La disciplina como sistema'],
+  ctaTitle:'Aplica lo que aprendiste', ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.', ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad', footerTerms:'Términos de Uso', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Por Qué Cuatro Pilares?</h2>
+<p>El error más común que cometen los hombres es reducir su valor a una sola variable — apariencia, dinero o inteligencia. Esta simplificación excesiva conduce a estrategias distorsionadas y resultados frustrantes. El verdadero valor masculino es una <strong>estructura multidimensional donde los pilares se refuerzan mutuamente</strong>.</p>
+
+<h2>Pilar 1: Presencia Física</h2>
+<p>Tu cuerpo comunica antes de que abras la boca. En menos de 100 milisegundos, el cerebro humano forma juicios iniciales. Lo que se evalúa en ese instante:</p>
+<ul>
+  <li><strong>Amenaza vs. seguridad:</strong> Un cuerpo entrenado y una postura erguida señalan fuerza y control</li>
+  <li><strong>Indicadores de salud:</strong> Peso saludable, piel limpia, vitalidad física</li>
+  <li><strong>Disciplina y autodominio:</strong> Un cuerpo mantenido señala capacidad de gratificación diferida</li>
+</ul>
+<p>La atractivo físico masculino no significa "rasgos perfectos" — en gran medida son fijos. Lo que es completamente cambiable: composición corporal, porcentaje de grasa, postura y cuidado personal.</p>
+
+<h2>Pilar 2: Riqueza y Recursos</h2>
+<p>El dinero no es una meta — es una herramienta para la libertad. El hombre financieramente independiente opera desde la elección, no desde la necesidad. Puede decir no sin miedo. Esto cambia todo en su forma de presentarse.</p>
+<ul>
+  <li><strong>Fase defensiva:</strong> Eliminar deudas de consumo, crear fondo de emergencia (3-6 meses de gastos)</li>
+  <li><strong>Fase ofensiva:</strong> Desarrollar habilidades generadoras de ingresos, aumentar ingresos primarios</li>
+  <li><strong>Fase de capitalización:</strong> Convertir ingresos en activos que trabajen sin ti</li>
+</ul>
+
+<h2>Pilar 3: Estatus Social</h2>
+<p>El estatus es la evaluación que tu entorno social te asigna basándose en tu contribución, liderazgo e influencia. No es lo que piensas de ti mismo — es lo que los demás piensan de ti cuando no estás en la sala.</p>
+<ul>
+  <li>Competencia demostrada: ser el solucionador de problemas</li>
+  <li>Liderazgo silencioso: guiar sin necesitar título formal</li>
+  <li>Fiabilidad absoluta: ser el que hace lo que dice</li>
+</ul>
+
+<h2>Pilar 4: Personalidad y Marco</h2>
+<p>El marco es tu sistema interno de valores y realidad. En cada interacción social, hay una negociación implícita entre marcos. El que mantiene el suyo señala fuerza. El que lo abandona bajo presión señala debilidad.</p>
+<ul>
+  <li>Confianza real: no necesita validación externa, permanece estable</li>
+  <li>Independencia de opinión: decisiones basadas en valores propios</li>
+  <li>Presencia inamovible: difícil de desestabilizar bajo presión</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>No tienes que ser perfecto en los cuatro pilares — la perfección es un ideal paralizante. Pero debes trabajar en los cuatro con metodología y honestidad. El hombre que dedica tiempo a cada pilar sistemáticamente se transforma de una manera que no puede ignorarse. <strong>Empieza con el pilar más débil hoy.</strong></p>`
+},
+fr: {
+  dir:'ltr', title:"Les Quatre Piliers du SMV: Analyse Scientifique Approfondie de la Valeur Masculine",
+  cat:'SMV', date:'Juillet 2026', readTime:'12 min',
+  excerpt:"Une analyse approfondie de chaque pilier de la valeur masculine — la science derrière chacun, comment ils interagissent et la méthodologie pratique pour les construire.",
+  backLabel:'← Blog', homeLabel:'Accueil', homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Guide complet du SMV','Première impression en 7 secondes','La discipline comme système'],
+  ctaTitle:'Appliquez ce que vous avez appris', ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.", ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité', footerTerms:"Conditions d'utilisation", footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Pourquoi Quatre Piliers?</h2>
+<p>L'erreur la plus courante que font les hommes est de réduire leur valeur à une seule variable — apparence, argent ou intelligence. Cette simplification excessive conduit à des stratégies distordues et des résultats frustrants. La vraie valeur masculine est une <strong>structure multidimensionnelle où les piliers se renforcent mutuellement</strong>.</p>
+
+<h2>Pilier 1: Présence Physique</h2>
+<p>Votre corps communique avant que vous n'ouvriez la bouche. En moins de 100 millisecondes, le cerveau humain forme des jugements initiaux. Ce qui est évalué en cet instant:</p>
+<ul>
+  <li><strong>Menace vs. sécurité:</strong> Un corps entraîné et une posture droite signalent force et contrôle</li>
+  <li><strong>Indicateurs de santé:</strong> Poids sain, peau claire, vitalité physique</li>
+  <li><strong>Discipline et maîtrise de soi:</strong> Un corps entretenu signale une capacité à différer la gratification</li>
+</ul>
+
+<h2>Pilier 2: Richesse et Ressources</h2>
+<p>L'argent n'est pas un objectif — c'est un outil pour la liberté. L'homme financièrement indépendant opère depuis le choix, pas la nécessité. Il peut dire non sans crainte.</p>
+<ul>
+  <li><strong>Phase défensive:</strong> Éliminer les dettes à la consommation, créer un fonds d'urgence (3-6 mois de dépenses)</li>
+  <li><strong>Phase offensive:</strong> Développer des compétences génératrices de revenus</li>
+  <li><strong>Phase de capitalisation:</strong> Convertir les revenus en actifs qui travaillent sans vous</li>
+</ul>
+
+<h2>Pilier 3: Statut Social</h2>
+<p>Le statut est l'évaluation que votre environnement social vous attribue en fonction de votre contribution, leadership et influence. Ce n'est pas ce que vous pensez de vous — c'est ce que les autres pensent de vous quand vous n'êtes pas dans la pièce.</p>
+<ul>
+  <li>Compétence démontrée: être celui qui résout les problèmes</li>
+  <li>Leadership silencieux: guider sans avoir besoin d'un titre formel</li>
+  <li>Fiabilité absolue: être celui qui fait ce qu'il dit</li>
+</ul>
+
+<h2>Pilier 4: Personnalité et Cadre</h2>
+<p>Le cadre est votre système interne de valeurs et de réalité. Dans chaque interaction sociale, il y a une négociation implicite entre les cadres. Celui qui maintient le sien signale la force. Celui qui l'abandonne sous pression signale la faiblesse.</p>
+
+<h2>Conclusion</h2>
+<p>Vous n'avez pas à être parfait dans les quatre piliers — la perfection est un idéal paralysant. Mais vous devez travailler sur les quatre avec méthode et honnêteté. <strong>Commencez par le pilier le plus faible aujourd'hui.</strong></p>`
+},
+hi: {
+  dir:'ltr', title:'पुरुष SMV के चार स्तंभ: मर्दाना मूल्य का वैज्ञानिक गहन विश्लेषण',
+  cat:'SMV', date:'जुलाई 2026', readTime:'12 मिनट',
+  excerpt:'पुरुष मूल्य के प्रत्येक स्तंभ का गहन विश्लेषण — प्रत्येक के पीछे का विज्ञान, वे कैसे परस्पर क्रिया करते हैं, और उन्हें शून्य से बनाने की व्यावहारिक पद्धति।',
+  backLabel:'← ब्लॉग', homeLabel:'होम', homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['SMV की पूरी गाइड','7 सेकंड में पहली छाप','अनुशासन एक प्रणाली के रूप में'],
+  ctaTitle:'जो सीखा उसे लागू करें', ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।', ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति', footerTerms:'उपयोग की शर्तें', footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>चार स्तंभ क्यों?</h2>
+<p>पुरुषों की सबसे आम गलती अपने मूल्य को एक ही चर — दिखावट, पैसा या बुद्धि — तक सीमित करना है। यह अत्यधिक सरलीकरण विकृत रणनीतियों और निराशाजनक परिणामों की ओर ले जाता है। वास्तविक पुरुष मूल्य एक <strong>बहुआयामी संरचना है जहाँ स्तंभ एक दूसरे को मजबूत करते हैं</strong>।</p>
+
+<h2>स्तंभ 1: शारीरिक उपस्थिति</h2>
+<p>आपका शरीर मुंह खोलने से पहले संवाद करता है। 100 मिलीसेकंड से भी कम में, मानव मस्तिष्क प्रारंभिक निर्णय बनाता है:</p>
+<ul>
+  <li><strong>खतरा बनाम सुरक्षा:</strong> प्रशिक्षित शरीर और सीधी मुद्रा शक्ति और नियंत्रण का संकेत देती है</li>
+  <li><strong>स्वास्थ्य संकेतक:</strong> स्वस्थ वजन, साफ त्वचा, शारीरिक जीवंतता</li>
+  <li><strong>अनुशासन और आत्म-नियंत्रण:</strong> बनाए रखा शरीर विलंबित संतुष्टि की क्षमता का संकेत देता है</li>
+</ul>
+
+<h2>स्तंभ 2: धन और संसाधन</h2>
+<p>पैसा लक्ष्य नहीं है — यह स्वतंत्रता के लिए एक उपकरण है। वित्तीय रूप से स्वतंत्र पुरुष पसंद से काम करता है, जरूरत से नहीं।</p>
+
+<h2>स्तंभ 3: सामाजिक स्थान</h2>
+<p>स्थान वह मूल्यांकन है जो आपका सामाजिक वातावरण आपको आपके योगदान, नेतृत्व और प्रभाव के आधार पर देता है। यह वह नहीं है जो आप अपने बारे में सोचते हैं — यह वह है जो दूसरे आपके बारे में तब सोचते हैं जब आप कमरे में नहीं होते।</p>
+
+<h2>स्तंभ 4: व्यक्तित्व और फ्रेम</h2>
+<p>फ्रेम आपका मूल्यों और वास्तविकता का आंतरिक प्रणाली है। हर सामाजिक बातचीत में, फ्रेम के बीच एक निहित बातचीत होती है। जो अपना बनाए रखता है वह ताकत का संकेत देता है।</p>
+
+<h2>निष्कर्ष</h2>
+<p>आपको चारों स्तंभों में परिपूर्ण नहीं होना है — परिपूर्णता एक पक्षाघात करने वाला आदर्श है। लेकिन आपको पद्धति और ईमानदारी के साथ चारों पर काम करना होगा। <strong>आज सबसे कमजोर स्तंभ से शुरू करें।</strong></p>`
+}
+};
+
+const LANGS_ORDER = ['ar','en','es','fr','hi'];
+let currentLang = localStorage.getItem('tf_lang') || 'ar';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('tf_lang', lang);
+  document.getElementById('lang-flag').textContent = FLAGS[lang];
+  document.getElementById('lang-label').textContent = NAMES[lang];
+  document.querySelectorAll('.lang-option').forEach((el,i)=>{ el.classList.toggle('active', LANGS_ORDER[i]===lang); });
+  document.getElementById('lang-picker').classList.remove('open');
+  renderPage();
+}
+
+function renderPage() {
+  const c = CONTENT[currentLang] || CONTENT['ar'];
+  const root = document.getElementById('html-root');
+  root.lang = currentLang;
+  root.dir = c.dir;
+  document.body.style.fontFamily = currentLang==='ar' ? "'Cairo',sans-serif" : "'Oswald',sans-serif";
+  document.title = c.title + ' | The Frame';
+  document.querySelector('meta[name="description"]').content = c.excerpt;
+
+  document.getElementById('nav-blog').textContent = c.backLabel;
+  document.getElementById('nav-home').textContent = c.homeLabel;
+  document.getElementById('nav-home').href = c.homeHref;
+  document.getElementById('nav-home-link').href = c.homeHref;
+
+  document.getElementById('article-hero').innerHTML = `
+    <div class="breadcrumb">
+      <a href="${c.homeHref}">${c.homeLabel}</a>
+      <span>›</span>
+      <a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a>
+      <span>›</span>
+      <span>${c.cat}</span>
+    </div>
+    <span class="article-cat">${c.cat}</span>
+    <h1 class="article-title">${c.title}</h1>
+    <div class="article-meta">
+      <span>${c.date}</span>
+      <span class="read-time">${c.readTime}</span>
+    </div>
+    <p class="article-excerpt">${c.excerpt}</p>`;
+
+  document.getElementById('article-body').innerHTML = c.body;
+
+  const rels = c.rel || [];
+  document.getElementById('related-title').textContent = c.relatedTitle;
+  ['rel1','rel2','rel3'].forEach((id,i)=>{
+    const el = document.getElementById(id);
+    if(el && rels[i]) el.textContent = rels[i];
+  });
+
+  document.getElementById('cta-title').textContent = c.ctaTitle;
+  document.getElementById('cta-desc').textContent = c.ctaDesc;
+  document.getElementById('cta-btn-text').textContent = c.ctaBtn;
+  document.getElementById('f-privacy').textContent = c.footerPrivacy;
+  document.getElementById('f-terms').textContent = c.footerTerms;
+  document.getElementById('f-blog').textContent = c.footerBlog;
+  document.getElementById('footer-copy').textContent = c.footerCopy;
+}
+
+document.getElementById('lang-btn-toggle').addEventListener('click', ()=>{ document.getElementById('lang-picker').classList.toggle('open'); });
+document.addEventListener('click', e=>{ if(!document.getElementById('lang-picker').contains(e.target)) document.getElementById('lang-picker').classList.remove('open'); });
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById('progress-bar').style.width = pct+'%';
+});
+
+setLang(currentLang);
+</script>
+</body>
+</html>

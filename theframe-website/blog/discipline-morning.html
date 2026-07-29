@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="روتين الصباح المثالي للرجل الطموح — كيف تُهندس أول ساعة من يومك لتُحدد مسار الـ 23 ساعة الباقية.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>روتين الصباح: كيف تُهندس أول ساعة تُحدد يومك كله | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/discipline-morning.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="discipline-system.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel1">الانضباط كنظام</span></a>
+      <a class="related-card" href="discipline-habits.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel2">العادات الذرية</span></a>
+      <a class="related-card" href="fitness-sleep.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel3">النوم السلاح السري</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'روتين الصباح: كيف تُهندس أول ساعة في يومك لتُحدد ما تبقى منه',
+  cat:'الانضباط',date:'يوليو 2026',readTime:'11 دقيقة قراءة',
+  excerpt:'الصباح ليس مجرد بداية اليوم — هو أعلى فترة في طاقتك الذهنية وأهدأ وقت قبل أن يبدأ العالم في المطالبة بانتباهك. من يملك صباحه يملك يومه.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الانضباط كنظام','العادات الذرية','النوم السلاح السري'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>لماذا الصباح هو أهم جزء في يومك؟</h2>
+<p>الساعة الأولى من الاستيقاظ هي أكثر ساعة تُحدد مسار يومك بأكمله — ليس لأن "الكتب تقول ذلك"، بل لأن علم الأعصاب يُثبت أن <strong>أعلى مستويات الدوبامين والتستوستيرون والقشرة المخية الأمامية تكون في ذروتها صباحاً</strong>، وتنخفض تدريجياً مع تقدم اليوم.</p>
+<p>الشخص الذي يُضيع هذه الساعة على الهاتف والأخبار والتشتت لا يُضيع ساعة فقط — يُضيع أفضل موارده الذهنية لليوم بأسره. بينما الشخص الذي يستثمرها في عمل ذي قيمة عالية أو تطوير ذاتي يُنجز في ساعة واحدة ما لا يُنجزه غيره في ثلاث ساعات من أي وقت آخر.</p>
+<p>لكن قبل الحديث عن الروتين، يجب أن نُناقِش أكبر خطأ يرتكبه الناس في فهم روتين الصباح.</p>
+
+<h2>الخطأ الأكبر في فهم روتين الصباح</h2>
+<p>كثير من الناس يقرأون عن روتين الصباح ويُحاوِلون تطبيق نسخة شخص آخر بالكامل — من التأمل لـ30 دقيقة إلى التمرين لـ60 دقيقة إلى القراءة إلى الكتابة إلى... ويصطدمون بالفشل بعد أسبوعين.</p>
+<p>المشكلة ليست في أنهم ضعاف الإرادة. المشكلة أنهم <strong>حاوَلوا تغيير كل شيء دفعة واحدة</strong>. الدماغ يقاوم التغيير الجذري وسريعاً ما يعود للنمط القديم.</p>
+<p>الحل: ابدأ بعنصر واحد فقط. أتقنه تماماً — حتى يُصبح تلقائياً دون تفكير. ثم أضِف عنصراً ثانياً. وهكذا.</p>
+
+<h2>العلم وراء الساعات الأولى من الاستيقاظ</h2>
+
+<h3>مرحلة "النوم الخفيف" ما بعد الاستيقاظ</h3>
+<p>يستغرق الدماغ حوالي 30-60 دقيقة بعد الاستيقاظ ليدخل في حالة اليقظة الكاملة. خلال هذه الفترة، موجات ألفا الدماغية (المرتبطة بالاسترخاء الإبداعي) لا تزال نشطة — مما يجعل هذا الوقت مثالياً للتأمل، التخطيط، والأفكار الإبداعية، لكن أقل مثالية للعمل التحليلي الدقيق.</p>
+
+<h3>ذروة الكورتيزول: نافذة الطاقة القصوى</h3>
+<p>بعد ساعة تقريباً من الاستيقاظ، يصل الكورتيزول (هرمون التنبه واليقظة) لذروته في الصباح. هذه هي "نافذة القوة الذهنية القصوى" — الوقت المثالي للعمل التركيزي العميق، حل المشاكل الصعبة، وأعمال الإبداع العالية الجودة.</p>
+
+<h3>الضوء الطبيعي وإعادة ضبط الساعة البيولوجية</h3>
+<p>التعرض للضوء الطبيعي في أول 30-60 دقيقة من الاستيقاظ يُعيد ضبط ساعتك البيولوجية ويُحسِّن جودة النوم ليلاً. هذا مدعوم بأبحاث Andrew Huberman من جامعة ستانفورد — التعرض للضوء الطبيعي صباحاً لـ10-30 دقيقة هو من أقوى المؤثرات على الطاقة والمزاج والنوم.</p>
+
+<h2>بناء روتين الصباح المثالي: المراحل السبع</h2>
+
+<h3>المرحلة الصفرية: الاستيقاظ بدون هاتف</h3>
+<p>قبل أي شيء آخر: اجعل الهاتف خارج غرفة النوم أو على الأقل في الجانب البعيد. أول ما يراه الناس على هواتفهم يُوجِّه انتباههم للخارج — رسائل، أخبار، منشورات — ويُسرق منهم التحكم في انتباههم قبل أن يبدأ اليوم أصلاً.</p>
+<p>الـ15 دقيقة الأولى بدون هاتف ليست رفاهية — هي ضرورة للتحكم في أجندتك الذهنية لليوم.</p>
+
+<h3>المرحلة الأولى: الماء والتعرض للضوء (دقيقتان)</h3>
+<p>اشرب كوباً كاملاً من الماء فور الاستيقاظ. الجسم يفقد ماءً أثناء النوم، والجفاف الخفيف يُضعف التركيز. ثم اخرج أو افتح نافذة أو اجلس أمام مصدر ضوء طبيعي لـ10 دقائق. هذا البروتوكول وحده يُحسِّن مستوى الطاقة والتركيز بشكل ملحوظ.</p>
+
+<h3>المرحلة الثانية: التحريك (15-30 دقيقة)</h3>
+<p>التمرين الصباحي ليس ضرورياً أن يكون تمريناً مكثفاً. التحريك الكافي للجسم يُحرِّر الدوبامين والإندورفين ويُنشِّط الجهاز العصبي بطريقة تُحسِّن التركيز لساعات:</p>
+<ul>
+  <li>الحد الأدنى: 10 دقائق مشي سريع أو تمارين خفيفة</li>
+  <li>المثالي: 20-30 دقيقة تمرين متوسط إلى مرتفع الشدة</li>
+  <li>الأفضل: إذا كان لديك وقت — الجمع بين التمرين والتعرض للضوء الطبيعي في الخارج</li>
+</ul>
+
+<h3>المرحلة الثالثة: التأمل أو التخطيط الهادئ (10 دقائق)</h3>
+<p>لا يجب أن يكون التأمل وفق بروتوكول بوذي معقد. المطلوب: 10 دقائق من الهدوء الواعي — تجلس دون إشعارات ودون ضجيج وتُحدِّد:</p>
+<ul>
+  <li>كيف تريد أن تشعر في نهاية اليوم؟</li>
+  <li>ما هي المهمة الواحدة الأهم التي يجب إنجازها اليوم؟</li>
+  <li>ما الذي تُشكِر عليه اليوم؟ (هذا التمرين يُحسِّن الحالة العاطفية ويُقلِّل الضغط النفسي)</li>
+</ul>
+
+<h3>المرحلة الرابعة: التغذية الصباحية</h3>
+<p>الإفطار ليس إلزامياً للجميع — بعض الناس يعملون بشكل أفضل مع صيام متقطع. لكن إذا اخترت الإفطار، اختَر طعاماً يُثبِّت سكر الدم ويُوفِّر طاقة مستدامة لا سكريات سريعة:</p>
+<ul>
+  <li>البروتين الصباحي (بيض، لبن، مكسرات) يُحسِّن التركيز والشبع</li>
+  <li>تجنب السكريات السريعة صباحاً — تمنحك طاقة مؤقتة ثم انهياراً</li>
+  <li>الكافيين: تأخيره لـ90 دقيقة بعد الاستيقاظ يُحسِّن تأثيره (تُوصية Andrew Huberman)</li>
+</ul>
+
+<h3>المرحلة الخامسة: العمل العميق الأول (60-90 دقيقة)</h3>
+<p>هذه هي أقيم مرحلة في اليوم بأسره. العمل على أهم مهمة واحدة بتركيز كامل — هاتف مُسكَّت، إشعارات مُغلَقة، بيئة هادئة. 60-90 دقيقة من التركيز العميق في ذروة الطاقة تُساوي 3-4 ساعات من العمل المتقطع المُشتَّت.</p>
+
+<div class="callout"><p><strong>القاعدة الذهبية:</strong> لا تُتحقق من بريدك الإلكتروني أو رسائلك أو أي منصة تواصل قبل إنجاز المهمة الأولى الأهم. حين تبدأ يومك برد على رسائل الآخرين، تُصبح أجندتهم أولويتك لا أجندتك أنت.</p></div>
+
+<h2>التحدي الحقيقي: الاتساق لا الكمال</h2>
+<p>الروتين الكامل المذكور أعلاه يستغرق حوالي 2-3 ساعات. هذا ليس واقعياً لكل شخص كل يوم. لهذا السبب يجب أن يكون لديك:</p>
+
+<h3>الروتين الكامل (الأيام المثالية)</h3>
+<p>الروتين الكامل المُفصَّل أعلاه — حين تكون الظروف مواتية.</p>
+
+<h3>الروتين المُختَزَل (الأيام المشغولة)</h3>
+<p>الحد الأدنى الذي تلتزم به حتى في أصعب الأيام: ماء + 5 دقائق تمرين + المهمة الواحدة الأهم.</p>
+
+<h3>الروتين الطارئ (الأيام الاستثنائية)</h3>
+<p>أي شيء واحد من الروتين: حتى الاستيقاظ بدون هاتف لـ10 دقائق يُبقي الهوية حيّة.</p>
+
+<h2>كيف تبدأ من الصفر: الخطة التدريجية</h2>
+<ul>
+  <li><strong>الأسبوع 1:</strong> أخرج الهاتف من غرفة النوم. فقط هذا.</li>
+  <li><strong>الأسبوع 2:</strong> أضِف كوب ماء فور الاستيقاظ + 10 دقائق ضوء طبيعي</li>
+  <li><strong>الأسبوع 3:</strong> أضِف 10 دقائق تمرين خفيف</li>
+  <li><strong>الأسبوع 4:</strong> حدِّد مهمتك الأولى قبل النوم — وابدأ بها فور الانتهاء من الروتين</li>
+  <li><strong>الشهر 2 فصاعداً:</strong> أضِف مكونات بحسب ما يناسب حياتك وأهدافك</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الساعة الأولى من الاستيقاظ هي أعلى طاقة ذهنية في اليوم — لا تُبدِّدها</li>
+    <li>ابدأ بعنصر واحد وأتقنه قبل الإضافة — لا تُغيِّر كل شيء دفعة واحدة</li>
+    <li>الهاتف خارج غرفة النوم هو أسهل وأقوى تغيير يمكنك إجراؤه</li>
+    <li>الضوء الطبيعي صباحاً يُعيد ضبط الساعة البيولوجية ويُحسِّن النوم ليلاً</li>
+    <li>العمل العميق قبل البريد الإلكتروني — أجندتك أولاً</li>
+    <li>الروتين المُختَزَل أفضل من لا روتين — الحد الأدنى يُبقي الهوية</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الصباح هو المكان الذي تُبنى فيه الحياة</h2>
+<p>الفرق بين من يعيش حياة مُتحكِّماً فيها ومن يعيشها مدفوعاً بالتفاعل مع الظروف يبدأ في كثير من الأحيان من الساعة الأولى. أعطِ نفسك ساعة واحدة كل صباح — ساعة تكون فيها أنت ومشاريعك وقيمك. كل شيء آخر ينتظر.</p>`
+},
+en:{
+  dir:'ltr',title:'Morning Routine: How to Engineer the First Hour That Determines Your Entire Day',
+  cat:'Discipline',date:'July 2026',readTime:'11 min read',
+  excerpt:'The morning is not just the start of your day — it is your peak mental energy window and the quietest time before the world starts demanding your attention. Who owns their morning owns their day.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Discipline as a System','Atomic Habits','Sleep: The Secret Weapon'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>Why Is Morning the Most Important Part of Your Day?</h2>
+<p>The first hour after waking is when <strong>dopamine, testosterone, and prefrontal cortex activity peak</strong> — then gradually decline throughout the day. The person who wastes this time on scrolling and news doesn't just waste an hour — they waste their best cognitive resources for the entire day.</p>
+<p>The biggest mistake people make is trying to copy someone else's full routine all at once. The brain resists radical change and quickly reverts to old patterns. The solution: start with one element. Master it completely until it's automatic. Then add a second.</p>
+
+<h2>The Science Behind the First Hours of Waking</h2>
+<p>The brain takes 30-60 minutes after waking to enter full alertness. During this period, alpha waves (associated with creative relaxation) are still active — making it ideal for meditation, planning, and creative thinking. After about one hour, cortisol peaks — the "peak mental power window" for deep focus work, solving difficult problems, and high-quality creative output.</p>
+<p>Andrew Huberman's research from Stanford University shows that 10-30 minutes of natural light exposure in the first hour after waking is one of the most powerful influences on energy, mood, and nighttime sleep quality.</p>
+
+<h2>The Seven Phases of an Optimal Morning Routine</h2>
+
+<h3>Phase Zero: Wake Up Without Your Phone</h3>
+<p>Keep the phone outside the bedroom or at the far side of the room. The first thing most people see on their phones directs their attention outward — messages, news, posts — stealing control of their mental agenda before the day even begins.</p>
+
+<h3>Phase One: Water and Light (2 minutes)</h3>
+<p>Drink a full glass of water immediately upon waking — the body loses water during sleep, and mild dehydration impairs focus. Then get natural light for 10 minutes — outside, open window, or in front of a natural light source.</p>
+
+<h3>Phase Two: Movement (15-30 minutes)</h3>
+<ul>
+  <li>Minimum: 10 minutes brisk walking or light exercise</li>
+  <li>Ideal: 20-30 minutes moderate to high-intensity training</li>
+  <li>Best: combine exercise with outdoor natural light exposure</li>
+</ul>
+
+<h3>Phase Three: Quiet Planning (10 minutes)</h3>
+<p>10 minutes of conscious calm — no notifications, no noise. Ask: How do I want to feel at the end of today? What is the one most important task? What am I grateful for?</p>
+
+<h3>Phase Four: Morning Nutrition</h3>
+<p>If you eat breakfast, choose food that stabilizes blood sugar. Protein (eggs, dairy, nuts) improves focus and satiety. Avoid fast sugars — temporary energy followed by a crash. Delay caffeine 90 minutes after waking for better effect.</p>
+
+<h3>Phase Five: First Deep Work Block (60-90 minutes)</h3>
+<p>The most valuable phase in the entire day. Work on the single most important task with complete focus — phone silenced, notifications off, quiet environment.</p>
+
+<div class="callout"><p><strong>The Golden Rule:</strong> Do not check email, messages, or any social platform before completing the first and most important task. When you start your day responding to others' messages, their agenda becomes your priority — not yours.</p></div>
+
+<h2>How to Start From Zero: The Progressive Plan</h2>
+<ul>
+  <li><strong>Week 1:</strong> Phone outside the bedroom. Just this.</li>
+  <li><strong>Week 2:</strong> Add water upon waking + 10 minutes of natural light</li>
+  <li><strong>Week 3:</strong> Add 10 minutes light exercise</li>
+  <li><strong>Week 4:</strong> Identify your most important task before sleeping — start it immediately after the routine</li>
+  <li><strong>Month 2+:</strong> Add components based on what fits your life and goals</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>The first hour after waking is peak mental energy — don't squander it</li>
+    <li>Start with one element and master it before adding — don't change everything at once</li>
+    <li>Phone outside bedroom is the easiest, most powerful change you can make</li>
+    <li>Morning natural light resets the circadian clock and improves nighttime sleep</li>
+    <li>Deep work before email — your agenda first</li>
+    <li>The abbreviated routine is better than no routine — the minimum preserves identity</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Rutina Matutina: Cómo Diseñar la Primera Hora que Determina Todo tu Día',
+  cat:'Disciplina',date:'Julio 2026',readTime:'11 min',
+  excerpt:'La mañana no es solo el comienzo del día — es tu ventana de máxima energía mental y el momento más tranquilo antes de que el mundo empiece a exigir tu atención.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['La disciplina como sistema','Hábitos atómicos','El sueño: el arma secreta'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Por Qué la Mañana es la Parte Más Importante de tu Día?</h2>
+<p>La primera hora después de despertar es cuando la <strong>dopamina, la testosterona y la actividad de la corteza prefrontal alcanzan su pico</strong>, luego disminuyen gradualmente. La persona que desperdicia este tiempo en el teléfono no solo pierde una hora — pierde sus mejores recursos cognitivos del día entero.</p>
+
+<h2>Las Siete Fases de una Rutina Matutina Óptima</h2>
+
+<h3>Fase Cero: Despertar Sin Teléfono</h3>
+<p>Mantén el teléfono fuera del dormitorio. Lo primero que la gente ve en sus teléfonos dirige su atención hacia afuera — mensajes, noticias, publicaciones — robándoles el control de su agenda mental antes de que el día comience.</p>
+
+<h3>Fase Uno: Agua y Luz (2 minutos)</h3>
+<p>Bebe un vaso lleno de agua al despertar. Luego obtén luz natural durante 10 minutos. La investigación de Andrew Huberman de Stanford muestra que 10-30 minutos de exposición a luz natural es una de las influencias más poderosas sobre la energía, el estado de ánimo y la calidad del sueño nocturno.</p>
+
+<h3>Fase Dos: Movimiento (15-30 minutos)</h3>
+<ul>
+  <li>Mínimo: 10 minutos de caminata rápida o ejercicio ligero</li>
+  <li>Ideal: 20-30 minutos de entrenamiento de intensidad moderada a alta</li>
+</ul>
+
+<h3>Fase Tres: Planificación Tranquila (10 minutos)</h3>
+<p>10 minutos de calma consciente. Pregúntate: ¿Cómo quiero sentirme al final del día? ¿Cuál es la tarea más importante?</p>
+
+<h3>Fase Cinco: Primer Bloque de Trabajo Profundo (60-90 minutos)</h3>
+<div class="callout"><p><strong>La Regla de Oro:</strong> No revises el correo electrónico antes de completar la primera tarea más importante. Cuando comienzas tu día respondiendo los mensajes de otros, su agenda se convierte en tu prioridad — no la tuya.</p></div>
+
+<h2>Cómo Empezar Desde Cero</h2>
+<ul>
+  <li><strong>Semana 1:</strong> Teléfono fuera del dormitorio. Solo esto.</li>
+  <li><strong>Semana 2:</strong> Agrega agua al despertar + 10 minutos de luz natural</li>
+  <li><strong>Semana 3:</strong> Agrega 10 minutos de ejercicio ligero</li>
+  <li><strong>Semana 4:</strong> Identifica tu tarea más importante antes de dormir</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>La diferencia entre quien vive una vida bajo su control y quien la vive empujado por las circunstancias a menudo comienza en la primera hora. <strong>Date una hora cada mañana — una hora que sea tuya, de tus proyectos, de tus valores.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Routine Matinale: Comment Concevoir la Première Heure qui Détermine Toute ta Journée',
+  cat:'Discipline',date:'Juillet 2026',readTime:'11 min',
+  excerpt:"Le matin n'est pas seulement le début de la journée — c'est votre fenêtre de pointe d'énergie mentale et le moment le plus calme avant que le monde commence à exiger votre attention.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['La discipline comme système','Habitudes atomiques','Le sommeil: l\'arme secrète'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Pourquoi le Matin est-il la Partie la Plus Importante de ta Journée?</h2>
+<p>La première heure après le réveil est le moment où la <strong>dopamine, la testostérone et l'activité du cortex préfrontal atteignent leur pic</strong>, puis diminuent progressivement. La personne qui gaspille ce temps sur son téléphone ne perd pas seulement une heure — elle perd ses meilleures ressources cognitives pour toute la journée.</p>
+
+<h2>Les Sept Phases d'une Routine Matinale Optimale</h2>
+
+<h3>Phase Zéro: Se Réveiller Sans Téléphone</h3>
+<p>Gardez le téléphone hors de la chambre à coucher. La première chose que les gens voient sur leur téléphone dirige leur attention vers l'extérieur — volant le contrôle de leur agenda mental avant même que la journée commence.</p>
+
+<h3>Phase Un: Eau et Lumière (2 minutes)</h3>
+<p>Buvez un verre d'eau complet dès le réveil. Puis obtenez de la lumière naturelle pendant 10 minutes. La recherche d'Andrew Huberman de Stanford montre que 10-30 minutes d'exposition à la lumière naturelle est l'une des influences les plus puissantes sur l'énergie, l'humeur et la qualité du sommeil nocturne.</p>
+
+<h3>Phase Cinq: Premier Bloc de Travail Profond (60-90 minutes)</h3>
+<div class="callout"><p><strong>La Règle d'Or:</strong> Ne consultez pas votre e-mail avant d'avoir terminé la première tâche la plus importante. Quand vous commencez votre journée en répondant aux messages des autres, leur agenda devient votre priorité — pas le vôtre.</p></div>
+
+<h2>Conclusion</h2>
+<p>La différence entre celui qui vit une vie qu'il contrôle et celui qui la vit poussé par les circonstances commence souvent dans la première heure. <strong>Accordez-vous une heure chaque matin — une heure qui soit la vôtre, pour vos projets, pour vos valeurs.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'सुबह की दिनचर्या: पहला घंटा कैसे डिज़ाइन करें जो पूरे दिन को निर्धारित करे',
+  cat:'अनुशासन',date:'जुलाई 2026',readTime:'11 मिनट',
+  excerpt:'सुबह केवल दिन की शुरुआत नहीं है — यह आपकी चरम मानसिक ऊर्जा की खिड़की है और दुनिया आपका ध्यान मांगना शुरू करने से पहले का सबसे शांत समय है।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['अनुशासन एक प्रणाली के रूप में','परमाणु आदतें','नींद: गुप्त हथियार'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>सुबह दिन का सबसे महत्वपूर्ण हिस्सा क्यों है?</h2>
+<p>जागने के बाद पहला घंटा वह है जब <strong>डोपामाइन, टेस्टोस्टेरोन और प्रीफ्रंटल कॉर्टेक्स गतिविधि चरम पर होती है</strong>। जो व्यक्ति इस समय को स्क्रॉलिंग और समाचारों में बर्बाद करता है वह सिर्फ एक घंटा नहीं खोता — वह पूरे दिन के लिए अपने सर्वोत्तम संज्ञानात्मक संसाधन खो देता है।</p>
+
+<h2>सबसे बड़ी गलती</h2>
+<p>लोग एक साथ किसी और की पूरी दिनचर्या नकल करने की कोशिश करते हैं। समाधान: एक तत्व से शुरू करें। इसे पूरी तरह से माहिर करें जब तक यह स्वचालित न हो जाए। फिर दूसरा जोड़ें।</p>
+
+<h2>इष्टतम सुबह की दिनचर्या के सात चरण</h2>
+<ul>
+  <li><strong>चरण शून्य:</strong> फोन के बिना जागें — फोन बेडरूम से बाहर रखें</li>
+  <li><strong>चरण एक:</strong> जागने पर एक गिलास पानी + 10 मिनट प्राकृतिक प्रकाश</li>
+  <li><strong>चरण दो:</strong> 15-30 मिनट व्यायाम</li>
+  <li><strong>चरण तीन:</strong> 10 मिनट शांत योजना — सबसे महत्वपूर्ण कार्य क्या है?</li>
+  <li><strong>चरण पाँच:</strong> 60-90 मिनट गहरा काम</li>
+</ul>
+
+<div class="callout"><p><strong>सुनहरा नियम:</strong> पहला सबसे महत्वपूर्ण कार्य पूरा करने से पहले ईमेल या संदेश मत देखें। जब आप दूसरों के संदेशों का जवाब देकर अपना दिन शुरू करते हैं, तो उनका एजेंडा आपकी प्राथमिकता बन जाता है।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>हर सुबह खुद को एक घंटा दें — एक घंटा जो आपका हो, आपके प्रोजेक्ट्स के लिए, आपके मूल्यों के लिए। <strong>बाकी सब इंतजार करे।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

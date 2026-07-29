@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الإطار في العلاقات: كيف تُحدِّد ديناميكية العلاقة منذ اللحظة الأولى. قواعد الجذب، الاحترام، والتوازن في العلاقات الصحية.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الإطار في العلاقات: كيف تُحدِّد الديناميكية منذ البداية | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/frame-relationships.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="frame-control.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel1">السيطرة على الإطار</span></a>
+      <a class="related-card" href="frame-silence.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel2">قوة الصمت</span></a>
+      <a class="related-card" href="smv-basics.html"><span class="related-cat">SMV</span><span class="related-title" id="rel3">أساسيات قيمة السوق</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'الإطار في العلاقات: كيف تُحدِّد الديناميكية منذ اللحظة الأولى',
+  cat:'الإطار',date:'يوليو 2026',readTime:'12 دقيقة قراءة',
+  excerpt:'الديناميكية التي تُحدِّدها في اللحظات الأولى من أي علاقة تُصبح النمط الذي يستمر لسنوات. تعلّم كيف تُؤسِّس علاقات قائمة على الاحترام الحقيقي لا على الحاجة والخوف.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['السيطرة على الإطار','قوة الصمت','أساسيات قيمة السوق'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الديناميكية تُحدَّد في البداية — وتبقى</h2>
+<p>أحد أكثر الحقائق في علم نفس العلاقات التي يرفض الناس سماعها: <strong>الديناميكية التي تُرسيها في الأسابيع الأولى من أي علاقة — رومانسية، مهنية، أو صداقة — تميل للبقاء والتعمق مع الوقت، لا للتغيير</strong>.</p>
+<p>الرجل الذي يُثبِت منذ البداية أنه يُقيِّم الطرف الآخر لا يُقيَّم سيحافظ على هذا الموضع. الرجل الذي يُبدي تفانياً زائداً من اليوم الأول سيجد نفسه في علاقة تُأخَذ فيها جهوده كمُسلَّمة مع الزمن. ليس لأن الطرف الآخر شرير — بل لأن الدماغ البشري يُكيِّف توقعاته على أساس الأنماط المتكررة.</p>
+
+<h2>لماذا تفشل العلاقات القائمة على "الحاجة الزائدة"</h2>
+<p>علم الأعصاب يُخبِرنا أن الدماغ يُنشئ الرغبة والتقدير استجابةً لمحفزات معينة:</p>
+<ul>
+  <li><strong>الندرة:</strong> ما هو نادر يُقدَّر أكثر — هذا ينطبق على الوقت والاهتمام والطاقة</li>
+  <li><strong>التوقع غير المؤكد:</strong> الجائزة غير المؤكدة تُفعِّل نظام الدوبامين أكثر بكثير من المضمونة</li>
+  <li><strong>القيمة المُدرَكة:</strong> كيف يُدرِك الطرف الآخر قيمتك يؤثر مباشرة في كيف يُعامِلك</li>
+</ul>
+<p>الشخص الذي يُبدي حاجة زائدة وإتاحة كاملة يُقدِّم لدماغ الطرف الآخر صورة تقول: "قيمتي مضمونة لك بلا مقابل." الدماغ يستجيب لذلك بتخفيض التقدير — ليس لأنه قرار واعٍ، بل لأنه ردّ فعل مُبرمَج.</p>
+
+<h2>الإطار الصحي في العلاقات: ما يبدو عكس البديهة</h2>
+
+<h3>معيار الاختيار لا الحاجة للقبول</h3>
+<p>الفرق بين الرجل الذي يختار الطرف الآخر وفق معاييره الخاصة والرجل الذي يحتاج موافقة الطرف الآخر — هذا الفرق يظهر في كل تفاصيل التفاعل. من كلمة ترحيب بسيطة إلى كيف يتعامل مع الرفض.</p>
+<p>الاختيار يُنتِج علاقة متوازنة. الحاجة تُنتِج علاقة غير متوازنة — حتى لو كان الطرف الآخر يرفض هذا التوازن ظاهرياً.</p>
+
+<h3>الحياة المستقلة: ليست لعبة — هي حقيقة</h3>
+<p>الرجل الذي يملك حياة غنية بمشاريعه، أصدقائه، طموحاته، وقيمه يدخل كل علاقة من موضع الوفرة. هذا لا يعني أنه لا يُعطي — يعني أنه يُعطي من موضع اختيار لا من موضع خوف الفقد.</p>
+<p>مفارقة حقيقية: الرجل الذي لديه حياة مستقلة يُصبِح أكثر جذباً للطرف الآخر — ليس أقل. لأن وجود الآخر في حياته يبدو كإضافة لا كإنقاذ.</p>
+
+<h3>المعايير ليست حواجز — هي احترام</h3>
+<p>وضع معايير واضحة في العلاقة ليس عدواناً — هو احترام للنفس وللطرف الآخر في آن واحد. قبول ما لا يقبله الرجل عن نفسه يُقنِع الطرف الآخر ضمنياً أن ما يفعله مقبول — مما يُشجِّعه على الاستمرار.</p>
+
+<h2>أنماط الإطار السلبي في العلاقات وكيفية الخروج منها</h2>
+
+<h3>نمط "الرجل المتاح دائماً"</h3>
+<p><strong>الصورة:</strong> يرد على كل رسالة فوراً، يُلغي مواعيده الشخصية لإرضاء الطرف الآخر، يضع احتياجات الطرف الآخر دائماً فوق احتياجاته الخاصة.</p>
+<p><strong>النتيجة المنطقية:</strong> الطرف الآخر يبدأ بمعاملته كمورد، لا كشريك. الاهتمام يتحول لمُسلَّمة.</p>
+<p><strong>التصحيح:</strong> أعِد تقييم وقتك. لديك حياة، مشاريع، أصدقاء تُقدِّمهم أحياناً على طلبات اللحظة الأخيرة. هذا ليس لعبة — هو واقع الشخص الذي يملك حياة كاملة.</p>
+
+<h3>نمط "المُوافِق على كل شيء"</h3>
+<p><strong>الصورة:</strong> لا يُعبِّر عن رأي مخالف، يوافق على كل اقتراح، يتجنب الخلاف بأي ثمن.</p>
+<p><strong>النتيجة المنطقية:</strong> الطرف الآخر يفقد الإحساس بأنه يتحدث مع شخص حقيقي. الجذب يتلاشى مع الوقت.</p>
+<p><strong>التصحيح:</strong> الخلاف الهادئ والواثق يُرسِل إشارة أقوى من أي موافقة. "أرى الأمر بشكل مختلف — أعتقد أن X" هي جملة تزيد الاحترام لا تُقلِّله.</p>
+
+<h3>نمط "التعويض الزائد"</h3>
+<p><strong>الصورة:</strong> يُغرِق بالهدايا، المديح، والإيماءات الضخمة من اليوم الأول محاوِلاً "شراء" القيمة.</p>
+<p><strong>النتيجة المنطقية:</strong> الطرف الآخر يُدرِك (ربما لا واعياً) أن هذا تعويض عن شيء ناقص — وهذا يُخفِّض التقدير بدلاً من رفعه.</p>
+<p><strong>التصحيح:</strong> الكرم الحقيقي ينبع من موضع الوفرة لا القلق. أعطِ لأنك تُريد لا لأنك تخاف.</p>
+
+<div class="callout"><p><strong>السؤال الجوهري:</strong> في كل علاقة، اسأل نفسك: "هل أكون في هذه العلاقة لأنني أختار ذلك، أم لأنني أخاف من عدم وجودها؟" الإجابة الصادقة تُخبِرك بإطارك الحالي.</p></div>
+
+<h2>بناء الإطار الصحي من اليوم الأول</h2>
+<ul>
+  <li><strong>اجعل حياتك المستقلة واضحة:</strong> لا تُخلِص جدولك لشخص لا تزال في مرحلة التعرف عليه. امتلك وقتاً محجوزاً لمشاريعك</li>
+  <li><strong>اعبِّر عن رأيك بهدوء:</strong> خلافات مبكرة صغيرة ومُدارة جيداً تُؤسِّس لنمط من الصدق لا من الموافقة العمياء</li>
+  <li><strong>لا تشرح جدولك:</strong> "لديّ ارتباط الخميس" — لا تحتاج لمزيد من التفاصيل. الشرح الزائد يُظهِر القلق</li>
+  <li><strong>المعايير من البداية:</strong> ما لا تقبله في البداية يُصبِح أصعب قبولاً لاحقاً وأصعب رفضاً في آن واحد</li>
+</ul>
+
+<h2>الفرق بين الإطار القوي والعلاقة الباردة</h2>
+<p>امتلاك إطار قوي لا يعني الحرد أو البرود العاطفي. يعني: دفء حقيقي من موضع القوة لا الخوف. التعبير عن المشاعر من موضع الاختيار لا الاضطرار. الحضور الكامل مع احتفاظ الهوية المستقلة.</p>
+<p>الرجل ذو الإطار القوي يمكنه أن يكون حنوناً وصادقاً ومُعطياً — لكن من موضع الاختيار، لا الحاجة. هذا هو الفرق الجوهري.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الديناميكية الأولى تميل للاستمرار — أسِّسها بوعي</li>
+    <li>الحاجة الزائدة تُخفِّض القيمة المُدرَكة — علم أعصاب وليس فلسفة</li>
+    <li>الاختيار بوعي أجمل من الحاجة للقبول</li>
+    <li>الحياة المستقلة تزيد الجذب — لا تُقلِّله</li>
+    <li>المعايير الواضحة هي احترام للنفس وللطرف الآخر</li>
+    <li>الإطار القوي لا يتعارض مع الدفء — هو دفء من موضع القوة</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: علاقات بالاختيار لا بالخوف</h2>
+<p>العلاقة الأجمل هي التي يختار فيها الطرفان بعضهما باستمرار — ليس لأنهما لا يجدان خياراً آخر، بل لأنهما يختاران هذا الخيار بوعي يومياً. هذا النوع من الاختيار لا يحدث في علاقة مبنية على الحاجة والخوف — يحدث فقط حين يملك كلا الطرفين هويةً مستقلة وإطاراً داخلياً راسخاً.</p>`
+},
+en:{
+  dir:'ltr',title:'Frame in Relationships: How to Set the Dynamic from the Very Beginning',
+  cat:'Frame',date:'July 2026',readTime:'12 min read',
+  excerpt:'The dynamic you establish in the first weeks of any relationship tends to persist and deepen over time, not change. Learn to build relationships based on genuine respect, not need and fear.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Frame Control','The Power of Silence','SMV Basics'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>The Dynamic Is Set at the Beginning — And Stays</h2>
+<p>One of the most resisted truths in relationship psychology: <strong>the dynamic you establish in the first weeks of any relationship — romantic, professional, or friendship — tends to persist and deepen with time, not change</strong>.</p>
+<p>The man who demonstrates from day one that he evaluates rather than being evaluated will maintain that position. The man who shows excessive devotion from the first day will find his efforts taken for granted over time — not because the other party is malicious, but because the human brain calibrates its expectations based on recurring patterns.</p>
+
+<h2>Why Relationships Built on "Excessive Need" Fail</h2>
+<p>Neuroscience tells us the brain creates desire and appreciation in response to certain stimuli:</p>
+<ul>
+  <li><strong>Scarcity:</strong> What is rare is valued more — this applies to time, attention, and energy</li>
+  <li><strong>Uncertain anticipation:</strong> An uncertain reward activates the dopamine system far more than a guaranteed one</li>
+  <li><strong>Perceived value:</strong> How the other party perceives your value directly affects how they treat you</li>
+</ul>
+
+<h2>Negative Frame Patterns in Relationships</h2>
+
+<h3>The "Always Available Man" Pattern</h3>
+<p>Responds to every message instantly, cancels his personal appointments to please the other party, always puts their needs above his own. Result: the other party begins treating him as a resource, not a partner. The fix: have a life — projects, friends, ambitions you prioritize, sometimes over last-minute requests.</p>
+
+<h3>The "Agrees With Everything" Pattern</h3>
+<p>Expresses no differing opinion, agrees with every suggestion, avoids conflict at any cost. Result: the other party loses the sense they're talking with a real person. The fix: quiet, confident disagreement sends a stronger signal than any agreement. "I see it differently — I think X" is a sentence that increases respect, not diminishes it.</p>
+
+<h3>The "Excessive Compensation" Pattern</h3>
+<p>Floods with gifts, praise, and grand gestures from day one trying to "buy" value. Result: the other party perceives (perhaps unconsciously) that this compensates for something lacking. The fix: true generosity comes from abundance, not anxiety.</p>
+
+<div class="callout"><p><strong>The Core Question:</strong> In every relationship, ask yourself: "Am I in this relationship because I choose to be, or because I fear not having it?" The honest answer tells you your current frame.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>The initial dynamic tends to continue — establish it consciously</li>
+    <li>Excessive need reduces perceived value — neuroscience, not philosophy</li>
+    <li>Conscious selection is more beautiful than needing approval</li>
+    <li>An independent life increases attraction — not reduces it</li>
+    <li>Clear standards are respect for self and for the other party</li>
+    <li>A strong frame doesn't conflict with warmth — it's warmth from a position of strength</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'El Marco en las Relaciones: Cómo Establecer la Dinámica desde el Primer Momento',
+  cat:'Marco',date:'Julio 2026',readTime:'12 min',
+  excerpt:'La dinámica que estableces en las primeras semanas de cualquier relación tiende a persistir y profundizarse con el tiempo, no a cambiar. Aprende a construir relaciones basadas en el respeto genuino.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Control del Marco','El Poder del Silencio','Fundamentos del SMV'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>La Dinámica se Establece al Principio y Permanece</h2>
+<p>Una de las verdades más resistidas en la psicología de las relaciones: <strong>la dinámica que estableces en las primeras semanas de cualquier relación tiende a persistir y profundizarse con el tiempo, no a cambiar</strong>.</p>
+
+<h2>Patrones de Marco Negativo en las Relaciones</h2>
+
+<h3>El Patrón del "Hombre Siempre Disponible"</h3>
+<p>Responde a cada mensaje instantáneamente, cancela sus citas personales para complacer al otro. Resultado: el otro comienza a tratarle como un recurso, no como un compañero. La corrección: tener una vida — proyectos, amigos, ambiciones que a veces priorizas.</p>
+
+<h3>El Patrón del "Siempre de Acuerdo"</h3>
+<p>No expresa opinión diferente, evita el conflicto a cualquier costo. Resultado: el otro pierde el sentido de que está hablando con una persona real. La corrección: el desacuerdo tranquilo y seguro envía una señal más fuerte que cualquier acuerdo.</p>
+
+<h3>El Patrón de "Compensación Excesiva"</h3>
+<p>Inunda con regalos y grandes gestos desde el primer día intentando "comprar" valor. La corrección: la verdadera generosidad proviene de la abundancia, no de la ansiedad.</p>
+
+<div class="callout"><p><strong>La Pregunta Fundamental:</strong> En cada relación, pregúntate: "¿Estoy en esta relación porque lo elijo, o porque temo no tenerla?" La respuesta honesta te dice tu marco actual.</p></div>
+
+<h2>Conclusión</h2>
+<p>La relación más hermosa es aquella en la que ambas partes se eligen continuamente — no porque no encuentren otra opción, sino porque eligen esa opción conscientemente cada día. <strong>Construye primero tu identidad independiente y un marco interior sólido.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Le Cadre dans les Relations: Comment Définir la Dynamique dès le Premier Instant',
+  cat:'Cadre',date:'Juillet 2026',readTime:'12 min',
+  excerpt:'La dynamique que vous établissez dans les premières semaines de toute relation tend à persister et à s\'approfondir avec le temps, non à changer. Apprenez à construire des relations basées sur le respect authentique.',
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Contrôle du Cadre','Le Pouvoir du Silence','Bases du SMV'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>La Dynamique s'Établit au Début et Reste</h2>
+<p>L'une des vérités les plus résistées en psychologie des relations: <strong>la dynamique que vous établissez dans les premières semaines de toute relation tend à persister et à s'approfondir avec le temps, non à changer</strong>.</p>
+
+<h2>Modèles de Cadre Négatif dans les Relations</h2>
+
+<h3>Le Modèle de "L'Homme Toujours Disponible"</h3>
+<p>Répond à chaque message instantanément, annule ses rendez-vous personnels pour plaire à l'autre. Résultat: l'autre commence à le traiter comme une ressource, non comme un partenaire. La correction: avoir une vie — des projets, des amis, des ambitions que vous priorisez parfois.</p>
+
+<h3>Le Modèle de "Toujours d'Accord"</h3>
+<p>N'exprime pas d'opinion différente, évite le conflit à tout prix. Résultat: l'autre perd le sentiment de parler avec une vraie personne. La correction: un désaccord tranquille et confiant envoie un signal plus fort que tout accord.</p>
+
+<h3>Le Modèle de "Compensation Excessive"</h3>
+<p>Inonde de cadeaux et de grands gestes dès le premier jour. La correction: la vraie générosité vient de l'abondance, pas de l'anxiété.</p>
+
+<div class="callout"><p><strong>La Question Fondamentale:</strong> Dans chaque relation, demandez-vous: "Suis-je dans cette relation parce que je le choisis, ou parce que j'ai peur de ne pas l'avoir?" La réponse honnête vous dit votre cadre actuel.</p></div>
+
+<h2>Conclusion</h2>
+<p>La relation la plus belle est celle où les deux parties se choisissent continuellement — non parce qu'elles ne trouvent pas d'autre option, mais parce qu'elles choisissent consciemment cette option chaque jour. <strong>Construisez d'abord votre identité indépendante et un cadre intérieur solide.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'रिश्तों में फ्रेम: पहले ही पल से गतिशीलता कैसे निर्धारित करें',
+  cat:'फ्रेम',date:'जुलाई 2026',readTime:'12 मिनट',
+  excerpt:'किसी भी रिश्ते के पहले हफ्तों में जो गतिशीलता आप स्थापित करते हैं वह समय के साथ बनी रहती है और गहरी होती है, बदलती नहीं। वास्तविक सम्मान पर आधारित रिश्ते बनाना सीखें।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['फ्रेम नियंत्रण','मौन की शक्ति','SMV की मूल बातें'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>गतिशीलता शुरुआत में निर्धारित होती है — और रहती है</h2>
+<p>रिश्तों के मनोविज्ञान में सबसे अधिक प्रतिरोधित सत्यों में से एक: <strong>किसी भी रिश्ते के पहले हफ्तों में जो गतिशीलता आप स्थापित करते हैं — रोमांटिक, पेशेवर, या दोस्ती — वह समय के साथ बनी रहती है और गहरी होती है, बदलती नहीं।</strong></p>
+
+<h2>रिश्तों में नकारात्मक फ्रेम के पैटर्न</h2>
+
+<h3>"हमेशा उपलब्ध रहने वाले" का पैटर्न</h3>
+<p>हर संदेश का तुरंत जवाब देता है, दूसरे को खुश करने के लिए अपनी व्यक्तिगत नियुक्तियां रद्द करता है। परिणाम: दूसरा पक्ष उसे एक संसाधन के रूप में मानने लगता है। सुधार: एक जीवन रखें — परियोजनाएं, मित्र, महत्वाकांक्षाएं जिन्हें आप कभी-कभी प्राथमिकता देते हैं।</p>
+
+<h3>"हर बात से सहमत" का पैटर्न</h3>
+<p>अलग राय व्यक्त नहीं करता, हर सुझाव से सहमत होता है। परिणाम: दूसरा पक्ष यह महसूस करना बंद कर देता है कि वे एक वास्तविक व्यक्ति से बात कर रहे हैं। सुधार: शांत, आत्मविश्वासी असहमति किसी भी सहमति से अधिक मजबूत संकेत भेजती है।</p>
+
+<div class="callout"><p><strong>मूल प्रश्न:</strong> हर रिश्ते में खुद से पूछें: "क्या मैं इस रिश्ते में इसलिए हूं क्योंकि मैं चुनता हूं, या इसलिए कि मुझे इसके न होने का डर है?" ईमानदार उत्तर आपको आपका वर्तमान फ्रेम बताता है।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>सबसे सुंदर रिश्ता वह है जिसमें दोनों पक्ष लगातार एक-दूसरे को चुनते हैं — इसलिए नहीं कि उन्हें कोई अन्य विकल्प नहीं मिलता, बल्कि इसलिए कि वे हर दिन सचेत रूप से इस विकल्प को चुनते हैं। <strong>पहले अपनी स्वतंत्र पहचान और एक मजबूत आंतरिक फ्रेम बनाएं।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

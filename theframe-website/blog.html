@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,8 @@
   <meta name="theme-color" content="#000000">
   <title>المدونة | The Frame — بناء الذات والقيمة الحقيقية</title>
   <link rel="canonical" href="https://theframeapp.site/blog.html">
+  <link rel="icon" type="image/png" href="./assets/icon.png">
+  <link rel="apple-touch-icon" href="./assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
@@ -27,51 +29,56 @@
     }
     body { background: var(--black); color: var(--text); font-family: 'Cairo', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
-    /* NAV */
     nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 16px 48px; background: rgba(0,0,0,0.92); border-bottom: 1px solid var(--red-border); backdrop-filter: blur(12px); }
     .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
     .nav-logo { height: 44px; width: auto; mix-blend-mode: lighten; }
-    .nav-title { display: none; }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 600; letter-spacing: 1px; transition: color 0.2s; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--red); }
 
-    /* HERO */
+    .lang-picker { position: relative; }
+    .lang-btn { background: var(--glass-bg); border: 1px solid var(--red-border); color: var(--text); padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 6px; transition: border-color 0.2s; }
+    .lang-btn:hover { border-color: var(--red); }
+    .lang-dropdown { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: #0e0e0e; border: 1px solid var(--red-border); border-radius: 8px; overflow: hidden; min-width: 140px; z-index: 200; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+    .lang-picker.open .lang-dropdown { display: block; }
+    .lang-option { display: block; width: 100%; text-align: start; padding: 9px 16px; font-size: 0.82rem; font-weight: 600; color: var(--muted); background: none; border: none; cursor: pointer; font-family: inherit; transition: background 0.15s, color 0.15s; }
+    .lang-option:hover { background: var(--red-dim); color: #fff; }
+    .lang-option.active { color: var(--red); }
+
     .blog-hero { padding: 80px 48px 60px; text-align: center; position: relative; }
     .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(100,0,25,0.35) 0%, transparent 70%); pointer-events: none; }
     .section-label { font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
     .blog-title { font-family: 'Oswald', sans-serif; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 16px; line-height: 1.1; }
     .blog-title span { color: var(--red); }
-    .blog-subtitle { color: var(--muted); font-size: 1rem; max-width: 560px; margin: 0 auto; line-height: 1.75; }
+    .blog-subtitle { color: var(--muted); font-size: 1rem; max-width: 580px; margin: 0 auto; line-height: 1.8; }
 
-    /* FILTERS */
     .filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; padding: 32px 48px 0; }
-    .filter-btn { background: var(--glass-bg); border: 1px solid var(--red-border); color: var(--muted); padding: 7px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: 'Cairo', sans-serif; transition: all 0.2s; }
+    .filter-btn { background: var(--glass-bg); border: 1px solid var(--red-border); color: var(--muted); padding: 7px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; }
     .filter-btn:hover, .filter-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
 
-    /* GRID */
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; max-width: 1200px; margin: 48px auto 80px; padding: 0 48px; }
+    .results-count { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 20px 0 0; }
 
-    /* CARD */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; max-width: 1200px; margin: 36px auto 80px; padding: 0 48px; }
+
     .card { background: var(--glass-bg); border: 1px solid var(--red-border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; cursor: pointer; text-decoration: none; color: inherit; }
     .card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(255,0,60,0.15); }
 
-    .card-cover { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .card-cover svg { width: 64px; height: 64px; opacity: 0.9; }
+    .card-cover { height: 175px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .card-cover svg { width: 58px; height: 58px; opacity: 0.9; position: relative; z-index: 1; }
     .card-cover::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, var(--glass-bg) 100%); }
 
-    .card-body { padding: 22px 24px 28px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+    .card-body { padding: 20px 22px 26px; flex: 1; display: flex; flex-direction: column; gap: 11px; }
     .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-    .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; color: var(--red); background: var(--red-dim); border: 1px solid var(--red-border); border-radius: 4px; padding: 2px 8px; }
-    .card-title { font-family: 'Oswald', sans-serif; font-size: 1.25rem; font-weight: 700; text-transform: uppercase; color: #fff; line-height: 1.3; flex: 1; }
-    .card-excerpt { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
-    .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--red-border); }
-    .card-date { font-size: 0.75rem; color: var(--muted); }
-    .card-read { font-size: 0.75rem; color: var(--red); font-weight: 700; }
-    .card-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--red); font-weight: 700; margin-top: 8px; transition: gap 0.2s; }
+    .tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; color: var(--red); background: var(--red-dim); border: 1px solid var(--red-border); border-radius: 4px; padding: 2px 7px; }
+    .card-title { font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 700; text-transform: uppercase; color: #fff; line-height: 1.3; flex: 1; }
+    .card-excerpt { color: var(--muted); font-size: 0.86rem; line-height: 1.72; }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--red-border); }
+    .card-date { font-size: 0.73rem; color: var(--muted); }
+    .card-read { font-size: 0.73rem; color: var(--red); font-weight: 700; }
+    .card-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--red); font-weight: 700; margin-top: 6px; transition: gap 0.2s; }
     .card:hover .card-arrow { gap: 10px; }
 
-    /* NEWSLETTER */
     .newsletter { max-width: 640px; margin: 0 auto 80px; padding: 0 48px; text-align: center; }
     .newsletter-box { background: var(--glass-bg); border: 1px solid var(--red-border); border-radius: var(--radius); padding: 40px 36px; }
     .newsletter-box h2 { font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 10px; }
@@ -80,7 +87,6 @@
     .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: #fff; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; font-family: 'Oswald', sans-serif; text-transform: uppercase; transition: opacity 0.2s, transform 0.2s; }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
 
-    /* FOOTER */
     footer { border-top: 1px solid var(--red-border); padding: 32px 40px; text-align: center; }
     .footer-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 12px 0; }
     .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
@@ -90,6 +96,8 @@
 
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: 0.78rem; letter-spacing: 0; }
       .blog-hero { padding: 60px 20px 40px; }
       .filters { padding: 24px 20px 0; }
       .blog-grid { grid-template-columns: 1fr; padding: 0 20px; gap: 20px; }
@@ -100,218 +108,413 @@
 <body>
 
 <nav>
-  <a href="ar.html" class="nav-brand">
+  <a href="ar.html" class="nav-brand" id="nav-home-link">
     <img src="./assets/logo.png" alt="The Frame" class="nav-logo">
-    <span class="nav-title">The Frame</span>
   </a>
-  <div class="nav-links">
-    <a href="blog.html" class="active">المدونة</a>
-    <a href="privacy.html">الخصوصية</a>
-    <a href="ar.html">← الرئيسية</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="blog.html" class="active" id="nav-blog">المدونة</a>
+      <a href="privacy.html" id="nav-privacy">الخصوصية</a>
+      <a href="ar.html" id="nav-main">← الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle">
+        <span id="lang-flag">🇸🇦</span>
+        <span id="lang-label">العربية</span>
+        <span>▾</span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="blog-hero">
-  <div class="section-label">المعرفة = القوة</div>
-  <h1 class="blog-title">مدونة <span>The Frame</span></h1>
-  <p class="blog-subtitle">ليس هدفك أن تُعجب النساء. هدفك أن تبني رجلاً يستحق الإعجاب. مقالات في بناء الذات، القيمة الحقيقية، والانضباط بلا أعذار.</p>
+  <div class="section-label" id="hero-label">المعرفة = القوة</div>
+  <h1 class="blog-title" id="hero-title">مدونة <span>The Frame</span></h1>
+  <p class="blog-subtitle" id="hero-subtitle">ليس هدفك أن تُعجب النساء. هدفك أن تبني رجلاً يستحق الإعجاب. مقالات في بناء الذات، القيمة الحقيقية، والانضباط بلا أعذار.</p>
 </div>
 
-<!-- FILTERS -->
-<div class="filters">
-  <button class="filter-btn active">الكل</button>
-  <button class="filter-btn">SMV</button>
-  <button class="filter-btn">الانضباط</button>
-  <button class="filter-btn">الإطار</button>
-  <button class="filter-btn">المال</button>
-  <button class="filter-btn">اللياقة</button>
-  <button class="filter-btn">المنطق</button>
-</div>
+<div class="filters" id="filters-container"></div>
+<div class="results-count" id="results-count"></div>
+<div class="blog-grid" id="blog-grid"></div>
 
-<!-- GRID -->
-<div class="blog-grid">
-
-  <!-- ARTICLE 1 -->
-  <a class="card" href="#smv-guide">
-    <div class="card-cover" style="background: linear-gradient(135deg, #0a0005 0%, #2a0010 50%, #000 100%);">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="28" stroke="#FF003C" stroke-width="2" opacity="0.3"/>
-        <path d="M32 12 L38 26 L54 28 L42 40 L46 56 L32 48 L18 56 L22 40 L10 28 L26 26 Z" fill="#FF003C" opacity="0.85"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag">SMV</span>
-        <span class="tag">بناء الذات</span>
-      </div>
-      <h2 class="card-title">SMV: ما هي القيمة السوقية وكيف تبنيها لنفسك لا للآخرين</h2>
-      <p class="card-excerpt">القيمة السوقية ليست لعبة لجذب النساء — إنها مقياس لمدى إتقانك لحياتك. تعلم الأعمدة الأربعة: الجسد، المال، الهوية، والتأثير الاجتماعي.</p>
-      <div class="card-meta">
-        <span class="card-date">يوليو 2026</span>
-        <span class="card-read">8 دقائق قراءة</span>
-      </div>
-      <span class="card-arrow">اقرأ المقال ←</span>
-    </div>
-  </a>
-
-  <!-- ARTICLE 2 -->
-  <a class="card" href="#discipline">
-    <div class="card-cover" style="background: linear-gradient(135deg, #000a00 0%, #001a08 50%, #000 100%);">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="12" y="8" width="40" height="48" rx="4" stroke="#FF003C" stroke-width="2" opacity="0.3"/>
-        <path d="M20 24 H44 M20 32 H38 M20 40 H32" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="44" cy="44" r="8" fill="#FF003C" opacity="0.85"/>
-        <path d="M41 44 L43 46 L47 42" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag">الانضباط</span>
-        <span class="tag">عقلية</span>
-      </div>
-      <h2 class="card-title">الانضباط ليس خياراً — هو الفرق الوحيد بين من تتمنى ومن تنجز</h2>
-      <p class="card-excerpt">الدافعية تنتهي. المشاعر تتقلب. الانضباط وحده ما يبقى. كيف تبني نظاماً يشتغل حتى يوم لا تريد فيه فعل شيء.</p>
-      <div class="card-meta">
-        <span class="card-date">يوليو 2026</span>
-        <span class="card-read">6 دقائق قراءة</span>
-      </div>
-      <span class="card-arrow">اقرأ المقال ←</span>
-    </div>
-  </a>
-
-  <!-- ARTICLE 3 -->
-  <a class="card" href="#frame-control">
-    <div class="card-cover" style="background: linear-gradient(135deg, #0a0000 0%, #200008 50%, #000 100%);">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="10" y="10" width="44" height="44" rx="4" stroke="#FF003C" stroke-width="2.5"/>
-        <rect x="20" y="20" width="24" height="24" rx="2" fill="#FF003C" opacity="0.2" stroke="#FF003C" stroke-width="1.5"/>
-        <circle cx="32" cy="32" r="6" fill="#FF003C" opacity="0.9"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag">الإطار</span>
-        <span class="tag">سيكولوجيا</span>
-      </div>
-      <h2 class="card-title">السيطرة على الإطار: فن عدم الاستجابة في عالم يريدك دائماً تفاعلاً</h2>
-      <p class="card-excerpt">الإطار هو واقعيتك المفروضة. من يفقد إطاره يعيش وفق قواعد غيره. كيف تثبّت إطارك في العلاقات والعمل والمواقف الضاغطة.</p>
-      <div class="card-meta">
-        <span class="card-date">يوليو 2026</span>
-        <span class="card-read">7 دقائق قراءة</span>
-      </div>
-      <span class="card-arrow">اقرأ المقال ←</span>
-    </div>
-  </a>
-
-  <!-- ARTICLE 4 -->
-  <a class="card" href="#fitness">
-    <div class="card-cover" style="background: linear-gradient(135deg, #050005 0%, #18001a 50%, #000 100%);">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 32 H16 L20 20 L28 44 L36 24 L40 36 L44 30 H56" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="32" cy="52" r="4" fill="#FF003C" opacity="0.6"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag">اللياقة</span>
-        <span class="tag">SMV</span>
-      </div>
-      <h2 class="card-title">الجسد الذي تبنيه هو رسالتك الصامتة — اللياقة كأساس لا كخيار</h2>
-      <p class="card-excerpt">الرجل الذي يسيطر على جسده يُشير إلى أنه يسيطر على حياته. الروتين، التغذية، والنوم ليست صحة — إنها هوية.</p>
-      <div class="card-meta">
-        <span class="card-date">يونيو 2026</span>
-        <span class="card-read">9 دقائق قراءة</span>
-      </div>
-      <span class="card-arrow">اقرأ المقال ←</span>
-    </div>
-  </a>
-
-  <!-- ARTICLE 5 -->
-  <a class="card" href="#financial">
-    <div class="card-cover" style="background: linear-gradient(135deg, #000800 0%, #001502 50%, #000 100%);">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 48 L12 36 L22 36 L22 48 M26 48 L26 28 L36 28 L36 48 M40 48 L40 18 L50 18 L50 48" fill="#FF003C" opacity="0.85"/>
-        <path d="M8 48 H56" stroke="#FF003C" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag">المال</span>
-        <span class="tag">حرية</span>
-      </div>
-      <h2 class="card-title">الاستقلال المالي: المال ليس هدفاً — هو أداة الحرية التي لا تُناقَش</h2>
-      <p class="card-excerpt">الرجل المعتمد مالياً على غيره ليس حراً. كيف تبني تدفقاً مالياً يمنحك الوقت والاختيار، لا مجرد مستوى معيشي أفضل.</p>
-      <div class="card-meta">
-        <span class="card-date">يونيو 2026</span>
-        <span class="card-read">10 دقائق قراءة</span>
-      </div>
-      <span class="card-arrow">اقرأ المقال ←</span>
-    </div>
-  </a>
-
-  <!-- ARTICLE 6 -->
-  <a class="card" href="#identity">
-    <div class="card-cover" style="background: linear-gradient(135deg, #030008 0%, #0a001a 50%, #000 100%);">
-      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="20" r="10" stroke="#FF003C" stroke-width="2.5"/>
-        <path d="M12 52 C12 40 52 40 52 52" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M26 20 L30 24 L38 16" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-tags">
-        <span class="tag">الهوية</span>
-        <span class="tag">المنطق</span>
-      </div>
-      <h2 class="card-title">هويتك ليست للنقاش — كيف تتوقف عن طلب الموافقة وتبدأ بالقيادة</h2>
-      <p class="card-excerpt">الرجل الذي يحتاج تأكيداً خارجياً يعيش في عبودية رأي الآخرين. بناء هوية راسخة يبدأ من الداخل، ويُقاس بالأفعال لا بالكلام.</p>
-      <div class="card-meta">
-        <span class="card-date">يونيو 2026</span>
-        <span class="card-read">7 دقائق قراءة</span>
-      </div>
-      <span class="card-arrow">اقرأ المقال ←</span>
-    </div>
-  </a>
-
-</div>
-
-<!-- NEWSLETTER / CTA -->
 <div class="newsletter">
   <div class="newsletter-box">
-    <h2>ابدأ التطبيق العملي</h2>
-    <p>المعرفة وحدها لا تبني رجالاً. استخدم The Frame للتشخيص الرصين وتحويل المعرفة إلى خطة عمل.</p>
-    <a href="ar.html#download" class="btn-primary">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/>
-      </svg>
-      تحميل التطبيق مجاناً
+    <h2 id="cta-title">ابدأ التطبيق العملي</h2>
+    <p id="cta-desc">المعرفة وحدها لا تبني رجالاً. استخدم The Frame للتشخيص الرصين وتحويل المعرفة إلى خطة عمل.</p>
+    <a href="ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل التطبيق مجاناً</span>
     </a>
-    <p class="newsletter-note">مجاني للبدء. بدون بطاقة ائتمان.</p>
+    <p class="newsletter-note" id="cta-note">مجاني للبدء. بدون بطاقة ائتمان.</p>
   </div>
 </div>
 
 <footer>
-  <p class="footer-logo">The Frame · مستشار علاقات بالذكاء الاصطناعي</p>
-  <div class="footer-links">
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links" id="footer-links">
     <a href="privacy.html">سياسة الخصوصية</a>
     <a href="terms.html">شروط الاستخدام</a>
     <a href="blog.html">المدونة</a>
     <a href="/app-ads.txt">app-ads.txt</a>
-    <a href="index.html">English</a>
   </div>
-  <p class="footer-copy">© <span class="current-year"></span> The Frame. جميع الحقوق محفوظة. theframeapp.site</p>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
 </footer>
 
 <script>
-  document.querySelectorAll('.filter-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
+const LANG_FLAGS = { ar:'🇸🇦', en:'🇺🇸', es:'🇪🇸', fr:'🇫🇷', hi:'🇮🇳' };
+const LANG_NAMES = { ar:'العربية', en:'English', es:'Español', fr:'Français', hi:'हिन्दी' };
+const LANGS = ['ar','en','es','fr','hi'];
+
+const UI = {
+  ar: {
+    dir:'rtl', font:"'Cairo',sans-serif",
+    heroLabel:'المعرفة = القوة',
+    heroTitle:'مدونة <span>The Frame</span>',
+    heroSubtitle:'ليس هدفك أن تُعجب النساء. هدفك أن تبني رجلاً يستحق الإعجاب. مقالات في بناء الذات، القيمة الحقيقية، والانضباط بلا أعذار.',
+    filterAll:'الكل',
+    cats:{ smv:'SMV', discipline:'الانضباط', frame:'الإطار', money:'المال', fitness:'اللياقة', logic:'المنطق' },
+    readMore:'اقرأ المقال ←', readTime:m=>`${m} دقائق قراءة`,
+    ctaTitle:'ابدأ التطبيق العملي',
+    ctaDesc:'المعرفة وحدها لا تبني رجالاً. استخدم The Frame للتشخيص الرصين وتحويل المعرفة إلى خطة عمل.',
+    ctaBtn:'تحميل التطبيق مجاناً', ctaNote:'مجاني للبدء. بدون بطاقة ائتمان.',
+    footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+    navBlog:'المدونة', navPrivacy:'الخصوصية', navHome:'← الرئيسية', navHomeHref:'ar.html',
+    footerPrivacy:'سياسة الخصوصية', footerTerms:'شروط الاستخدام', footerBlog:'المدونة',
+    showing:n=>`${n} مقالاً`
+  },
+  en: {
+    dir:'ltr', font:"'Oswald',sans-serif",
+    heroLabel:'KNOWLEDGE = POWER',
+    heroTitle:'The Frame <span>Blog</span>',
+    heroSubtitle:"Your goal isn't to impress women. Your goal is to build a man worth impressing. Articles on self-mastery, real value, and discipline without excuses.",
+    filterAll:'All',
+    cats:{ smv:'SMV', discipline:'Discipline', frame:'Frame', money:'Money', fitness:'Fitness', logic:'Logic' },
+    readMore:'Read Article →', readTime:m=>`${m} min read`,
+    ctaTitle:'START APPLYING',
+    ctaDesc:"Knowledge alone doesn't build men. Use The Frame for honest self-assessment and turning knowledge into a real action plan.",
+    ctaBtn:'Download Free', ctaNote:'Free to start. No credit card needed.',
+    footerCopy:'© 2026 The Frame. All rights reserved.',
+    navBlog:'Blog', navPrivacy:'Privacy', navHome:'Home →', navHomeHref:'index.html',
+    footerPrivacy:'Privacy Policy', footerTerms:'Terms of Use', footerBlog:'Blog',
+    showing:n=>`${n} articles`
+  },
+  es: {
+    dir:'ltr', font:"'Oswald',sans-serif",
+    heroLabel:'CONOCIMIENTO = PODER',
+    heroTitle:'Blog de <span>The Frame</span>',
+    heroSubtitle:'Tu objetivo no es impresionar a las mujeres. Tu objetivo es construir un hombre que valga la pena impresionar. Artículos sobre autodominio, valor real y disciplina sin excusas.',
+    filterAll:'Todos',
+    cats:{ smv:'SMV', discipline:'Disciplina', frame:'Marco', money:'Dinero', fitness:'Fitness', logic:'Lógica' },
+    readMore:'Leer artículo →', readTime:m=>`${m} min`,
+    ctaTitle:'EMPIEZA A APLICAR',
+    ctaDesc:'El conocimiento solo no construye hombres. Usa The Frame para un diagnóstico honesto y convierte el conocimiento en un plan de acción real.',
+    ctaBtn:'Descargar gratis', ctaNote:'Gratis para empezar. Sin tarjeta de crédito.',
+    footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+    navBlog:'Blog', navPrivacy:'Privacidad', navHome:'Inicio →', navHomeHref:'es.html',
+    footerPrivacy:'Política de Privacidad', footerTerms:'Términos de Uso', footerBlog:'Blog',
+    showing:n=>`${n} artículos`
+  },
+  fr: {
+    dir:'ltr', font:"'Oswald',sans-serif",
+    heroLabel:'CONNAISSANCE = POUVOIR',
+    heroTitle:'Blog <span>The Frame</span>',
+    heroSubtitle:"Votre objectif n'est pas d'impressionner les femmes. Votre objectif est de construire un homme qui mérite d'être impressionné. Articles sur la maîtrise de soi, la vraie valeur et la discipline sans excuses.",
+    filterAll:'Tous',
+    cats:{ smv:'SMV', discipline:'Discipline', frame:'Cadre', money:'Argent', fitness:'Fitness', logic:'Logique' },
+    readMore:"Lire l'article →", readTime:m=>`${m} min`,
+    ctaTitle:'COMMENCEZ À APPLIQUER',
+    ctaDesc:"La connaissance seule ne construit pas des hommes. Utilisez The Frame pour un diagnostic honnête et transformez la connaissance en plan d'action réel.",
+    ctaBtn:'Télécharger gratuitement', ctaNote:'Gratuit pour commencer. Sans carte de crédit.',
+    footerCopy:'© 2026 The Frame. Tous droits réservés.',
+    navBlog:'Blog', navPrivacy:'Confidentialité', navHome:'Accueil →', navHomeHref:'fr.html',
+    footerPrivacy:'Politique de Confidentialité', footerTerms:"Conditions d'utilisation", footerBlog:'Blog',
+    showing:n=>`${n} articles`
+  },
+  hi: {
+    dir:'ltr', font:"'Cairo',sans-serif",
+    heroLabel:'ज्ञान = शक्ति',
+    heroTitle:'The Frame <span>ब्लॉग</span>',
+    heroSubtitle:'आपका लक्ष्य महिलाओं को प्रभावित करना नहीं है। आपका लक्ष्य एक ऐसा पुरुष बनाना है जो प्रभावित होने योग्य हो। आत्म-निपुणता, वास्तविक मूल्य और बहाने के बिना अनुशासन पर लेख।',
+    filterAll:'सभी',
+    cats:{ smv:'SMV', discipline:'अनुशासन', frame:'फ्रेम', money:'पैसा', fitness:'फिटनेस', logic:'तर्क' },
+    readMore:'लेख पढ़ें →', readTime:m=>`${m} मिनट`,
+    ctaTitle:'अभी शुरू करें',
+    ctaDesc:'केवल ज्ञान से पुरुष नहीं बनते। The Frame का उपयोग करें ईमानदार आत्म-मूल्यांकन के लिए।',
+    ctaBtn:'मुफ्त डाउनलोड करें', ctaNote:'शुरू करने के लिए मुफ्त।',
+    footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+    navBlog:'ब्लॉग', navPrivacy:'गोपनीयता', navHome:'होम →', navHomeHref:'hi.html',
+    footerPrivacy:'गोपनीयता नीति', footerTerms:'उपयोग की शर्तें', footerBlog:'ब्लॉग',
+    showing:n=>`${n} लेख`
+  }
+};
+
+const IC = {
+  smv1:`<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="#FF003C" stroke-width="2" opacity="0.3"/><path d="M32 12 L38 26 L54 28 L42 40 L46 56 L32 48 L18 56 L22 40 L10 28 L26 26 Z" fill="#FF003C" opacity="0.85"/></svg>`,
+  smv2:`<svg viewBox="0 0 64 64" fill="none"><rect x="10" y="44" width="10" height="12" fill="#FF003C" opacity="0.85"/><rect x="24" y="34" width="10" height="22" fill="#FF003C" opacity="0.7"/><rect x="38" y="22" width="10" height="34" fill="#FF003C" opacity="0.85"/><path d="M8 52 H56" stroke="#FF003C" stroke-width="1.5" opacity="0.4"/><path d="M14 30 L28 24 L42 16" stroke="#FF003C" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/></svg>`,
+  smv3:`<svg viewBox="0 0 64 64" fill="none"><ellipse cx="32" cy="32" rx="22" ry="14" stroke="#FF003C" stroke-width="2" opacity="0.5"/><circle cx="32" cy="32" r="7" fill="#FF003C" opacity="0.85"/><circle cx="32" cy="32" r="3" fill="#fff" opacity="0.6"/></svg>`,
+  smv4:`<svg viewBox="0 0 64 64" fill="none"><circle cx="22" cy="26" r="12" stroke="#FF003C" stroke-width="2" opacity="0.6"/><circle cx="42" cy="38" r="12" stroke="#FF003C" stroke-width="2" opacity="0.3"/><path d="M22 26 L42 38" stroke="#FF003C" stroke-width="2" stroke-dasharray="4 2"/><circle cx="22" cy="26" r="4" fill="#FF003C" opacity="0.8"/><circle cx="42" cy="38" r="4" fill="#FF003C" opacity="0.4"/></svg>`,
+  disc1:`<svg viewBox="0 0 64 64" fill="none"><rect x="12" y="8" width="40" height="48" rx="4" stroke="#FF003C" stroke-width="2" opacity="0.3"/><path d="M20 24 H44 M20 32 H38 M20 40 H32" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round"/><circle cx="44" cy="44" r="8" fill="#FF003C" opacity="0.85"/><path d="M41 44 L43 46 L47 42" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  disc2:`<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="28" r="14" stroke="#FF003C" stroke-width="2" opacity="0.5"/><path d="M32 14 L32 10 M32 46 L32 42 M18 28 L14 28 M50 28 L46 28" stroke="#FF003C" stroke-width="2" stroke-linecap="round"/><path d="M20 48 L56 48 M16 56 L20 48 M48 56 L44 48" stroke="#FF003C" stroke-width="2" stroke-linecap="round" opacity="0.4"/></svg>`,
+  disc3:`<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="24" stroke="#FF003C" stroke-width="2" opacity="0.3"/><line x1="20" y1="20" x2="44" y2="44" stroke="#FF003C" stroke-width="3" stroke-linecap="round"/><line x1="44" y1="20" x2="20" y2="44" stroke="#FF003C" stroke-width="3" stroke-linecap="round" opacity="0.5"/></svg>`,
+  disc4:`<svg viewBox="0 0 64 64" fill="none"><circle cx="16" cy="32" r="6" fill="#FF003C" opacity="0.7"/><circle cx="32" cy="32" r="6" fill="#FF003C" opacity="0.85"/><circle cx="48" cy="32" r="6" fill="#FF003C" opacity="0.7"/><path d="M22 32 H26 M38 32 H42" stroke="#FF003C" stroke-width="3" stroke-linecap="round"/></svg>`,
+  frame1:`<svg viewBox="0 0 64 64" fill="none"><rect x="10" y="10" width="44" height="44" rx="4" stroke="#FF003C" stroke-width="2.5"/><rect x="20" y="20" width="24" height="24" rx="2" fill="#FF003C" opacity="0.2" stroke="#FF003C" stroke-width="1.5"/><circle cx="32" cy="32" r="6" fill="#FF003C" opacity="0.9"/></svg>`,
+  frame2:`<svg viewBox="0 0 64 64" fill="none"><circle cx="22" cy="28" r="10" stroke="#FF003C" stroke-width="2" opacity="0.6"/><circle cx="42" cy="28" r="10" stroke="#FF003C" stroke-width="2" opacity="0.4"/><path d="M29 22 Q32 28 35 22" stroke="#FF003C" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 48 C14 38 30 38 30 48 M34 48 C34 38 50 38 50 48" stroke="#FF003C" stroke-width="2" stroke-linecap="round"/></svg>`,
+  frame3:`<svg viewBox="0 0 64 64" fill="none"><path d="M20 24 C20 18 24 14 32 14 C40 14 44 18 44 24 L44 34 C44 40 40 44 32 44 C24 44 20 40 20 34 Z" stroke="#FF003C" stroke-width="2" opacity="0.6" fill="none"/><path d="M32 44 L32 52 M24 52 L40 52" stroke="#FF003C" stroke-width="2" stroke-linecap="round" opacity="0.4"/><line x1="8" y1="8" x2="56" y2="56" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/></svg>`,
+  frame4:`<svg viewBox="0 0 64 64" fill="none"><path d="M32 8 L54 20 L54 44 L32 56 L10 44 L10 20 Z" stroke="#FF003C" stroke-width="2" opacity="0.4" fill="none"/><path d="M32 18 L46 26 L46 42 L32 50 L18 42 L18 26 Z" fill="#FF003C" opacity="0.12" stroke="#FF003C" stroke-width="1.5"/><circle cx="32" cy="34" r="8" fill="#FF003C" opacity="0.85"/><path d="M28 34 L31 37 L36 30" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  money1:`<svg viewBox="0 0 64 64" fill="none"><path d="M12 48 L12 36 L22 36 L22 48 M26 48 L26 28 L36 28 L36 48 M40 48 L40 18 L50 18 L50 48" fill="#FF003C" opacity="0.85"/><path d="M8 48 H56" stroke="#FF003C" stroke-width="2" stroke-linecap="round"/></svg>`,
+  money2:`<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="16" r="8" stroke="#FF003C" stroke-width="2" opacity="0.7"/><circle cx="12" cy="48" r="8" stroke="#FF003C" stroke-width="2" opacity="0.5"/><circle cx="52" cy="48" r="8" stroke="#FF003C" stroke-width="2" opacity="0.5"/><path d="M26 22 L18 42 M38 22 L46 42" stroke="#FF003C" stroke-width="2" stroke-dasharray="4 2"/><circle cx="32" cy="16" r="3" fill="#FF003C"/></svg>`,
+  money3:`<svg viewBox="0 0 64 64" fill="none"><path d="M10 44 Q22 32 32 36 Q42 40 54 16" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.85"/><circle cx="54" cy="16" r="4" fill="#FF003C" opacity="0.85"/><path d="M10 54 H54 M10 44 L10 54" stroke="#FF003C" stroke-width="1.5" opacity="0.3"/></svg>`,
+  money4:`<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="28" r="16" stroke="#FF003C" stroke-width="2" opacity="0.4"/><path d="M24 28 C24 22 28 18 32 18 C36 18 40 22 40 28" stroke="#FF003C" stroke-width="2" stroke-linecap="round" fill="none"/><line x1="32" y1="18" x2="32" y2="12" stroke="#FF003C" stroke-width="2"/><text x="29" y="52" font-size="16" fill="#FF003C" opacity="0.8" font-weight="bold">$</text></svg>`,
+  fit1:`<svg viewBox="0 0 64 64" fill="none"><path d="M8 32 H16 L20 20 L28 44 L36 24 L40 36 L44 30 H56" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="52" r="4" fill="#FF003C" opacity="0.6"/></svg>`,
+  fit2:`<svg viewBox="0 0 64 64" fill="none"><rect x="6" y="28" width="8" height="8" rx="2" fill="#FF003C" opacity="0.7"/><rect x="50" y="28" width="8" height="8" rx="2" fill="#FF003C" opacity="0.7"/><rect x="14" y="24" width="6" height="16" rx="2" fill="#FF003C" opacity="0.5"/><rect x="44" y="24" width="6" height="16" rx="2" fill="#FF003C" opacity="0.5"/><rect x="20" y="30" width="24" height="4" rx="2" fill="#FF003C" opacity="0.9"/></svg>`,
+  fit3:`<svg viewBox="0 0 64 64" fill="none"><path d="M38 12 C30 12 18 20 18 32 C18 44 26 52 38 52 C50 52 58 44 58 32 C52 38 40 36 36 28 C32 20 34 14 38 12 Z" fill="#FF003C" opacity="0.2" stroke="#FF003C" stroke-width="2"/><circle cx="44" cy="22" r="3" fill="#FF003C" opacity="0.8"/><circle cx="50" cy="28" r="2" fill="#FF003C" opacity="0.5"/></svg>`,
+  logic1:`<svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="20" r="10" stroke="#FF003C" stroke-width="2.5"/><path d="M12 52 C12 40 52 40 52 52" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round"/><path d="M26 20 L30 24 L38 16" stroke="#FF003C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+};
+
+const ARTICLES = [
+  { id:'smv-basics',      cat:'smv',        readTime:10, cover:'linear-gradient(135deg,#0a0005 0%,#2a0010 50%,#000 100%)', icon:IC.smv1,
+    ar:{ title:'دليل SMV الشامل: ما هي القيمة السوقية وكيف تبنيها من الصفر', excerpt:'القيمة السوقية ليست لعبة لجذب النساء — إنها مقياس لمدى إتقانك لحياتك. الأعمدة الأربعة ومنهجية بناء القيمة الحقيقية.', tags:['SMV','بناء الذات'], date:'يوليو 2026' },
+    en:{ title:'The Complete SMV Guide: What Is Market Value and How to Build It', excerpt:'Market value is not about attracting women — it is a measure of how well you master your life. The four pillars and methodology.', tags:['SMV','Self-Development'], date:'July 2026' },
+    es:{ title:'La guía completa de SMV: Qué es el valor de mercado y cómo construirlo', excerpt:'El valor de mercado no es un juego para atraer mujeres — es una medida de cuánto dominas tu vida.', tags:['SMV','Desarrollo'], date:'Julio 2026' },
+    fr:{ title:"Le guide complet du SMV: Qu'est-ce que la valeur marchande et comment la construire", excerpt:"La valeur marchande n'est pas un jeu pour attirer les femmes — c'est une mesure de votre maîtrise de la vie.", tags:['SMV','Développement'], date:'Juillet 2026' },
+    hi:{ title:'SMV की पूरी गाइड: बाजार मूल्य क्या है और इसे कैसे बनाएं', excerpt:'बाजार मूल्य महिलाओं को आकर्षित करने का खेल नहीं — यह आपकी जीवन निपुणता का माप है।', tags:['SMV','आत्म-विकास'], date:'जुलाई 2026' } },
+
+  { id:'smv-pillars',     cat:'smv',        readTime:12, cover:'linear-gradient(135deg,#0d0005 0%,#350015 50%,#000 100%)', icon:IC.smv2,
+    ar:{ title:'الأعمدة الأربعة للـ SMV: المنهجية الكاملة لتعظيم قيمتك كرجل', excerpt:'المظهر، المال، الوضع الاجتماعي، والشخصية — أربعة أعمدة تحدد قيمتك السوقية. كيف تبني كل عمود بشكل منهجي.', tags:['SMV','استراتيجية'], date:'يوليو 2026' },
+    en:{ title:'The 4 Pillars of SMV: Complete Methodology to Maximize Your Value as a Man', excerpt:'Appearance, wealth, status, and personality — four pillars defining your market value. How to build each pillar systematically.', tags:['SMV','Strategy'], date:'July 2026' },
+    es:{ title:'Los 4 pilares del SMV: Metodología completa para maximizar tu valor', excerpt:'Apariencia, riqueza, estatus y personalidad — cuatro pilares que definen tu valor de mercado.', tags:['SMV','Estrategia'], date:'Julio 2026' },
+    fr:{ title:'Les 4 piliers du SMV: Méthodologie complète pour maximiser votre valeur', excerpt:'Apparence, richesse, statut et personnalité — quatre piliers qui définissent votre valeur marchande.', tags:['SMV','Stratégie'], date:'Juillet 2026' },
+    hi:{ title:'SMV के 4 स्तंभ: अपना मूल्य अधिकतम करने की पूरी पद्धति', excerpt:'रूप, धन, स्थान और व्यक्तित्व — चार स्तंभ जो आपके बाजार मूल्य को परिभाषित करते हैं।', tags:['SMV','रणनीति'], date:'जुलाई 2026' } },
+
+  { id:'smv-perception',  cat:'smv',        readTime:8,  cover:'linear-gradient(135deg,#08000a 0%,#200025 50%,#000 100%)', icon:IC.smv3,
+    ar:{ title:'الانطباع الأول وسراب الكلمات: كيف تُقيَّم في 7 ثوانٍ لا أكثر', excerpt:'الدراسات تثبت أن الآخرين يحكمون عليك في أقل من سبع ثوانٍ. لغة الجسد، الوقفة، والصوت تقول ما تعجز الكلمات عنه.', tags:['SMV','سيكولوجيا'], date:'يوليو 2026' },
+    en:{ title:'First Impressions: How You Are Judged in 7 Seconds or Less', excerpt:'Studies prove others judge you in less than seven seconds. Body language, posture, and voice say what words cannot.', tags:['SMV','Psychology'], date:'July 2026' },
+    es:{ title:'Primera impresión: Cómo te juzgan en 7 segundos o menos', excerpt:'Los estudios demuestran que otros te juzgan en menos de siete segundos.', tags:['SMV','Psicología'], date:'Julio 2026' },
+    fr:{ title:'Première impression: Comment vous êtes jugé en 7 secondes ou moins', excerpt:'Les études prouvent que les autres vous jugent en moins de sept secondes.', tags:['SMV','Psychologie'], date:'Juillet 2026' },
+    hi:{ title:'पहली छाप: 7 सेकंड या उससे कम में आपका मूल्यांकन', excerpt:'अध्ययन साबित करते हैं कि दूसरे सात सेकंड से कम में आपको आंकते हैं।', tags:['SMV','मनोविज्ञान'], date:'जुलाई 2026' } },
+
+  { id:'smv-gap',         cat:'smv',        readTime:9,  cover:'linear-gradient(135deg,#0a0202 0%,#250a0a 50%,#000 100%)', icon:IC.smv4,
+    ar:{ title:'فجوة القيمة: لماذا ما تراه في نفسك ليس ما يراه الآخرون فيك', excerpt:'أغلب الرجال يبالغون في تقدير قيمتهم أو يستهينون بها. كيف تُجري تقييماً صادقاً وتُغلق الفجوة بين الإدراك والواقع.', tags:['SMV','وعي ذاتي'], date:'يونيو 2026' },
+    en:{ title:'The Value Gap: Why What You See in Yourself Differs from What Others See', excerpt:'Most men overestimate or underestimate their value. How to do an honest self-assessment and close the gap between perception and reality.', tags:['SMV','Self-Awareness'], date:'June 2026' },
+    es:{ title:'La brecha de valor: Por qué lo que ves en ti difiere de lo que ven los demás', excerpt:'La mayoría de los hombres sobreestiman o subestiman su valor.', tags:['SMV','Autoconciencia'], date:'Junio 2026' },
+    fr:{ title:"L'écart de valeur: Pourquoi ce que vous voyez en vous diffère de ce que les autres voient", excerpt:'La plupart des hommes surestiment ou sous-estiment leur valeur.', tags:['SMV','Conscience de soi'], date:'Juin 2026' },
+    hi:{ title:'मूल्य अंतर: आप अपने बारे में जो देखते हैं वह दूसरे क्यों नहीं देखते', excerpt:'अधिकांश पुरुष अपने मूल्य को अधिक या कम आंकते हैं।', tags:['SMV','आत्म-जागरूकता'], date:'जून 2026' } },
+
+  { id:'discipline-system',cat:'discipline', readTime:7,  cover:'linear-gradient(135deg,#000a15 0%,#001a30 50%,#000 100%)', icon:IC.disc1,
+    ar:{ title:'الانضباط كنظام لا كشعور: الطريقة الوحيدة التي تنجح دائماً', excerpt:'الدافعية تنتهي. المشاعر تتقلب. الانضباط وحده ما يبقى. كيف تبني نظاماً يشتغل حتى يوم لا تريد فيه فعل شيء.', tags:['الانضباط','عقلية'], date:'يوليو 2026' },
+    en:{ title:'Discipline as a System, Not a Feeling: The Only Method That Always Works', excerpt:'Motivation ends. Feelings fluctuate. Only discipline remains. How to build a system that works even on days you want to do nothing.', tags:['Discipline','Mindset'], date:'July 2026' },
+    es:{ title:'La disciplina como sistema, no como sentimiento: El único método que siempre funciona', excerpt:'La motivación termina. Los sentimientos fluctúan. Solo la disciplina permanece.', tags:['Disciplina','Mentalidad'], date:'Julio 2026' },
+    fr:{ title:'La discipline comme système, pas comme sentiment: La seule méthode qui fonctionne toujours', excerpt:'La motivation prend fin. Les sentiments fluctuent. Seule la discipline reste.', tags:['Discipline','Mentalité'], date:'Juillet 2026' },
+    hi:{ title:'अनुशासन एक प्रणाली है, भावना नहीं: एकमात्र तरीका जो हमेशा काम करता है', excerpt:'प्रेरणा समाप्त होती है। भावनाएं बदलती हैं। केवल अनुशासन ही बचता है।', tags:['अनुशासन','मानसिकता'], date:'जुलाई 2026' } },
+
+  { id:'discipline-morning',cat:'discipline',readTime:8,  cover:'linear-gradient(135deg,#000810 0%,#001525 50%,#000 100%)', icon:IC.disc2,
+    ar:{ title:'روتين الصباح المنتج: أول 90 دقيقة تحدد بقية يومك كله', excerpt:'الساعات الأولى من اليوم هي الأقوى والأهدأ. كيف تصمم روتين صباحي يمنحك ميزة تنافسية وتركيزاً لا يُضاهى.', tags:['الانضباط','إنتاجية'], date:'يوليو 2026' },
+    en:{ title:'The Productive Morning Routine: First 90 Minutes Define Your Entire Day', excerpt:'The first hours of the day are the most powerful and peaceful. How to design a morning routine that gives you a competitive edge.', tags:['Discipline','Productivity'], date:'July 2026' },
+    es:{ title:'La rutina matutina productiva: Los primeros 90 minutos definen todo tu día', excerpt:'Las primeras horas del día son las más poderosas y tranquilas.', tags:['Disciplina','Productividad'], date:'Julio 2026' },
+    fr:{ title:'La routine matinale productive: Les 90 premières minutes définissent votre journée', excerpt:'Les premières heures de la journée sont les plus puissantes et les plus paisibles.', tags:['Discipline','Productivité'], date:'Juillet 2026' },
+    hi:{ title:'उत्पादक सुबह की दिनचर्या: पहले 90 मिनट आपका पूरा दिन तय करते हैं', excerpt:'दिन के पहले घंटे सबसे शक्तिशाली और शांत होते हैं।', tags:['अनुशासन','उत्पादकता'], date:'जुलाई 2026' } },
+
+  { id:'discipline-no-excuses',cat:'discipline',readTime:6,cover:'linear-gradient(135deg,#050010 0%,#120030 50%,#000 100%)', icon:IC.disc3,
+    ar:{ title:'لا أعذار: فلسفة المساءلة الذاتية التي تُغير كل شيء في حياتك', excerpt:'كل عذر هو اتفاق مع العجز. كيف تتبنى فلسفة المساءلة الذاتية التي تحولك من ضحية الظروف إلى صانع النتائج.', tags:['الانضباط','عقلية'], date:'يونيو 2026' },
+    en:{ title:'No Excuses: The Self-Accountability Philosophy That Changes Everything', excerpt:'Every excuse is an agreement with failure. How to adopt self-accountability and transform from victim to result-maker.', tags:['Discipline','Mindset'], date:'June 2026' },
+    es:{ title:'Sin excusas: La filosofía de autoresponsabilidad que cambia todo', excerpt:'Cada excusa es un acuerdo con el fracaso.', tags:['Disciplina','Mentalidad'], date:'Junio 2026' },
+    fr:{ title:"Pas d'excuses: La philosophie de responsabilité personnelle qui change tout", excerpt:"Chaque excuse est un accord avec l'échec.", tags:['Discipline','Mentalité'], date:'Juin 2026' },
+    hi:{ title:'कोई बहाना नहीं: आत्म-जवाबदेही दर्शन जो सब कुछ बदलता है', excerpt:'हर बहाना विफलता के साथ एक समझौता है।', tags:['अनुशासन','मानसिकता'], date:'जून 2026' } },
+
+  { id:'discipline-habits',cat:'discipline', readTime:10, cover:'linear-gradient(135deg,#000510 0%,#001020 50%,#000 100%)', icon:IC.disc4,
+    ar:{ title:'العادات الذرية: كيف تبني هوية جديدة عبر التغييرات الصغيرة المتراكمة', excerpt:'التغيير الجوهري لا يأتي من الإرادة الضخمة بل من التراكم الصغير. كيف تستخدم الهوية بدلاً من الأهداف لبناء عادات لا تنكسر.', tags:['الانضباط','عادات'], date:'يونيو 2026' },
+    en:{ title:'Atomic Habits: How to Build a New Identity Through Small Accumulated Changes', excerpt:'Real change comes not from massive willpower but from small accumulation. How to use identity instead of goals to build unbreakable habits.', tags:['Discipline','Habits'], date:'June 2026' },
+    es:{ title:'Hábitos atómicos: Cómo construir una nueva identidad a través de pequeños cambios acumulados', excerpt:'El cambio real no viene de una fuerza de voluntad masiva sino de una pequeña acumulación.', tags:['Disciplina','Hábitos'], date:'Junio 2026' },
+    fr:{ title:'Habitudes atomiques: Comment construire une nouvelle identité grâce à de petits changements accumulés', excerpt:"Le vrai changement ne vient pas d'une volonté massive mais d'une petite accumulation.", tags:['Discipline','Habitudes'], date:'Juin 2026' },
+    hi:{ title:'परमाणु आदतें: छोटे संचित बदलावों से नई पहचान कैसे बनाएं', excerpt:'वास्तविक परिवर्तन विशाल इच्छाशक्ति से नहीं बल्कि छोटे संचय से आता है।', tags:['अनुशासन','आदतें'], date:'जून 2026' } },
+
+  { id:'frame-control',   cat:'frame',      readTime:8,  cover:'linear-gradient(135deg,#0a0000 0%,#200008 50%,#000 100%)', icon:IC.frame1,
+    ar:{ title:'السيطرة على الإطار: الأساس الذي يحدد من تكون في عيون الآخرين', excerpt:'الإطار هو واقعيتك المفروضة. من يفقد إطاره يعيش وفق قواعد غيره. كيف تثبّت إطارك في العلاقات والعمل والمواقف الضاغطة.', tags:['الإطار','سيكولوجيا'], date:'يوليو 2026' },
+    en:{ title:"Frame Control: The Foundation That Defines Who You Are in Others' Eyes", excerpt:"Frame is your imposed reality. Whoever loses their frame lives by others' rules. How to anchor your frame in all situations.", tags:['Frame','Psychology'], date:'July 2026' },
+    es:{ title:'Control del marco: La base que define quién eres en los ojos de los demás', excerpt:'El marco es tu realidad impuesta. Quien pierde su marco vive según las reglas de otros.', tags:['Marco','Psicología'], date:'Julio 2026' },
+    fr:{ title:'Contrôle du cadre: La base qui définit qui vous êtes aux yeux des autres', excerpt:"Le cadre est votre réalité imposée. Celui qui perd son cadre vit selon les règles des autres.", tags:['Cadre','Psychologie'], date:'Juillet 2026' },
+    hi:{ title:'फ्रेम नियंत्रण: वह आधार जो दूसरों की नजर में आपकी पहचान तय करता है', excerpt:'फ्रेम आपकी थोपी गई वास्तविकता है। जो अपना फ्रेम खो देता है वह दूसरों के नियमों के अनुसार जीता है।', tags:['फ्रेम','मनोविज्ञान'], date:'जुलाई 2026' } },
+
+  { id:'frame-relationships',cat:'frame',   readTime:9,  cover:'linear-gradient(135deg,#0c0003 0%,#280008 50%,#000 100%)', icon:IC.frame2,
+    ar:{ title:'الإطار في العلاقات العاطفية: كيف تحتفظ بنفسك بينما تحب الآخرين', excerpt:'فقدان الإطار في العلاقات هو السبب الحقيقي وراء التراجع الجذاب والتبعية العاطفية. كيف تحب بقوة دون أن تنسى نفسك.', tags:['الإطار','علاقات'], date:'يونيو 2026' },
+    en:{ title:'Frame in Romantic Relationships: How to Keep Yourself While Loving Others', excerpt:"Losing frame in relationships is the real reason behind attraction decline and emotional dependency. How to love powerfully without losing yourself.", tags:['Frame','Relationships'], date:'June 2026' },
+    es:{ title:'El marco en las relaciones románticas: Cómo mantenerte mientras amas a otros', excerpt:'Perder el marco en las relaciones es la razón real detrás del declive de la atracción.', tags:['Marco','Relaciones'], date:'Junio 2026' },
+    fr:{ title:'Le cadre dans les relations romantiques: Comment vous maintenir en aimant les autres', excerpt:"Perdre le cadre dans les relations est la vraie raison du déclin de l'attrait.", tags:['Cadre','Relations'], date:'Juin 2026' },
+    hi:{ title:'रोमांटिक रिश्तों में फ्रेम: दूसरों से प्यार करते हुए खुद को कैसे बनाए रखें', excerpt:'रिश्तों में फ्रेम खोना आकर्षण में गिरावट का असली कारण है।', tags:['फ्रेम','रिश्ते'], date:'जून 2026' } },
+
+  { id:'frame-silence',   cat:'frame',      readTime:7,  cover:'linear-gradient(135deg,#060002 0%,#180005 50%,#000 100%)', icon:IC.frame3,
+    ar:{ title:'قوة الصمت: لماذا الرجل القوي لا يشرح نفسه ولا يبرر قراراته', excerpt:'الحاجة إلى الشرح والتبرير دليل على الضعف الداخلي. كيف يُصبح الصمت سلاحاً استراتيجياً يمنحك القوة والهيبة.', tags:['الإطار','قوة'], date:'يونيو 2026' },
+    en:{ title:'The Power of Silence: Why a Strong Man Never Explains or Justifies Himself', excerpt:'The need to explain and justify is evidence of internal weakness. How silence becomes a strategic weapon giving you power and authority.', tags:['Frame','Power'], date:'June 2026' },
+    es:{ title:'El poder del silencio: Por qué un hombre fuerte nunca se explica', excerpt:'La necesidad de explicar y justificar es evidencia de debilidad interna.', tags:['Marco','Poder'], date:'Junio 2026' },
+    fr:{ title:"Le pouvoir du silence: Pourquoi un homme fort ne s'explique jamais", excerpt:"Le besoin d'expliquer et de justifier est une preuve de faiblesse interne.", tags:['Cadre','Pouvoir'], date:'Juin 2026' },
+    hi:{ title:'मौन की शक्ति: एक मजबूत पुरुष खुद को क्यों नहीं समझाता', excerpt:'समझाने और उचित ठहराने की जरूरत आंतरिक कमजोरी का सबूत है।', tags:['फ्रेम','शक्ति'], date:'जून 2026' } },
+
+  { id:'frame-antifragile',cat:'frame',     readTime:11, cover:'linear-gradient(135deg,#050005 0%,#140010 50%,#000 100%)', icon:IC.frame4,
+    ar:{ title:'الرجل غير القابل للكسر: كيف تتحول الأزمات والهزائم إلى وقود للنمو', excerpt:'الأزمات لا تكسر الرجل الحقيقي — تبنيه. مفهوم مضاد الهشاشة وكيف تخرج أقوى من كل صدمة وكل خسارة.', tags:['الإطار','مرونة'], date:'مايو 2026' },
+    en:{ title:'The Unbreakable Man: How Crises and Defeats Become Fuel for Growth', excerpt:"Crises don't break the real man — they build him. The antifragility concept and how to grow stronger from every shock and every loss.", tags:['Frame','Resilience'], date:'May 2026' },
+    es:{ title:'El hombre inquebrantable: Cómo las crisis se convierten en combustible para el crecimiento', excerpt:'Las crisis no rompen al hombre real — lo construyen.', tags:['Marco','Resiliencia'], date:'Mayo 2026' },
+    fr:{ title:"L'homme indestructible: Comment les crises deviennent du carburant pour la croissance", excerpt:"Les crises ne brisent pas l'homme réel — elles le construisent.", tags:['Cadre','Résilience'], date:'Mai 2026' },
+    hi:{ title:'अटूट पुरुष: संकट और हार विकास के ईंधन में कैसे बदलते हैं', excerpt:'संकट वास्तविक पुरुष को नहीं तोड़ते — वे उसे बनाते हैं।', tags:['फ्रेम','लचीलापन'], date:'मई 2026' } },
+
+  { id:'money-freedom',   cat:'money',      readTime:10, cover:'linear-gradient(135deg,#000800 0%,#001502 50%,#000 100%)', icon:IC.money1,
+    ar:{ title:'الاستقلال المالي: المال ليس الهدف بل أداة الحرية التي لا تُناقَش', excerpt:'الرجل المعتمد مالياً على غيره ليس حراً. كيف تبني تدفقاً مالياً يمنحك الوقت والاختيار، لا مجرد مستوى معيشي أفضل.', tags:['المال','حرية'], date:'يونيو 2026' },
+    en:{ title:'Financial Independence: Money Is Not the Goal — It Is the Tool of True Freedom', excerpt:'A man who depends financially on others is not free. How to build a financial flow that gives you time and choice, not just a better lifestyle.', tags:['Money','Freedom'], date:'June 2026' },
+    es:{ title:'Independencia financiera: El dinero no es el objetivo sino la herramienta de la libertad', excerpt:'Un hombre que depende financieramente de otros no es libre.', tags:['Dinero','Libertad'], date:'Junio 2026' },
+    fr:{ title:"L'indépendance financière: L'argent n'est pas le but mais l'outil de la vraie liberté", excerpt:"Un homme qui dépend financièrement des autres n'est pas libre.", tags:['Argent','Liberté'], date:'Juin 2026' },
+    hi:{ title:'वित्तीय स्वतंत्रता: पैसा लक्ष्य नहीं, सच्ची स्वतंत्रता का साधन है', excerpt:'जो पुरुष दूसरों पर आर्थिक रूप से निर्भर है वह स्वतंत्र नहीं है।', tags:['पैसा','स्वतंत्रता'], date:'जून 2026' } },
+
+  { id:'money-income',    cat:'money',      readTime:9,  cover:'linear-gradient(135deg,#000a02 0%,#001805 50%,#000 100%)', icon:IC.money2,
+    ar:{ title:'قاعدة التدفقات المتعددة: لماذا الاعتماد على مصدر دخل واحد انتحار مالي بطيء', excerpt:'الراتب الوحيد وهم الأمان. كيف تبني ثلاثة مصادر دخل على الأقل لتحقيق الحماية الحقيقية وتسريع بناء الثروة.', tags:['المال','دخل'], date:'مايو 2026' },
+    en:{ title:'The Multiple Streams Rule: Why Depending on One Income Source Is Slow Financial Suicide', excerpt:'A single salary is the illusion of security. How to build at least three income sources to achieve real financial protection.', tags:['Money','Income'], date:'May 2026' },
+    es:{ title:'La regla de múltiples flujos: Por qué depender de una sola fuente de ingresos es suicidio financiero', excerpt:'Un solo salario es la ilusión de seguridad.', tags:['Dinero','Ingresos'], date:'Mayo 2026' },
+    fr:{ title:"La règle des flux multiples: Pourquoi dépendre d'une source de revenus est un suicide financier", excerpt:"Un seul salaire est l'illusion de la sécurité.", tags:['Argent','Revenus'], date:'Mai 2026' },
+    hi:{ title:'एकाधिक धाराओं का नियम: एक आय स्रोत पर निर्भरता वित्तीय आत्महत्या क्यों है', excerpt:'एकल वेतन सुरक्षा का भ्रम है।', tags:['पैसा','आय'], date:'मई 2026' } },
+
+  { id:'money-investing',  cat:'money',     readTime:12, cover:'linear-gradient(135deg,#000602 0%,#001204 50%,#000 100%)', icon:IC.money3,
+    ar:{ title:'الاستثمار للمبتدئ: ابدأ بمئة دولار وابنِ ثروة حقيقية على المدى البعيد', excerpt:'الاستثمار ليس حكراً على الأثرياء. كيف تبدأ بمبلغ صغير وتستخدم قوة الفائدة المركبة لبناء ثروة تدوم عقوداً.', tags:['المال','استثمار'], date:'مايو 2026' },
+    en:{ title:'Investing for Beginners: Start with $100 and Build Real Long-Term Wealth', excerpt:'Investing is not exclusive to the rich. How to start small and use the power of compound interest to build wealth that lasts decades.', tags:['Money','Investing'], date:'May 2026' },
+    es:{ title:'Inversión para principiantes: Comienza con $100 y construye riqueza real a largo plazo', excerpt:'Invertir no es exclusivo para los ricos.', tags:['Dinero','Inversión'], date:'Mayo 2026' },
+    fr:{ title:'Investissement pour débutants: Commencez avec 100$ et construisez une vraie richesse à long terme', excerpt:"L'investissement n'est pas réservé aux riches.", tags:['Argent','Investissement'], date:'Mai 2026' },
+    hi:{ title:'शुरुआती के लिए निवेश: $100 से शुरू करके दीर्घकालिक संपत्ति बनाएं', excerpt:'निवेश केवल अमीरों के लिए नहीं है।', tags:['पैसा','निवेश'], date:'मई 2026' } },
+
+  { id:'money-mindset',   cat:'money',      readTime:8,  cover:'linear-gradient(135deg,#000802 0%,#001408 50%,#000 100%)', icon:IC.money4,
+    ar:{ title:'عقلية الثروة: الفروق الجوهرية بين تفكير الأغنياء وتفكير الفقراء', excerpt:'الفقر والثروة يبدآن في العقل قبل المحفظة. كيف تُشخّص وتُغيّر أنماط التفكير المحدودة التي تبقيك في دائرة الخوف المالي.', tags:['المال','عقلية'], date:'أبريل 2026' },
+    en:{ title:'The Wealth Mindset: Core Differences Between Rich and Poor Thinking Patterns', excerpt:'Poverty and wealth start in the mind before the wallet. How to diagnose and change limiting thought patterns keeping you in financial fear.', tags:['Money','Mindset'], date:'April 2026' },
+    es:{ title:'La mentalidad de riqueza: Diferencias fundamentales entre el pensamiento rico y pobre', excerpt:'La pobreza y la riqueza comienzan en la mente antes que en la billetera.', tags:['Dinero','Mentalidad'], date:'Abril 2026' },
+    fr:{ title:'La mentalité de richesse: Différences fondamentales entre la pensée des riches et des pauvres', excerpt:"La pauvreté et la richesse commencent dans l'esprit avant le portefeuille.", tags:['Argent','Mentalité'], date:'Avril 2026' },
+    hi:{ title:'संपत्ति की मानसिकता: अमीर और गरीब की सोच के बीच मुख्य अंतर', excerpt:'गरीबी और संपत्ति बटुए से पहले दिमाग में शुरू होती है।', tags:['पैसा','मानसिकता'], date:'अप्रैल 2026' } },
+
+  { id:'fitness-body',    cat:'fitness',    readTime:9,  cover:'linear-gradient(135deg,#050005 0%,#18001a 50%,#000 100%)', icon:IC.fit1,
+    ar:{ title:'جسدك رسالتك الصامتة: اللياقة البدنية فلسفة حياة لا مجرد هواية', excerpt:'الرجل الذي يسيطر على جسده يُشير إلى أنه يسيطر على حياته. الروتين، التغذية، والنوم ليست صحة — إنها هوية وسلطة.', tags:['اللياقة','SMV'], date:'يونيو 2026' },
+    en:{ title:'Your Body Is Your Silent Message: Fitness as a Life Philosophy, Not a Hobby', excerpt:'The man who controls his body signals that he controls his life. Routine, nutrition, and sleep are not just health — they are identity and authority.', tags:['Fitness','SMV'], date:'June 2026' },
+    es:{ title:'Tu cuerpo es tu mensaje silencioso: El fitness como filosofía de vida, no hobby', excerpt:'El hombre que controla su cuerpo señala que controla su vida.', tags:['Fitness','SMV'], date:'Junio 2026' },
+    fr:{ title:'Votre corps est votre message silencieux: Le fitness comme philosophie de vie, pas hobby', excerpt:"L'homme qui contrôle son corps signale qu'il contrôle sa vie.", tags:['Fitness','SMV'], date:'Juin 2026' },
+    hi:{ title:'आपका शरीर आपका मौन संदेश: फिटनेस जीवन दर्शन है, शौक नहीं', excerpt:'जो पुरुष अपने शरीर को नियंत्रित करता है वह संकेत देता है कि वह अपने जीवन को नियंत्रित करता है।', tags:['फिटनेस','SMV'], date:'जून 2026' } },
+
+  { id:'fitness-strength', cat:'fitness',   readTime:11, cover:'linear-gradient(135deg,#080008 0%,#1e001e 50%,#000 100%)', icon:IC.fit2,
+    ar:{ title:'تدريب القوة للرجل: البرنامج الأساسي الذي لا تحتاج إلى أكثر منه أبداً', excerpt:'التدريب المُعقَّد وهم التطور. الحركات المركبة الخمس والحمل المتزايد هما كل ما تحتاجه لبناء جسم لا يُنكر وقوة حقيقية.', tags:['اللياقة','تدريب'], date:'مايو 2026' },
+    en:{ title:"Strength Training for Men: The Essential Program You'll Never Need to Exceed", excerpt:"Complex training is the illusion of progress. Five compound movements and progressive overload are all you need to build an undeniable physique.", tags:['Fitness','Training'], date:'May 2026' },
+    es:{ title:'Entrenamiento de fuerza para hombres: El programa esencial que nunca necesitarás superar', excerpt:'El entrenamiento complejo es la ilusión del progreso.', tags:['Fitness','Entrenamiento'], date:'Mayo 2026' },
+    fr:{ title:"Entraînement de force pour les hommes: Le programme essentiel dont vous n'aurez jamais besoin de dépasser", excerpt:"L'entraînement complexe est l'illusion du progrès.", tags:['Fitness','Entraînement'], date:'Mai 2026' },
+    hi:{ title:'पुरुषों के लिए ताकत प्रशिक्षण: आवश्यक कार्यक्रम जिसे आपको कभी पार करने की जरूरत नहीं', excerpt:'जटिल प्रशिक्षण प्रगति का भ्रम है।', tags:['फिटनेस','प्रशिक्षण'], date:'मई 2026' } },
+
+  { id:'fitness-sleep',   cat:'fitness',    readTime:8,  cover:'linear-gradient(135deg,#030008 0%,#0a0022 50%,#000 100%)', icon:IC.fit3,
+    ar:{ title:'النوم: السلاح السري الذي يتجاهله 90% من الرجال الساعين للنجاح', excerpt:'الحرمان من النوم يدمر الهرمونات، يقتل الإرادة، ويحرق العضلات. العلم الكامل وراء تحسين النوم لأداء أقصى وتعافٍ أسرع.', tags:['اللياقة','تعافٍ'], date:'أبريل 2026' },
+    en:{ title:'Sleep: The Secret Weapon 90% of Success-Seeking Men Ignore', excerpt:'Sleep deprivation destroys hormones, kills willpower, and burns muscle. The complete science behind sleep optimization for peak performance.', tags:['Fitness','Recovery'], date:'April 2026' },
+    es:{ title:'El sueño: El arma secreta que el 90% de los hombres ambiciosos ignoran', excerpt:'La privación de sueño destruye hormonas, mata la fuerza de voluntad y quema músculo.', tags:['Fitness','Recuperación'], date:'Abril 2026' },
+    fr:{ title:"Le sommeil: L'arme secrète que 90% des hommes ambitieux ignorent", excerpt:'La privation de sommeil détruit les hormones, tue la volonté et brûle les muscles.', tags:['Fitness','Récupération'], date:'Avril 2026' },
+    hi:{ title:'नींद: वह गुप्त हथियार जिसे 90% महत्वाकांक्षी पुरुष नजरअंदाज करते हैं', excerpt:'नींद की कमी हार्मोन को नष्ट करती है, इच्छाशक्ति को मारती है और मांसपेशियों को जलाती है।', tags:['फिटनेस','रिकवरी'], date:'अप्रैल 2026' } },
+
+  { id:'logic-identity',  cat:'logic',      readTime:8,  cover:'linear-gradient(135deg,#030008 0%,#0a001a 50%,#000 100%)', icon:IC.logic1,
+    ar:{ title:'الهوية الراسخة: كيف تتوقف عن طلب الموافقة وتبدأ بالقيادة الحقيقية', excerpt:'الرجل الذي يحتاج تأكيداً خارجياً يعيش في عبودية رأي الآخرين. بناء هوية راسخة يبدأ من الداخل، ويُقاس بالأفعال لا بالكلام.', tags:['المنطق','هوية'], date:'يونيو 2026' },
+    en:{ title:'Anchored Identity: How to Stop Seeking Approval and Start True Leadership', excerpt:"A man who needs external validation lives in the slavery of others' opinions. Building an anchored identity starts from within and is measured by actions.", tags:['Logic','Identity'], date:'June 2026' },
+    es:{ title:'Identidad anclada: Cómo dejar de buscar aprobación y comenzar el verdadero liderazgo', excerpt:'Un hombre que necesita validación externa vive en la esclavitud de las opiniones de los demás.', tags:['Lógica','Identidad'], date:'Junio 2026' },
+    fr:{ title:"Identité ancrée: Comment arrêter de chercher l'approbation et commencer le vrai leadership", excerpt:"Un homme qui a besoin de validation externe vit dans l'esclavage des opinions des autres.", tags:['Logique','Identité'], date:'Juin 2026' },
+    hi:{ title:'स्थिर पहचान: अनुमोदन की तलाश बंद करें और सच्चा नेतृत्व शुरू करें', excerpt:'जिस पुरुष को बाहरी सत्यापन की जरूरत है वह दूसरों की राय की गुलामी में जीता है।', tags:['तर्क','पहचान'], date:'जून 2026' } }
+];
+
+let currentLang = localStorage.getItem('tf_lang') || 'ar';
+let currentFilter = 'all';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('tf_lang', lang);
+  const ui = UI[lang];
+  const root = document.getElementById('html-root');
+  root.lang = lang;
+  root.dir = ui.dir;
+  document.body.style.fontFamily = ui.font;
+  document.getElementById('lang-flag').textContent = LANG_FLAGS[lang];
+  document.getElementById('lang-label').textContent = LANG_NAMES[lang];
+  document.querySelectorAll('.lang-option').forEach((el,i) => {
+    el.classList.toggle('active', LANGS[i] === lang);
+  });
+  document.getElementById('lang-picker').classList.remove('open');
+  renderPage();
+}
+
+function renderPage() {
+  const ui = UI[currentLang];
+  document.title = currentLang === 'ar' ? 'المدونة | The Frame' : 'Blog | The Frame';
+  document.getElementById('hero-label').textContent = ui.heroLabel;
+  document.getElementById('hero-title').innerHTML = ui.heroTitle;
+  document.getElementById('hero-subtitle').textContent = ui.heroSubtitle;
+  document.getElementById('cta-title').textContent = ui.ctaTitle;
+  document.getElementById('cta-desc').textContent = ui.ctaDesc;
+  document.getElementById('cta-btn-text').textContent = ui.ctaBtn;
+  document.getElementById('cta-note').textContent = ui.ctaNote;
+  document.getElementById('footer-copy').textContent = ui.footerCopy;
+  document.getElementById('nav-blog').textContent = ui.navBlog;
+  document.getElementById('nav-privacy').textContent = ui.navPrivacy;
+  document.getElementById('nav-main').textContent = ui.navHome;
+  document.getElementById('nav-main').href = ui.navHomeHref;
+  document.getElementById('nav-home-link').href = ui.navHomeHref;
+  document.getElementById('footer-links').innerHTML = `
+    <a href="privacy.html">${ui.footerPrivacy}</a>
+    <a href="terms.html">${ui.footerTerms}</a>
+    <a href="blog.html">${ui.footerBlog}</a>
+    <a href="/app-ads.txt">app-ads.txt</a>`;
+  renderFilters();
+  renderCards();
+}
+
+function renderFilters() {
+  const ui = UI[currentLang];
+  const catKeys = ['smv','discipline','frame','money','fitness','logic'];
+  let html = `<button class="filter-btn ${currentFilter==='all'?'active':''}" data-cat="all">${ui.filterAll}</button>`;
+  catKeys.forEach(k => {
+    html += `<button class="filter-btn ${currentFilter===k?'active':''}" data-cat="${k}">${ui.cats[k]}</button>`;
+  });
+  const fc = document.getElementById('filters-container');
+  fc.innerHTML = html;
+  fc.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFilter = btn.dataset.cat;
+      renderFilters();
+      renderCards();
     });
   });
-</script>
+}
 
-<script>document.querySelectorAll(".current-year").forEach(el => el.textContent = new Date().getFullYear());</script>
+function renderCards() {
+  const ui = UI[currentLang];
+  const filtered = currentFilter === 'all' ? ARTICLES : ARTICLES.filter(a => a.cat === currentFilter);
+  document.getElementById('results-count').textContent = ui.showing(filtered.length);
+  document.getElementById('blog-grid').innerHTML = filtered.map(a => {
+    const d = a[currentLang] || a['ar'];
+    return `
+    <a class="card" href="blog/${a.id}.html">
+      <div class="card-cover" style="background:${a.cover}">${a.icon}</div>
+      <div class="card-body">
+        <div class="card-tags">${d.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <h2 class="card-title">${d.title}</h2>
+        <p class="card-excerpt">${d.excerpt}</p>
+        <div class="card-meta">
+          <span class="card-date">${d.date}</span>
+          <span class="card-read">${ui.readTime(a.readTime)}</span>
+        </div>
+        <span class="card-arrow">${ui.readMore}</span>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+document.getElementById('lang-btn-toggle').addEventListener('click', () => {
+  document.getElementById('lang-picker').classList.toggle('open');
+});
+document.addEventListener('click', e => {
+  if (!document.getElementById('lang-picker').contains(e.target))
+    document.getElementById('lang-picker').classList.remove('open');
+});
+
+setLang(currentLang);
+</script>
 </body>
 </html>

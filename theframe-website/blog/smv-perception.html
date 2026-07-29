@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الانطباع الأول يتشكّل في 7 ثوانٍ فقط — كيف يعمل الدماغ، ما الذي يُقيَّم فعلاً، وكيف تُهندس الانطباع الأول لصالحك.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الانطباع الأول في 7 ثوانٍ: العلم والاستراتيجية الكاملة | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/smv-perception.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link">
+    <img src="../assets/logo.png" alt="The Frame" class="nav-logo">
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle">
+        <span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero" id="article-hero"></div>
+
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="smv-basics.html"><span class="related-cat">SMV</span><span class="related-title" id="rel1">دليل SMV الشامل</span></a>
+      <a class="related-card" href="smv-pillars.html"><span class="related-cat">SMV</span><span class="related-title" id="rel2">الأعمدة الأربعة للـ SMV</span></a>
+      <a class="related-card" href="frame-control.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel3">السيطرة على الإطار</span></a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+const LANGS = ['ar','en','es','fr','hi'];
+const FLAGS = {ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES = {ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+
+const CONTENT = {
+ar: {
+  dir:'rtl', title:'الانطباع الأول في 7 ثوانٍ: العلم الكامل وكيف تُهندسه لصالحك',
+  cat:'SMV', date:'يوليو 2026', readTime:'11 دقيقة قراءة',
+  excerpt:'الانطباع الأول يتشكّل في أقل من 7 ثوانٍ — لكن تداعياته تستمر لساعات أو أشهر أو سنوات. تعلّم العلم الكامل وراء هذه الظاهرة وكيف تُحوِّلها لميزة دائمة.',
+  backLabel:'← المدونة', homeLabel:'الرئيسية', homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['دليل SMV الشامل','الأعمدة الأربعة للـ SMV','السيطرة على الإطار'],
+  ctaTitle:'طبّق ما تعلمته الآن', ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.', ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية', footerTerms:'شروط الاستخدام', footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>لماذا 7 ثوانٍ تُحدد مساراً طويلاً؟</h2>
+<p>رقم 7 ثوانٍ ليس مجازاً شعبياً — هو رقم مستخرج من أبحاث علمية منشورة في مجلات متحكَّم بها. دراسة عام 2006 في مجلة Psychological Science أثبتت أن الناس يُشكِّلون أحكاماً موثوقة حول الكفاءة والأمانة والجاذبية في غضون ثوانٍ معدودة من التعرض الأول لشخص ما — وما هو أكثر إثارة للاهتمام أن هذه الأحكام السريعة كانت تتوافق إلى حد كبير مع التقييمات التي تُشكَّل بعد تعارف أطول.</p>
+<p>بمعنى آخر: <strong>ما يحكم عليك الناس في الثواني السبع الأولى يُقارب كثيراً ما سيحكمون عليك بعد ساعات من المعرفة</strong>. ليس لأن الناس أغبياء — بل لأن الدماغ البشري طوّر آليات تقييم سريعة فعّالة جداً تعكس إشارات حقيقية يصعب تزويرها.</p>
+<p>هذا يعني شيئاً مهماً: إذا كنت تعتقد أنك تستطيع "اصطياد" التقييم الجيد رغم وجود ثغرات حقيقية في حضورك — فأنت تُخدع نفسك. الانطباع الأول الجيد يجب أن يكون انعكاساً لتحسينات حقيقية، لا مجرد تمثيل سطحي.</p>
+
+<h2>ماذا يحدث في الدماغ في تلك الثواني؟</h2>
+<p>عندما تلتقي بشخص جديد، يعالج دماغك المعلومات الواردة بصورة متوازية عبر مسارات متعددة — وكل هذا يحدث قبل أن تُشغِّل تفكيرك الواعي.</p>
+
+<h3>نظام التقييم الأمجدالي (Amygdala Assessment)</h3>
+<p>اللوزة الدماغية (Amygdala) هي المنطقة المسؤولة عن تقييم التهديدات والاستجابات الانفعالية. في اللحظة التي تُدرِك فيها شخصاً جديداً، تبدأ اللوزة في معالجة:</p>
+<ul>
+  <li><strong>الوضعية والحجم:</strong> هل هذا شخص يبدو مسيطراً أم خاضعاً؟</li>
+  <li><strong>تعبيرات الوجه والتواصل البصري:</strong> هل يبدو مرتاحاً أم قلقاً؟ واثقاً أم خائفاً؟</li>
+  <li><strong>حركات الجسم:</strong> هل تتحرك بثقة وحزم أم بتردد وعصبية؟</li>
+  <li><strong>الطاقة العامة:</strong> هل يشع هذا الشخص هدوءاً داخلياً أم توتراً؟</li>
+</ul>
+
+<h3>مبدأ "الهالة" وكيف يعمل لصالحك أو ضدك</h3>
+<p>تأثير الهالة (Halo Effect) هو ميل الدماغ لتعميم صفة إيجابية واحدة لافتة على الصورة الكلية للشخص. إذا كنت بصرياً جذاباً، يميل الناس لا شعورياً لافتراض أنك أكثر ذكاءً وأكثر موثوقية وأكثر كفاءة — حتى قبل أن تفتح فمك.</p>
+<p>العكس صحيح أيضاً: تأثير "القرون" (Horn Effect) — صفة سلبية واحدة لافتة كالمظهر المهمل أو الوضعية المنكمشة تُولِّد افتراضات سلبية تمتد للتقييم الكلي للشخص.</p>
+<p>الفهم الصحيح لهذه الآلية لا يعني استغلالها خداعاً — يعني إزالة العوائق غير الضرورية أمام التقييم الحقيقي لك. الشخص الكفء الذي يبدو متراخياً يُواجه عقبات لا لزوم لها في كل تفاعل جديد.</p>
+
+<h2>العناصر الخمسة التي تُشكِّل الانطباع الأول</h2>
+
+<h3>أولاً: الوضعية ولغة الجسد (55% من التواصل الأولي)</h3>
+<p>دراسة Albert Mehrabian الشهيرة تُشير إلى أن 55% من الرسائل التواصلية تأتي من لغة الجسد. هذا الرقم يُناقَش علمياً في سياقاته، لكن المبدأ الأساسي صحيح: جسدك يُرسل رسائل قبل كلامك.</p>
+<p>الوضعية المثالية لانطباع أول قوي:</p>
+<ul>
+  <li><strong>الظهر المستقيم:</strong> ليس بشكل مصطنع متصلب، بل باسترخاء طبيعي مع انتصاب فقري كامل</li>
+  <li><strong>الكتفان للخلف وللأسفل:</strong> لا مشدودتان للأعلى، بل مفتوحتان وثابتتان</li>
+  <li><strong>الرأس في مستوى افقي:</strong> لا مائل للأمام أو للأسفل — إشارة الخضوع اللاشعورية الأكثر شيوعاً</li>
+  <li><strong>ثقل الجسم على القدمين بالتساوي:</strong> لا ميلان على ساق واحدة أو تحريك متواصل لا يعكس راحة داخلية</li>
+  <li><strong>التباعد المناسب:</strong> المسافة الشخصية الكافية التي لا تُبدي عدوانية ولا خجلاً مفرطاً</li>
+</ul>
+
+<h3>ثانياً: التواصل البصري — الميزان الدقيق</h3>
+<p>التواصل البصري هو أحد أقوى مؤشرات الثقة والاهتمام — ويُمكن تحسينه بوعي وتدريب.</p>
+<ul>
+  <li><strong>الميزان الصحيح:</strong> التواصل البصري المريح يكون حوالي 60-70% من وقت المحادثة — أكثر حين تستمع، أقل حين تتكلم</li>
+  <li><strong>الخطأ الأول — التحديق المستمر:</strong> يُشعر بالعدوانية أو عدم الارتياح الاجتماعي</li>
+  <li><strong>الخطأ الثاني — التهرب:</strong> يُشعر بعدم الثقة والقلق والاهتمام المنخفض</li>
+  <li><strong>القاعدة العملية:</strong> حافظ على التواصل البصري مع نقطة مثلثة بين العينين والأنف — طبيعي وغير مُرهِق</li>
+</ul>
+
+<h3>ثالثاً: المظهر الخارجي والأناقة</h3>
+<p>قبل أن تقول كلمة، مظهرك يُجيب على أسئلة صامتة يطرحها كل من يراك: هل يحترم نفسه؟ هل يهتم بالتفاصيل؟ هل هو شخص يعتني بما تحت سيطرته؟</p>
+<ul>
+  <li><strong>النظافة والترتيب:</strong> شرط مطلق لا خلاف فيه — الشعر، الملابس، رائحة الجسم</li>
+  <li><strong>الملابس المناسبة للمقاس والسياق:</strong> ملابس تناسب جسمك وتناسب البيئة التي أنت فيها — لا أفضل من ذلك ولا أسوأ</li>
+  <li><strong>الألوان الصحيحة:</strong> الألوان المناسبة لبشرتك تُحسِّن مظهرك الكلي دون أي جهد إضافي</li>
+  <li><strong>التفاصيل المهمة:</strong> الأحذية، الساعة، الحقيبة — تُخبر عن مستوى الاهتمام بالتفاصيل</li>
+</ul>
+
+<h3>رابعاً: الصوت ونبرة الكلام</h3>
+<p>حين تبدأ بالكلام، تنضم طبقة صوتية جديدة لمعادلة الانطباع. الصوت يُحمَّل بمعلومات حول حالتك الداخلية أكثر مما يُعبِّر عنه محتوى الكلام نفسه.</p>
+<ul>
+  <li><strong>الإيقاع الهادئ:</strong> الكلام السريع يُشعر بالعصبية. البطء المتعمد يُعطي انطباع السيطرة والثقة</li>
+  <li><strong>العمق والانبساط:</strong> الصوت المنبسط من الصدر يُعطي انطباعاً أقوى من الصوت الضيق الأنفي</li>
+  <li><strong>القطع المقصود:</strong> التوقف قبل الإجابة — حتى لو ثانية أو اثنتين — يُعطي انطباع التأمل والثقة بدلاً من العصبية</li>
+  <li><strong>الإيقاع غير المتساوي:</strong> التنويع بين السرعة والبطء يُبقي الآخر مُنتبهاً ومُهتماً</li>
+</ul>
+
+<h3>خامساً: المصافحة والتواصل الجسدي الأولي</h3>
+<p>المصافحة قصيرة جداً لكن معلوماتها كثيرة. دراسات أثبتت أن المصافحة القوية والمريحة تُولِّد ثقة تدوم لساعات بعد اللقاء.</p>
+<ul>
+  <li>مصافحة كاملة الكف — ليس طرف الأصابع فقط</li>
+  <li>قوة معتدلة — لا سحق ولا خمول</li>
+  <li>مدة 2-3 ثوانٍ مع التواصل البصري</li>
+  <li>دفء حقيقي في التعبير — لا وجه جامد أثناء المصافحة</li>
+</ul>
+
+<h2>أخطاء الانطباع الأول: ما يُدمِّر التقييم في ثوانٍ</h2>
+<p>بعد معرفة ما يبنيه، المهم معرفة ما يهدمه — لأن الأثر السلبي عادةً يُرسَّخ بسرعة أكبر من الأثر الإيجابي.</p>
+
+<h3>الاعتذارية المفرطة</h3>
+<p>"آسف على الإزعاج" — "أعتذر إذا كان هذا سؤالاً سخيفاً" — "ربما لا أكون في محله لكن..." — هذه العبارات الاعتذارية التي تسبق كل جملة تُرسل إشارة ضعف وقلق واجتماعي قبل أن يبدأ المحتوى الفعلي. قُل ما تريد قوله مباشرة.</p>
+
+<h3>الحاجة الاجتماعية الظاهرة</h3>
+<p>الضحك الزائد، الموافقة على كل شيء، تغيير رأيك فور ملاحظة عدم موافقة الآخر — كلها تُرسل إشارة حاجة اجتماعية تُقلِّل من الانطباع بشكل كبير.</p>
+
+<h3>التشتت والانشغال بالهاتف</h3>
+<p>إخراج الهاتف أو النظر حولك باستمرار خلال التعارف يُرسل رسالة أن الشخص أمامك لا يستحق اهتمامك الكامل — وهذا من أسوأ ما يمكن إرساله في أي لقاء أولي.</p>
+
+<h3>التسرع في الكلام</h3>
+<p>الكلام السريع الذي لا يُتيح مساحة للصمت يوحي بالعصبية وقلة الثقة. الشخص الواثق لا يُسرع لملء كل صمت.</p>
+
+<h2>كيف تُعيد بناء انطباع أول سيئ؟</h2>
+<p>الخبر السيئ: الانطباع الأول يصعب تغييره — الدماغ يميل للتأكيد على ما توقعه مبكراً (Confirmation Bias). الخبر الجيد: ليس مستحيلاً.</p>
+
+<div class="callout"><p><strong>قاعدة 4 التفاعلات:</strong> الأبحاث تُشير إلى أن الانطباع الأول يمكن تعديله بعد حوالي 4 تفاعلات إيجابية متسقة تناقضه. هذا يعني أن الاستمرارية والاتساق هما المفتاح — لا مسرحية إضافية في لقاء واحد.</p></div>
+
+<h2>التدريب العملي: كيف تُطوِّر انطباعك الأول في 30 يوماً</h2>
+<p>التطوير هنا يجب أن يكون منهجياً لا عشوائياً:</p>
+
+<h3>الأسبوع الأول: الوضعية</h3>
+<ul>
+  <li>ضع ذكرى (منبه هاتف) كل ساعتين تُذكِّرك بالتحقق من وضعيتك</li>
+  <li>تمارين تقوية الظهر والأكتاف يومياً — 10 دقائق كافية</li>
+  <li>راقب نفسك في مرآة أو تسجيل فيديو — الصدق البصري مؤلم ومفيد</li>
+</ul>
+
+<h3>الأسبوع الثاني: التواصل البصري</h3>
+<ul>
+  <li>في كل محادثة اليوم: حافظ على التواصل البصري لأطول مما اعتدت</li>
+  <li>تمرين المرآة: تحدث لنفسك بالمرآة مع الحفاظ على التواصل البصري</li>
+  <li>لاحظ متى تتهرب من التواصل البصري وما السبب — الخوف؟ القلق؟ الملل؟</li>
+</ul>
+
+<h3>الأسبوع الثالث: الصوت والكلام</h3>
+<ul>
+  <li>سجِّل صوتك في محادثات يومية واستمع لنبرتك وسرعتك</li>
+  <li>تمرّن على التوقف قبل الإجابة — أضف ثانيتين لكل إجابة</li>
+  <li>قل الجملة الأولى من كل محادثة بصوت أخفض وأبطأ مما اعتدت</li>
+</ul>
+
+<h3>الأسبوع الرابع: التكامل</h3>
+<ul>
+  <li>اخلق مواقف تلتقي فيها بأشخاص جدد: فعالية، ندوة، نادي، أي تجمع منظم</li>
+  <li>بعد كل لقاء جديد: قيِّم الثلاثة عناصر — وضعيتك، تواصلك البصري، نبرتك</li>
+  <li>اطلب من شخص تثق به تقييماً صادقاً لانطباعك الأول</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الانطباع الأول يتشكل في ثوانٍ وتداعياته تمتد لساعات وأشهر</li>
+    <li>الدماغ يُقيِّم: الوضعية، التواصل البصري، المظهر، الصوت، المصافحة</li>
+    <li>تأثير الهالة يعمل في كلا الاتجاهين — استغله لصالحك بتطوير حقيقي</li>
+    <li>الاعتذارية المفرطة والحاجة الاجتماعية: أسرع طريقة لتدمير الانطباع</li>
+    <li>إصلاح انطباع سيئ يستغرق 4 تفاعلات إيجابية متسقة على الأقل</li>
+    <li>التدريب المنهجي لمدة 30 يوماً يُحوِّل الانطباع الأول بشكل جوهري</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الانطباع الأول هو إعلان عمّا أصبحت</h2>
+<p>كل تحسين تُجريه على وضعيتك، مظهرك، صوتك، وطريقة تواصلك البصري هو انعكاس لتحسينات حقيقية أجريتها على نفسك من الداخل. الإنطباع الأول القوي والأصيل ليس ما تُؤديه — هو ما أصبحته.</p>
+<p>اشتغل على الجوهر وستتحسن الظاهرة تلقائياً. اشتغل على الظاهرة فقط وستكتشف أن التقيية لا تُدوم طويلاً.</p>`
+},
+en: {
+  dir:'ltr', title:'First Impressions in 7 Seconds: The Complete Science and Strategy',
+  cat:'SMV', date:'July 2026', readTime:'11 min read',
+  excerpt:'First impressions form in under 7 seconds — but their consequences can last hours, months, or years. Learn the complete science behind this phenomenon and how to engineer it in your favor.',
+  backLabel:'← Blog', homeLabel:'Home', homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['The Complete SMV Guide','The 4 Pillars of SMV','Frame Control'],
+  ctaTitle:'Apply What You Learned', ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.', ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy', footerTerms:'Terms of Use', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>Why Do 7 Seconds Determine Such a Long Path?</h2>
+<p>The "7 seconds" figure is not popular folklore — it is extracted from peer-reviewed scientific research. A 2006 study in Psychological Science proved that people form reliable judgments about competence, trustworthiness, and attractiveness within seconds of first exposure — and more strikingly, these rapid assessments closely matched evaluations formed after much longer acquaintance.</p>
+<p>This means: <strong>what people judge you on in the first 7 seconds closely approximates what they'll judge you on after hours of knowing you.</strong> Not because people are shallow — but because the human brain evolved highly efficient evaluation mechanisms that actually reflect genuine signals.</p>
+
+<h2>What Happens in the Brain During Those Seconds?</h2>
+<p>The amygdala processes incoming information in parallel, before conscious thought activates. It evaluates:</p>
+<ul>
+  <li><strong>Posture and size:</strong> Does this person appear dominant or submissive?</li>
+  <li><strong>Facial expressions and eye contact:</strong> Comfortable or anxious? Confident or afraid?</li>
+  <li><strong>Movement quality:</strong> Moving with confident purpose or hesitant nervousness?</li>
+  <li><strong>General energy:</strong> Inner calm or visible tension?</li>
+</ul>
+<p>The Halo Effect — the tendency to generalize one striking positive trait across the whole person — works in both directions. A strong, well-maintained physical presence generates positive assumptions about intelligence, reliability, and competence before you speak a word.</p>
+
+<h2>The Five Elements of First Impressions</h2>
+
+<h3>1. Posture and Body Language (55% of initial communication)</h3>
+<ul>
+  <li>Straight back — naturally relaxed, not stiffly military</li>
+  <li>Shoulders back and down — open, not hunched</li>
+  <li>Head level — not tilted forward (the most common subconscious submission signal)</li>
+  <li>Weight evenly distributed on both feet</li>
+  <li>Appropriate personal space — not invasive, not distant</li>
+</ul>
+
+<h3>2. Eye Contact — The Precise Balance</h3>
+<p>Optimal eye contact: approximately 60-70% of conversation time, more while listening, less while speaking. The two errors: continuous staring (signals aggression or social discomfort) and avoidance (signals low confidence and anxiety). Practical rule: maintain contact at a natural triangle between the eyes and nose.</p>
+
+<h3>3. Physical Appearance and Grooming</h3>
+<p>Before you speak, your appearance answers silent questions: Does he respect himself? Does he care about details? Your appearance should signal: this person is in control of what is under his control.</p>
+
+<h3>4. Voice and Tone</h3>
+<ul>
+  <li>Calm pacing: fast speech signals nervousness; deliberate slowness signals control</li>
+  <li>Chest voice: fuller, lower tone projects strength</li>
+  <li>Intentional pausing before answering: 1-2 seconds signals thoughtfulness, not anxiety</li>
+</ul>
+
+<h3>5. The Handshake</h3>
+<p>Brief but information-dense. Research confirms that a confident, warm handshake generates trust that lasts hours beyond the meeting: full palm contact, moderate firmness, 2-3 seconds with eye contact, and genuine warmth in expression.</p>
+
+<h2>Impression Killers: What Destroys the Assessment in Seconds</h2>
+<ul>
+  <li><strong>Excessive apologizing:</strong> "Sorry to bother you," "This might be a stupid question" — these pre-emptive apologies signal social anxiety before any content arrives</li>
+  <li><strong>Visible social neediness:</strong> Excessive laughter, agreeing with everything, changing your position the moment you sense disagreement</li>
+  <li><strong>Phone distraction:</strong> Checking your phone signals that the person in front of you is not worth your full attention</li>
+  <li><strong>Rushed speech:</strong> Racing to fill every silence suggests you need the interaction more than it needs you</li>
+</ul>
+
+<h2>30-Day First Impression Development Plan</h2>
+<ul>
+  <li><strong>Week 1 — Posture:</strong> Set hourly phone reminders to check posture. Daily 10-minute back and shoulder exercises. Film yourself and watch honestly.</li>
+  <li><strong>Week 2 — Eye contact:</strong> Hold eye contact longer in every conversation today. Practice with a mirror. Notice when you break it and why.</li>
+  <li><strong>Week 3 — Voice:</strong> Record your voice in daily conversations. Practice pausing before answers. Open every conversation slower and softer than usual.</li>
+  <li><strong>Week 4 — Integration:</strong> Seek new meeting opportunities. Debrief after each: posture, eye contact, voice. Ask a trusted person for honest first-impression feedback.</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>First impressions form in seconds; their consequences last much longer</li>
+    <li>The brain evaluates: posture, eye contact, appearance, voice, handshake</li>
+    <li>The Halo Effect works in both directions — use it by genuinely improving</li>
+    <li>Excessive apologizing and social neediness are the fastest impression destroyers</li>
+    <li>A bad first impression requires 4 consistent positive interactions to repair</li>
+    <li>30 days of systematic training transforms your first impression fundamentally</li>
+  </ul>
+</div>`
+},
+es: {
+  dir:'ltr', title:'Primera Impresión en 7 Segundos: La Ciencia Completa y la Estrategia',
+  cat:'SMV', date:'Julio 2026', readTime:'11 min',
+  excerpt:'Las primeras impresiones se forman en menos de 7 segundos — pero sus consecuencias pueden durar horas, meses o años. Aprende la ciencia completa detrás de este fenómeno.',
+  backLabel:'← Blog', homeLabel:'Inicio', homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Guía completa del SMV','Los 4 pilares del SMV','Control del marco'],
+  ctaTitle:'Aplica lo que aprendiste', ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.', ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad', footerTerms:'Términos de Uso', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Por Qué 7 Segundos Determinan un Camino Tan Largo?</h2>
+<p>El "7 segundos" no es folclore popular — está extraído de investigación científica revisada por pares. Un estudio de 2006 en Psychological Science demostró que las personas forman juicios fiables sobre competencia, confiabilidad y atractivo en segundos de primera exposición. Lo que juzgan en los primeros 7 segundos se aproxima estrechamente a lo que juzgarán después de horas de conocerte.</p>
+
+<h2>Los Cinco Elementos de la Primera Impresión</h2>
+
+<h3>1. Postura y Lenguaje Corporal</h3>
+<ul>
+  <li>Espalda recta — relajada naturalmente, no rígida</li>
+  <li>Hombros hacia atrás y abajo — abiertos, no encorvados</li>
+  <li>Cabeza nivelada — no inclinada hacia adelante</li>
+  <li>Peso distribuido equitativamente en ambos pies</li>
+</ul>
+
+<h3>2. Contacto Visual — El Equilibrio Preciso</h3>
+<p>Contacto visual óptimo: aproximadamente 60-70% del tiempo de conversación. Los dos errores: mirar fijo continuamente (señala agresividad) y evitar la mirada (señala baja confianza). Regla práctica: mantén el contacto en un triángulo natural entre los ojos y la nariz.</p>
+
+<h3>3. Apariencia Física y Cuidado Personal</h3>
+<p>Antes de hablar, tu apariencia responde preguntas silenciosas: ¿Se respeta a sí mismo? ¿Le importan los detalles? Tu apariencia debe señalar: esta persona controla lo que está bajo su control.</p>
+
+<h3>4. Voz y Tono</h3>
+<ul>
+  <li>Ritmo tranquilo: el habla rápida señala nerviosismo; la lentitud deliberada señala control</li>
+  <li>Voz de pecho: tono más completo y profundo proyecta fortaleza</li>
+  <li>Pausa intencional antes de responder: 1-2 segundos señala reflexión, no ansiedad</li>
+</ul>
+
+<h3>5. El Apretón de Manos</h3>
+<p>Breve pero denso en información. Contacto completo de palma, firmeza moderada, 2-3 segundos con contacto visual y calidez genuina en la expresión.</p>
+
+<h2>Destructores de Impresión: Lo que Destruye la Evaluación en Segundos</h2>
+<ul>
+  <li><strong>Disculpas excesivas:</strong> "Perdón por molestar" — señalan ansiedad social</li>
+  <li><strong>Necesidad social visible:</strong> Risa excesiva, estar de acuerdo con todo</li>
+  <li><strong>Distracción con el teléfono:</strong> Señala que la persona frente a ti no merece tu plena atención</li>
+  <li><strong>Habla apresurada:</strong> Correr a llenar cada silencio sugiere que necesitas la interacción</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>Cada mejora que hagas en tu postura, apariencia, voz y contacto visual es un reflejo de mejoras reales que has hecho en tu interior. <strong>Una fuerte primera impresión auténtica no es lo que realizas — es en lo que te has convertido.</strong></p>`
+},
+fr: {
+  dir:'ltr', title:"Première Impression en 7 Secondes: La Science Complète et la Stratégie",
+  cat:'SMV', date:'Juillet 2026', readTime:'11 min',
+  excerpt:"Les premières impressions se forment en moins de 7 secondes — mais leurs conséquences peuvent durer des heures, des mois ou des années. Apprenez la science complète derrière ce phénomène.",
+  backLabel:'← Blog', homeLabel:'Accueil', homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Guide complet du SMV','Les 4 piliers du SMV','Contrôle du cadre'],
+  ctaTitle:'Appliquez ce que vous avez appris', ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.", ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité', footerTerms:"Conditions d'utilisation", footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Pourquoi 7 Secondes Déterminent-elles un Si Long Chemin?</h2>
+<p>Le chiffre "7 secondes" n'est pas du folklore populaire — il est extrait de recherches scientifiques à comité de lecture. Une étude de 2006 dans Psychological Science a prouvé que les gens forment des jugements fiables sur la compétence, la fiabilité et l'attractivité en quelques secondes de première exposition.</p>
+
+<h2>Les Cinq Éléments de la Première Impression</h2>
+
+<h3>1. Posture et Langage Corporel</h3>
+<ul>
+  <li>Dos droit — naturellement détendu, pas rigide</li>
+  <li>Épaules en arrière et en bas — ouvertes, pas voûtées</li>
+  <li>Tête au niveau — pas inclinée vers l'avant</li>
+  <li>Poids réparti également sur les deux pieds</li>
+</ul>
+
+<h3>2. Contact Visuel — L'Équilibre Précis</h3>
+<p>Contact visuel optimal: environ 60-70% du temps de conversation. Les deux erreurs: regarder fixement en continu (signal d'agressivité) et éviter le regard (signal de faible confiance). Règle pratique: maintenir le contact dans un triangle naturel entre les yeux et le nez.</p>
+
+<h3>3. Apparence Physique et Soins Personnels</h3>
+<p>Avant de parler, votre apparence répond à des questions silencieuses: Se respecte-t-il? Se soucie-t-il des détails? Votre apparence doit signaler: cette personne contrôle ce qui est sous son contrôle.</p>
+
+<h3>4. Voix et Ton</h3>
+<ul>
+  <li>Rythme calme: un débit rapide signale la nervosité; une lenteur délibérée signale le contrôle</li>
+  <li>Voix de poitrine: un ton plus plein et plus profond projette la force</li>
+  <li>Pause intentionnelle avant de répondre: 1-2 secondes signale la réflexion, pas l'anxiété</li>
+</ul>
+
+<h3>5. La Poignée de Main</h3>
+<p>Bref mais dense en informations. Contact complet de la paume, fermeté modérée, 2-3 secondes avec contact visuel et chaleur sincère dans l'expression.</p>
+
+<h2>Conclusion</h2>
+<p>Chaque amélioration que vous apportez à votre posture, apparence, voix et contact visuel est le reflet d'améliorations réelles que vous avez apportées à l'intérieur. <strong>Une forte première impression authentique n'est pas ce que vous jouez — c'est ce que vous êtes devenu.</strong></p>`
+},
+hi: {
+  dir:'ltr', title:'7 सेकंड में पहली छाप: पूरी विज्ञान और रणनीति',
+  cat:'SMV', date:'जुलाई 2026', readTime:'11 मिनट',
+  excerpt:'पहली छाप 7 सेकंड से भी कम में बनती है — लेकिन इसके परिणाम घंटों, महीनों या वर्षों तक चल सकते हैं। इस घटना के पीछे की पूरी विज्ञान सीखें।',
+  backLabel:'← ब्लॉग', homeLabel:'होम', homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['SMV की पूरी गाइड','SMV के 4 स्तंभ','फ्रेम नियंत्रण'],
+  ctaTitle:'जो सीखा उसे लागू करें', ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।', ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति', footerTerms:'उपयोग की शर्तें', footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>7 सेकंड इतना लंबा रास्ता क्यों निर्धारित करते हैं?</h2>
+<p>"7 सेकंड" का आंकड़ा लोकप्रिय लोककथा नहीं है — यह सहकर्मी-समीक्षित वैज्ञानिक अनुसंधान से निकाला गया है। 2006 में Psychological Science में एक अध्ययन ने साबित किया कि लोग पहले संपर्क के कुछ ही सेकंड में योग्यता, विश्वसनीयता और आकर्षण के बारे में विश्वसनीय निर्णय बनाते हैं।</p>
+
+<h2>पहली छाप के पाँच तत्व</h2>
+
+<h3>1. मुद्रा और शारीरिक भाषा</h3>
+<ul>
+  <li>सीधी पीठ — स्वाभाविक रूप से आरामदायक, कठोर नहीं</li>
+  <li>कंधे पीछे और नीचे — खुले, झुके हुए नहीं</li>
+  <li>सिर समतल — आगे झुका हुआ नहीं</li>
+</ul>
+
+<h3>2. आँख से संपर्क</h3>
+<p>इष्टतम नेत्र संपर्क: बातचीत के लगभग 60-70% समय। दो त्रुटियाँ: लगातार घूरना (आक्रामकता का संकेत) और टालना (कम आत्मविश्वास का संकेत)।</p>
+
+<h3>3. शारीरिक रूप और देखभाल</h3>
+<p>बोलने से पहले, आपकी उपस्थिति मौन प्रश्नों का उत्तर देती है: क्या वह खुद का सम्मान करता है? क्या उसे विवरण की परवाह है?</p>
+
+<h3>4. आवाज़ और स्वर</h3>
+<ul>
+  <li>शांत गति: तेज़ भाषण घबराहट का संकेत देता है; जानबूझकर धीमापन नियंत्रण का संकेत देता है</li>
+  <li>छाती की आवाज़: गहरा स्वर शक्ति प्रदर्शित करता है</li>
+  <li>जवाब देने से पहले जानबूझकर रुकना: 1-2 सेकंड विचारशीलता का संकेत देते हैं</li>
+</ul>
+
+<h2>निष्कर्ष</h2>
+<p>आपकी मुद्रा, उपस्थिति, आवाज़ और नेत्र संपर्क में जो भी सुधार आप करते हैं वह आपके अंदर से किए गए वास्तविक सुधारों का प्रतिबिंब है। <strong>एक मजबूत, प्रामाणिक पहली छाप वह नहीं है जो आप करते हैं — यह वह है जो आप बन गए हैं।</strong></p>`
+}
+};
+
+const LANGS_ORDER = ['ar','en','es','fr','hi'];
+let currentLang = localStorage.getItem('tf_lang') || 'ar';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('tf_lang', lang);
+  document.getElementById('lang-flag').textContent = FLAGS[lang];
+  document.getElementById('lang-label').textContent = NAMES[lang];
+  document.querySelectorAll('.lang-option').forEach((el,i)=>{ el.classList.toggle('active', LANGS_ORDER[i]===lang); });
+  document.getElementById('lang-picker').classList.remove('open');
+  renderPage();
+}
+
+function renderPage() {
+  const c = CONTENT[currentLang] || CONTENT['ar'];
+  const root = document.getElementById('html-root');
+  root.lang = currentLang;
+  root.dir = c.dir;
+  document.body.style.fontFamily = currentLang==='ar' ? "'Cairo',sans-serif" : "'Oswald',sans-serif";
+  document.title = c.title + ' | The Frame';
+  document.querySelector('meta[name="description"]').content = c.excerpt;
+
+  document.getElementById('nav-blog').textContent = c.backLabel;
+  document.getElementById('nav-home').textContent = c.homeLabel;
+  document.getElementById('nav-home').href = c.homeHref;
+  document.getElementById('nav-home-link').href = c.homeHref;
+
+  document.getElementById('article-hero').innerHTML = `
+    <div class="breadcrumb">
+      <a href="${c.homeHref}">${c.homeLabel}</a>
+      <span>›</span>
+      <a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a>
+      <span>›</span>
+      <span>${c.cat}</span>
+    </div>
+    <span class="article-cat">${c.cat}</span>
+    <h1 class="article-title">${c.title}</h1>
+    <div class="article-meta">
+      <span>${c.date}</span>
+      <span class="read-time">${c.readTime}</span>
+    </div>
+    <p class="article-excerpt">${c.excerpt}</p>`;
+
+  document.getElementById('article-body').innerHTML = c.body;
+
+  const rels = c.rel || [];
+  document.getElementById('related-title').textContent = c.relatedTitle;
+  ['rel1','rel2','rel3'].forEach((id,i)=>{
+    const el = document.getElementById(id);
+    if(el && rels[i]) el.textContent = rels[i];
+  });
+
+  document.getElementById('cta-title').textContent = c.ctaTitle;
+  document.getElementById('cta-desc').textContent = c.ctaDesc;
+  document.getElementById('cta-btn-text').textContent = c.ctaBtn;
+  document.getElementById('f-privacy').textContent = c.footerPrivacy;
+  document.getElementById('f-terms').textContent = c.footerTerms;
+  document.getElementById('f-blog').textContent = c.footerBlog;
+  document.getElementById('footer-copy').textContent = c.footerCopy;
+}
+
+document.getElementById('lang-btn-toggle').addEventListener('click', ()=>{ document.getElementById('lang-picker').classList.toggle('open'); });
+document.addEventListener('click', e=>{ if(!document.getElementById('lang-picker').contains(e.target)) document.getElementById('lang-picker').classList.remove('open'); });
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById('progress-bar').style.width = pct+'%';
+});
+
+setLang(currentLang);
+</script>
+</body>
+</html>

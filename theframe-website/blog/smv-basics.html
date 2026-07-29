@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="دليل SMV الشامل — ما هي القيمة السوقية للرجل وكيف تبنيها من الصفر عبر الأعمدة الأربعة: المظهر، المال، الوضع الاجتماعي، والشخصية.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>دليل SMV الشامل: ما هي القيمة السوقية وكيف تبنيها | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/smv-basics.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link">
+    <img src="../assets/logo.png" alt="The Frame" class="nav-logo">
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle">
+        <span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero" id="article-hero"></div>
+
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="smv-pillars.html"><span class="related-cat">SMV</span><span class="related-title" id="rel1">الأعمدة الأربعة للـ SMV</span></a>
+      <a class="related-card" href="smv-perception.html"><span class="related-cat">SMV</span><span class="related-title" id="rel2">الانطباع الأول في 7 ثوانٍ</span></a>
+      <a class="related-card" href="logic-identity.html"><span class="related-cat">المنطق</span><span class="related-title" id="rel3">الهوية الراسخة</span></a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+const LANGS = ['ar','en','es','fr','hi'];
+const FLAGS = {ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES = {ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+
+const CONTENT = {
+ar: {
+  dir:'rtl', title:'دليل SMV الشامل: ما هي القيمة السوقية وكيف تبنيها من الصفر',
+  cat:'SMV', date:'يوليو 2026', readTime:'10 دقائق قراءة',
+  excerpt:'القيمة السوقية ليست لعبة لجذب النساء — إنها مقياس شامل لمدى إتقانك لحياتك. دليل كامل حول الأعمدة الأربعة وكيف تبني قيمتك الحقيقية كرجل.',
+  backLabel:'← المدونة', homeLabel:'الرئيسية', homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الأعمدة الأربعة للـ SMV','الانطباع الأول في 7 ثوانٍ','الهوية الراسخة'],
+  ctaTitle:'طبّق ما تعلمته الآن', ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.', ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية', footerTerms:'شروط الاستخدام', footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>ما هي الـ SMV حقاً؟ وهل هي عن النساء فقط؟</h2>
+<p>يُعرِّف كثيرون مصطلح SMV (Sexual Market Value) على أنه مقياس لجاذبية الرجل في سوق التعارف. وهذا تعريف قاصر ومُضلِّل. الـ SMV في جوهرها هي <strong>تقييس شامل لقيمة الرجل كإنسان</strong>: في مهنته، في بيئته الاجتماعية، في علاقاته، وفي عيون نفسه أولاً قبل أي شخص آخر.</p>
+<p>المفارقة اللافتة هي أن الرجل الذي يعمل على بناء قيمته الحقيقية لا يفعل ذلك "لاصطياد النساء" — بل يفعله لأنه يرفض أن يعيش نسخة متوسطة من نفسه. والنتيجة الطبيعية؟ أن يصبح شخصاً أكثر جذباً من الناحية الاجتماعية، المهنية، والعاطفية في آنٍ معاً.</p>
+<p>إذا سألت نفسك: "لماذا يجب أن أعمل على قيمتي؟" — فالإجابة البسيطة هي: لأنك تستحق أن تكون أكثر مما أنت عليه الآن. وهذا الطموح هو ما يميز الرجل الذي يُبني حياته عن الرجل الذي يتفرج عليها.</p>
+
+<h2>الأصل العلمي: لماذا يُقيِّم الناس بعضهم بعضاً؟</h2>
+<p>علم النفس التطوري يخبرنا أن التقييم الاجتماعي ليس ظاهرة ثقافية — إنه آلية بيولوجية نشأت عبر ملايين السنين. البشر يُقيِّمون بعضهم البعض في كل تفاعل اجتماعي، وهذا التقييم يؤثر على الفرص المتاحة لهم في العمل، العلاقات، والمجتمع.</p>
+<p>الفارق الجوهري بين الذكر والأنثى في هذا السياق: <strong>قيمة الأنثى تعتمد بشكل أكبر على معطيات بيولوجية</strong> كالشباب والصحة والجمال، في حين أن <strong>قيمة الذكر تُبنى بشكل رئيسي على الإنجاز والكفاءة</strong>. هذا يعني أن الرجل لديه قدرة أكبر بكثير على تغيير موقعه في السلم الاجتماعي خلال حياته — وهذا خبر ممتاز لمن يفهم تداعياته ويعمل بناءً عليها.</p>
+<p>علماء مثل David Buss وRobert Trivers أثبتوا في دراسات عابرة للثقافات أن المرأة في كل ثقافة درسوها تُفضل الرجال الذين يُظهرون الكفاءة والموارد والمكانة الاجتماعية. هذه ليست آراء شخصية — إنها نتائج علمية موثقة.</p>
+
+<h2>الأعمدة الأربعة: المنهجية الكاملة لبناء SMV قوية</h2>
+<p>بعد مراجعة الأدبيات العلمية وتحليل أنماط النجاح الاجتماعي، يمكن اختزال قيمة الرجل في أربعة أعمدة أساسية تتكامل مع بعضها.</p>
+
+<h3>العمود الأول: المظهر الجسدي (Physical Presence)</h3>
+<p>الجسد هو أول رسالة ترسلها قبل أن تفتح فمك. لا يعني هذا أن تمتلك ملامح ممثل سينمائي — يعني أن تُظهر من خلال جسدك أنك رجل يأخذ نفسه بجدية ويحترم ذاته.</p>
+<p>ما يُقيِّمه الناس في مظهرك لا شعورياً:</p>
+<ul>
+  <li><strong>التناسب الجسدي والوزن الصحي:</strong> السمنة الزائدة تُشير إلى غياب الانضباط الذاتي، والجسم المُدرَّب يُشير إلى الإرادة والكفاءة</li>
+  <li><strong>القوة والتناسق العضلي:</strong> العضلة ليست مجرد مظهر — إنها رسالة قدرة وصحة وتحكم في الذات</li>
+  <li><strong>الأناقة والنظافة الشخصية:</strong> الملابس المناسبة والاهتمام بالتفاصيل ليست رفاهية — إنها مؤشر لكيف تقيّم نفسك</li>
+  <li><strong>لغة الجسد والوقفة:</strong> كيف تجلس وكيف تقف وكيف تمشي يُخبر الآخرين بمن تعتقد أنك قبل أن تقول كلمة</li>
+  <li><strong>التواصل البصري:</strong> القدرة على الحفاظ على التواصل البصري المريح تُشير إلى الثقة الداخلية</li>
+</ul>
+<p>الخبر الجيد والمهم: هذا العمود قابل للتغيير بالكامل في غضون أشهر قليلة. لا أحد يُولد بجسم مثالي — لكن كل شخص قادر على بناء جسم أفضل مما هو عليه اليوم إذا التزم بنظام تدريب وتغذية واضح.</p>
+
+<h3>العمود الثاني: المال والموارد (Wealth and Resources)</h3>
+<p>المال ليس الهدف — لكنه أداة أساسية لا يمكن تجاهلها أو الاستهانة بها. الرجل الحر هو الرجل الذي يستطيع أن يقول "لا" دون خوف من العواقب المالية. هذا هو جوهر ما يمنحك إياه المال.</p>
+<p>ما يمنحك إياه المال في المعادلة الاجتماعية:</p>
+<ul>
+  <li><strong>الحرية الحقيقية:</strong> أن تختار وظيفتك، مكان إقامتك، ووقتك — بدلاً من أن تختارها الضرورة</li>
+  <li><strong>الأمان النفسي:</strong> أن تتصرف من موقع الكفاءة والاختيار لا من موقع الحاجة والاضطرار</li>
+  <li><strong>الوضع الاجتماعي:</strong> المال يفتح أبواباً ويُغيّر معادلات كانت مغلقة</li>
+  <li><strong>الوقت:</strong> الاستثمار في الأصول يمنحك أثمن ما يمكن امتلاكه في هذه الحياة</li>
+  <li><strong>الخيارات:</strong> الرجل الثري لديه خيارات، الرجل الفقير لديه اضطرارات</li>
+</ul>
+<div class="callout"><p><strong>تنبيه مهم:</strong> المال مُعزِّز لا مُعوِّض. الرجل الثري ذو الشخصية الضعيفة والجسم المهمل لا يزال ذا قيمة اجتماعية متدنية — فقط بمحفظة أثقل. المال يُضخِّم ما هو موجود، لا يخلق ما هو غائب.</p></div>
+
+<h3>العمود الثالث: الوضع الاجتماعي والمكانة (Status and Social Proof)</h3>
+<p>البشر كائنات هيراركية بطبيعتها. الوضع الاجتماعي هو موقعك في السلم الاجتماعي، ويُحدد كيف يُعاملك الآخرون ابتداءً حتى قبل أن يعرفوك جيداً.</p>
+<p>مكونات الوضع الاجتماعي للرجل:</p>
+<ul>
+  <li><strong>الإنجازات المهنية والأكاديمية:</strong> التقدم الواضح في المسار الوظيفي أو النجاح في مشروع تجاري يرفعان مكانتك تلقائياً</li>
+  <li><strong>شبكة العلاقات:</strong> "أخبرني بمن تُصاحب أُخبرك بمن أنت" — المقولة صحيحة تماماً. جودة من تحيط بهم تُعرِّف بك</li>
+  <li><strong>القيادة والتأثير:</strong> هل يتبعك الناس؟ هل تُحرك قرارات؟ هل رأيك يُغيّر مسار المحادثات؟</li>
+  <li><strong>السمعة في غيابك:</strong> ما يقوله الناس عنك حين لا تكون موجوداً هو مقياس حقيقي لمكانتك</li>
+</ul>
+<p>الوضع الاجتماعي هو الأبطأ في البناء من بين الأعمدة الأربعة — لكنه الأقوى والأكثر ديمومة في تأثيره. يُبنى عبر سنوات من الإنجاز المتراكم والعلاقات المُحسَنة.</p>
+
+<h3>العمود الرابع: الشخصية والإطار (Personality and Frame)</h3>
+<p>هذا هو العمود الأكثر تعقيداً من الناحية النظرية، والأقوى تأثيراً في كثير من المواقف. الشخصية القوية لا تعني الغرور أو الاستعراض — تعني اليقين الهادئ والحضور الراسخ الذي يصعب تزعزعه.</p>
+<p>مؤشرات الشخصية القوية والإطار المتماسك:</p>
+<ul>
+  <li><strong>الثقة الداخلية الحقيقية:</strong> أن تتصرف بثقة سواء كنت في غرفة مليئة بالناس أو وحدك في بيتك</li>
+  <li><strong>السيطرة على الإطار:</strong> أن تحتفظ بواقعيتك وقيمك في مواجهة كل محاولات الاستفزاز أو الضغط الاجتماعي</li>
+  <li><strong>استقلالية الرأي:</strong> أن تتخذ قراراتك وفق قيمك وتفكيرك لا وفق ما يُرضي الآخرين أو ما يتوقعونه منك</li>
+  <li><strong>الغموض المحسوب:</strong> أن لا تكشف كل شيء عن نفسك فور اللقاء — الإنسان الذي يُكشف في جلسة واحدة لا يُثير الفضول</li>
+  <li><strong>الذكاء العاطفي والاجتماعي:</strong> القدرة على قراءة الغرف والتفاعل معها من موقع القوة لا الاضطراب</li>
+</ul>
+
+<h2>الخطأ الشائع: التركيز على عمود واحد وإهمال البقية</h2>
+<p>معظم الرجال يقعون في فخ إهمال الأعمدة الأخرى لصالح عمود يجيدونه أو يرتاحون لتطويره. يظنون أن التفوق في مجال واحد يُعوِّض القصور في البقية. هذا وهم خطير.</p>
+<p>أمثلة شائعة على هذا الخطأ:</p>
+<ul>
+  <li>الرجل الرياضي الجميل المظهر الذي لا يملك طموحاً مهنياً ولا شخصية مميزة</li>
+  <li>الرجل الثري الذي أهمل جسده وتفتقر شخصيته إلى العمق والتحدي</li>
+  <li>الرجل الذكي والمثقف الذي يعيش في خوف اجتماعي ويحتاج موافقة الآخرين في كل قرار</li>
+</ul>
+<p>القيمة الحقيقية تأتي من البناء المتوازن. ليس عليك أن تكون مثالياً في كل عمود — لكن لا يجب أن تكون كارثة في أيٍّ منها.</p>
+
+<h2>كيف تُقيِّم نفسك بصدق؟ إطار عملي للبداية</h2>
+<p>قبل أن تبدأ في البناء، تحتاج إلى تقييم صادق وغير رحيم للواقع الحالي. إليك إطار التقييم:</p>
+<ul>
+  <li><strong>الجسد (0-10):</strong> هل وزنك في النطاق الصحي؟ هل تتمرن منتظماً؟ هل مظهرك يعكس من تريد أن تكون؟ هل لغة جسدك تعكس الثقة؟</li>
+  <li><strong>المال (0-10):</strong> هل لديك مدخرات تُغطي 6 أشهر من نفقاتك؟ هل أنت في مسار نمو مالي واضح؟ هل لديك أكثر من مصدر دخل؟</li>
+  <li><strong>الوضع الاجتماعي (0-10):</strong> هل تتقدم بوضوح في مسارك المهني؟ هل شبكتك تضم أشخاصاً ناجحين حقيقيين؟ هل لديك مشروع أو قضية يُعرِّفك بها الناس؟</li>
+  <li><strong>الشخصية (0-10):</strong> هل تتصرف بدافع من قيمك أم بدافع طلب الموافقة؟ هل تحتفظ بهدوئك تحت الضغط؟ هل لديك حضور يُلاحظه الناس؟</li>
+</ul>
+<p>اجمع الأرقام وقسّمها على 4. الرقم الناتج هو تقديرك الخام الحالي — ليس للاكتئاب، بل لتعرف من أين تبدأ وما الذي تعمل عليه أولاً.</p>
+
+<h2>خطة العمل: ابدأ من اليوم لا من الغد</h2>
+<p>الوضوح بدون خطة عمل مجرد حلم معسول. إليك خطة عملية متدرجة:</p>
+
+<h3>الأسبوع الأول: الأساس</h3>
+<ul>
+  <li>التزم بثلاثة تمارين أسبوعياً — الاتساق أهم بكثير من الشدة في البداية</li>
+  <li>راجع ميزانيتك واحذف نفقة غير ضرورية واحدة على الأقل</li>
+  <li>تواصل مع شخص ناجح في مجالك واطلب لقاء قصيراً</li>
+  <li>ابدأ بقراءة 10 صفحات يومياً في كتاب ذي قيمة</li>
+</ul>
+
+<h3>الشهر الأول: البناء</h3>
+<ul>
+  <li>اكتسب مهارة جديدة ذات صلة بمسارك المهني — ولو مهارة بسيطة</li>
+  <li>ابدأ في بناء مدخرات طوارئ ولو بـ10% من دخلك الشهري</li>
+  <li>اقرأ كتاباً واحداً في علم النفس الاجتماعي أو فن التأثير</li>
+  <li>أصلح عادة واحدة تعرف أنها تُضرّك — النوم، الأكل، شاشات الهاتف</li>
+</ul>
+
+<h3>الستة أشهر الأولى: التحول</h3>
+<ul>
+  <li>حقق هدفاً لياقياً واضحاً وقابلاً للقياس بأرقام محددة</li>
+  <li>حقق تقدماً ملموساً في مسارك المهني — ترقية، عقد، مشروع ناجح</li>
+  <li>بنِ عادة يومية تُعرِّفك — شيء تفعله كل يوم بغض النظر عن المزاج أو الظروف</li>
+  <li>وسّع شبكة علاقاتك بشكل مقصود ومنهجي</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>SMV ليست لعبة جذب — إنها مقياس لمدى إتقانك لحياتك</li>
+    <li>الأعمدة الأربعة: المظهر، المال، الوضع الاجتماعي، الشخصية</li>
+    <li>التوازن بين الأعمدة أهم من الكمال في عمود واحد</li>
+    <li>قيمة الرجل قابلة للبناء والتطوير في كل مرحلة عمرية</li>
+    <li>ابدأ بالتقييم الصادق، ثم ضع خطة، ثم نفّذ يومياً</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: SMV ليست لعبة — هي طريقة حياة كاملة</h2>
+<p>في النهاية، بناء القيمة السوقية ليس خطة لاصطياد فرص أو جذب شركاء — إنه إجابة على السؤال الأعمق والأصعب: <strong>هل أنت من تريد أن تكون؟</strong></p>
+<p>الرجل الذي يعمل على قيمته يفعل ذلك لأنه يرفض الرضا بالمتوسط. لأنه يريد أن يكون إنساناً يستحق الوجود بملء الكلمة. لأن الانضباط والبناء الذاتي هو الطريق الوحيد للحرية الحقيقية — وليس فقط الحرية المالية، بل الحرية أن تكون نفسك بشكل كامل ودون اعتذار.</p>
+<p>ابدأ اليوم. لا غداً. لا بعد "ما أنهي هذا الموسم" أو "ما تتحسن الظروف". الظروف لن تتحسن من تلقاء نفسها — أنت من يُحسِّنها.</p>`
+},
+en: {
+  dir:'ltr', title:'The Complete SMV Guide: What Is Market Value and How to Build It From Zero',
+  cat:'SMV', date:'July 2026', readTime:'10 min read',
+  excerpt:'Market value is not about attracting women — it is a comprehensive measure of how well you master your life. The complete guide to the four pillars and building your real value as a man.',
+  backLabel:'← Blog', homeLabel:'Home', homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['The 4 Pillars of SMV','First Impressions in 7 Seconds','Anchored Identity'],
+  ctaTitle:'Apply What You Learned', ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.', ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy', footerTerms:'Terms of Use', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>What Is SMV Really? Is It Only About Women?</h2>
+<p>Most people define SMV (Sexual Market Value) as a measure of a man's attractiveness in the dating market. That's a shallow and misleading interpretation. At its core, SMV is a <strong>comprehensive measure of your value as a human being</strong>: professionally, socially, personally, and in your own eyes before anyone else's.</p>
+<p>The man who works on his value to "attract women" is fundamentally misguided. The man who works on it because he refuses to live as a mediocre version of himself — that man naturally attracts everything: better opportunities, better relationships, better outcomes in every domain of life.</p>
+<p>If you ask "why should I care about my market value?" — the simple answer is: because you deserve to be more than you currently are. That ambition is what separates the man who builds his life from the man who watches it pass.</p>
+
+<h2>The Science Behind Social Valuation</h2>
+<p>Evolutionary psychology tells us that social evaluation is not a cultural phenomenon — it is a deeply wired biological mechanism that evolved over millions of years. Humans constantly assess each other, and these assessments affect available opportunities in career, relationships, and society.</p>
+<p>The fundamental difference between male and female evaluation: <strong>female value depends heavily on biological factors</strong> (youth, health, beauty), while <strong>male value is primarily built through achievement and demonstrated competence</strong>. This means a man has far greater ability to change his position in the social hierarchy throughout his life — extraordinary news for anyone willing to act on it.</p>
+
+<h2>The Four Pillars of Male SMV</h2>
+
+<h3>Pillar 1: Physical Presence</h3>
+<p>Your body is the first message you send before opening your mouth. This doesn't mean looking like a movie star — it means demonstrating through your body that you take yourself seriously.</p>
+<ul>
+  <li><strong>Healthy weight and body composition:</strong> Excess fat signals lack of self-discipline; a trained body signals willpower and competence</li>
+  <li><strong>Strength and muscular development:</strong> Physical training sends signals of health, capability, and self-mastery</li>
+  <li><strong>Grooming and personal style:</strong> How you dress and maintain yourself reflects your self-respect and attention to detail</li>
+  <li><strong>Posture and body language:</strong> How you carry yourself communicates who you believe you are before you say a word</li>
+  <li><strong>Eye contact:</strong> The ability to maintain comfortable, confident eye contact signals internal security</li>
+</ul>
+<p>Good news: this pillar is entirely changeable. No one is born with an ideal physique — but everyone can build a better one with consistent training and nutrition.</p>
+
+<h3>Pillar 2: Wealth and Resources</h3>
+<p>Money is not the goal — it's the tool that enables real freedom. A financially independent man can say "no" without fear of consequences. He operates from a position of choice, not necessity.</p>
+<ul>
+  <li><strong>True freedom:</strong> Choosing your work, location, and schedule rather than having necessity choose for you</li>
+  <li><strong>Psychological security:</strong> Acting from abundance rather than scarcity — this changes everything about how you show up</li>
+  <li><strong>Social access:</strong> Wealth opens doors that talent alone cannot</li>
+  <li><strong>Time:</strong> Investing in assets gives you the most valuable commodity in existence</li>
+</ul>
+<div class="callout"><p><strong>Important:</strong> Money amplifies what already exists — it does not create what is absent. A wealthy man with a weak personality and neglected body is still low-value, just with a thicker wallet.</p></div>
+
+<h3>Pillar 3: Status and Social Proof</h3>
+<p>Humans are inherently hierarchical. Status is your position in the social hierarchy and determines how others treat you from the first interaction, often before they know anything about you.</p>
+<ul>
+  <li>Professional achievement and career advancement</li>
+  <li>The quality of your social network — who you surround yourself with defines you</li>
+  <li>Leadership and influence — do people follow your lead? Does your opinion change outcomes?</li>
+  <li>Your reputation when you are not in the room — the true measure of standing</li>
+</ul>
+
+<h3>Pillar 4: Personality and Frame</h3>
+<p>The most nuanced and arguably the most powerful pillar. Strong personality does not mean arrogance — it means quiet certainty and unshakeable presence that is difficult to destabilize.</p>
+<ul>
+  <li><strong>Genuine internal confidence:</strong> Behaving the same whether observed or completely alone</li>
+  <li><strong>Frame control:</strong> Maintaining your reality and values in the face of external pressure or social tests</li>
+  <li><strong>Opinion independence:</strong> Decisions driven by your values, not approval-seeking</li>
+  <li><strong>Measured mystery:</strong> Not revealing everything about yourself immediately — depth creates curiosity</li>
+  <li><strong>Emotional and social intelligence:</strong> Reading rooms and adapting from a position of strength</li>
+</ul>
+
+<h2>The Common Mistake: One Pillar Obsession</h2>
+<p>Most men master one pillar and neglect the others, assuming excellence in one area compensates for deficiencies elsewhere. It doesn't. Value comes from balance. The physically perfect man with no career ambition and a shallow personality is still low-value. The wealthy man who is out of shape and socially anxious occupies the same position.</p>
+<p>You don't need to be perfect across all pillars — but you cannot afford to be catastrophically weak in any of them.</p>
+
+<h2>Honest Self-Assessment: Your Current Baseline</h2>
+<p>Before building anything, you need an honest, ruthless evaluation of your current state. Rate yourself 0-10 on each pillar, add the scores, and divide by four. This is your baseline — not for despair, but for clarity on where to start.</p>
+
+<h2>Action Plan: Start Today</h2>
+<ul>
+  <li><strong>Week 1:</strong> Three workouts. Review your budget. Reach out to one successful person for a meeting. Read 10 pages daily.</li>
+  <li><strong>Month 1:</strong> Learn one career-relevant skill. Start an emergency fund (10% of income). Read one book on psychology or influence. Fix one destructive habit.</li>
+  <li><strong>Six months:</strong> Hit a measurable fitness goal. Achieve visible career progress. Build one identity-defining daily habit. Expand your network deliberately.</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>SMV is not a dating game — it's a measure of how fully you master your life</li>
+    <li>The four pillars: Physical, Financial, Social Status, Personality</li>
+    <li>Balance across all pillars outperforms perfection in one</li>
+    <li>Male value is buildable at any age — this is a significant advantage</li>
+    <li>Start with honest assessment, then plan, then execute daily</li>
+  </ul>
+</div>
+
+<h2>The Bottom Line</h2>
+<p>Building your market value is not a game for attracting people. It is the answer to the deepest question: <strong>Are you becoming the man you are capable of being?</strong></p>
+<p>Discipline and deliberate self-development are the only paths to real freedom — not just financial freedom, but the freedom to be fully, unapologetically yourself. Start today. Not tomorrow. Not after the season ends. Today.</p>`
+},
+es: {
+  dir:'ltr', title:'La guía completa de SMV: Qué es el valor de mercado y cómo construirlo desde cero',
+  cat:'SMV', date:'Julio 2026', readTime:'10 min',
+  excerpt:'El valor de mercado no es un juego para atraer mujeres — es una medida integral de cuánto dominas tu vida. La guía completa sobre los cuatro pilares.',
+  backLabel:'← Blog', homeLabel:'Inicio', homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Los 4 pilares del SMV','Primera impresión en 7 segundos','Identidad anclada'],
+  ctaTitle:'Aplica lo que aprendiste', ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.', ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad', footerTerms:'Términos de Uso', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Qué es realmente el SMV?</h2>
+<p>La mayoría de las personas define SMV (Sexual Market Value) como una medida del atractivo de un hombre en el mercado de citas. Esa es una interpretación superficial y engañosa. En su esencia, el SMV es una <strong>medida integral de tu valor como ser humano</strong>: profesionalmente, socialmente y personalmente.</p>
+<p>El hombre que trabaja en su valor para "atraer mujeres" está fundamentalmente equivocado. El hombre que lo hace porque se niega a vivir como una versión mediocre de sí mismo — ese hombre naturalmente atrae mejores oportunidades, mejores relaciones y mejores resultados en todos los ámbitos.</p>
+
+<h2>Los Cuatro Pilares del SMV Masculino</h2>
+
+<h3>Pilar 1: Presencia Física</h3>
+<p>Tu cuerpo es el primer mensaje que envías antes de abrir la boca. No significa tener el aspecto de un actor — significa demostrar a través de tu cuerpo que te tomas en serio.</p>
+<ul>
+  <li><strong>Peso saludable y composición corporal:</strong> El exceso de grasa señala falta de autodisciplina; un cuerpo entrenado señala voluntad y competencia</li>
+  <li><strong>Postura y lenguaje corporal:</strong> Cómo te mueves comunica quién crees que eres</li>
+  <li><strong>Cuidado personal y estilo:</strong> Cómo te vistes refleja tu autorespeto</li>
+</ul>
+
+<h3>Pilar 2: Riqueza y Recursos</h3>
+<p>El dinero no es el objetivo — es la herramienta que permite la libertad real. Un hombre financieramente independiente puede decir "no" sin miedo. Opera desde una posición de elección, no de necesidad.</p>
+
+<h3>Pilar 3: Estatus y Prueba Social</h3>
+<p>Los humanos son inherentemente jerárquicos. El estatus es tu posición en la jerarquía social y determina cómo te tratan los demás desde el primer encuentro.</p>
+<ul>
+  <li>Logros profesionales y avance en la carrera</li>
+  <li>La calidad de tu red social — quiénes te rodean te define</li>
+  <li>Liderazgo e influencia — ¿te siguen las personas? ¿Tu opinión cambia resultados?</li>
+</ul>
+
+<h3>Pilar 4: Personalidad y Marco</h3>
+<p>El pilar más matizado y posiblemente el más poderoso. La personalidad fuerte no significa arrogancia — significa certeza tranquila y presencia inamovible.</p>
+<ul>
+  <li>Confianza interna genuina — comportarse igual ya sea observado o solo</li>
+  <li>Control del marco — mantener tu realidad frente a la presión externa</li>
+  <li>Independencia de opinión — decisiones impulsadas por valores, no por búsqueda de aprobación</li>
+</ul>
+
+<h2>Plan de Acción</h2>
+<ul>
+  <li><strong>Semana 1:</strong> Tres entrenamientos. Revisar presupuesto. Contactar a una persona exitosa.</li>
+  <li><strong>Mes 1:</strong> Aprender una habilidad profesional. Iniciar fondo de emergencia. Leer un libro de psicología.</li>
+  <li><strong>Seis meses:</strong> Alcanzar un objetivo de fitness medible. Lograr progreso visible en la carrera. Construir un hábito diario de identidad.</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>Construir tu valor de mercado no es un juego. Es la respuesta a la pregunta más profunda: <strong>¿Te estás convirtiendo en el hombre que eres capaz de ser?</strong> La disciplina y el desarrollo personal deliberado son los únicos caminos hacia la libertad real. Empieza hoy.</p>`
+},
+fr: {
+  dir:'ltr', title:"Le guide complet du SMV: Qu'est-ce que la valeur marchande et comment la construire",
+  cat:'SMV', date:'Juillet 2026', readTime:'10 min',
+  excerpt:"La valeur marchande n'est pas un jeu pour attirer les femmes — c'est une mesure globale de votre maîtrise de la vie. Le guide complet sur les quatre piliers.",
+  backLabel:'← Blog', homeLabel:'Accueil', homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Les 4 piliers du SMV','Première impression en 7 secondes','Identité ancrée'],
+  ctaTitle:'Appliquez ce que vous avez appris', ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.", ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité', footerTerms:"Conditions d'utilisation", footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Qu'est-ce que le SMV réellement?</h2>
+<p>La plupart des gens définissent le SMV (Sexual Market Value) comme une mesure de l'attractivité d'un homme sur le marché des rencontres. C'est une interprétation superficielle et trompeuse. Dans son essence, le SMV est une <strong>mesure globale de votre valeur en tant qu'être humain</strong>: professionnellement, socialement et personnellement.</p>
+<p>L'homme qui travaille sur sa valeur pour "attirer des femmes" est fondamentalement dans l'erreur. L'homme qui le fait parce qu'il refuse de vivre comme une version médiocre de lui-même — cet homme attire naturellement de meilleures opportunités et de meilleurs résultats dans tous les domaines.</p>
+
+<h2>Les Quatre Piliers du SMV Masculin</h2>
+
+<h3>Pilier 1: Présence Physique</h3>
+<p>Votre corps est le premier message que vous envoyez avant d'ouvrir la bouche. Cela ne signifie pas ressembler à un acteur — cela signifie démontrer à travers votre corps que vous vous prenez au sérieux.</p>
+<ul>
+  <li><strong>Poids sain et composition corporelle:</strong> L'excès de graisse signale un manque de discipline; un corps entraîné signale la volonté et la compétence</li>
+  <li><strong>Posture et langage corporel:</strong> Comment vous vous déplacez communique qui vous croyez être</li>
+  <li><strong>Soins personnels et style:</strong> Comment vous vous habillez reflète votre respect de vous-même</li>
+</ul>
+
+<h3>Pilier 2: Richesse et Ressources</h3>
+<p>L'argent n'est pas le but — c'est l'outil qui permet la vraie liberté. Un homme financièrement indépendant peut dire "non" sans crainte. Il opère depuis une position de choix, pas de nécessité.</p>
+
+<h3>Pilier 3: Statut et Preuve Sociale</h3>
+<p>Les humains sont intrinsèquement hiérarchiques. Le statut est votre position dans la hiérarchie sociale et détermine comment les autres vous traitent dès la première interaction.</p>
+<ul>
+  <li>Réalisations professionnelles et avancement de carrière</li>
+  <li>La qualité de votre réseau social — ceux qui vous entourent vous définissent</li>
+  <li>Leadership et influence — les gens vous suivent-ils? Votre opinion change-t-elle les résultats?</li>
+</ul>
+
+<h3>Pilier 4: Personnalité et Cadre</h3>
+<p>Le pilier le plus nuancé et le plus puissant. Une personnalité forte ne signifie pas l'arrogance — cela signifie une certitude tranquille et une présence inébranlable.</p>
+<ul>
+  <li>Vraie confiance interne — se comporter de la même façon qu'on soit observé ou seul</li>
+  <li>Contrôle du cadre — maintenir votre réalité face à la pression externe</li>
+  <li>Indépendance d'opinion — décisions guidées par les valeurs, pas par la recherche d'approbation</li>
+</ul>
+
+<h2>Plan d'Action</h2>
+<ul>
+  <li><strong>Semaine 1:</strong> Trois entraînements. Réviser votre budget. Contacter une personne qui réussit.</li>
+  <li><strong>Mois 1:</strong> Apprendre une compétence professionnelle. Démarrer un fonds d'urgence. Lire un livre de psychologie.</li>
+  <li><strong>Six mois:</strong> Atteindre un objectif de fitness mesurable. Réaliser des progrès visibles dans la carrière. Construire une habitude quotidienne d'identité.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Construire votre valeur marchande n'est pas un jeu. C'est la réponse à la question la plus profonde: <strong>Devenez-vous l'homme que vous êtes capable d'être?</strong> La discipline et le développement personnel délibéré sont les seuls chemins vers la vraie liberté. Commencez aujourd'hui.</p>`
+},
+hi: {
+  dir:'ltr', title:'SMV की पूरी गाइड: बाजार मूल्य क्या है और इसे शून्य से कैसे बनाएं',
+  cat:'SMV', date:'जुलाई 2026', readTime:'10 मिनट',
+  excerpt:'बाजार मूल्य महिलाओं को आकर्षित करने का खेल नहीं है — यह आपके जीवन पर आपकी पकड़ का व्यापक माप है। चार स्तंभों पर पूरी गाइड।',
+  backLabel:'← ब्लॉग', homeLabel:'होम', homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['SMV के 4 स्तंभ','7 सेकंड में पहली छाप','स्थिर पहचान'],
+  ctaTitle:'जो सीखा उसे लागू करें', ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।', ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति', footerTerms:'उपयोग की शर्तें', footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>SMV वास्तव में क्या है?</h2>
+<p>अधिकांश लोग SMV (Sexual Market Value) को डेटिंग मार्केट में एक पुरुष के आकर्षण के माप के रूप में परिभाषित करते हैं। यह एक उथली और भ्रामक व्याख्या है। अपने मूल में, SMV <strong>एक मानव के रूप में आपके मूल्य का एक व्यापक माप है</strong>: पेशेवर रूप से, सामाजिक रूप से और व्यक्तिगत रूप से।</p>
+<p>जो पुरुष "महिलाओं को आकर्षित करने" के लिए अपने मूल्य पर काम करता है वह मूल रूप से गलत रास्ते पर है। जो पुरुष इसे इसलिए करता है क्योंकि वह खुद के एक औसत संस्करण के रूप में जीने से इनकार करता है — वह पुरुष स्वाभाविक रूप से बेहतर अवसर, बेहतर रिश्ते और जीवन के हर क्षेत्र में बेहतर परिणाम आकर्षित करता है।</p>
+
+<h2>पुरुष SMV के चार स्तंभ</h2>
+
+<h3>स्तंभ 1: शारीरिक उपस्थिति</h3>
+<p>आपका शरीर पहला संदेश है जो आप मुंह खोलने से पहले भेजते हैं। इसका मतलब किसी अभिनेता की तरह दिखना नहीं है — इसका मतलब है कि अपने शरीर के माध्यम से यह दिखाना कि आप खुद को गंभीरता से लेते हैं।</p>
+<ul>
+  <li><strong>स्वस्थ वजन:</strong> अतिरिक्त वसा आत्म-अनुशासन की कमी का संकेत देती है</li>
+  <li><strong>मुद्रा और शारीरिक भाषा:</strong> आप कैसे चलते हैं यह बताता है कि आप खुद को कौन मानते हैं</li>
+  <li><strong>व्यक्तिगत देखभाल और शैली:</strong> आप कैसे कपड़े पहनते हैं यह आपके आत्मसम्मान को दर्शाता है</li>
+</ul>
+
+<h3>स्तंभ 2: धन और संसाधन</h3>
+<p>पैसा लक्ष्य नहीं है — यह वह उपकरण है जो वास्तविक स्वतंत्रता को सक्षम बनाता है। एक वित्तीय रूप से स्वतंत्र पुरुष बिना डर के "नहीं" कह सकता है। वह पसंद की स्थिति से काम करता है, जरूरत की नहीं।</p>
+
+<h3>स्तंभ 3: स्थान और सामाजिक प्रमाण</h3>
+<p>मनुष्य स्वाभाविक रूप से पदानुक्रमिक हैं। स्थान सामाजिक पदानुक्रम में आपकी स्थिति है और यह निर्धारित करता है कि पहली बातचीत से दूसरे आपके साथ कैसा व्यवहार करते हैं।</p>
+
+<h3>स्तंभ 4: व्यक्तित्व और फ्रेम</h3>
+<p>सबसे सूक्ष्म और शायद सबसे शक्तिशाली स्तंभ। मजबूत व्यक्तित्व का मतलब अहंकार नहीं है — इसका मतलब है शांत निश्चितता और अटल उपस्थिति।</p>
+<ul>
+  <li>वास्तविक आंतरिक आत्मविश्वास — चाहे देखा जाए या अकेले हों, एक जैसा व्यवहार</li>
+  <li>फ्रेम नियंत्रण — बाहरी दबाव का सामना करते हुए अपनी वास्तविकता बनाए रखना</li>
+  <li>राय की स्वतंत्रता — मूल्यों द्वारा संचालित निर्णय, अनुमोदन की तलाश नहीं</li>
+</ul>
+
+<h2>कार्य योजना: आज से शुरू करें</h2>
+<ul>
+  <li><strong>सप्ताह 1:</strong> तीन वर्कआउट। बजट की समीक्षा करें। एक सफल व्यक्ति से संपर्क करें।</li>
+  <li><strong>महीना 1:</strong> एक पेशेवर कौशल सीखें। आपातकालीन निधि शुरू करें। मनोविज्ञान पर एक किताब पढ़ें।</li>
+  <li><strong>छह महीने:</strong> मापने योग्य फिटनेस लक्ष्य प्राप्त करें। दैनिक पहचान-परिभाषित आदत बनाएं।</li>
+</ul>
+
+<h2>निष्कर्ष</h2>
+<p>अपना बाजार मूल्य बनाना एक खेल नहीं है। यह सबसे गहरे प्रश्न का उत्तर है: <strong>क्या आप वह पुरुष बन रहे हैं जो आप बनने में सक्षम हैं?</strong> अनुशासन और जानबूझकर आत्म-विकास वास्तविक स्वतंत्रता के एकमात्र रास्ते हैं। आज से शुरू करें।</p>`
+}
+};
+
+const LANGS_ORDER = ['ar','en','es','fr','hi'];
+let currentLang = localStorage.getItem('tf_lang') || 'ar';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('tf_lang', lang);
+  document.getElementById('lang-flag').textContent = FLAGS[lang];
+  document.getElementById('lang-label').textContent = NAMES[lang];
+  document.querySelectorAll('.lang-option').forEach((el,i)=>{ el.classList.toggle('active', LANGS_ORDER[i]===lang); });
+  document.getElementById('lang-picker').classList.remove('open');
+  renderPage();
+}
+
+function renderPage() {
+  const c = CONTENT[currentLang] || CONTENT['ar'];
+  const root = document.getElementById('html-root');
+  root.lang = currentLang;
+  root.dir = c.dir;
+  document.body.style.fontFamily = currentLang==='ar' ? "'Cairo',sans-serif" : "'Oswald',sans-serif";
+  document.title = c.title + ' | The Frame';
+  document.querySelector('meta[name="description"]').content = c.excerpt;
+
+  document.getElementById('nav-blog').textContent = c.backLabel;
+  document.getElementById('nav-home').textContent = c.homeLabel;
+  document.getElementById('nav-home').href = c.homeHref;
+  document.getElementById('nav-home-link').href = c.homeHref;
+
+  document.getElementById('article-hero').innerHTML = `
+    <div class="breadcrumb">
+      <a href="${c.homeHref}">${c.homeLabel}</a>
+      <span>›</span>
+      <a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a>
+      <span>›</span>
+      <span>${c.cat}</span>
+    </div>
+    <span class="article-cat">${c.cat}</span>
+    <h1 class="article-title">${c.title}</h1>
+    <div class="article-meta">
+      <span>${c.date}</span>
+      <span class="read-time">${c.readTime}</span>
+    </div>
+    <p class="article-excerpt">${c.excerpt}</p>`;
+
+  document.getElementById('article-body').innerHTML = c.body;
+
+  const rels = c.rel || [];
+  const hrefs = ['smv-pillars.html','smv-perception.html','logic-identity.html'];
+  const cats = [c.cat, c.cat, currentLang==='ar'?'المنطق':currentLang==='en'?'Logic':currentLang==='es'?'Lógica':currentLang==='fr'?'Logique':'तर्क'];
+  document.getElementById('related-title').textContent = c.relatedTitle;
+  ['rel1','rel2','rel3'].forEach((id,i)=>{
+    const el = document.getElementById(id);
+    if(el && rels[i]) el.textContent = rels[i];
+  });
+
+  document.getElementById('cta-title').textContent = c.ctaTitle;
+  document.getElementById('cta-desc').textContent = c.ctaDesc;
+  document.getElementById('cta-btn-text').textContent = c.ctaBtn;
+  document.getElementById('f-privacy').textContent = c.footerPrivacy;
+  document.getElementById('f-terms').textContent = c.footerTerms;
+  document.getElementById('f-blog').textContent = c.footerBlog;
+  document.getElementById('footer-copy').textContent = c.footerCopy;
+}
+
+document.getElementById('lang-btn-toggle').addEventListener('click', ()=>{ document.getElementById('lang-picker').classList.toggle('open'); });
+document.addEventListener('click', e=>{ if(!document.getElementById('lang-picker').contains(e.target)) document.getElementById('lang-picker').classList.remove('open'); });
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById('progress-bar').style.width = pct+'%';
+});
+
+setLang(currentLang);
+</script>
+</body>
+</html>

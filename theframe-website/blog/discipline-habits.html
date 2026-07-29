@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="العادات الذرية: علم بناء العادات الصغيرة التي تُنتج تحولات ضخمة. كيف تُصمِّم نظام عادات يعمل تلقائياً.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>العادات الذرية: بناء عادات صغيرة تُنتج تحولات ضخمة | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/discipline-habits.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="discipline-system.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel1">الانضباط كنظام</span></a>
+      <a class="related-card" href="discipline-morning.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel2">روتين الصباح</span></a>
+      <a class="related-card" href="logic-identity.html"><span class="related-cat">المنطق</span><span class="related-title" id="rel3">الهوية الراسخة</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'العادات الذرية: كيف تُبني عادات صغيرة تُنتج تحولات لا تصدق',
+  cat:'الانضباط',date:'يوليو 2026',readTime:'13 دقيقة قراءة',
+  excerpt:'التحسن بنسبة 1% يومياً يُنتج تحسناً بنسبة 37 ضعفاً في سنة واحدة. العادات الذرية ليست عن الإنجازات الكبيرة — هي عن التغييرات الصغيرة المتراكمة التي تُعيد تشكيل هويتك.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الانضباط كنظام','روتين الصباح','الهوية الراسخة'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>قوة التحسن الهامشي: الرياضيات التي تُغير كل شيء</h2>
+<p>إذا تحسنت بنسبة 1% كل يوم لمدة سنة واحدة، ستكون في نهاية السنة أفضل بـ37 مرة مما أنت عليه الآن. إذا تراجعت بنسبة 1% كل يوم، ستنتهي السنة بانتهائك تقريباً. هذه الرياضيات البسيطة تُلخِّص جوهر فكرة العادات الذرية: <strong>التحسينات الصغيرة اليومية المتراكمة تُنتج نتائج ضخمة لا تُتوقَع</strong>.</p>
+<p>المشكلة أن هذه التحسينات الصغيرة غير مرئية في البداية. الشخص الذي يبدأ بتمرين 10 دقائق يومياً لن يُلاحِظ فرقاً بعد أسبوع. لن يُلاحِظ فرقاً كبيراً بعد شهر. لكن بعد 6 أشهر؟ بعد سنة؟ التراكم يكون قد فعل عمله بشكل لا يمكن إنكاره.</p>
+<p>هذا ما يُسميه العلم "الاهتمام المركّب للسلوك" — مبدأ مشابه للاهتمام المركّب المالي، لكن مُطبَّق على بناء الشخصية والكفاءة والصحة.</p>
+
+<h2>لماذا العادات الكبيرة تفشل؟ التشخيص الصحيح</h2>
+<p>معظم الناس يحاوِلون تغيير سلوكهم بطفرات كبيرة: "سأتمرن ساعة يومياً من الغد"، "سأتوقف عن السكر تماماً"، "سأقرأ كتاباً في الأسبوع". هذه الأهداف الكبيرة تصطدم بمشكلتين مزدوجتَين:</p>
+<ul>
+  <li><strong>مشكلة التحفيز:</strong> التحفيز الأولي كافٍ لبدء التغيير الكبير، لكنه غير كافٍ للاستمرار. التحفيز مشاعر وليس استراتيجية.</li>
+  <li><strong>مشكلة الهوية:</strong> التغيير الكبير يتعارض مع الهوية الحالية ("أنا لست النوع الذي يتمرن") مما يُولِّد مقاومة داخلية عميقة.</li>
+</ul>
+<p>الحل؟ تغييرات صغيرة جداً لا تستحق المقاومة، مبنية على هوية جديدة بدلاً من نتائج جديدة.</p>
+
+<h2>الفرق الجوهري: الهوية مقابل النتيجة</h2>
+<p>هناك نهجان مختلفان تماماً لبناء العادات:</p>
+
+<h3>النهج الأول: مبني على النتيجة</h3>
+<p>"أريد أن أخسر 10 كيلوغرامات." — النتيجة هي الهدف. هذا النهج يُفشِل لأنه يجعل السلوك الجديد يبدو مؤقتاً — "سأتمرن حتى أصل للوزن المطلوب." حين يصل، يتوقف.</p>
+
+<h3>النهج الثاني: مبني على الهوية</h3>
+<p>"أنا شخص يتعامل مع جسده باحترام." — الهوية هي الأساس. كل قرار صغير يُتخَذ يومياً هو تصويت لصالح هذه الهوية أو ضدها. هذا النهج يُنتج سلوكاً مستداماً لأنه مرتبط بمن أنت، لا بما تريده.</p>
+
+<div class="callout"><p><strong>القاعدة الذهبية:</strong> لا تُركِّز على ما تريد تحقيقه — ركِّز على نوع الشخص الذي تريد أن تكون. ثم اسأل: "ماذا سيفعل هذا النوع من الناس في هذا الموقف؟"</p></div>
+
+<h2>حلقة العادة: الآلية الكاملة</h2>
+<p>كل عادة — سواء كانت جيدة أو سيئة — تمر بنفس الدورة الرباعية:</p>
+<ul>
+  <li><strong>الإشارة (Cue):</strong> الشيء الذي يُطلِق السلوك — وقت، مكان، شخص، حالة عاطفية، أو فعل سابق</li>
+  <li><strong>الرغبة (Craving):</strong> الدافع الذي يُحرِّك نحو السلوك — ليس السلوك نفسه بل التوقع بالمكافأة</li>
+  <li><strong>الاستجابة (Response):</strong> السلوك الفعلي — الفعل أو الامتناع</li>
+  <li><strong>المكافأة (Reward):</strong> الفائدة التي تُعزِّز العادة وتُعلِّم الدماغ كرارها</li>
+</ul>
+<p>فهم هذه الحلقة هو مفتاح بناء عادات جديدة وكسر عادات قديمة.</p>
+
+<h2>القوانين الأربعة لبناء عادة جيدة</h2>
+
+<h3>القانون الأول: اجعلها واضحة (Cue)</h3>
+<p>الإشارات غير الواضحة لا تُطلِق عادات. اجعل إشارة عادتك الجديدة واضحة ومرئية:</p>
+<ul>
+  <li>تقنية "ربط العادات" (Habit Stacking): "بعد [عادة موجودة]، سأقوم بـ[عادة جديدة]". "بعد أن أشرب قهوتي الصباحية، سأقرأ 10 صفحات."</li>
+  <li>تصميم البيئة: ضع الكتاب على طاولة القهوة. ضع حذاء الجري بجانب الباب. اجعل الإشارة مرئية ولا يمكن تجاهلها.</li>
+</ul>
+
+<h3>القانون الثاني: اجعلها جذابة (Craving)</h3>
+<p>الدماغ يُكرِّر ما يتوقع منه مكافأة. اجعل عادتك الجديدة مرتبطة بشيء تحبه:</p>
+<ul>
+  <li>استمع لبودكاست تُحبه فقط أثناء التمرين</li>
+  <li>احتسِ قهوتك المفضلة فقط أثناء القراءة</li>
+  <li>اجعل العادة تُسبق شيئاً تتطلع إليه</li>
+</ul>
+
+<h3>القانون الثالث: اجعلها سهلة (Response)</h3>
+<p>قلِّل الاحتكاك بينك وبين العادة. قاعدة "الدقيقتين": أي عادة جديدة يجب أن تبدأ بنسخة تستغرق دقيقتين أو أقل:</p>
+<ul>
+  <li>"اقرأ كتاباً" → "اقرأ صفحة واحدة"</li>
+  <li>"تمرن 30 دقيقة" → "البِس ملابس الجيم"</li>
+  <li>"كتابة مقالة" → "افتح المستند واكتب جملة"</li>
+</ul>
+<p>الهدف ليس قراءة صفحة واحدة فقط كل يوم — الهدف هو بناء الهوية بداية من الخطوة الأسهل ثم التوسع منها بشكل طبيعي.</p>
+
+<h3>القانون الرابع: اجعلها مُرضية (Reward)</h3>
+<p>الدماغ يتعلم أسرع من المكافآت الفورية. المشكلة أن كثيراً من العادات الجيدة تُؤخِّر مكافأتها (الرياضة تُحسِّن الصحة بعد أشهر):</p>
+<ul>
+  <li>تتبّع العادة: ضع علامة على التقويم في كل يوم تُنجِز فيه العادة — رؤية السلسلة المتراكمة تُصبح دافعاً بحد ذاتها</li>
+  <li>مكافأة فورية صغيرة: مكافأة فورية لا تتعارض مع هدف العادة (ليس السكر بعد التمرين)</li>
+  <li>مشاركة التقدم: أخبر شخصاً بتقدمك — المساءلة الاجتماعية تُعزِّز الالتزام</li>
+</ul>
+
+<h2>كسر العادات السيئة: عكس القوانين الأربعة</h2>
+<p>لكسر عادة سيئة: اجعل إشارتها غير مرئية، اجعل الرغبة غير جذابة، اجعل الاستجابة صعبة، اجعل المكافأة مُؤلمة.</p>
+<ul>
+  <li><strong>هاتف بعد منتصف الليل:</strong> ضعه في غرفة أخرى (إشارة غير مرئية) + شاشة رمادية (أقل جاذبية) + كلمة مرور طويلة (صعوبة الوصول)</li>
+  <li><strong>الأكل العاطفي:</strong> لا تشتري الطعام غير الصحي (إزالة الإشارة) + لاحظ المشاعر وراء الرغبة (إضعاف الرغبة) + اجعل الوصول صعباً (اذهب للمتجر بدلاً من الطلب)</li>
+</ul>
+
+<h2>تتبع العادات: لماذا هو ضروري</h2>
+<p>ما يُقاس يُحسَّن. تتبّع عاداتك بطريقة بسيطة — تطبيق، ورقة، أو تقويم — يُعطيك:</p>
+<ul>
+  <li>دليلاً مرئياً على تقدمك (مُحفِّز)</li>
+  <li>رؤية واضحة للأنماط (ما الذي يُفشِل عادتك عادةً؟)</li>
+  <li>إحساساً بالانجاز يُعزِّز الاستمرار</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>التحسن 1% يومياً = 37 ضعفاً أفضل في سنة واحدة — الاهتمام المركّب للسلوك</li>
+    <li>ابنِ العادات على الهوية ("من أنا") لا على النتائج ("ما أريد")</li>
+    <li>حلقة العادة: إشارة → رغبة → استجابة → مكافأة</li>
+    <li>القانون الثالث الأهم: اجعلها سهلة — قاعدة الدقيقتين</li>
+    <li>تتبّع العادة يُحوِّل السلوك لهوية ويُعزِّز الاستمرار</li>
+    <li>اكسر العادات السيئة بعكس القوانين الأربعة</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: أنت مجموع عاداتك</h2>
+<p>كل يوم تُصوِّت لصالح نوع الشخص الذي تريد أن تكون أو ضده. ليس بقرارات كبيرة جذرية — بل بخيارات صغيرة يومية يبدو كل منها لا يكاد يُغير شيئاً. لكن مجموعها عبر الزمن يُعيد تشكيلك بشكل كامل.</p>
+<p>ابدأ بعادة واحدة صغيرة جداً هذا الأسبوع. أصغر مما تظن أنها كافية. ثم اتركها تنمو.</p>`
+},
+en:{
+  dir:'ltr',title:'Atomic Habits: Build Tiny Habits That Produce Incredible Transformations',
+  cat:'Discipline',date:'July 2026',readTime:'13 min read',
+  excerpt:'Improving 1% daily produces 37x improvement in one year. Atomic habits are not about big achievements — they are about small accumulated changes that reshape your identity.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Discipline as a System','Morning Routine','Anchored Identity'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>The Power of Marginal Gains: The Math That Changes Everything</h2>
+<p>If you improve 1% every day for a year, you will be 37 times better by year's end. If you decline 1% daily, you'll end the year nearly at zero. This simple math summarizes the core of atomic habits: <strong>small daily improvements compounded produce results that seem impossible</strong>.</p>
+<p>The problem is these small improvements are invisible at first. Someone starting with 10 minutes of daily exercise won't notice a difference after a week. Won't notice much after a month. But after 6 months? After a year? The compounding has done its work undeniably.</p>
+
+<h2>Why Big Habits Fail: The Correct Diagnosis</h2>
+<p>Most people try to change their behavior through large leaps: "I'll work out an hour daily starting tomorrow." These large goals hit two compounding problems: motivation runs out, and the change conflicts with current identity ("I'm not the type who exercises"), generating deep internal resistance.</p>
+<p>The solution? Changes so tiny they don't warrant resistance, built on a new identity rather than new outcomes.</p>
+
+<h2>The Critical Difference: Identity vs. Outcome</h2>
+<p><strong>Outcome-based approach:</strong> "I want to lose 10 kilos." — The goal is temporary behavior. Once reached, the behavior stops.</p>
+<p><strong>Identity-based approach:</strong> "I am someone who treats their body with respect." — Every small daily decision is a vote for or against this identity. This produces sustainable behavior because it's tied to who you are, not what you want.</p>
+
+<div class="callout"><p><strong>The Golden Rule:</strong> Don't focus on what you want to achieve — focus on the type of person you want to be. Then ask: "What would this type of person do in this situation?"</p></div>
+
+<h2>The Habit Loop: The Complete Mechanism</h2>
+<p>Every habit passes through the same four-step cycle:</p>
+<ul>
+  <li><strong>Cue:</strong> What triggers the behavior — time, place, person, emotional state, or preceding action</li>
+  <li><strong>Craving:</strong> The motivational drive toward the behavior — not the behavior itself but the expectation of reward</li>
+  <li><strong>Response:</strong> The actual behavior — the action or abstention</li>
+  <li><strong>Reward:</strong> The benefit that reinforces the habit and teaches the brain to repeat it</li>
+</ul>
+
+<h2>The Four Laws of Building a Good Habit</h2>
+
+<h3>Law 1: Make It Obvious (Cue)</h3>
+<p>Habit stacking: "After [existing habit], I will [new habit]." Environment design: make the cue visible and impossible to ignore — put the book on the coffee table, put running shoes by the door.</p>
+
+<h3>Law 2: Make It Attractive (Craving)</h3>
+<p>Pair the habit with something you love: listen only to your favorite podcast while exercising, drink your favorite coffee only while reading.</p>
+
+<h3>Law 3: Make It Easy (Response)</h3>
+<p>The Two-Minute Rule: any new habit must start as a version that takes two minutes or less:</p>
+<ul>
+  <li>"Read a book" → "Read one page"</li>
+  <li>"Work out 30 minutes" → "Put on gym clothes"</li>
+  <li>"Write an article" → "Open the document and write one sentence"</li>
+</ul>
+
+<h3>Law 4: Make It Satisfying (Reward)</h3>
+<p>Track the habit: mark your calendar every day you complete it — seeing the accumulated chain becomes its own motivator. Use small immediate rewards that don't undermine the habit's goal.</p>
+
+<h2>Breaking Bad Habits: Reverse the Four Laws</h2>
+<ul>
+  <li>Make the cue invisible</li>
+  <li>Make the craving unattractive</li>
+  <li>Make the response difficult</li>
+  <li>Make the reward painful</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>1% improvement daily = 37x better in one year — behavioral compound interest</li>
+    <li>Build habits on identity ("who I am") not outcomes ("what I want")</li>
+    <li>The habit loop: cue → craving → response → reward</li>
+    <li>The most important law: make it easy — the Two-Minute Rule</li>
+    <li>Habit tracking converts behavior into identity and reinforces continuation</li>
+    <li>Break bad habits by reversing the four laws</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Hábitos Atómicos: Construye Pequeños Hábitos que Producen Transformaciones Increíbles',
+  cat:'Disciplina',date:'Julio 2026',readTime:'13 min',
+  excerpt:'Mejorar un 1% diario produce una mejora 37 veces mayor en un año. Los hábitos atómicos no son sobre grandes logros — son sobre pequeños cambios acumulados que remodelan tu identidad.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['La disciplina como sistema','Rutina matutina','Identidad anclada'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>El Poder de las Ganancias Marginales</h2>
+<p>Si mejoras un 1% cada día durante un año, serás 37 veces mejor al final del año. Esta simple matemática resume el núcleo de los hábitos atómicos: <strong>las pequeñas mejoras diarias acumuladas producen resultados que parecen imposibles</strong>.</p>
+
+<h2>Por Qué los Grandes Hábitos Fallan</h2>
+<p>La mayoría de las personas intenta cambiar su comportamiento a través de grandes saltos. Estos chocan con dos problemas: la motivación se acaba y el cambio entra en conflicto con la identidad actual. La solución: cambios tan pequeños que no merezcan resistencia, construidos sobre una nueva identidad.</p>
+
+<h2>Las Cuatro Leyes para Construir un Buen Hábito</h2>
+
+<h3>Ley 1: Hazlo Obvio (Señal)</h3>
+<p>Apilamiento de hábitos: "Después de [hábito existente], haré [nuevo hábito]." Diseño del entorno: pon el libro en la mesa de café, pon las zapatillas de correr junto a la puerta.</p>
+
+<h3>Ley 2: Hazlo Atractivo (Ansia)</h3>
+<p>Vincula el hábito a algo que ames: escucha solo tu podcast favorito mientras haces ejercicio, toma tu café favorito solo mientras lees.</p>
+
+<h3>Ley 3: Hazlo Fácil (Respuesta)</h3>
+<p>La Regla de los Dos Minutos: cualquier hábito nuevo debe comenzar como una versión que tarda dos minutos o menos:</p>
+<ul>
+  <li>"Leer un libro" → "Leer una página"</li>
+  <li>"Entrenar 30 minutos" → "Ponerse la ropa de gimnasio"</li>
+</ul>
+
+<h3>Ley 4: Hazlo Satisfactorio (Recompensa)</h3>
+<p>Rastrea el hábito: marca tu calendario cada día que lo completes — ver la cadena acumulada se convierte en su propia motivación.</p>
+
+<div class="callout"><p><strong>La Regla de Oro:</strong> No te centres en lo que quieres lograr — céntrate en el tipo de persona que quieres ser. Luego pregunta: "¿Qué haría este tipo de persona en esta situación?"</p></div>
+
+<h2>Conclusión</h2>
+<p>Cada día votas a favor o en contra del tipo de persona que quieres ser. No con grandes decisiones radicales — sino con pequeñas elecciones diarias que juntas a lo largo del tiempo te remodelan completamente. <strong>Comienza con un hábito tan pequeño que parezca insuficiente. Luego déjalo crecer.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Habitudes Atomiques: Construisez de Petites Habitudes qui Produisent des Transformations Incroyables',
+  cat:'Discipline',date:'Juillet 2026',readTime:'13 min',
+  excerpt:"S'améliorer de 1% par jour produit une amélioration 37 fois supérieure en un an. Les habitudes atomiques ne concernent pas les grandes réalisations — elles concernent les petits changements accumulés qui remodèlent votre identité.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['La discipline comme système','Routine matinale','Identité ancrée'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Le Pouvoir des Gains Marginaux</h2>
+<p>Si vous vous améliorez de 1% chaque jour pendant un an, vous serez 37 fois meilleur à la fin de l'année. Ces simples mathématiques résument le cœur des habitudes atomiques: <strong>les petites améliorations quotidiennes cumulées produisent des résultats qui semblent impossibles</strong>.</p>
+
+<h2>Les Quatre Lois pour Construire une Bonne Habitude</h2>
+
+<h3>Loi 1: Rendez-la Évidente (Signal)</h3>
+<p>Empilement d'habitudes: "Après [habitude existante], je ferai [nouvelle habitude]." Conception de l'environnement: rendez le signal visible et impossible à ignorer.</p>
+
+<h3>Loi 2: Rendez-la Attrayante (Envie)</h3>
+<p>Associez l'habitude à quelque chose que vous aimez: n'écoutez votre podcast préféré que pendant l'exercice.</p>
+
+<h3>Loi 3: Rendez-la Facile (Réponse)</h3>
+<p>La Règle des Deux Minutes: toute nouvelle habitude doit commencer comme une version qui prend deux minutes ou moins:</p>
+<ul>
+  <li>"Lire un livre" → "Lire une page"</li>
+  <li>"S'entraîner 30 minutes" → "Mettre la tenue de sport"</li>
+</ul>
+
+<h3>Loi 4: Rendez-la Satisfaisante (Récompense)</h3>
+<p>Suivez l'habitude: marquez votre calendrier chaque jour que vous la complétez — voir la chaîne accumulée devient sa propre motivation.</p>
+
+<div class="callout"><p><strong>La Règle d'Or:</strong> Ne vous concentrez pas sur ce que vous voulez accomplir — concentrez-vous sur le type de personne que vous voulez être. Puis demandez: "Que ferait ce type de personne dans cette situation?"</p></div>
+
+<h2>Conclusion</h2>
+<p>Chaque jour vous votez pour ou contre le type de personne que vous voulez être. Pas avec de grandes décisions radicales — mais avec de petits choix quotidiens qui ensemble au fil du temps vous remodèlent complètement. <strong>Commencez avec une habitude si petite qu'elle semble insuffisante. Puis laissez-la grandir.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'परमाणु आदतें: छोटी आदतें बनाएं जो अविश्वसनीय परिवर्तन उत्पन्न करें',
+  cat:'अनुशासन',date:'जुलाई 2026',readTime:'13 मिनट',
+  excerpt:'प्रतिदिन 1% सुधार एक वर्ष में 37 गुना सुधार पैदा करता है। परमाणु आदतें बड़ी उपलब्धियों के बारे में नहीं हैं — वे छोटे संचित परिवर्तनों के बारे में हैं जो आपकी पहचान को नया रूप देते हैं।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['अनुशासन एक प्रणाली के रूप में','सुबह की दिनचर्या','स्थिर पहचान'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>सीमांत लाभ की शक्ति</h2>
+<p>यदि आप एक वर्ष तक हर दिन 1% सुधार करते हैं, तो वर्ष के अंत तक आप 37 गुना बेहतर होंगे। यह सरल गणित परमाणु आदतों के मूल को सारांशित करती है: <strong>छोटे दैनिक सुधार संचित होकर असंभव लगने वाले परिणाम उत्पन्न करते हैं</strong>।</p>
+
+<h2>अच्छी आदत बनाने के चार नियम</h2>
+
+<h3>नियम 1: इसे स्पष्ट बनाएं (संकेत)</h3>
+<p>आदत स्टैकिंग: "[मौजूदा आदत] के बाद, मैं [नई आदत] करूंगा।" पर्यावरण डिज़ाइन: संकेत को दृश्यमान और अनदेखा करना असंभव बनाएं।</p>
+
+<h3>नियम 2: इसे आकर्षक बनाएं (लालसा)</h3>
+<p>आदत को उस चीज़ से जोड़ें जो आपको पसंद है: व्यायाम के दौरान केवल अपना पसंदीदा पॉडकास्ट सुनें।</p>
+
+<h3>नियम 3: इसे आसान बनाएं (प्रतिक्रिया)</h3>
+<p>दो मिनट का नियम: कोई भी नई आदत एक ऐसे संस्करण के रूप में शुरू होनी चाहिए जिसमें दो मिनट या उससे कम समय लगे — "एक किताब पढ़ें" → "एक पन्ना पढ़ें"।</p>
+
+<h3>नियम 4: इसे संतोषजनक बनाएं (पुरस्कार)</h3>
+<p>आदत को ट्रैक करें: हर दिन जब आप इसे पूरा करें तो अपने कैलेंडर पर निशान लगाएं।</p>
+
+<h2>निष्कर्ष</h2>
+<p>हर दिन आप उस प्रकार के व्यक्ति के पक्ष में या विरुद्ध वोट करते हैं जो आप बनना चाहते हैं। <strong>इतनी छोटी आदत से शुरू करें कि वह अपर्याप्त लगे। फिर उसे बढ़ने दें।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

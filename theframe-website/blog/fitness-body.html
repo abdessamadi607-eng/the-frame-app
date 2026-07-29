@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="جسدك رسالتك: كيف يُشكِّل مظهرك الجسدي الانطباع الأول ويرسم حدود معاملة الناس لك. الجسد كأداة اتصال صامت قبل أن تنطق بكلمة.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>جسدك رسالتك: الجسد كأداة اتصال صامت | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/fitness-body.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="fitness-strength.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel1">تدريب القوة</span></a>
+      <a class="related-card" href="fitness-sleep.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel2">النوم: السلاح السري</span></a>
+      <a class="related-card" href="smv-basics.html"><span class="related-cat">SMV</span><span class="related-title" id="rel3">أساسيات SMV</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'جسدك رسالتك: الجسد كأداة اتصال صامت قبل أن تنطق بكلمة',
+  cat:'اللياقة',date:'يوليو 2026',readTime:'13 دقيقة قراءة',
+  excerpt:'قبل أن تنطق بكلمة واحدة، يُصدِر جسدك رسالة كاملة. وضعيتك، بنيتك، حركتك — كلها تُحدِّد كيف يُعاملك العالم. الجسد ليس جماليات فقط — هو تواصل.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['تدريب القوة','النوم: السلاح السري','أساسيات SMV'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الجسد يتكلم قبل أن تفتح فمك</h2>
+<p>هناك حقيقة مزعجة لمن لا يريد الاعتراف بها: <strong>الناس يُحكَم عليك في الثواني الأولى من لقائك بهم، قبل أي كلمة تقولها</strong>. دراسات علم النفس الاجتماعي تُشير إلى أن الانطباع الأول يتشكل في أقل من عشر ثوانٍ، وأن تغييره لاحقاً يستغرق جهداً مضاعفاً.</p>
+<p>في هذه الثواني، الشيء الوحيد الذي يرسل رسالة هو جسدك: كيف يقف، كيف يتحرك، ما حجمه وبنيته، ما الطاقة التي تُشعُّ منه. هذه ليست سطحية ولا ظلم — هي معالجة معلومات بيولوجية ينفذها الدماغ تلقائياً.</p>
+
+<h2>ما الذي يقرأه الناس في جسدك؟</h2>
+
+<h3>الوضعية (Posture): الرسالة الأوضح</h3>
+<p>الوضعية المنحنية — كتفان مطأطآن، ظهر منحنٍ، رأس مائل للأمام — ترسل إشارات واضحة: عدم الثقة، الانكماش، أو الإرهاق. الوضعية المستقيمة ترسل العكس تماماً: حضور، ثقة، سيطرة على المساحة.</p>
+<p>الأمر الأكثر إثارة: الوضعية لا تؤثر فقط على كيف يراك الآخرون، بل على كيف تشعر أنت. أبحاث Amy Cuddy عن "وضعيات القوة" تُثبِت أن الجلوس أو الوقوف بانبساط لمدتين دقيقتين يُغيِّر فعلياً مستويات الكورتيزول والتستوستيرون في الدم — يُقلِّل القلق ويزيد الشعور بالسيطرة.</p>
+
+<h3>بنية الجسد: رأس المال الاجتماعي الجسدي</h3>
+<p>الحقيقة التي لا يُحبها كثيرون: الجسد المتناسب المتدرب — لا يُشترط أن يكون جسد بطل أولمبي، بل فقط صحي وقوي — يحمل وزناً اجتماعياً حقيقياً. هذا ليس رأياً، هو نتيجة دراسات متعددة في علم الاجتماع وعلم النفس التطوري:</p>
+<ul>
+  <li>أصحاب الأجسام المتناسبة يُرى إليهم على أنهم أكثر ثقة وقيادة وكفاءة</li>
+  <li>الرجال أصحاب الجسم القوي يُعامَلون باحترام أكبر في بيئات العمل والتفاوض</li>
+  <li>التدريب ينعكس على طريقة المشي والحركة والحضور العام — حتى في الملابس</li>
+</ul>
+
+<h3>الحركة: كيف تملأ المساحة</h3>
+<p>الحركة البطيئة الواثقة — لا المتسرعة، لا المتوترة — ترسل إشارة هدوء وسيطرة. الشخص المتوتر يتحرك بسرعة، يُومئ كثيراً، يُغيِّر وضعية جلوسه باستمرار. الشخص الواثق يأخذ وقته، يتحرك بقصد، يملأ مساحته بهدوء.</p>
+
+<h2>الجسد والانضباط: رسالة مُضاعَفة</h2>
+<p>الجسد المُدرَّب لا يرسل رسالة جمالية فقط — يرسل رسالة انضباط. حين يرى شخص ما جسماً يتطلب تدريباً منتظماً وتغذية مدروسة وإرادة مستمرة، يستنتج تلقائياً شيئاً عن شخصيتك:</p>
+<blockquote style="border-right:4px solid #FF003C;padding-right:1rem;margin:1.5rem 0;font-style:italic;">"إذا كان يحترم جسده بهذا القدر، فهو على الأرجح يحترم أيضاً التزاماته ووعوده وعمله."</blockquote>
+<p>هذا الاستنتاج قد يكون غير عادل أحياناً، لكنه يحدث — تلقائياً، بدون وعي من الطرف الآخر. الجسد يتحدث عنك حتى حين تصمت.</p>
+
+<h2>لماذا "الصحة فقط" ليست كافية كهدف</h2>
+<p>كثيرون يقولون "أريد أن أكون صحياً" — وهذا هدف نبيل. لكن الصحة كهدف وحيد في كثير من الأحيان تفشل في تحفيز الانضباط الكافي لأنها غير ملموسة. لا أحد يشعر بـ"الصحة" بشكل مباشر — تشعر بانعدامها فقط حين تمرض.</p>
+<p>إضافة أهداف أداء ملموسة تُغيِّر هذا:</p>
+<ul>
+  <li>"أريد أن أرفع X كيلو في تمرين القرفصاء" — هدف ملموس قابل للقياس</li>
+  <li>"أريد أن أجري 5 كيلومتر بدون توقف" — هدف واضح</li>
+  <li>"أريد أن أنزل بنسبة دهون جسم إلى X%" — هدف محدد</li>
+</ul>
+<p>الأهداف الملموسة تُوجِد قياساً، والقياس يُوجِد مسؤولية، والمسؤولية تُوجِد انضباطاً.</p>
+
+<h2>العوائق الحقيقية: لماذا يعرف الناس ولا يفعلون</h2>
+
+<h3>العائق 1: الكمالية</h3>
+<p>"لا وقت لذهاب للنادي لساعة كاملة" — فيفوت اليوم كله. الحقيقة: 20 دقيقة من التمرين المكثف تفوق صفر دقيقة بكثير. كمالية العذر تقتل التقدم الممكن. الحل: قاعدة الحد الأدنى — حدّد حداً أدنى لا يمكن فيه تبرير التخطي (ولو 10 دقائق، ولو 5 تمارين).</p>
+
+<h3>العائق 2: عدم الاتساق</h3>
+<p>أسبوع متحمس ثم غياب لأسبوعين — وهذه الدوامة لا تُفضي إلى تقدم حقيقي. التقدم الجسدي يعتمد على التحميل التدريجي المستمر (Progressive Overload) — كل أسبوع أكثر قليلاً من الأسبوع السابق. الاتساق لثلاثة أشهر يتجاوز كثيراً شهراً كثيفاً مع غياب طويل.</p>
+
+<h3>العائق 3: التغذية غير المدروسة</h3>
+<p>التمرين يُبني القدرة؛ التغذية تُبني الجسد. ساعة في النادي لا تعوّض يوماً من الأكل العشوائي. البروتين الكافي (1.6-2.2 غرام لكل كيلو من وزن الجسم) وسعرات حرارية مناسبة للهدف (عجز في حالة الخسارة، فائض في حالة البناء) هما المعادلة الأساسية.</p>
+
+<div class="callout"><p><strong>حقيقة بيولوجية:</strong> دراسات تصوير الدماغ تُثبِت أن التمرين المنتظم يزيد حجم قشرة الفص الأمامي (Prefrontal Cortex) — المسؤول عن ضبط النفس، اتخاذ القرار، والتخطيط. يعني التمرين لا يُقوِّي الجسد فقط — يُقوِّي قدرتك على الانضباط في كل مجالات الحياة.</p></div>
+
+<h2>المبادئ الأساسية للبداية الصحيحة</h2>
+
+<h3>المبدأ 1: التحميل التدريجي (Progressive Overload)</h3>
+<p>الجسم يتكيف مع أي حمل ثابت ويتوقف عن التطور. لتحقق تقدماً مستمراً، يجب زيادة الحمل تدريجياً: سواء أكثر وزناً، أكثر تكراراً، أقل راحة، أو أصعب في التقنية. هذا المبدأ هو قلب أي برنامج تدريبي فعّال.</p>
+
+<h3>المبدأ 2: التعافي جزء من التدريب</h3>
+<p>العضلات لا تنمو أثناء التمرين — بل تنمو أثناء الراحة بعده. تدريب بلا تعافٍ كافٍ يُسبِّب الإفراط في التدريب (Overtraining): إرهاق مزمن، ضعف، وإصابات. النوم الكافي (7-9 ساعات) والراحة الكافية بين جلسات نفس العضلة (48 ساعة على الأقل) ليسا ترفاً — هما ضرورة.</p>
+
+<h3>المبدأ 3: الاتساق يتفوق على الكثافة</h3>
+<p>ثلاث جلسات أسبوعياً لستة أشهر تتفوق على ست جلسات أسبوعياً لشهر واحد ثم توقف. الاتساق يُراكِم التكيّفات البيولوجية (بناء العضل، تحسين الكفاءة القلبية الوعائية، تطوير الأداء الحركي) بشكل لا يمكن للكثافة القصيرة تحقيقه.</p>
+
+<h2>وضعية الجسد: إصلاح سريع بتأثير فوري</h2>
+<p>بينما يأخذ بناء الجسد أشهراً، إصلاح الوضعية يُعطي نتائج فورية. تمارين تساعد على ذلك:</p>
+<ul>
+  <li><strong>Face Pulls:</strong> لتقوية عضلات الظهر العلوي وسحب الكتفين للخلف</li>
+  <li><strong>Dead Bug:</strong> لتقوية العضلات الجوهرية (Core) الداعمة للعمود الفقري</li>
+  <li><strong>Hip Flexor Stretches:</strong> لمن يجلس كثيراً — يُصلِح ميل الحوض للأمام</li>
+  <li><strong>Chin Tucks:</strong> لتصحيح وضعية الرأس المائلة للأمام</li>
+</ul>
+<p>عشرون دقيقة يومياً على هذه التمارين لشهر واحد ستُحدِث فرقاً ملحوظاً في وضعيتك وطريقة حضورك.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>جسدك يرسل رسالة قبل أي كلمة — الوضعية والحركة والبنية كلها تواصل</li>
+    <li>الجسم المُدرَّب يرسل رسالة انضباط قبل أن يرسل رسالة جمالية</li>
+    <li>أهداف الأداء الملموسة أفضل من "أريد أن أكون صحياً" كمحرك للانضباط</li>
+    <li>المبادئ الثلاثة: تحميل تدريجي + تعافٍ كافٍ + اتساق على المدى البعيد</li>
+    <li>التمرين يُقوِّي قدرة الانضباط في كل مجالات الحياة بيولوجياً</li>
+    <li>إصلاح الوضعية نتيجة فورية — لا تنتظر شهوراً لتبدأ بالتأثير</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الجسد مشروع لا نهائي</h2>
+<p>لا أحد يصل إلى "الجسد المثالي" ويتوقف. الجسد مشروع مستمر — مثل كل شيء يستحق الاهتمام. المطلوب ليس الكمال، المطلوب الاتجاه الصحيح: كل أسبوع أفضل من الأسبوع السابق ولو بهامش ضئيل.</p>
+<p>ابدأ بما تستطيع، أين أنت، بما لديك. وضعية أفضل الآن. تمرين واحد اليوم. قرار غذائي أذكى في الوجبة القادمة. هذه هي المادة الخام لتحول لا تراه في أسبوع لكن تراه في ستة أشهر بوضوح.</p>`
+},
+en:{
+  dir:'ltr',title:'Your Body Is Your Message: The Body as a Silent Communication Tool Before You Speak a Word',
+  cat:'Fitness',date:'July 2026',readTime:'13 min read',
+  excerpt:'Before you say a single word, your body sends a complete message. Your posture, build, movement — all determine how the world treats you. The body is not just aesthetics — it is communication.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Strength Training','Sleep: The Secret Weapon','SMV Basics'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>The Body Speaks Before You Open Your Mouth</h2>
+<p>Social psychology research indicates that first impressions form in under ten seconds — and changing them later requires twice the effort. In those seconds, the only thing sending a message is your body: how it stands, how it moves, its size and build, the energy it radiates.</p>
+
+<h2>What People Read in Your Body</h2>
+
+<h3>Posture: The Clearest Message</h3>
+<p>Hunched posture — slumped shoulders, curved back, forward head — sends clear signals: lack of confidence, withdrawal. Upright posture sends the opposite: presence, confidence, control of space.</p>
+<p>More interesting: posture doesn't just affect how others see you, but how you feel yourself. Amy Cuddy's research on "power poses" proves that sitting or standing expansively for two minutes actually changes cortisol and testosterone levels — reducing anxiety and increasing the sense of control.</p>
+
+<h3>Body Build: Physical Social Capital</h3>
+<p>A well-proportioned, trained body — doesn't need to be an Olympic athlete's, just healthy and strong — carries real social weight. Multiple studies in sociology and evolutionary psychology confirm: people with well-proportioned bodies are perceived as more confident, leadership-oriented, and competent.</p>
+
+<h3>Movement: How You Fill Space</h3>
+<p>Slow, assured movement — not rushed, not tense — signals calm and control. The anxious person moves quickly, gestures too much, constantly shifts position. The confident person takes their time, moves with purpose, fills space quietly.</p>
+
+<h2>The Body and Discipline: A Double Message</h2>
+<p>A trained body sends not just an aesthetic message — it sends a discipline message. When someone sees a physique that requires consistent training, deliberate nutrition, and sustained will, they automatically infer something about your character.</p>
+
+<h2>Core Training Principles</h2>
+<ul>
+  <li><strong>Progressive Overload:</strong> The body adapts to any fixed load and stops developing. Constantly increase challenge — more weight, more reps, less rest</li>
+  <li><strong>Recovery Is Part of Training:</strong> Muscles grow during rest, not during training. Sleep 7-9 hours and rest 48+ hours between sessions targeting the same muscle</li>
+  <li><strong>Consistency Beats Intensity:</strong> Three sessions weekly for six months crushes six sessions weekly for one month then stopping</li>
+</ul>
+
+<div class="callout"><p><strong>Biological Fact:</strong> Brain imaging studies prove that regular exercise increases the size of the Prefrontal Cortex — responsible for self-control, decision-making, and planning. Exercise doesn't just strengthen the body — it strengthens your ability to maintain discipline across all areas of life.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Your body sends a message before any word — posture, movement, build are all communication</li>
+    <li>A trained body sends a discipline message before an aesthetic one</li>
+    <li>Concrete performance goals beat "I want to be healthy" as a discipline driver</li>
+    <li>Three principles: progressive overload + adequate recovery + long-term consistency</li>
+    <li>Exercise biologically strengthens discipline capacity in all life areas</li>
+    <li>Fixing posture gives immediate results — don't wait months to start making an impact</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Tu Cuerpo es Tu Mensaje: El Cuerpo como Herramienta de Comunicación Silenciosa',
+  cat:'Fitness',date:'Julio 2026',readTime:'13 min',
+  excerpt:'Antes de decir una sola palabra, tu cuerpo envía un mensaje completo. Tu postura, constitución, movimiento — todo determina cómo te trata el mundo. El cuerpo no es solo estética — es comunicación.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Entrenamiento de Fuerza','El Sueño: El Arma Secreta','Conceptos Básicos de SMV'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>El Cuerpo Habla Antes de Que Abras la Boca</h2>
+<p>La investigación en psicología social indica que las primeras impresiones se forman en menos de diez segundos. En esos segundos, lo único que envía un mensaje es tu cuerpo: cómo está de pie, cómo se mueve, su tamaño y constitución, la energía que irradia.</p>
+
+<h2>Lo que la Gente Lee en Tu Cuerpo</h2>
+<ul>
+  <li><strong>Postura:</strong> La postura encorvada envía señales claras de falta de confianza. La postura erguida envía lo opuesto: presencia, confianza, control del espacio</li>
+  <li><strong>Constitución corporal:</strong> Un cuerpo bien proporcionado y entrenado lleva un peso social real — percibido como más confiable y capaz</li>
+  <li><strong>Movimiento:</strong> El movimiento lento y seguro señala calma y control. El movimiento apresurado señala ansiedad</li>
+</ul>
+
+<h2>Principios Básicos de Entrenamiento</h2>
+<ul>
+  <li><strong>Sobrecarga Progresiva:</strong> El cuerpo se adapta a cualquier carga fija — aumenta constantemente el desafío</li>
+  <li><strong>La Recuperación es Parte del Entrenamiento:</strong> Los músculos crecen durante el descanso, no durante el entrenamiento</li>
+  <li><strong>La Constancia Supera la Intensidad:</strong> Tres sesiones semanales durante seis meses supera una semana intensa y luego abandono</li>
+</ul>
+
+<div class="callout"><p><strong>Hecho Biológico:</strong> Estudios de neuroimagen prueban que el ejercicio regular aumenta el tamaño de la Corteza Prefrontal — responsable del autocontrol y la toma de decisiones. El ejercicio no solo fortalece el cuerpo — fortalece tu capacidad de mantener disciplina en todas las áreas de la vida.</p></div>
+
+<h2>Conclusión</h2>
+<p>Tu cuerpo es un proyecto continuo. No se requiere perfección — se requiere dirección correcta: cada semana un poco mejor que la anterior. Empieza con lo que tienes, donde estás. <strong>Una mejor postura ahora. Un entrenamiento hoy. Una decisión alimentaria más inteligente en la próxima comida.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Ton Corps Est Ton Message: Le Corps comme Outil de Communication Silencieux',
+  cat:'Fitness',date:'Juillet 2026',readTime:'13 min',
+  excerpt:"Avant de dire un seul mot, ton corps envoie un message complet. Ta posture, ta constitution, ton mouvement — tout détermine comment le monde te traite. Le corps n'est pas que de l'esthétique — c'est de la communication.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Entraînement de Force','Le Sommeil: L\'Arme Secrète','Bases du SMV'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Le Corps Parle Avant que tu Ouvres la Bouche</h2>
+<p>La recherche en psychologie sociale indique que les premières impressions se forment en moins de dix secondes. Dans ces secondes, la seule chose qui envoie un message est ton corps: comment il se tient, comment il bouge, sa taille et sa constitution, l'énergie qu'il rayonne.</p>
+
+<h2>Ce que les Gens Lisent dans Ton Corps</h2>
+<ul>
+  <li><strong>Posture:</strong> La posture voûtée envoie des signaux de manque de confiance. La posture droite envoie l'opposé: présence, confiance, contrôle de l'espace</li>
+  <li><strong>Constitution corporelle:</strong> Un corps bien proportionné et entraîné a un vrai poids social</li>
+  <li><strong>Mouvement:</strong> Le mouvement lent et assuré signale le calme et le contrôle</li>
+</ul>
+
+<h2>Principes Fondamentaux d'Entraînement</h2>
+<ul>
+  <li><strong>Surcharge Progressive:</strong> Le corps s'adapte à toute charge fixe — augmente constamment le défi</li>
+  <li><strong>La Récupération fait Partie de l'Entraînement:</strong> Les muscles grandissent pendant le repos, pas pendant l'entraînement</li>
+  <li><strong>La Régularité Surpasse l'Intensité:</strong> Trois séances hebdomadaires pendant six mois surpasse une semaine intense puis abandon</li>
+</ul>
+
+<div class="callout"><p><strong>Fait Biologique:</strong> Des études de neuroimagerie prouvent que l'exercice régulier augmente le volume du Cortex Préfrontal — responsable de l'autocontrôle et de la prise de décision. L'exercice ne renforce pas seulement le corps — il renforce ta capacité à maintenir la discipline dans tous les domaines de la vie.</p></div>
+
+<h2>Conclusion</h2>
+<p>Ton corps est un projet continu. Ce n'est pas la perfection qui est requise — c'est la bonne direction: chaque semaine un peu mieux que la précédente. <strong>Commence avec ce que tu as, là où tu es.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'तुम्हारा शरीर तुम्हारा संदेश है: एक शब्द बोलने से पहले मूक संचार उपकरण',
+  cat:'फिटनेस',date:'जुलाई 2026',readTime:'13 मिनट',
+  excerpt:'एक शब्द बोलने से पहले, तुम्हारा शरीर एक पूरा संदेश भेजता है। तुम्हारी मुद्रा, बनावट, चाल — सब तय करते हैं कि दुनिया तुम्हारे साथ कैसा व्यवहार करती है। शरीर सिर्फ सौंदर्यशास्त्र नहीं है — यह संचार है।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['शक्ति प्रशिक्षण','नींद: गुप्त हथियार','SMV की मूल बातें'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>शरीर बोलता है तुम्हारे मुंह खोलने से पहले</h2>
+<p>सामाजिक मनोविज्ञान अनुसंधान बताता है कि पहली छाप दस सेकंड से कम में बनती है। उन सेकंडों में, एकमात्र चीज जो संदेश भेज रही है वह है तुम्हारा शरीर: यह कैसे खड़ा है, कैसे चलता है, इसका आकार और बनावट, इससे निकलने वाली ऊर्जा।</p>
+
+<h2>प्रशिक्षण के मूल सिद्धांत</h2>
+<ul>
+  <li><strong>प्रगतिशील अधिभार:</strong> शरीर किसी भी स्थिर भार के अनुकूल हो जाता है — लगातार चुनौती बढ़ाओ</li>
+  <li><strong>रिकवरी प्रशिक्षण का हिस्सा है:</strong> मांसपेशियां आराम के दौरान बढ़ती हैं, प्रशिक्षण के दौरान नहीं</li>
+  <li><strong>निरंतरता तीव्रता से बेहतर है:</strong> छह महीने तक सप्ताह में तीन सत्र एक सप्ताह के गहन प्रशिक्षण से बेहतर है</li>
+</ul>
+
+<div class="callout"><p><strong>जैविक तथ्य:</strong> मस्तिष्क इमेजिंग अध्ययन साबित करते हैं कि नियमित व्यायाम प्रीफ्रंटल कॉर्टेक्स के आकार को बढ़ाता है — आत्म-नियंत्रण और निर्णय लेने के लिए जिम्मेदार। व्यायाम केवल शरीर को ही नहीं बल्कि जीवन के सभी क्षेत्रों में अनुशासन बनाए रखने की क्षमता को मजबूत करता है।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>तुम्हारा शरीर एक सतत परियोजना है। पूर्णता की आवश्यकता नहीं है — सही दिशा की आवश्यकता है: हर हफ्ते पिछले से थोड़ा बेहतर। <strong>जो है उसके साथ शुरू करो, जहां हो वहां से।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

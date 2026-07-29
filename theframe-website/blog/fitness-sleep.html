@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="النوم: السلاح السري الذي يتجاهله معظم الناس. كيف يؤثر النوم على التستوستيرون والدماغ والأداء وحرق الدهون وبناء العضل — وكيف تُحسِّن نومك فوراً.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>النوم: السلاح السري الذي تتجاهله | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/fitness-sleep.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="fitness-body.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel1">جسدك رسالتك</span></a>
+      <a class="related-card" href="fitness-strength.html"><span class="related-cat">اللياقة</span><span class="related-title" id="rel2">تدريب القوة</span></a>
+      <a class="related-card" href="discipline-morning.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel3">روتين الصباح</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'النوم: السلاح السري الذي تتجاهله وهو يُدمِّر أداءك',
+  cat:'اللياقة',date:'يوليو 2026',readTime:'14 دقيقة قراءة',
+  excerpt:'تستثمر في تدريبك وتغذيتك وتتجاهل النوم. هذه المعادلة مكسورة. النوم ليس راحة — هو الوقت الذي تحدث فيه كل عمليات التعافي والبناء الهرموني وتوطيد الذاكرة وتجديد الإرادة.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['جسدك رسالتك','تدريب القوة','روتين الصباح'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الحقيقة التي يتجاهلها المجتهدون</h2>
+<p>هناك نمط شائع: شخص يُدرِّب يومياً، يأكل بحذر، يعمل بجد — لكن نومه مشوش أو قليل. ويتساءل لماذا لا يتقدم بالسرعة المتوقعة، لماذا مزاجه غير مستقر، لماذا تستوستيرونه منخفض رغم كل شيء.</p>
+<p>الجواب في الأغلب: <strong>النوم. العنصر الوحيد في معادلة الأداء الذي لا يمكن تعويضه بأي شيء آخر</strong>. لا مكمل، لا دواء، لا قوة إرادة — تعوّض النوم الكافي.</p>
+
+<h2>ما يحدث في جسدك أثناء النوم</h2>
+<p>النوم ليس "إيقاف تشغيل" — هو أكثر مراحل النشاط البيولوجي كثافةً في جسدك:</p>
+
+<h3>إفراز هرمون النمو (GH)</h3>
+<p>أكثر من 70% من الكمية اليومية لهرمون النمو تُفرَز خلال نوم موجة بطيئة عميقة (Slow-Wave Sleep) في الساعات الأولى من الليل. هرمون النمو مسؤول عن: بناء وإصلاح الأنسجة العضلية، حرق الدهون، تجديد الجلد والعظام. قطع هذه المرحلة أو تأخيرها يعني تفويت هذه الجرعة اليومية من البناء الجسدي.</p>
+
+<h3>مستويات التستوستيرون</h3>
+<p>دراسات متعددة تُثبِت العلاقة المباشرة بين ساعات النوم والتستوستيرون:</p>
+<ul>
+  <li>النوم 5 ساعات لمدة أسبوع يُقلِّل مستوى التستوستيرون بنسبة 10-15% — تأثير مشابه لشيخوخة 10-15 سنة</li>
+  <li>النوم 7-9 ساعات يُحافِظ على الذروة الصباحية الطبيعية للتستوستيرون</li>
+  <li>قلة النوم المزمنة ترتبط بانخفاض مستويات LH (الهرمون المُحفِّز للخصية لإنتاج التستوستيرون)</li>
+</ul>
+
+<h3>توطيد الذاكرة والتعلم</h3>
+<p>مرحلة REM (حركة العين السريعة) هي المرحلة التي يُعالِج فيها الدماغ كل ما تعلمته خلال اليوم: يُقوِّي الاتصالات العصبية المهمة ويُضعِف غير المهمة. من يحرم نفسه من REM يُقلِّل فعلياً قدرته على الاحتفاظ بما تعلمه واستخدامه.</p>
+
+<h3>تجديد الإرادة وضبط النفس</h3>
+<p>الفص الأمامي (Prefrontal Cortex) — مركز ضبط النفس والقرار — هو الأكثر حساسيةً لقلة النوم. دراسة مشهورة تُثبِت أن شخصاً نام 6 ساعات لمدة أسبوعين يُظهِر ضعفاً معرفياً مشابهاً لشخص سهر ليلتين متواليتين — مع الفارق أنه لا يدرك ذلك ويعتقد أن أداءه طبيعي.</p>
+
+<h2>ثمن قلة النوم: ما تدفعه فعلاً</h2>
+<ul>
+  <li><strong>كورتيزول مرتفع:</strong> قلة النوم ترفع هرمون التوتر (الكورتيزول) الذي يُهدِم العضل ويُراكِم الدهون حول البطن</li>
+  <li><strong>مقاومة الأنسولين:</strong> نوم أقل من 6 ساعات يُقلِّل حساسية الأنسولين — يُسهِم في تراكم الدهون وارتفاع خطر السكري طويل المدى</li>
+  <li><strong>شهية مرتفعة:</strong> قلة النوم ترفع هرمون الجريلين (الجوع) وتُقلِّل اللبتين (الشبع) — تدفعك للأكل أكثر تلقائياً</li>
+  <li><strong>قرارات أسوأ:</strong> الفص الأمامي المُجهَد يُفضِّل الراحة الفورية على الهدف بعيد المدى — تنهار قوة الإرادة في اتخاذ قرارات غذائية ومالية وعلاقاتية صحيحة</li>
+  <li><strong>أداء رياضي أدنى:</strong> رد الفعل، القوة، التحمل، التوازن — كلها تنخفض بشكل مُثبَت علمياً بنقص النوم</li>
+</ul>
+
+<h2>مراحل النوم: لماذا الساعات لوحدها لا تكفي</h2>
+<p>النوم له بنية دورية (دورة كل ~90 دقيقة) تتضمن:</p>
+<ul>
+  <li><strong>N1 (خفيفة):</strong> الانتقال من اليقظة للنوم</li>
+  <li><strong>N2 (متوسطة):</strong> خفض درجة الحرارة وضربات القلب، تعزيز الذاكرة قصيرة المدى</li>
+  <li><strong>N3 (عميقة):</strong> إفراز هرمون النمو، تصليح الأنسجة، تعزيز جهاز المناعة</li>
+  <li><strong>REM:</strong> توطيد الذاكرة، معالجة المشاعر، الإبداع</li>
+</ul>
+<p>كلما طال نومك، زادت نسبة REM في الدورات الأخيرة. قطع النوم بعد 6 ساعات يعني فقدان نسبة كبيرة من REM — رغم أنك "نمت 6 ساعات".</p>
+
+<div class="callout"><p><strong>أرقام صادمة:</strong> متوسط نوم الشخص الناجح تاريخياً ليس 4-5 ساعات كما يُروَّج — بل 7-9 ساعات. Jeff Bezos ذكر أنه يحتاج 8 ساعات. LeBron James ينام 10-12 ساعة. Matthew Walker، أبرز باحثي النوم، يقول: "لا يوجد جانب واحد من صحتك لا يتأثر سلباً بقلة النوم."</p></div>
+
+<h2>كيف تُحسِّن جودة نومك: البروتوكول العملي</h2>
+
+<h3>1. ثبّت موعد الاستيقاظ</h3>
+<p>الموعد الأهم ليس موعد النوم — بل موعد الاستيقاظ. ثبّته كل يوم بما في ذلك نهاية الأسبوع. الجسم يُعيِّر ساعته البيولوجية على موعد الاستيقاظ أكثر من موعد النوم. بعد أسبوع أو اثنين، ستبدأ بالنعاس تلقائياً في الوقت المناسب.</p>
+
+<h3>2. البرودة للنوم العميق</h3>
+<p>درجة حرارة الجسم الأساسية يجب أن تنخفض لبدء نوم عميق. درجة حرارة الغرفة المثالية: 16-19 درجة مئوية. دش دافئ قبل النوم بساعة يُساعِد (الجسم يُبرِّد نفسه بعده). غطاء خفيف يُفضَّل على غطاء ثقيل يرفع الحرارة.</p>
+
+<h3>3. الظلام الكامل</h3>
+<p>أي ضوء — حتى ضوء الشاشات الصغيرة — يُثبِّط إفراز الميلاتونين. ستائر تعتيم كاملة أو قناع نوم. إيقاف كل الأجهزة الإلكترونية أو وضعها خارج الغرفة. هذه التغيير وحده يُحسِّن عمق النوم لدى كثيرين.</p>
+
+<h3>4. قاعدة الـ 90 دقيقة الأولى</h3>
+<p>تجنب الكافيين بعد الظهر (نصف عمر الكافيين ~5-6 ساعات). تجنب الكحول قبل النوم (يُبدو أنك تنام بسرعة لكن يُدمِّر بنية النوم ويُلغي REM). تجنب الأكل الثقيل في الساعتين الأخيرتين.</p>
+
+<h3>5. روتين ما قبل النوم</h3>
+<p>الدماغ يحتاج إشارة أن "الوقت انتهى". روتين ثابت لـ 30-60 دقيقة قبل النوم: إضاءة خافتة، قراءة ورقية، تأمل أو تمديد خفيف، بعد عيد عن الشاشات. التكرار يجعل هذا الروتين مُحفِّزاً شرطياً للنوم — يبدأ الدماغ بالاسترخاء حين يرى نفس التسلسل.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>70%+ من هرمون النمو اليومي يُفرَز أثناء النوم العميق — لا تُفوِّته</li>
+    <li>5 ساعات نوم لأسبوع = انخفاض تستوستيرون يعادل شيخوخة 10-15 سنة</li>
+    <li>قلة النوم تُحسِّن الجريلين (جوع) وتُقلِّل اللبتين (شبع) — تُفقِدك السيطرة على الأكل</li>
+    <li>الفص الأمامي المُجهَد = قرارات أسوأ في كل مجال: غذاء، مال، علاقات</li>
+    <li>7-9 ساعات الهدف — الكمية والجودة معاً</li>
+    <li>ثبّت موعد الاستيقاظ + ظلام كامل + برودة الغرفة = أقوى ثلاثة تغييرات</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: النوم استثمار، لا كسل</h2>
+<p>ثقافة "النوم للضعفاء" أنتجت جيلاً من الناس المنهكين يُقنِعون أنفسهم أنهم يُنجِزون. لكن العلم واضح: الشخص المنهوك النوم أقل إنتاجاً، أقل صحةً، أضعف إرادةً، وأبطأ في بناء الجسد — مقارنةً بنفسه المرتاحة.</p>
+<p>النوم ليس وقتاً ضائعاً من الإنتاج — هو <em>البنية التحتية</em> التي يعتمد عليها كل إنتاجك. أصلح نومك، وستُصلِح معه جزءاً كبيراً من بقية حياتك.</p>`
+},
+en:{
+  dir:'ltr',title:'Sleep: The Secret Weapon You\'re Ignoring That\'s Destroying Your Performance',
+  cat:'Fitness',date:'July 2026',readTime:'14 min read',
+  excerpt:"You invest in training and nutrition and ignore sleep. That equation is broken. Sleep isn't rest — it's when all recovery, hormonal building, memory consolidation, and willpower renewal happen.",
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Your Body Is Your Message','Strength Training','Morning Routine'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>What Happens in Your Body During Sleep</h2>
+<p>Sleep isn't "powering off" — it's the most biologically intense period in your body:</p>
+<ul>
+  <li><strong>Growth Hormone:</strong> Over 70% of the daily amount is released during deep Slow-Wave Sleep in the first hours of the night. Cutting this phase means missing your daily dose of physical building</li>
+  <li><strong>Testosterone:</strong> Sleeping 5 hours for one week reduces testosterone levels by 10-15% — similar to aging 10-15 years. Sleeping 7-9 hours maintains the natural morning testosterone peak</li>
+  <li><strong>Memory Consolidation:</strong> REM sleep is when the brain processes everything learned during the day — strengthens important neural connections and weakens unimportant ones</li>
+  <li><strong>Willpower Renewal:</strong> The Prefrontal Cortex — center of self-control — is most sensitive to sleep deprivation</li>
+</ul>
+
+<h2>The Price of Sleep Deprivation</h2>
+<ul>
+  <li>Elevated cortisol: breaks down muscle and accumulates belly fat</li>
+  <li>Insulin resistance: contributes to fat accumulation and long-term diabetes risk</li>
+  <li>Increased appetite: raises ghrelin (hunger hormone) and reduces leptin (satiety)</li>
+  <li>Worse decisions: exhausted prefrontal cortex prefers immediate comfort over long-term goals</li>
+  <li>Lower athletic performance: reaction time, strength, endurance, balance — all scientifically proven to decline</li>
+</ul>
+
+<h2>How to Improve Sleep Quality: The Practical Protocol</h2>
+<ul>
+  <li><strong>Fix your wake time:</strong> Same time every day including weekends — the most important anchor</li>
+  <li><strong>Cool room:</strong> 16-19°C optimal for deep sleep</li>
+  <li><strong>Complete darkness:</strong> Any light inhibits melatonin — blackout curtains or sleep mask</li>
+  <li><strong>Avoid caffeine after noon:</strong> Half-life of caffeine is ~5-6 hours</li>
+  <li><strong>Pre-sleep routine:</strong> 30-60 minutes of dim lighting, no screens, light reading or meditation</li>
+</ul>
+
+<div class="callout"><p><strong>Shocking Numbers:</strong> The average sleep of historically successful people is not 4-5 hours as promoted — it's 7-9 hours. Jeff Bezos mentioned he needs 8 hours. LeBron James sleeps 10-12 hours. Matthew Walker, the leading sleep researcher, says: "There is no single aspect of your health that isn't negatively impacted by sleep deprivation."</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>70%+ of daily growth hormone is released during deep sleep — don't miss it</li>
+    <li>5 hours of sleep for a week = testosterone drop equivalent to aging 10-15 years</li>
+    <li>Sleep deprivation increases ghrelin and reduces leptin — you lose control over eating</li>
+    <li>An exhausted prefrontal cortex = worse decisions in every area: food, money, relationships</li>
+    <li>7-9 hours is the target — quantity and quality both matter</li>
+    <li>Fix wake time + complete darkness + cool room = the three most powerful changes</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'El Sueño: El Arma Secreta que Estás Ignorando y que Está Destruyendo tu Rendimiento',
+  cat:'Fitness',date:'Julio 2026',readTime:'14 min',
+  excerpt:'Inviertes en entrenamiento y nutrición e ignoras el sueño. Esa ecuación está rota. El sueño no es descanso — es cuando ocurre toda la recuperación, construcción hormonal y renovación de fuerza de voluntad.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Tu Cuerpo es Tu Mensaje','Entrenamiento de Fuerza','Rutina Matutina'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>Lo que Sucede en tu Cuerpo Durante el Sueño</h2>
+<ul>
+  <li><strong>Hormona del Crecimiento:</strong> Más del 70% de la cantidad diaria se libera durante el Sueño de Ondas Lentas profundo en las primeras horas de la noche</li>
+  <li><strong>Testosterona:</strong> Dormir 5 horas durante una semana reduce los niveles de testosterona en 10-15% — similar a envejecer 10-15 años</li>
+  <li><strong>Consolidación de Memoria:</strong> El sueño REM es cuando el cerebro procesa todo lo aprendido durante el día</li>
+  <li><strong>Renovación de Fuerza de Voluntad:</strong> La Corteza Prefrontal es la más sensible a la privación del sueño</li>
+</ul>
+
+<h2>El Precio de la Privación del Sueño</h2>
+<ul>
+  <li>Cortisol elevado: descompone músculo y acumula grasa abdominal</li>
+  <li>Resistencia a la insulina: contribuye a la acumulación de grasa</li>
+  <li>Mayor apetito: eleva la grelina (hambre) y reduce la leptina (saciedad)</li>
+  <li>Peores decisiones: la corteza prefrontal agotada prefiere comodidad inmediata</li>
+</ul>
+
+<h2>Protocolo Práctico para Mejorar el Sueño</h2>
+<ul>
+  <li>Fija tu hora de despertar: misma hora todos los días incluyendo fines de semana</li>
+  <li>Habitación fresca: 16-19°C óptimo para el sueño profundo</li>
+  <li>Oscuridad total: cualquier luz inhibe la melatonina</li>
+  <li>Evitar cafeína después del mediodía</li>
+  <li>Rutina pre-sueño: 30-60 minutos sin pantallas</li>
+</ul>
+
+<div class="callout"><p><strong>La Cultura "El Sueño es Para los Débiles" es Falsa:</strong> Jeff Bezos menciona que necesita 8 horas. LeBron James duerme 10-12 horas. Matthew Walker, el principal investigador del sueño, dice: "No hay un solo aspecto de tu salud que no se vea afectado negativamente por la privación del sueño."</p></div>
+
+<h2>Conclusión</h2>
+<p>El sueño no es tiempo perdido de productividad — es la infraestructura en la que se apoya toda tu productividad. <strong>Repara tu sueño y repararás gran parte del resto de tu vida.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:"Le Sommeil: L'Arme Secrète que tu Ignores et qui Détruit tes Performances",
+  cat:'Fitness',date:'Juillet 2026',readTime:'14 min',
+  excerpt:"Tu investis dans l'entraînement et la nutrition et ignores le sommeil. Cette équation est brisée. Le sommeil n'est pas du repos — c'est là que se produisent toute la récupération, la construction hormonale et le renouvellement de la volonté.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Ton Corps Est Ton Message','Entraînement de Force','Routine Matinale'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Ce qui Se Passe dans Ton Corps Pendant le Sommeil</h2>
+<ul>
+  <li><strong>Hormone de Croissance:</strong> Plus de 70% de la quantité quotidienne est libérée pendant le sommeil à ondes lentes profondes</li>
+  <li><strong>Testostérone:</strong> Dormir 5 heures pendant une semaine réduit les niveaux de testostérone de 10-15% — similaire à vieillir de 10-15 ans</li>
+  <li><strong>Consolidation de la Mémoire:</strong> Le sommeil REM est le moment où le cerveau traite tout ce qui a été appris pendant la journée</li>
+  <li><strong>Renouvellement de la Volonté:</strong> Le Cortex Préfrontal est le plus sensible à la privation de sommeil</li>
+</ul>
+
+<h2>Le Prix du Manque de Sommeil</h2>
+<ul>
+  <li>Cortisol élevé: décompose le muscle et accumule la graisse abdominale</li>
+  <li>Résistance à l'insuline: contribue à l'accumulation de graisse</li>
+  <li>Appétit accru: augmente la ghréline (faim) et réduit la leptine (satiété)</li>
+  <li>Pires décisions: cortex préfrontal épuisé préfère le confort immédiat</li>
+</ul>
+
+<h2>Protocole Pratique pour Améliorer le Sommeil</h2>
+<ul>
+  <li>Fixe ton heure de réveil: même heure tous les jours</li>
+  <li>Chambre fraîche: 16-19°C optimal pour le sommeil profond</li>
+  <li>Obscurité totale: toute lumière inhibe la mélatonine</li>
+  <li>Éviter la caféine après midi</li>
+  <li>Routine pré-sommeil: 30-60 minutes sans écrans</li>
+</ul>
+
+<div class="callout"><p><strong>La Culture "Le Sommeil c'est Pour les Faibles" est Fausse:</strong> Jeff Bezos mentionne avoir besoin de 8 heures. LeBron James dort 10-12 heures. Matthew Walker dit: "Il n'y a pas un seul aspect de ta santé qui ne soit pas affecté négativement par le manque de sommeil."</p></div>
+
+<h2>Conclusion</h2>
+<p>Le sommeil n'est pas du temps perdu de productivité — c'est l'infrastructure sur laquelle repose toute ta productivité. <strong>Répare ton sommeil et tu répareras une grande partie du reste de ta vie.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'नींद: वह गुप्त हथियार जिसे तुम नज़रअंदाज़ कर रहे हो और जो तुम्हारे प्रदर्शन को बर्बाद कर रहा है',
+  cat:'फिटनेस',date:'जुलाई 2026',readTime:'14 मिनट',
+  excerpt:'तुम प्रशिक्षण और पोषण में निवेश करते हो और नींद की अनदेखी करते हो। यह समीकरण टूटा हुआ है। नींद आराम नहीं है — यह वह समय है जब सभी रिकवरी, हार्मोनल निर्माण और इच्छाशक्ति का नवीनीकरण होता है।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['तुम्हारा शरीर तुम्हारा संदेश है','शक्ति प्रशिक्षण','सुबह की दिनचर्या'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>नींद के दौरान तुम्हारे शरीर में क्या होता है</h2>
+<ul>
+  <li><strong>वृद्धि हार्मोन:</strong> दैनिक मात्रा का 70% से अधिक रात के पहले घंटों में गहरी नींद के दौरान जारी होता है</li>
+  <li><strong>टेस्टोस्टेरोन:</strong> एक हफ्ते तक 5 घंटे सोने से टेस्टोस्टेरोन का स्तर 10-15% कम हो जाता है — 10-15 साल की उम्र बढ़ने के समान</li>
+  <li><strong>स्मृति समेकन:</strong> REM नींद वह समय है जब मस्तिष्क दिन के दौरान सीखी गई हर चीज़ को संसाधित करता है</li>
+  <li><strong>इच्छाशक्ति नवीनीकरण:</strong> प्रीफ्रंटल कॉर्टेक्स नींद की कमी के प्रति सबसे संवेदनशील है</li>
+</ul>
+
+<h2>व्यावहारिक प्रोटोकॉल</h2>
+<ul>
+  <li>जागने का समय तय करो: हर दिन एक ही समय पर</li>
+  <li>ठंडा कमरा: गहरी नींद के लिए 16-19°C</li>
+  <li>पूर्ण अंधेरा: कोई भी प्रकाश मेलाटोनिन को रोकता है</li>
+  <li>दोपहर के बाद कैफीन से बचो</li>
+  <li>सोने से पहले की दिनचर्या: 30-60 मिनट बिना स्क्रीन के</li>
+</ul>
+
+<div class="callout"><p><strong>"नींद कमज़ोरों के लिए है" संस्कृति गलत है:</strong> Jeff Bezos को 8 घंटे की ज़रूरत है। LeBron James 10-12 घंटे सोते हैं। Matthew Walker कहते हैं: "तुम्हारे स्वास्थ्य का कोई भी पहलू नहीं है जो नींद की कमी से नकारात्मक रूप से प्रभावित न हो।"</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>नींद उत्पादकता का खोया हुआ समय नहीं है — यह वह बुनियादी ढांचा है जिस पर तुम्हारी सारी उत्पादकता टिकी है। <strong>अपनी नींद ठीक करो और तुम अपने जीवन का बड़ा हिस्सा ठीक कर लोगे।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

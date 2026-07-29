@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الانضباط ليس قوة إرادة — إنه نظام. تعلّم كيف تبني منظومة انضباط ذاتي تعمل تلقائياً حتى في أصعب الأيام.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الانضباط كنظام لا كإرادة: المنهجية الكاملة | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/discipline-system.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="discipline-morning.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel1">روتين الصباح</span></a>
+      <a class="related-card" href="discipline-habits.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel2">العادات الذرية</span></a>
+      <a class="related-card" href="smv-basics.html"><span class="related-cat">SMV</span><span class="related-title" id="rel3">دليل SMV الشامل</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'الانضباط كنظام لا كإرادة: المنهجية الكاملة لبناء انضباط لا يتكسر',
+  cat:'الانضباط',date:'يوليو 2026',readTime:'12 دقيقة قراءة',
+  excerpt:'الاعتماد على قوة الإرادة وحدها استراتيجية فاشلة مضمونة. الانضباط الحقيقي يُبنى كنظام هندسي دقيق — حيث الإرادة تُوجَّه لإنشاء الأنظمة لا للمعركة اليومية.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['روتين الصباح','العادات الذرية','دليل SMV الشامل'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الوهم الكبير: قوة الإرادة كمحرك للانضباط</h2>
+<p>الثقافة الشعبية تُعرِّف الشخص المنضبط بأنه من يمتلك "إرادة فولاذية" — يستطيع أن يرفض كل إغراء ويُكمِل كل مهمة بقوة خالصة من شخصيته. هذا التعريف ليس فقط خاطئاً — هو ضار فعلاً لأنه يُوجِّه الطاقة في الاتجاه الخاطئ.</p>
+<p>الأبحاث في علم الأعصاب والسلوك الإنساني تُثبت بشكل متكرر أن <strong>قوة الإرادة مورد محدود قابل للاستنزاف</strong>. ما يُسميه الباحثون "إرهاق الإرادة" (Ego Depletion) — وهو الظاهرة التي تجعل كل قرار ومقاومة وجهد يُقلِّل من القدرة على المقاومة اللاحقة. الشخص الذي يُعتمد على إرادته فقط سيجد نفسه يرضخ حتماً لإغراءاته في فترات الضعف — وفترات الضعف لا مفر منها.</p>
+<p>الرجال الأكثر انضباطاً في العالم لا يمتلكون إرادة أقوى من غيرهم — يمتلكون <strong>أنظمة أفضل</strong> تجعل السلوك المنضبط هو الخيار الافتراضي والأسهل، لا الخيار الصعب الذي يتطلب مجهوداً مستمراً.</p>
+
+<h2>الانضباط كهندسة: تصميم البيئة والأنظمة</h2>
+<p>الهندسة السلوكية (Behavioral Architecture) هي العلم الذي يدرس كيف تُصمِم بيئتك وأنظمتك لتجعل السلوكيات الجيدة أسهل والسلوكيات السيئة أصعب — دون الاتكاء على الإرادة لحظة بلحظة.</p>
+
+<h3>المبدأ الأساسي: تقليل مقاومة الاحتكاك</h3>
+<p>كل سلوك تريد تبنّيه يجب أن يُصبح أسهل — بإزالة خطوات بينك وبينه. كل سلوك تريد تجنبه يجب أن يُصبح أصعب — بإضافة خطوات بينك وبينه.</p>
+<ul>
+  <li>تريد التمرن صباحاً؟ ضع ملابس التمرين بجانب السرير قبل النوم — القرار يُتخذ مساءً حين تكون إرادتك أقوى</li>
+  <li>تريد تقليل استخدام الهاتف؟ أزِل تطبيقات التشتيت من الصفحة الرئيسية — الاحتكاك الإضافي يُقلِّل الاستخدام 60% دون أي إرادة</li>
+  <li>تريد أكل صحي؟ أعِد ترتيب الثلاجة لتكون الخيارات الصحية في مستوى العين — الطعام المرئي يُستهلَك أكثر بنسبة كبيرة</li>
+  <li>تريد القراءة يومياً؟ ضع الكتاب على وسادتك — وستقرأه قبل النوم تلقائياً</li>
+</ul>
+
+<h3>تصميم البيئات المتعددة</h3>
+<p>الدماغ يُربط السلوك بالبيئة. إذا كنت تعمل من سريرك، سيُصبح العمل والنوم مرتبطَين في دماغك وسيُعاني كلاهما. إذا كنت تُصمم غرفة أو مكتباً خاصاً للعمل المركّز — سيُشغِّل دماغك نمط التركيز تلقائياً حين تجلس فيه.</p>
+<p>هذا المبدأ يُسمى "الإشارة البيئية" (Environmental Cuing) — البيئة ترسل إشارات دماغية تُهيئ السلوك قبل أن تُفكِّر في القيام به.</p>
+
+<h2>نظام الأولويات: لماذا معظم الناس مشغولون لكن غير منتجين</h2>
+<p>الشخص غير المنضبط يُسيطر عليه البريد الإلكتروني والإشعارات والطلبات الخارجية. الشخص المنضبط يُسيطر على يومه بنظام أولويات واضح ومُسبق.</p>
+
+<h3>قاعدة "MIT" — المهام الأكثر أهمية</h3>
+<p>في بداية كل يوم — وبشكل أفضل: في نهاية اليوم السابق — حدِّد 3 مهام فقط تُمثِّل أعلى قيمة يمكنك إنجازها اليوم. هذه هي المهام الأكثر أهمية (Most Important Tasks). أنجزها قبل أي شيء آخر — قبل البريد الإلكتروني، قبل الهاتف، قبل اجتماعات لا طائل منها.</p>
+<p>الجهد الفكري الحاد يكون في ذروته في الساعتين الأولى من الاستيقاظ لمعظم الناس. صرف هذا الوقت على الأقل أهمية هو تبذير لأثمن مورد يومي.</p>
+
+<h3>مبدأ باريتو في الانضباط</h3>
+<p>20% من أفعالك تُنتج 80% من نتائجك. العمل المنضبط لا يعني العمل أكثر — يعني التركيز المتشدد على الـ20% الصحيحة وحماية هذا التركيز من كل ما يحاول سرقته.</p>
+
+<h2>الاتساق فوق الكمال: قاعدة الاستمرارية</h2>
+<p>الخطأ الفادح الذي يرتكبه معظم من يحاولون بناء انضباط هو التخلي عند أول انتكاسة. يُفوِّتون يوم تمرين فيُقررون أن الأسبوع "ضاع" ويبدأون من جديد الأسبوع القادم. يُفوِّتون يوم كتابة فيُلغون الهدف كله. هذا التفكير الثنائي (إما الكمال أو الصفر) هو عدو الانضباط الأول.</p>
+
+<div class="callout"><p><strong>قاعدة "لا تُفوِّت مرتين":</strong> لا بأس بتفويت يوم — الحياة تتدخل دائماً. لكن لا تُفوِّت مرتين متتاليتين. اليوم الثاني المتتالي بدون عمل هو بداية الانهيار. اليوم الواحد الضائع هو مجرد توقف مؤقت.</p></div>
+
+<h3>قانون الحد الأدنى</h3>
+<p>لكل عادة تريد بناءها: حدِّد حداً أدنى مضموناً لا تُفرِّط فيه بأي ظرف. حين لا تستطيع إنجاز الكامل، أنجز الحد الأدنى:</p>
+<ul>
+  <li>التمرين الكامل 60 دقيقة → الحد الأدنى: 10 دقائق متمارين أي تمرين</li>
+  <li>الكتابة 1000 كلمة → الحد الأدنى: كتابة جملة واحدة</li>
+  <li>القراءة 30 صفحة → الحد الأدنى: فتح الكتاب وقراءة صفحة واحدة</li>
+</ul>
+<p>الحد الأدنى يُحافِظ على الهوية ("أنا شخص يتمرن يومياً") ويُبقي العادة حيّة حتى في أصعب الأيام. وكثيراً ما يبدأ بالحد الأدنى وينتهي بإنجاز الكامل — لأن البدء هو أصعب جزء.</p>
+
+<h2>إدارة الطاقة لا الوقت</h2>
+<p>معظم كتب الإنتاجية تتحدث عن إدارة الوقت. لكن الوقت ليس المشكلة — الطاقة هي المشكلة. يمكنك إدارة وقتك بشكل مثالي وتفشل في إنجاز أي شيء إذا كنت مستنزف الطاقة.</p>
+
+<h3>أنواع الطاقة التي تحتاج لإدارتها</h3>
+<ul>
+  <li><strong>الطاقة الجسدية:</strong> النوم (الأساس)، التغذية، التمرين، الراحة المنتظمة</li>
+  <li><strong>الطاقة الذهنية:</strong> قرارات أقل، تركيز عميق، فترات راحة منتظمة بين جلسات العمل</li>
+  <li><strong>الطاقة العاطفية:</strong> علاقات صحية، حدود واضحة، تجنب المصارين العاطفية غير الضرورية</li>
+  <li><strong>الطاقة الروحية:</strong> الهدف الواضح، الانسجام بين الفعل والقيم، الإحساس بالمعنى</li>
+</ul>
+
+<h3>مبدأ "أولاً الوقود ثم العمل"</h3>
+<p>الطيار لا يُقلع بخزان فارغ. أنت أيضاً لا تستطيع إنتاج عمل ذي قيمة حقيقية من جسم ومخ مستنزفَين. الاستثمار في الطاقة (نوم جيد، تغذية صحية، راحة مُبرمَجة) ليس ترفاً — هو شرط الإنتاج المستدام.</p>
+
+<h2>النظام الكامل: الدورة اليومية للانضباط</h2>
+<p>بدلاً من الاعتماد على قرارات لحظية، بنِ نظاماً يومياً شاملاً يُلغي معظم القرارات اليومية ويُحوِّل الانضباط لطبيعة ثانية:</p>
+
+<h3>ليلاً (30 دقيقة)</h3>
+<ul>
+  <li>راجع ما أنجزته اليوم وقيِّمه</li>
+  <li>حدِّد 3 مهام أولوية لليوم التالي</li>
+  <li>جهّز ما تحتاجه صباحاً (ملابس، طعام، مستلزمات)</li>
+  <li>أغلق الشاشات قبل ساعة من النوم</li>
+</ul>
+
+<h3>صباحاً (60 دقيقة قبل الانشغال)</h3>
+<ul>
+  <li>استيقاظ دون هاتف — 15 دقيقة أولى خالية من الإشعارات</li>
+  <li>تحريك الجسم — حتى 10 دقائق تمرين خفيف تُغيِّر كيمياء الدماغ</li>
+  <li>العمل على أولى الـ MIT قبل أي شيء آخر</li>
+</ul>
+
+<h3>خلال اليوم</h3>
+<ul>
+  <li>مقاطعة مُبرمَجة كل 90 دقيقة — الدماغ يعمل في دورات 90 دقيقة</li>
+  <li>لا تُتحقق من البريد الإلكتروني في وقت العمل العميق</li>
+  <li>وجبة خفيفة صحية للحفاظ على مستوى سكر الدم مستقراً</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>قوة الإرادة مورد محدود — الأنظمة هي الحل الحقيقي للانضباط</li>
+    <li>هندس بيئتك: اجعل السلوك الجيد أسهل والسيئ أصعب</li>
+    <li>حدِّد 3 مهام أولوية يومياً وأنجزها أولاً في ذروة طاقتك</li>
+    <li>قاعدة "لا تُفوِّت مرتين" — الاتساق فوق الكمال</li>
+    <li>قانون الحد الأدنى يُبقي العادات حيّة في أصعب الأيام</li>
+    <li>أدِر طاقتك (جسدية، ذهنية، عاطفية) كما تُدير وقتك</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الانضباط يُبنى لا يُولَد</h2>
+<p>ليس هناك شخص "طبيعته الانضباط" — هناك أشخاص بنوا أنظمة انضباط فعّالة على مدى وقت طويل حتى أصبحت هوية. أنت أيضاً قادر على بناء هذه الأنظمة — الأمر لا يحتاج لموهبة خاصة، يحتاج لفهم صحيح وتطبيق صبور.</p>
+<p>ابدأ بنظام واحد بسيط: البيئة المُصممة لصالحك. أضِف إليه تدريجياً. في غضون 6 أشهر، ستجد نفسك تعيش مستوى من الانضباط كنت تحسبه بعيد المنال.</p>`
+},
+en:{
+  dir:'ltr',title:'Discipline as a System, Not Willpower: The Complete Methodology',
+  cat:'Discipline',date:'July 2026',readTime:'12 min read',
+  excerpt:'Relying on willpower alone is a guaranteed failure strategy. Real discipline is built as a precise engineering system — where willpower is directed at building systems, not fighting daily battles.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Morning Routine','Atomic Habits','The Complete SMV Guide'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>The Big Illusion: Willpower as the Engine of Discipline</h2>
+<p>Neuroscience and behavioral research repeatedly confirm that <strong>willpower is a limited, depletable resource</strong>. "Ego Depletion" — the phenomenon where every decision and resistance reduces subsequent resistance capacity. Someone relying solely on willpower will inevitably break in moments of weakness — and weakness is unavoidable.</p>
+<p>The world's most disciplined people don't have stronger willpower than others — they have <strong>better systems</strong> that make disciplined behavior the default, easiest option rather than the difficult one requiring constant effort.</p>
+
+<h2>Discipline as Engineering: Designing Environment and Systems</h2>
+<p>Behavioral Architecture is the science of designing your environment and systems to make good behaviors easier and bad behaviors harder — without relying on moment-by-moment willpower.</p>
+<ul>
+  <li>Want to exercise in the morning? Put workout clothes by the bed before sleep — the decision is made in the evening when willpower is stronger</li>
+  <li>Want to reduce phone use? Remove distraction apps from the home screen — added friction reduces usage by 60% without any willpower</li>
+  <li>Want to eat healthy? Put healthy foods at eye level in the fridge — visible food gets consumed far more</li>
+  <li>Want to read daily? Put the book on your pillow — you'll read it automatically before sleep</li>
+</ul>
+
+<h2>Priority Systems: Why Most People Are Busy But Not Productive</h2>
+<p>The undisciplined person is controlled by email, notifications, and external demands. The disciplined person controls their day with a clear, pre-set priority system.</p>
+<p><strong>The MIT Rule:</strong> At the start (or end of the previous day), identify 3 tasks that represent the highest value you can accomplish today. Complete them before anything else — before email, before the phone, before pointless meetings. Peak cognitive ability is in the first 1-2 hours after waking. Spending this time on low-priority tasks is burning your most valuable daily resource.</p>
+
+<h2>Consistency Over Perfection: The Continuity Rule</h2>
+<div class="callout"><p><strong>The "Never Miss Twice" Rule:</strong> Missing one day is fine — life always intervenes. But never miss twice in a row. The second consecutive skipped day is where collapse begins. One lost day is just a temporary pause.</p></div>
+<p><strong>The Minimum Viable Dose:</strong> For every habit you're building, define a guaranteed minimum you will never abandon regardless of circumstances:</p>
+<ul>
+  <li>Full 60-minute workout → Minimum: 10 minutes of any exercise</li>
+  <li>Writing 1000 words → Minimum: writing one sentence</li>
+  <li>Reading 30 pages → Minimum: opening the book and reading one page</li>
+</ul>
+
+<h2>Energy Management, Not Time Management</h2>
+<p>You can manage your time perfectly and still produce nothing of value if your energy is depleted. Manage all four types:</p>
+<ul>
+  <li><strong>Physical energy:</strong> Sleep (foundational), nutrition, exercise, scheduled rest</li>
+  <li><strong>Mental energy:</strong> Fewer decisions, deep focus sessions, regular breaks between work blocks</li>
+  <li><strong>Emotional energy:</strong> Healthy relationships, clear boundaries, avoiding unnecessary emotional drains</li>
+  <li><strong>Purpose energy:</strong> Clear goals, alignment between action and values, a sense of meaning</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Willpower is a limited resource — systems are the real solution</li>
+    <li>Engineer your environment: make good behavior easier and bad behavior harder</li>
+    <li>Define 3 daily priority tasks and complete them first at peak energy</li>
+    <li>"Never miss twice" — consistency over perfection</li>
+    <li>The minimum viable dose keeps habits alive on the hardest days</li>
+    <li>Manage energy (physical, mental, emotional) the way you manage time</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'La Disciplina como Sistema, No como Voluntad: La Metodología Completa',
+  cat:'Disciplina',date:'Julio 2026',readTime:'12 min',
+  excerpt:'Depender solo de la fuerza de voluntad es una estrategia garantizada de fracaso. La verdadera disciplina se construye como un sistema de ingeniería preciso.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Rutina matutina','Hábitos atómicos','Guía completa del SMV'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>La Gran Ilusión: La Voluntad como Motor de la Disciplina</h2>
+<p>La neurociencia confirma repetidamente que <strong>la fuerza de voluntad es un recurso limitado y agotable</strong>. El "Agotamiento del Ego" — el fenómeno donde cada decisión y resistencia reduce la capacidad de resistencia posterior. Las personas más disciplinadas del mundo no tienen más voluntad que los demás — tienen <strong>mejores sistemas</strong>.</p>
+
+<h2>La Disciplina como Ingeniería</h2>
+<p>La Arquitectura del Comportamiento es la ciencia de diseñar tu entorno para hacer los buenos comportamientos más fáciles y los malos más difíciles — sin depender de la voluntad momento a momento.</p>
+<ul>
+  <li>¿Quieres ejercitarte por la mañana? Pon ropa de entrenamiento junto a la cama antes de dormir</li>
+  <li>¿Quieres reducir el uso del teléfono? Elimina apps de distracción de la pantalla principal</li>
+  <li>¿Quieres comer sano? Pon alimentos saludables a la altura de los ojos en el refrigerador</li>
+</ul>
+
+<h2>Consistencia sobre Perfección</h2>
+<div class="callout"><p><strong>La Regla "Nunca Faltes Dos Veces":</strong> Faltar un día está bien. Pero nunca faltes dos días seguidos. El segundo día consecutivo sin acción es donde comienza el colapso.</p></div>
+<p><strong>La Dosis Mínima Viable:</strong> Para cada hábito que construyes, define un mínimo garantizado que no abandonarás bajo ninguna circunstancia — 10 minutos de ejercicio, una oración escrita, una página leída.</p>
+
+<h2>Gestión de Energía, No de Tiempo</h2>
+<p>Puedes gestionar tu tiempo perfectamente y no producir nada de valor si tu energía está agotada. Gestiona los cuatro tipos: física (sueño, nutrición), mental (decisiones mínimas, enfoque profundo), emocional (límites claros), y de propósito (alineación entre acción y valores).</p>
+
+<h2>Conclusión</h2>
+<p>No hay personas cuya naturaleza sea la disciplina — hay personas que construyeron sistemas de disciplina efectivos a lo largo del tiempo hasta que se convirtieron en identidad. <strong>Tú también puedes construir estos sistemas.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'La Discipline comme Système, Pas comme Volonté: La Méthodologie Complète',
+  cat:'Discipline',date:'Juillet 2026',readTime:'12 min',
+  excerpt:"Compter uniquement sur la volonté est une stratégie d'échec garantie. La vraie discipline se construit comme un système d'ingénierie précis.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Routine matinale','Habitudes atomiques','Guide complet du SMV'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>La Grande Illusion: La Volonté comme Moteur de la Discipline</h2>
+<p>Les neurosciences confirment à plusieurs reprises que <strong>la volonté est une ressource limitée et épuisable</strong>. Les personnes les plus disciplinées du monde n'ont pas plus de volonté que les autres — elles ont <strong>de meilleurs systèmes</strong>.</p>
+
+<h2>La Discipline comme Ingénierie</h2>
+<p>L'Architecture Comportementale est la science de concevoir votre environnement pour rendre les bons comportements plus faciles et les mauvais plus difficiles.</p>
+<ul>
+  <li>Vous voulez faire de l'exercice le matin? Posez vos vêtements de sport à côté du lit avant de dormir</li>
+  <li>Vous voulez réduire l'utilisation du téléphone? Supprimez les applications distrayantes de l'écran principal</li>
+  <li>Vous voulez manger sainement? Mettez les aliments sains à hauteur des yeux dans le réfrigérateur</li>
+</ul>
+
+<h2>Cohérence plutôt que Perfection</h2>
+<div class="callout"><p><strong>La Règle "Ne Ratez Jamais Deux Fois":</strong> Rater un jour est acceptable. Mais ne ratez jamais deux jours de suite. Le deuxième jour consécutif sans action est le début de l'effondrement.</p></div>
+
+<h2>Gestion de l'Énergie, Pas du Temps</h2>
+<p>Vous pouvez gérer votre temps parfaitement et ne rien produire si votre énergie est épuisée. Gérez les quatre types: physique (sommeil, nutrition), mentale (décisions minimales, concentration profonde), émotionnelle (limites claires), et de sens (alignement entre action et valeurs).</p>
+
+<h2>Conclusion</h2>
+<p>Il n'y a pas de personnes dont la nature est la discipline — il y a des personnes qui ont construit des systèmes de discipline efficaces au fil du temps jusqu'à ce qu'ils deviennent une identité. <strong>Vous aussi pouvez construire ces systèmes.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'इच्छाशक्ति नहीं, प्रणाली के रूप में अनुशासन: पूरी पद्धति',
+  cat:'अनुशासन',date:'जुलाई 2026',readTime:'12 मिनट',
+  excerpt:'केवल इच्छाशक्ति पर निर्भर रहना एक गारंटीशुदा विफलता रणनीति है। वास्तविक अनुशासन एक सटीक इंजीनियरिंग प्रणाली के रूप में बनाया जाता है।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['सुबह की दिनचर्या','परमाणु आदतें','SMV की पूरी गाइड'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>बड़ा भ्रम: इच्छाशक्ति अनुशासन के इंजन के रूप में</h2>
+<p>तंत्रिका विज्ञान बार-बार पुष्टि करता है कि <strong>इच्छाशक्ति एक सीमित, समाप्त होने वाला संसाधन है</strong>। दुनिया के सबसे अनुशासित लोगों के पास दूसरों की तुलना में अधिक इच्छाशक्ति नहीं है — उनके पास <strong>बेहतर सिस्टम</strong> हैं।</p>
+
+<h2>इंजीनियरिंग के रूप में अनुशासन</h2>
+<p>अपने वातावरण को डिज़ाइन करें ताकि अच्छे व्यवहार आसान हों और बुरे व्यवहार कठिन हों:</p>
+<ul>
+  <li>सुबह व्यायाम करना चाहते हैं? सोने से पहले बिस्तर के पास वर्कआउट के कपड़े रखें</li>
+  <li>फोन का उपयोग कम करना चाहते हैं? होम स्क्रीन से विक्षेपण ऐप्स हटाएं</li>
+  <li>स्वस्थ खाना चाहते हैं? स्वस्थ खाद्य पदार्थों को फ्रिज में आंखों के स्तर पर रखें</li>
+</ul>
+
+<h2>निरंतरता परिपूर्णता से ऊपर</h2>
+<div class="callout"><p><strong>"कभी दो बार मत चूकें" नियम:</strong> एक दिन चूकना ठीक है। लेकिन कभी लगातार दो बार मत चूकें। लगातार दूसरा दिन बिना कार्रवाई के पतन की शुरुआत है।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>ऐसे कोई लोग नहीं हैं जिनकी प्रकृति अनुशासन है — ऐसे लोग हैं जिन्होंने समय के साथ प्रभावी अनुशासन प्रणालियाँ बनाई हैं जब तक कि वे पहचान नहीं बन गईं। <strong>आप भी ये सिस्टम बना सकते हैं।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

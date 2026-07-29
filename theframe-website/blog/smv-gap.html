@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="فجوة القيمة: الفرق بين ما تعتقده عن نفسك وما يراه الآخرون فعلاً. كيف تُشخِّص الفجوة وتُغلقها بمنهجية مدروسة.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>فجوة القيمة: لماذا يراك الناس بشكل مختلف عمّا تعتقد | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/smv-gap.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link">
+    <img src="../assets/logo.png" alt="The Frame" class="nav-logo">
+  </a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle">
+        <span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span>
+      </button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero" id="article-hero"></div>
+
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="smv-basics.html"><span class="related-cat">SMV</span><span class="related-title" id="rel1">دليل SMV الشامل</span></a>
+      <a class="related-card" href="smv-pillars.html"><span class="related-cat">SMV</span><span class="related-title" id="rel2">الأعمدة الأربعة للـ SMV</span></a>
+      <a class="related-card" href="money-mindset.html"><span class="related-cat">المال</span><span class="related-title" id="rel3">عقلية الثروة</span></a>
+    </div>
+  </div>
+
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+
+<script>
+const LANGS = ['ar','en','es','fr','hi'];
+const FLAGS = {ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES = {ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+
+const CONTENT = {
+ar: {
+  dir:'rtl', title:'فجوة القيمة: لماذا يراك الناس بشكل مختلف تماماً عمّا تعتقد',
+  cat:'SMV', date:'يوليو 2026', readTime:'10 دقائق قراءة',
+  excerpt:'فجوة القيمة هي الهوّة بين تقييمك لنفسك وما يراه الآخرون فعلاً. تشخيص هذه الفجوة والعمل على إغلاقها هو أحد أكثر الاستثمارات عائداً في بناء الذات.',
+  backLabel:'← المدونة', homeLabel:'الرئيسية', homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['دليل SMV الشامل','الأعمدة الأربعة للـ SMV','عقلية الثروة'],
+  ctaTitle:'طبّق ما تعلمته الآن', ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.', ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية', footerTerms:'شروط الاستخدام', footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>ما هي فجوة القيمة؟</h2>
+<p>فجوة القيمة (Value Gap) هي الفرق بين <strong>القيمة التي تعتقد أنك تُقدِّمها</strong> و<strong>القيمة التي يُدرِكها الآخرون فعلاً</strong>. هذه الفجوة موجودة عند الجميع بدرجات متفاوتة، لكنها تعمل في اتجاهين مختلفين تماماً:</p>
+<ul>
+  <li><strong>فجوة التقدير المبالَغ فيه:</strong> تعتقد أنك أفضل مما أنت عليه — وهذا الأكثر شيوعاً والأكثر ضرراً</li>
+  <li><strong>فجوة التقدير المنقوص:</strong> قيمتك الحقيقية أعلى مما يراه الناس — وهذا يُمثِّل فرصة ضائعة كبيرة</li>
+</ul>
+<p>النوع الأول هو الكارثة الهادئة التي تُدمِّر المسيرات والعلاقات والفرص بصمت. النوع الثاني هو الإمكانية المُعطَّلة التي تنتظر الإطار الصحيح لتُعلَن.</p>
+<p>فهم أي النوعين يصفك — وبأي قدر — هو نقطة انطلاق التحسين الحقيقي. بدون هذا الفهم، كل جهد للتطوير يُشبه إصلاح سيارة دون معرفة ما الذي يعطب فيها.</p>
+
+<h2>لماذا تحدث فجوة القيمة؟ الآليات النفسية</h2>
+
+<h3>تأثير المشارك والمراقب (Actor-Observer Effect)</h3>
+<p>علم النفس المعرفي يُوثِّق ظاهرة معروفة: نحن نُقيِّم تصرفاتنا الخاصة بناءً على نواياها الداخلية ("فعلت هذا لأنني أهتم") بينما نُقيِّم تصرفات الآخرين بناءً على ما نراه ظاهرياً ("يفعل هذا لأنه يريد الانتباه"). الآخرون يطبقون نفس المعيار عليك — يرون الظاهر فقط، بدون الوصول لنواياك الداخلية.</p>
+<p>هذا يعني أن كثيراً من الأشياء التي تبدو لك واضحة الجودة والدافعية لا تُقرأ بنفس الوضوح من الخارج. <strong>القيمة الحقيقية يجب أن تُترجَم لإشارات ظاهرة قابلة للقراءة</strong> — لا يكفي أن تعيشها داخلك.</p>
+
+<h3>التحيز نحو المعلومات الداخلية (Inside Information Bias)</h3>
+<p>أنت تعرف عن نفسك كل شيء: نواياك، جهودك الخفية، الصراعات الداخلية التي تجاوزتها، والمعرفة التي راكمتها. هذه المعرفة الداخلية تجعلك تُبالِغ في تقدير المخرجات الظاهرة لأنك تُضيف لها السياق الداخلي الذي لا يراه أحد غيرك.</p>
+<p>المدير الذي يجهد ساعات في التحضير لاجتماع يُصاب بخيبة أمل حين لا يُلاحَظ الجهد — لأن الآخرين لا يرون الجهد، يرون الاجتماع فقط. القيمة يجب أن تتجاوز جهد الإنتاج لتصل للمخرج القابل للملاحظة.</p>
+
+<h3>انحياز النقطة العمياء (Blind Spot Bias)</h3>
+<p>معظم الناس يعتقدون أنهم أقل تحيزاً من المتوسط — وهذا نفسه تحيز يُسميه علماء النفس "انحياز النقطة العمياء". لا ترى نقاط ضعفك بنفس وضوح رؤيتك لنقاط قوتك — وهذا بالضبط ما يُوجِد الفجوة.</p>
+
+<h2>أشكال فجوة القيمة الأكثر شيوعاً</h2>
+
+<h3>فجوة الكفاءة والعرض</h3>
+<p>الرجل الكفء الذي لا يُعرِض كفاءته لا يُحظى بها. الكفاءة المخفية لا تختلف عن الكفاءة المعدومة من وجهة نظر من لا يعلم بها. هذا لا يعني الاستعراض والتطبيل لنفسك — يعني بناء نظام يجعل مخرجاتك ظاهرة ومُلاحَظة بشكل طبيعي.</p>
+<p>أمثلة على فجوة الكفاءة والعرض:</p>
+<ul>
+  <li>الموظف المتميز الذي لا يُسوِّق إنجازاته داخل المؤسسة ويُصدَم حين يُتجاوَز في الترقية</li>
+  <li>المفكر العميق الذي لا يُعبِّر عن أفكاره بوضوح في المحادثات فيبدو عادياً</li>
+  <li>الرجل ذو القيم الرفيعة الذي لا تظهر قيمه في تفاعلاته اليومية</li>
+</ul>
+
+<h3>فجوة الجسد والصورة الذهنية</h3>
+<p>كثير من الرجال يحملون صورة ذهنية داخلية جيدة عن أنفسهم فيزيائياً، لكن الصورة الخارجية لا تُطابقها. هذا يحدث حين:</p>
+<ul>
+  <li>يعتمد الرجل على صورة قديمة لنفسه من سنوات مضت حين كان بحالة أفضل</li>
+  <li>يُقارن نفسه بمن هو أسوأ منه حالاً بدلاً من معيار موضوعي</li>
+  <li>يُعطي اهتماماً كبيراً لمجهوده ("أتمرن 3 مرات أسبوعياً") بدلاً من النتيجة الظاهرة</li>
+</ul>
+
+<h3>فجوة الاجتماعية والحضور</h3>
+<p>يعتقد كثيرون أنهم "أشخاص مثيرون للاهتمام" داخلياً لكنهم لا يُترجمون ذلك لحضور اجتماعي مُلاحَظ. الشخص المثير للاهتمام داخلياً لكن الهادئ جداً اجتماعياً يُقرأ في كثير من السياقات كشخص متوسط أو منسحب.</p>
+
+<div class="callout"><p><strong>الحقيقة المؤلمة:</strong> الناس لا يُقيِّمون نواياك — يُقيِّمون سلوكك. لا يُقيِّمون جهدك — يُقيِّمون نتيجتك. لا يُقيِّمون ما تعتقده عن نفسك — يُقيِّمون ما تُظهِره. الفجوة تُغلَق بتطوير الظاهر لا بالدفاع عن الباطن.</p></div>
+
+<h2>كيف تُشخِّص فجوتك بدقة؟</h2>
+<p>التشخيص الدقيق يتطلب جرأة والتزاماً بالصدق مع النفس. إليك الأدوات:</p>
+
+<h3>أداة 1: ملاحظة استجابات الناس</h3>
+<p>الناس لا يكذبون في استجاباتهم — حتى حين يكذبون في كلامهم. لاحظ:</p>
+<ul>
+  <li>هل يسألون رأيك في مواقف مهمة؟ (مؤشر مكانة)</li>
+  <li>هل يتواصلون معك ابتداءً أم تحتاج أنت للمبادرة دائماً؟</li>
+  <li>هل تستمر المحادثات معك بشكل طبيعي أم تنتهي بسرعة؟</li>
+  <li>هل يُقدِّم الناس الفرص والمعلومات لك بمبادرة منهم؟</li>
+</ul>
+
+<h3>أداة 2: التغذية الراجعة الصادقة</h3>
+<p>اطلب من 3 أشخاص تثق بصدقهم — ليس محبتهم لك، بل صدقهم — إجابة سؤال واحد: "ما أبرز انطباعي عنك حين نلتقي أول مرة؟" الإجابات ستكشف فجوات لم تُخطر على بالك.</p>
+
+<h3>أداة 3: تسجيل الفيديو</h3>
+<p>سجِّل نفسك في محادثة عادية بدون أن يعلم الطرف الآخر (أو باتفاق). شاهد التسجيل بموضوعية كأنك تُشاهد شخصاً غريباً. ما الذي تلاحظه أولاً؟ ما الذي يصرفك أو يُثيرك سلباً؟</p>
+
+<h3>أداة 4: المقارنة بالمستوى المستهدف</h3>
+<p>بدلاً من المقارنة بمن هو أسوأ منك، قارن نفسك بالمستوى الذي تطمح لأن تكون عليه. هذه المقارنة ستكشف الفجوة الحقيقية بين أين أنت وأين تريد أن تكون.</p>
+
+<h2>استراتيجيات إغلاق الفجوة</h2>
+
+<h3>الاستراتيجية الأولى: تطوير الظاهر بدلاً من تبرير الباطن</h3>
+<p>الرجل الذي يُبرِّر باستمرار ("لكنني في الداخل كذا وكذا") يُعمِّق الفجوة لأنه يُركِّز على الجانب الذي لا يراه الآخرون. الأكثر فاعلية: العمل على ما يُرى ويُسمَع ويُلاحَظ.</p>
+
+<h3>الاستراتيجية الثانية: بناء نظام التغذية الراجعة</h3>
+<p>أنشئ آليات منتظمة للحصول على تغذية راجعة صادقة: مُرشد يصارحك، مجموعة صغيرة من الأقران النقديين، أو منصات تُتيح تقييم حضورك (العروض التقديمية، الكتابة العامة).</p>
+
+<h3>الاستراتيجية الثالثة: تطوير التواصل الظاهر للقيمة الحقيقية</h3>
+<p>إذا كنت تمتلك قيمة حقيقية لكنها غير مرئية، فالمشكلة في التواصل لا في القيمة. تعلّم كيف تُعبِّر عن أفكارك بوضوح، كيف تُسوِّق إنجازاتك بأناقة، وكيف تجعل حضورك ملموساً في كل بيئة تكون فيها.</p>
+
+<h3>الاستراتيجية الرابعة: اختبار الافتراضات في بيئات جديدة</h3>
+<p>البيئات الجديدة تُعطيك تقييماً أكثر دقة لأنها خالية من الصور المسبقة. التواصل مع أشخاص جدد في سياقات مختلفة يكشف كيف يُقيِّمك الناس حين لا يعرفونك سلفاً.</p>
+
+<h2>الفجوة في اتجاهها الآخر: حين تكون أقوى مما يُرى</h2>
+<p>بعض الرجال يقعون في النوع الثاني من الفجوة — قيمتهم الحقيقية أعلى مما يُظهِر حضورهم. هذا يحدث مع:</p>
+<ul>
+  <li>الأشخاص ذوي القيمة الداخلية العالية لكن المهارات الاجتماعية المتواضعة</li>
+  <li>المتخصصين الذين يتفوقون في مجالاتهم لكن يُفشِلون في تسويق تخصصهم</li>
+  <li>الرجال ذوو المظهر المهمل رغم امتلاكهم كفاءة وشخصية عالية</li>
+</ul>
+<p>في هذه الحالة: الحل أسهل نفسياً لأنه لا يتطلب تغيير الجوهر، بل تطوير القدرة على إظهاره وتواصله.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>فجوة القيمة: الفرق بين ما تعتقده عن نفسك وما يراه الآخرون</li>
+    <li>تحدث بسبب: تأثير المشارك-المراقب، التحيز للمعلومات الداخلية، النقطة العمياء</li>
+    <li>أشكالها الأكثر شيوعاً: كفاءة غير ظاهرة، جسد/صورة، حضور اجتماعي</li>
+    <li>أدوات التشخيص: استجابات الناس، تغذية راجعة صادقة، تسجيل الفيديو</li>
+    <li>إغلاقها: طوِّر الظاهر، ابنِ نظام تغذية راجعة، اختبر في بيئات جديدة</li>
+    <li>الناس يُقيِّمون السلوك والنتيجة — لا النية والجهد</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الفجوة ليست عيباً — إنها بوصلة</h2>
+<p>الرجل الذكي لا يُنكر وجود الفجوة — يُشخِّصها بدقة ويستخدمها بوصلة للتحسين. كل فجوة مكتشفة هي سهم يُشير لمنطقة تحتاج عملاً. كل فجوة مُغلَقة هي خطوة نحو إنسان أكثر تكاملاً وأقوى تأثيراً.</p>
+<p>ابدأ بالتشخيص الصادق. ثم ضع خطة مُحددة. ثم نفِّذ باتساق. الفجوة لا تُغلَق بالتفكير — تُغلَق بالفعل.</p>`
+},
+en: {
+  dir:'ltr', title:'The Value Gap: Why People See You Differently Than You Think',
+  cat:'SMV', date:'July 2026', readTime:'10 min read',
+  excerpt:'The value gap is the gulf between how you assess yourself and what others actually perceive. Diagnosing this gap and methodically closing it is one of the highest-return investments in self-development.',
+  backLabel:'← Blog', homeLabel:'Home', homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['The Complete SMV Guide','The 4 Pillars of SMV','Wealth Mindset'],
+  ctaTitle:'Apply What You Learned', ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.', ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy', footerTerms:'Terms of Use', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>What Is the Value Gap?</h2>
+<p>The value gap is the difference between <strong>the value you believe you provide</strong> and <strong>the value others actually perceive</strong>. It operates in two directions:</p>
+<ul>
+  <li><strong>Overestimation gap:</strong> You think you are better than you are — the most common and most damaging direction</li>
+  <li><strong>Underestimation gap:</strong> Your real value is higher than what people see — a significant missed opportunity</li>
+</ul>
+<p>Without diagnosing this gap, all self-improvement efforts are like fixing a car without knowing what's broken.</p>
+
+<h2>Why Does the Value Gap Exist? The Psychological Mechanisms</h2>
+
+<h3>The Actor-Observer Effect</h3>
+<p>We evaluate our own actions based on internal intent ("I did this because I care") while evaluating others' actions based on visible behavior. Others apply the same standard to you — they see only the surface, with no access to your internal motivations. <strong>Real value must be translated into visible, readable signals</strong> — it is not enough to live it internally.</p>
+
+<h3>Inside Information Bias</h3>
+<p>You know everything about yourself: your intentions, hidden efforts, internal battles you've overcome, accumulated knowledge. This internal knowledge causes you to overestimate your visible outputs because you add context no one else has access to.</p>
+
+<h3>Blind Spot Bias</h3>
+<p>Most people believe they are less biased than average — and this itself is a bias. You cannot see your weaknesses with the same clarity you see your strengths — and this is exactly what creates the gap.</p>
+
+<h2>The Most Common Forms of Value Gap</h2>
+
+<h3>Competence-Visibility Gap</h3>
+<p>Hidden competence is functionally identical to absent competence for those who cannot see it. The talented employee passed over for promotion, the deep thinker who appears average because he communicates unclearly, the man of high values whose values never surface in daily interactions.</p>
+
+<h3>Body-Self-Image Gap</h3>
+<p>Many men carry an internally positive physical self-image that does not match external reality — relying on an old image from years past, comparing down instead of to an objective standard, or crediting effort over results.</p>
+
+<div class="callout"><p><strong>The Difficult Truth:</strong> People don't judge your intentions — they judge your behavior. Not your effort — your output. Not what you think about yourself — what you show. The gap closes by developing the visible, not defending the invisible.</p></div>
+
+<h2>How to Accurately Diagnose Your Gap</h2>
+<ul>
+  <li><strong>Observe people's responses:</strong> Do they seek your opinion on important matters? Do they initiate contact? Do conversations sustain naturally?</li>
+  <li><strong>Honest feedback:</strong> Ask 3 people you trust for honesty (not affection): "What is your primary impression of me when we first meet?"</li>
+  <li><strong>Video recording:</strong> Record yourself in normal conversation. Watch as if observing a stranger. What do you notice first? What puts you off?</li>
+  <li><strong>Compare upward, not down:</strong> Compare yourself to the level you aspire to be, not to those who are worse off</li>
+</ul>
+
+<h2>Strategies to Close the Gap</h2>
+<ul>
+  <li><strong>Develop the visible instead of justifying the internal:</strong> Work on what is seen, heard, and noticed</li>
+  <li><strong>Build a feedback system:</strong> Create regular mechanisms for honest feedback — a mentor who is direct, a small critical peer group</li>
+  <li><strong>Develop visible communication of real value:</strong> Learn to express your ideas clearly, market your achievements elegantly, make your presence felt in every environment</li>
+  <li><strong>Test in new environments:</strong> New environments give cleaner assessments free from preconceptions</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>The value gap: the difference between your self-assessment and others' perception</li>
+    <li>Caused by: actor-observer effect, inside information bias, blind spot bias</li>
+    <li>Most common forms: invisible competence, body image disconnect, social presence</li>
+    <li>Diagnosis tools: people's responses, honest feedback, video recording</li>
+    <li>Closing it: develop the visible, build feedback systems, test in new environments</li>
+    <li>People judge behavior and output — not intention and effort</li>
+  </ul>
+</div>`
+},
+es: {
+  dir:'ltr', title:'La Brecha de Valor: Por Qué la Gente Te Ve de Manera Diferente a lo que Crees',
+  cat:'SMV', date:'Julio 2026', readTime:'10 min',
+  excerpt:'La brecha de valor es el abismo entre cómo te evalúas a ti mismo y lo que los demás realmente perciben. Diagnosticar esta brecha y cerrarla metodicamente es una de las inversiones con mayor retorno.',
+  backLabel:'← Blog', homeLabel:'Inicio', homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Guía completa del SMV','Los 4 pilares del SMV','Mentalidad de riqueza'],
+  ctaTitle:'Aplica lo que aprendiste', ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.', ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad', footerTerms:'Términos de Uso', footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Qué es la Brecha de Valor?</h2>
+<p>La brecha de valor es la diferencia entre el valor que crees que proporcionas y el valor que los demás realmente perciben. Funciona en dos direcciones: sobreestimación (crees que eres mejor de lo que eres) y subestimación (tu valor real es mayor de lo que la gente ve).</p>
+
+<h2>¿Por Qué Existe la Brecha de Valor?</h2>
+<ul>
+  <li><strong>Efecto actor-observador:</strong> Evaluamos nuestras acciones según la intención interna, pero los demás solo ven el comportamiento visible</li>
+  <li><strong>Sesgo de información interna:</strong> Sabes todo sobre ti mismo — los demás solo ven el resultado</li>
+  <li><strong>Sesgo de punto ciego:</strong> No puedes ver tus debilidades con la misma claridad que tus fortalezas</li>
+</ul>
+
+<h2>Las Formas Más Comunes de la Brecha de Valor</h2>
+<ul>
+  <li><strong>Brecha competencia-visibilidad:</strong> La competencia oculta es funcionalmente idéntica a la competencia ausente para quienes no pueden verla</li>
+  <li><strong>Brecha imagen corporal:</strong> Imagen mental positiva que no coincide con la realidad externa</li>
+  <li><strong>Brecha de presencia social:</strong> Interesante internamente pero sin presencia social notable</li>
+</ul>
+
+<div class="callout"><p><strong>La Verdad Difícil:</strong> La gente no juzga tus intenciones — juzga tu comportamiento. No tu esfuerzo — tu resultado. La brecha se cierra desarrollando lo visible, no defendiendo lo invisible.</p></div>
+
+<h2>Cómo Diagnosticar Tu Brecha</h2>
+<ul>
+  <li>Observa las respuestas de las personas: ¿Buscan tu opinión? ¿Inician el contacto?</li>
+  <li>Solicita retroalimentación honesta de 3 personas en quienes confíes para la honestidad</li>
+  <li>Grábate en conversación normal. Mira como si observaras a un extraño</li>
+  <li>Compara hacia arriba, no hacia abajo — hacia el nivel al que aspiras</li>
+</ul>
+
+<h2>Conclusión</h2>
+<p>El hombre inteligente no niega la existencia de la brecha — la diagnostica con precisión y la usa como brújula para mejorar. <strong>Cada brecha descubierta es una flecha que apunta a un área que necesita trabajo.</strong></p>`
+},
+fr: {
+  dir:'ltr', title:"L'Écart de Valeur: Pourquoi les Gens Vous Voient Différemment de Ce Que Vous Pensez",
+  cat:'SMV', date:'Juillet 2026', readTime:'10 min',
+  excerpt:"L'écart de valeur est le gouffre entre comment vous vous évaluez et ce que les autres perçoivent réellement. Diagnostiquer cet écart et le combler méthodiquement est l'un des investissements à plus fort retour.",
+  backLabel:'← Blog', homeLabel:'Accueil', homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Guide complet du SMV','Les 4 piliers du SMV','Mentalité de richesse'],
+  ctaTitle:'Appliquez ce que vous avez appris', ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.", ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité', footerTerms:"Conditions d'utilisation", footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Qu'est-ce que l'Écart de Valeur?</h2>
+<p>L'écart de valeur est la différence entre la valeur que vous croyez apporter et la valeur que les autres perçoivent réellement. Il fonctionne dans deux directions: surestimation (vous pensez être meilleur que vous ne l'êtes) et sous-estimation (votre vraie valeur est supérieure à ce que les gens voient).</p>
+
+<h2>Pourquoi l'Écart de Valeur Existe-t-il?</h2>
+<ul>
+  <li><strong>Effet acteur-observateur:</strong> Nous évaluons nos propres actions selon l'intention interne, mais les autres ne voient que le comportement visible</li>
+  <li><strong>Biais d'information interne:</strong> Vous savez tout sur vous-même — les autres ne voient que le résultat</li>
+  <li><strong>Biais d'angle mort:</strong> Vous ne pouvez pas voir vos faiblesses avec la même clarté que vos forces</li>
+</ul>
+
+<h2>Comment Diagnostiquer Votre Écart</h2>
+<ul>
+  <li>Observez les réponses des gens: cherchent-ils votre opinion? Initient-ils le contact?</li>
+  <li>Demandez des retours honnêtes à 3 personnes en qui vous faites confiance pour leur honnêteté</li>
+  <li>Enregistrez-vous en conversation normale. Regardez comme si vous observiez un étranger</li>
+</ul>
+
+<div class="callout"><p><strong>La Vérité Difficile:</strong> Les gens ne jugent pas vos intentions — ils jugent votre comportement. Pas votre effort — votre résultat. L'écart se comble en développant le visible, pas en défendant l'invisible.</p></div>
+
+<h2>Conclusion</h2>
+<p>L'homme intelligent ne nie pas l'existence de l'écart — il le diagnostique avec précision et l'utilise comme boussole pour s'améliorer. <strong>Chaque écart découvert est une flèche pointant vers une zone qui nécessite du travail.</strong></p>`
+},
+hi: {
+  dir:'ltr', title:'मूल्य अंतराल: लोग आपको वैसा क्यों देखते हैं जैसा आप सोचते नहीं',
+  cat:'SMV', date:'जुलाई 2026', readTime:'10 मिनट',
+  excerpt:'मूल्य अंतराल वह खाई है जो आप खुद को कैसे आंकते हैं और दूसरे वास्तव में क्या देखते हैं के बीच है। इस अंतराल का निदान करना और इसे पद्धतिगत रूप से बंद करना स्व-विकास में सबसे अधिक रिटर्न वाले निवेशों में से एक है।',
+  backLabel:'← ब्लॉग', homeLabel:'होम', homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['SMV की पूरी गाइड','SMV के 4 स्तंभ','धन की मानसिकता'],
+  ctaTitle:'जो सीखा उसे लागू करें', ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।', ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति', footerTerms:'उपयोग की शर्तें', footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>मूल्य अंतराल क्या है?</h2>
+<p>मूल्य अंतराल वह अंतर है जो आप मानते हैं कि आप प्रदान करते हैं और दूसरे वास्तव में क्या देखते हैं के बीच है। यह दो दिशाओं में काम करता है: अधिक आंकना (आप सोचते हैं कि आप जितने हैं उससे बेहतर हैं) और कम आंकना (आपका वास्तविक मूल्य लोगों की नजर में जो दिखता है उससे अधिक है)।</p>
+
+<h2>मूल्य अंतराल क्यों मौजूद है?</h2>
+<ul>
+  <li><strong>अभिनेता-पर्यवेक्षक प्रभाव:</strong> हम अपने कार्यों को आंतरिक इरादे के आधार पर आंकते हैं, लेकिन दूसरे केवल दृश्यमान व्यवहार देखते हैं</li>
+  <li><strong>आंतरिक जानकारी का पूर्वाग्रह:</strong> आप खुद के बारे में सब कुछ जानते हैं — दूसरे केवल परिणाम देखते हैं</li>
+  <li><strong>अंध बिंदु पूर्वाग्रह:</strong> आप अपनी कमजोरियों को उसी स्पष्टता से नहीं देख सकते जैसे अपनी शक्तियों को</li>
+</ul>
+
+<div class="callout"><p><strong>कठिन सच्चाई:</strong> लोग आपके इरादों का न्याय नहीं करते — वे आपके व्यवहार का न्याय करते हैं। आपके प्रयास का नहीं — आपके परिणाम का। अंतराल दृश्यमान को विकसित करके बंद होता है, अदृश्य का बचाव करके नहीं।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>बुद्धिमान व्यक्ति अंतराल के अस्तित्व से इनकार नहीं करता — वह इसे सटीकता से पहचानता है और इसे सुधार के लिए एक कम्पास के रूप में उपयोग करता है। <strong>हर खोजा गया अंतराल उस क्षेत्र की ओर इशारा करने वाला तीर है जिसे काम की जरूरत है।</strong></p>`
+}
+};
+
+const LANGS_ORDER = ['ar','en','es','fr','hi'];
+let currentLang = localStorage.getItem('tf_lang') || 'ar';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('tf_lang', lang);
+  document.getElementById('lang-flag').textContent = FLAGS[lang];
+  document.getElementById('lang-label').textContent = NAMES[lang];
+  document.querySelectorAll('.lang-option').forEach((el,i)=>{ el.classList.toggle('active', LANGS_ORDER[i]===lang); });
+  document.getElementById('lang-picker').classList.remove('open');
+  renderPage();
+}
+
+function renderPage() {
+  const c = CONTENT[currentLang] || CONTENT['ar'];
+  const root = document.getElementById('html-root');
+  root.lang = currentLang;
+  root.dir = c.dir;
+  document.body.style.fontFamily = currentLang==='ar' ? "'Cairo',sans-serif" : "'Oswald',sans-serif";
+  document.title = c.title + ' | The Frame';
+  document.querySelector('meta[name="description"]').content = c.excerpt;
+
+  document.getElementById('nav-blog').textContent = c.backLabel;
+  document.getElementById('nav-home').textContent = c.homeLabel;
+  document.getElementById('nav-home').href = c.homeHref;
+  document.getElementById('nav-home-link').href = c.homeHref;
+
+  document.getElementById('article-hero').innerHTML = `
+    <div class="breadcrumb">
+      <a href="${c.homeHref}">${c.homeLabel}</a>
+      <span>›</span>
+      <a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a>
+      <span>›</span>
+      <span>${c.cat}</span>
+    </div>
+    <span class="article-cat">${c.cat}</span>
+    <h1 class="article-title">${c.title}</h1>
+    <div class="article-meta">
+      <span>${c.date}</span>
+      <span class="read-time">${c.readTime}</span>
+    </div>
+    <p class="article-excerpt">${c.excerpt}</p>`;
+
+  document.getElementById('article-body').innerHTML = c.body;
+
+  const rels = c.rel || [];
+  document.getElementById('related-title').textContent = c.relatedTitle;
+  ['rel1','rel2','rel3'].forEach((id,i)=>{
+    const el = document.getElementById(id);
+    if(el && rels[i]) el.textContent = rels[i];
+  });
+
+  document.getElementById('cta-title').textContent = c.ctaTitle;
+  document.getElementById('cta-desc').textContent = c.ctaDesc;
+  document.getElementById('cta-btn-text').textContent = c.ctaBtn;
+  document.getElementById('f-privacy').textContent = c.footerPrivacy;
+  document.getElementById('f-terms').textContent = c.footerTerms;
+  document.getElementById('f-blog').textContent = c.footerBlog;
+  document.getElementById('footer-copy').textContent = c.footerCopy;
+}
+
+document.getElementById('lang-btn-toggle').addEventListener('click', ()=>{ document.getElementById('lang-picker').classList.toggle('open'); });
+document.addEventListener('click', e=>{ if(!document.getElementById('lang-picker').contains(e.target)) document.getElementById('lang-picker').classList.remove('open'); });
+
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  document.getElementById('progress-bar').style.width = pct+'%';
+});
+
+setLang(currentLang);
+</script>
+</body>
+</html>

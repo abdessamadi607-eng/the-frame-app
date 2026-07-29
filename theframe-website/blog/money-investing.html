@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الاستثمار للمبتدئ: المبادئ الأساسية للاستثمار التي يعرفها الأثرياء ولا يُعلِّمها المدرسة. كيف تبدأ بمبالغ صغيرة وتبني ثروة على المدى البعيد.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الاستثمار للمبتدئ: المبادئ التي تغيّر كل شيء | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/money-investing.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="money-freedom.html"><span class="related-cat">المال</span><span class="related-title" id="rel1">الاستقلال المالي</span></a>
+      <a class="related-card" href="money-income.html"><span class="related-cat">المال</span><span class="related-title" id="rel2">مصادر الدخل المتعددة</span></a>
+      <a class="related-card" href="money-mindset.html"><span class="related-cat">المال</span><span class="related-title" id="rel3">عقلية الثروة</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'الاستثمار للمبتدئ: المبادئ التي تغيّر كل شيء في رحلتك المالية',
+  cat:'المال',date:'يوليو 2026',readTime:'13 دقيقة قراءة',
+  excerpt:'الاستثمار ليس للأثرياء فقط — هو الطريق الذي يوصل الفقراء للثراء. المدرسة لم تُعلِّمك هذه المبادئ لكنها تُغيِّر كل شيء: الاهتمام المركّب، التنويع، والزمن كأغلى أصولك.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الاستقلال المالي','مصادر الدخل المتعددة','عقلية الثروة'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>لماذا معظم الناس لا يستثمرون؟ التشخيص الصادق</h2>
+<p>إذا سألت معظم الناس لماذا لا يستثمرون، ستحصل على إجابات مشتركة: "لا أملك مالاً كافياً"، "الاستثمار للأثرياء"، "أخاف من الخسارة"، "لا أفهم فيه شيئاً." كل هذه الإجابات تستحق الرد الواضح:</p>
+<ul>
+  <li><strong>"لا أملك مالاً كافياً":</strong> يمكنك البدء بمبالغ صغيرة جداً في أغلب منصات الاستثمار الحديثة</li>
+  <li><strong>"الاستثمار للأثرياء":</strong> الاستثمار هو ما يجعل الناس أثرياء — لا العكس</li>
+  <li><strong>"أخاف من الخسارة":</strong> عدم الاستثمار هو خسارة مضمونة بسبب التضخم</li>
+  <li><strong>"لا أفهم فيه":</strong> هذا المقال يُصلِح ذلك</li>
+</ul>
+
+<h2>المبدأ الأول: الاهتمام المركّب — الأعجوبة الثامنة</h2>
+<p>يُنسَب لألبرت أينشتاين قوله إن الاهتمام المركّب هو "الأعجوبة الثامنة في العالم — من يفهمه يكسبه، ومن لا يفهمه يدفعه." الاهتمام المركّب يعني أن عوائد استثمارك تُولِّد عوائد بدورها — وهكذا دواليك.</p>
+<p>مثال ملموس: 10,000 درهم مستثمرة بمعدل عائد سنوي 8%:</p>
+<ul>
+  <li>بعد 10 سنوات: ~21,589 درهم</li>
+  <li>بعد 20 سنة: ~46,610 درهم</li>
+  <li>بعد 30 سنة: ~100,627 درهم</li>
+</ul>
+<p>المبلغ نفسه، لم تُضِف شيئاً، فقط الوقت والمعدل. هذا ما يجعل الزمن أغلى أصل في الاستثمار — وهذا سبب أن يبدأ في أسرع وقت ممكن.</p>
+
+<h2>المبدأ الثاني: التنويع — لا تضع كل بيضك في سلة واحدة</h2>
+<p>التنويع يعني توزيع استثمارك على أصول مختلفة بحيث إذا انهار أحدها لا يُدمِّر محفظتك بالكامل. أنواع الأصول الرئيسية:</p>
+<ul>
+  <li><strong>الأسهم (Stocks):</strong> ملكية جزئية في شركات. عالية العائد المحتمل، عالية التقلب</li>
+  <li><strong>السندات (Bonds):</strong> قروض للحكومات أو الشركات. عائد أقل، استقرار أعلى</li>
+  <li><strong>صناديق المؤشرات (Index Funds):</strong> محفظة تتبع مؤشراً كاملاً (مثل S&P 500). التنويع التلقائي بتكلفة منخفضة</li>
+  <li><strong>العقارات:</strong> دخل إيجاري + تقدير القيمة على المدى البعيد</li>
+  <li><strong>الذهب والسلع:</strong> تحوط ضد التضخم</li>
+</ul>
+
+<h2>المبدأ الثالث: الاستثمار المنتظم — لا تنتظر الوقت المثالي</h2>
+<p>أحد أكبر الأخطاء: انتظار "الوقت المثالي" للاستثمار. الدراسات تُثبِت باستمرار أن <strong>الوقت في السوق أهم من توقيت السوق</strong>. بدلاً من محاولة التنبؤ بارتفاع وانخفاض الأسواق — وهو ما يفشل فيه حتى المحترفون — استثمر مبلغاً ثابتاً بانتظام.</p>
+<p>هذه الاستراتيجية تُسمى "متوسط تكلفة الدولار" (Dollar Cost Averaging): تشتري أكثر حين الأسعار منخفضة وأقل حين مرتفعة — تلقائياً — دون أن تحتاج التنبؤ بأي شيء.</p>
+
+<h2>المبدأ الرابع: التكاليف تأكل عوائدك</h2>
+<p>رسوم إدارة المحفظة تبدو صغيرة (1%، 2%) لكن تأثيرها المركّب على مدى عقود ضخم. مقارنة بسيطة:</p>
+<ul>
+  <li>100,000 درهم × 30 سنة × عائد 8%: بدون رسوم = 1,006,266 درهم</li>
+  <li>نفس المبلغ مع رسوم 2%: عائد فعلي 6% = 574,349 درهم</li>
+</ul>
+<p>الرسوم كلّفتك 431,917 درهم! هذا لماذا صناديق المؤشرات منخفضة التكلفة (رسوم 0.03-0.2%) تتفوق تاريخياً على أغلب المحافظ المُدارة بشكل نشط.</p>
+
+<h2>المبدأ الخامس: المدى الطويل — الاستثمار ليس مضاربة</h2>
+<p>الفرق الجوهري بين الاستثمار والمضاربة:</p>
+<ul>
+  <li><strong>المضاربة:</strong> شراء لتبيع بسرعة بربح. تعتمد على التنبؤ القصير المدى. تُشبِه القمار في بعض صورها</li>
+  <li><strong>الاستثمار:</strong> شراء لتملك على المدى الطويل. يعتمد على القيمة الحقيقية للأصل وقدرته على النمو</li>
+</ul>
+<p>Warren Buffett، أحد أنجح المستثمرين في التاريخ، يُوصي المستثمر العادي بصناديق مؤشرات منخفضة التكلفة ومدى طويل — لا اختيار أسهم فردية. إذا كان هذا توصية Buffett، فهي جديرة بالانتباه.</p>
+
+<h2>البداية العملية: خطوتك الأولى</h2>
+
+<h3>الخطوة 1: افتح حساب استثمار</h3>
+<p>ابحث عن منصة استثمار منظَّمة في بلدك أو منصة دولية موثوقة. كثير من المنصات الحديثة تُتيح البدء بمبالغ صغيرة جداً وبدون عمولات.</p>
+
+<h3>الخطوة 2: ابدأ بصندوق مؤشر</h3>
+<p>للمبتدئ، صندوق مؤشر واسع (مثل يتبع مؤشر سوق عالمي) هو أبسط وأذكى نقطة بداية. تنويع تلقائي، رسوم منخفضة، لا تحتاج لمتابعة يومية.</p>
+
+<h3>الخطوة 3: أتمِت الاستثمار</h3>
+<p>اضبط تحويلاً تلقائياً شهرياً من حسابك البنكي لحساب الاستثمار في يوم محدد كل شهر. هذا يجعل الاستثمار عادة لا قراراً — والعادات أكثر موثوقية من القرارات.</p>
+
+<div class="callout"><p><strong>أهم درس:</strong> الزمن هو أغلى أصل في الاستثمار. كل سنة تنتظرها تُكلِّفك أكثر مما تتخيل. ابدأ اليوم بأي مبلغ — 100 درهم، 500 درهم — المهم البدء لا الكمال.</p></div>
+
+<h2>أخطاء المبتدئين التي يجب تجنبها</h2>
+<ul>
+  <li><strong>بيع عند الانهيار:</strong> الأسواق تنهار وترتفع — هذا طبيعي. من يبيع في الانهيار يُحوِّل الخسارة الورقية لخسارة حقيقية</li>
+  <li><strong>التركيز على الأخبار:</strong> الأخبار الاقتصادية مُصمَّمة لتثير ردود فعل عاطفية. المستثمر الناجح يتجاهل معظمها</li>
+  <li><strong>اتباع النصائح الساخنة:</strong> حين تسمع عن "الفرصة الذهبية التي لا تُعوَّض" — هذا عادةً وقت التراجع لا الشراء</li>
+  <li><strong>التوقف بعد أول خسارة:</strong> الخسارة الورقية جزء طبيعي من الاستثمار — من يتوقف عندها يضمن الخسارة الحقيقية</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الاهتمام المركّب: عوائد عوائدك — الزمن هو العامل الأهم</li>
+    <li>التنويع: لا تضع كل رأس مالك في أصل واحد</li>
+    <li>الوقت في السوق أهم من توقيت السوق — استثمر بانتظام</li>
+    <li>الرسوم تأكل عوائدك — اختر صناديق المؤشرات منخفضة التكلفة</li>
+    <li>الاستثمار مدى طويل — ليس مضاربة قصيرة</li>
+    <li>ابدأ الآن بأي مبلغ — الانتظار هو أغلى خطأ</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الاستثمار حق وواجب — لا رفاهية</h2>
+<p>في عالم التضخم المستمر، الأموال الموضوعة في حساب جارٍ تخسر قوتها الشرائية كل عام. عدم الاستثمار ليس أماناً — هو خسارة بطيئة مضمونة. الاستثمار الذكي هو ببساطة اختيار مدروس بين طريقين: ترك المال يتآكل، أو تشغيله ليتكاثر.</p>`
+},
+en:{
+  dir:'ltr',title:'Investing for Beginners: Principles That Change Everything in Your Financial Journey',
+  cat:'Money',date:'July 2026',readTime:'13 min read',
+  excerpt:"Investing isn't just for the rich — it's the road that takes the less wealthy to wealth. School didn't teach you these principles but they change everything: compound interest, diversification, and time as your most valuable asset.",
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Financial Independence','Multiple Income Streams','Wealth Mindset'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>Principle 1: Compound Interest — The Eighth Wonder</h2>
+<p>Compound interest means your investment returns generate returns themselves — and so on. A concrete example: $10,000 invested at 8% annual return:</p>
+<ul>
+  <li>After 10 years: ~$21,589</li>
+  <li>After 20 years: ~$46,610</li>
+  <li>After 30 years: ~$100,627</li>
+</ul>
+<p>Same amount, nothing added, just time and the rate. This makes time the most valuable asset in investing — and the reason to start as early as possible.</p>
+
+<h2>Principle 2: Diversification</h2>
+<p>Diversification means distributing your investment across different assets so that if one collapses it doesn't destroy your entire portfolio. Main asset types: Stocks (high potential return, high volatility), Bonds (lower return, higher stability), Index Funds (automatic diversification at low cost), Real Estate (rental income + long-term appreciation), Gold (inflation hedge).</p>
+
+<h2>Principle 3: Regular Investment — Don't Wait for the Perfect Moment</h2>
+<p>Studies consistently prove that <strong>time in the market matters more than timing the market</strong>. Dollar Cost Averaging: invest a fixed amount regularly. You automatically buy more when prices are low and less when high — without needing to predict anything.</p>
+
+<h2>Principle 4: Costs Eat Your Returns</h2>
+<p>Management fees seem small (1%, 2%) but their compound effect over decades is enormous. This is why low-cost index funds (fees of 0.03-0.2%) historically outperform most actively managed portfolios.</p>
+
+<h2>Principle 5: Long-Term — Investing Is Not Speculation</h2>
+<p>Warren Buffett recommends that average investors use low-cost index funds and a long time horizon — not individual stock picking. If that's Buffett's recommendation, it's worth noting.</p>
+
+<h2>Beginner Mistakes to Avoid</h2>
+<ul>
+  <li>Selling during a crash: converts paper loss to real loss</li>
+  <li>Following "hot tips": these are usually time to retreat, not buy</li>
+  <li>Stopping after the first loss: paper loss is a normal part of investing</li>
+  <li>Focusing on financial news: designed to trigger emotional reactions</li>
+</ul>
+
+<div class="callout"><p><strong>Most Important Lesson:</strong> Time is the most valuable asset in investing. Every year you wait costs you more than you imagine. Start today with any amount — $50, $100, $500 — the important thing is starting, not perfection.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Compound interest: returns on your returns — time is the most important factor</li>
+    <li>Diversification: don't put all your capital in one asset</li>
+    <li>Time in market beats timing the market — invest regularly</li>
+    <li>Costs eat your returns — choose low-cost index funds</li>
+    <li>Investing is long-term — not short-term speculation</li>
+    <li>Start now with any amount — waiting is the most expensive mistake</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Inversión para Principiantes: Principios que Cambian Todo en tu Viaje Financiero',
+  cat:'Dinero',date:'Julio 2026',readTime:'13 min',
+  excerpt:'Invertir no es solo para los ricos — es el camino que lleva a los menos acomodados a la riqueza. Estos principios cambian todo: interés compuesto, diversificación y el tiempo como tu activo más valioso.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Independencia Financiera','Múltiples Fuentes de Ingresos','Mentalidad de Riqueza'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>Principio 1: Interés Compuesto — La Octava Maravilla</h2>
+<p>El interés compuesto significa que los rendimientos de tu inversión generan rendimientos a su vez. Ejemplo: €10.000 invertidos al 8% anual:</p>
+<ul><li>Después de 10 años: ~€21.589</li><li>Después de 20 años: ~€46.610</li><li>Después de 30 años: ~€100.627</li></ul>
+<p>El tiempo es el activo más valioso en la inversión — por eso hay que empezar lo antes posible.</p>
+
+<h2>Principio 2: Diversificación</h2>
+<p>Distribuye tu inversión en diferentes activos: Acciones (alto rendimiento potencial, alta volatilidad), Bonos (menor rendimiento, mayor estabilidad), Fondos indexados (diversificación automática a bajo costo), Inmuebles, Oro.</p>
+
+<h2>Principio 3: Inversión Regular</h2>
+<p>El tiempo en el mercado importa más que el momento del mercado. El Promedio de Coste en Dólares (DCA): invierte una cantidad fija regularmente. Compras automáticamente más cuando los precios son bajos.</p>
+
+<h2>Principio 4: Los Costos se Comen tus Rendimientos</h2>
+<p>Las comisiones del 1-2% pueden costarte cientos de miles en décadas. Los fondos indexados de bajo costo (0.03-0.2%) superan históricamente a la mayoría de carteras gestionadas activamente.</p>
+
+<div class="callout"><p><strong>Lección Más Importante:</strong> El tiempo es el activo más valioso en la inversión. Empieza hoy con cualquier cantidad — €50, €100. Lo importante es empezar, no la perfección.</p></div>
+
+<h2>Conclusión</h2>
+<p>No invertir no es seguridad — es una pérdida lenta garantizada por la inflación. La inversión inteligente es simplemente una elección entre dejar que el dinero se erosione o ponerlo a trabajar para que se multiplique. <strong>Empieza hoy.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:"Investissement pour Débutants: Principes qui Changent Tout dans Votre Parcours Financier",
+  cat:'Argent',date:'Juillet 2026',readTime:'13 min',
+  excerpt:"Investir n'est pas réservé aux riches — c'est le chemin qui mène les moins aisés à la richesse. Ces principes changent tout: intérêt composé, diversification et le temps comme votre actif le plus précieux.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:["Indépendance Financière",'Sources de Revenus Multiples',"Mentalité de Richesse"],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Principe 1: Intérêt Composé — La Huitième Merveille</h2>
+<p>L'intérêt composé signifie que les rendements de votre investissement génèrent eux-mêmes des rendements. Exemple: 10.000€ investis à 8% annuel:</p>
+<ul><li>Après 10 ans: ~21.589€</li><li>Après 20 ans: ~46.610€</li><li>Après 30 ans: ~100.627€</li></ul>
+<p>Le temps est l'actif le plus précieux dans l'investissement — raison de commencer le plus tôt possible.</p>
+
+<h2>Principes Clés</h2>
+<ul>
+  <li><strong>Diversification:</strong> Répartissez vos investissements entre différentes classes d'actifs</li>
+  <li><strong>Investissement régulier (DCA):</strong> Le temps dans le marché compte plus que le timing du marché</li>
+  <li><strong>Coûts faibles:</strong> Les frais de 1-2% peuvent vous coûter des centaines de milliers sur des décennies</li>
+  <li><strong>Long terme:</strong> L'investissement n'est pas de la spéculation</li>
+</ul>
+
+<div class="callout"><p><strong>Leçon la Plus Importante:</strong> Le temps est l'actif le plus précieux. Commencez aujourd'hui avec n'importe quelle somme. L'important est de commencer, pas la perfection.</p></div>
+
+<h2>Conclusion</h2>
+<p>Ne pas investir n'est pas de la sécurité — c'est une perte lente garantie par l'inflation. <strong>L'investissement intelligent est simplement le choix de laisser l'argent se multiplier plutôt que de le laisser s'éroder.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'शुरुआती लोगों के लिए निवेश: सिद्धांत जो आपकी वित्तीय यात्रा में सब कुछ बदल देते हैं',
+  cat:'पैसा',date:'जुलाई 2026',readTime:'13 मिनट',
+  excerpt:'निवेश केवल अमीरों के लिए नहीं है — यह वह रास्ता है जो कम संपन्न लोगों को धन तक ले जाता है। चक्रवृद्धि ब्याज, विविधीकरण और समय आपका सबसे मूल्यवान संपत्ति।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['वित्तीय स्वतंत्रता','आय के कई स्रोत','धन की मानसिकता'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>सिद्धांत 1: चक्रवृद्धि ब्याज — आठवां आश्चर्य</h2>
+<p>चक्रवृद्धि ब्याज का मतलब है कि आपके निवेश पर रिटर्न स्वयं रिटर्न उत्पन्न करता है। उदाहरण: ₹10,000 को 8% वार्षिक रिटर्न पर निवेश किया गया:</p>
+<ul><li>10 साल बाद: ~₹21,589</li><li>20 साल बाद: ~₹46,610</li><li>30 साल बाद: ~₹1,00,627</li></ul>
+<p>समय निवेश में सबसे मूल्यवान संपत्ति है — इसीलिए जल्द से जल्द शुरुआत करनी चाहिए।</p>
+
+<h2>मुख्य सिद्धांत</h2>
+<ul>
+  <li><strong>विविधीकरण:</strong> अपने निवेश को विभिन्न परिसंपत्ति वर्गों में वितरित करें</li>
+  <li><strong>नियमित निवेश (SIP):</strong> बाजार में समय, बाजार के समय से अधिक मायने रखता है</li>
+  <li><strong>कम लागत:</strong> 1-2% शुल्क दशकों में लाखों रुपए खर्च कर सकता है</li>
+  <li><strong>दीर्घकालिक दृष्टिकोण:</strong> निवेश सट्टेबाजी नहीं है</li>
+</ul>
+
+<div class="callout"><p><strong>सबसे महत्वपूर्ण सबक:</strong> समय निवेश में सबसे मूल्यवान संपत्ति है। किसी भी राशि के साथ आज शुरू करें — ₹500, ₹1,000। महत्वपूर्ण बात शुरू करना है, पूर्णता नहीं।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>निवेश न करना सुरक्षा नहीं है — यह मुद्रास्फीति द्वारा एक धीमी, गारंटीकृत हानि है। <strong>स्मार्ट निवेश सिर्फ एक सोचा-समझा विकल्प है: पैसे को नष्ट होने देना, या इसे काम पर लगाना।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="عقلية الثروة: الفرق النفسي بين من يبقى فقيراً ومن يصبح ثرياً. المعتقدات المالية الخاطئة وكيفية إعادة برمجة علاقتك بالمال.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>عقلية الثروة: أعد برمجة علاقتك بالمال | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/money-mindset.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="money-freedom.html"><span class="related-cat">المال</span><span class="related-title" id="rel1">الاستقلال المالي</span></a>
+      <a class="related-card" href="money-income.html"><span class="related-cat">المال</span><span class="related-title" id="rel2">مصادر الدخل المتعددة</span></a>
+      <a class="related-card" href="smv-gap.html"><span class="related-cat">SMV</span><span class="related-title" id="rel3">فجوة القيمة</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'عقلية الثروة: أعد برمجة علاقتك بالمال وانطلق',
+  cat:'المال',date:'يوليو 2026',readTime:'12 دقيقة قراءة',
+  excerpt:'قبل أن تتعلم أي تقنية مالية، يجب إصلاح الأساس: كيف تُفكِّر في المال. المعتقدات المالية الموروثة من طفولتك تُحدِّد سقفك المالي أكثر بكثير مما تُحدِّده مهاراتك.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الاستقلال المالي','مصادر الدخل المتعددة','فجوة القيمة'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>لماذا المعرفة المالية وحدها لا تكفي</h2>
+<p>إذا كانت المعرفة المالية كافية لتحقيق الثروة، لكان أساتذة الاقتصاد أثرى الناس. لكن الواقع أكثر تعقيداً: <strong>المعتقدات اللاواعية عن المال تتحكم في قراراتنا المالية بشكل أعمق بكثير مما تتحكم فيه معلوماتنا الواعية</strong>.</p>
+<p>الدراسات على الفائزين باليانصيب تُظهِر ظاهرة مثيرة: أكثر من 70% منهم يعودون لنفس مستواهم المالي (أو أدنى) في غضون 5 سنوات. نفس النتيجة تظهر مع اللاعبين المحترفين الذين يحصلون على عقود ضخمة مفاجئة. السبب ليس نقص المال — هو نقص عقلية تستطيع الحفاظ عليه وتنميته.</p>
+
+<h2>مشكلة الـ "سقف المالي" الداخلي</h2>
+<p>مفهوم الـ "Setpoint" المالي: كما أن الجسم يملك وزناً تلقائياً يعود إليه بعد الحمية أو الإفراط، كذلك معظمنا يملك "سقفاً مالياً" داخلياً — مستوى من الثروة أو النجاح المالي يبدو "طبيعياً" ومقبولاً لهم نفسياً.</p>
+<p>من وُلِد في بيئة تعتبر الثروة "للآخرين" أو يشعر ذاتياً أن راتباً متوسطاً يكفي — سيتصرف دائماً بطريقة تعيده لهذا المستوى، حتى عند الحصول على فرص أكبر.</p>
+
+<h2>المعتقدات المالية السامة وأصولها</h2>
+
+<h3>1. "المال لا يجلب السعادة"</h3>
+<p>هذه الجملة تحتوي على حقيقة جزئية (الثراء الفاحش وحده لا يُنتِج سعادة دائمة) ولكنها تُستخدَم عادةً لتبرير عدم السعي الجاد للمال. الحقيقة الكاملة: <strong>المال لا يجلب السعادة لكن غيابه يجلب قدراً كبيراً من التعاسة</strong>. والاستقلال المالي يُتيح حرية لا تسمح بها الضائقة المالية.</p>
+
+<h3>2. "الأثرياء طمّاعون وفاسدون"</h3>
+<p>إذا كنت تعتقد في أعماق لاوعيك أن الثروة مرتبطة بالفساد، لن تسعى للثروة لأنها ستبدو مُهدِّدة لصورتك الأخلاقية. اللاوعي سيُخرِّب كل محاولة. الثروة أداة — قيمتها الأخلاقية تُحدِّدها كيفية كسبها وإنفاقها، لا وجودها.</p>
+
+<h3>3. "لا يكفي — المال دائماً شحيح"</h3>
+<p>عقلية الشح (Scarcity Mindset) تجعل قراراتك انكماشية: تتجنب الاستثمار خوفاً من الخسارة، تتردد في طلب زيادة، ترفض فرصاً تتطلب استثماراً مبدئياً. عقلية الوفرة (Abundance Mindset) لا تعني إنفاق ما ليس عندك — تعني الإيمان بوجود فرص كافية للجميع إذا سعيت للاستفادة منها.</p>
+
+<h3>4. "لا أستحق كثيراً"</h3>
+<p>الشعور بعدم الاستحقاق يُظهِر في سلوكيات ملموسة: التردد في المفاوضة، قبول عروض أقل من قيمتك، الإحساس بالذنب عند كسب أكثر من المحيطين. هذا المعتقد مُوجَع لأنه يبدو كتواضع لكنه في الحقيقة ضرر ذاتي.</p>
+
+<h2>إعادة البرمجة: كيف تُغيِّر المعتقدات المالية</h2>
+
+<h3>الخطوة 1: التشخيص الصادق</h3>
+<p>اكتب إجاباتك الصادقة على هذه الأسئلة: ما أول شيء يخطر على بالك حين تسمع "الأثرياء"؟ كيف تشعر حين تنفق على نفسك؟ ماذا قال أهلك عن المال حين كنت صغيراً؟ الإجابات ستُخبِرك بكثير عن المعتقدات الموروثة.</p>
+
+<h3>الخطوة 2: اعترض على المعتقد السلبي</h3>
+<p>لكل معتقد مالي سلبي تكتشفه، اكتب ثلاثة أمثلة تُثبِت عكسه. "الأثرياء فاسدون" → ابحث عن ثلاثة أثرياء معروفين بنزاهتهم وإسهامهم الإيجابي. هذا التمرين يُعيد برمجة اللاوعي بالأدلة.</p>
+
+<h3>الخطوة 3: تغيير البيئة المعلوماتية</h3>
+<p>ما تقرأه وتسمعه وتشاهده يُشكِّل معتقداتك. استبدل محتوى الشكوى من الأثرياء بكتب السيرة الذاتية للناجحين. لا لاستيراد قيمهم كاملاً — بل لفهم كيف يُفكِّرون في المال.</p>
+
+<h3>الخطوة 4: ابدأ بعمل صغير يتعارض مع معتقدك القديم</h3>
+<p>إذا كنت تعتقد أنك لا تستحق الكثير: طالب بزيادة صغيرة، اشترِ شيئاً جيداً لنفسك بدون ذنب. إذا كنت تعتقد أن المال شحيح: استثمر مبلغاً صغيراً. الفعل يُغيِّر المعتقد من الداخل أكثر مما يُغيِّره التفكير وحده.</p>
+
+<div class="callout"><p><strong>الرقم السحري:</strong> دراسة نشرتها مجلة Nature Human Behaviour وجدت أن السعادة الشخصية ترتفع مع الدخل حتى ~$75,000-$100,000 سنوياً (بتكييف حسب بلدك). فوق هذا الرقم، جودة الحياة تتحسن لكن السعادة اليومية تثبت تقريباً. المال يحل مشاكل المال — لا مشاكل الهوية والمعنى.</p></div>
+
+<h2>عقلية الثروة vs. عقلية الفقر: الجدول المقارن</h2>
+<ul>
+  <li><strong>عقلية الفقر:</strong> "كيف أوفر؟" — <strong>عقلية الثروة:</strong> "كيف أكسب أكثر؟"</li>
+  <li><strong>عقلية الفقر:</strong> "المال يُنفَق" — <strong>عقلية الثروة:</strong> "المال يُوظَّف"</li>
+  <li><strong>عقلية الفقر:</strong> "الثروة حظ" — <strong>عقلية الثروة:</strong> "الثروة نظام قابل للتعلم"</li>
+  <li><strong>عقلية الفقر:</strong> "النجاح صفري — نجاحي يعني خسارة غيري" — <strong>عقلية الثروة:</strong> "الثروة تُنشئ ثروة للجميع"</li>
+  <li><strong>عقلية الفقر:</strong> "أتمنى لو كان معي مال" — <strong>عقلية الثروة:</strong> "ما الذي يمكنني فعله لكسب أكثر؟"</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>المعتقدات اللاواعية تتحكم في قراراتك المالية أكثر من معلوماتك الواعية</li>
+    <li>السقف المالي الداخلي حقيقي — وقابل للتغيير</li>
+    <li>المعتقدات السامة: المال=شر، الأثرياء=فاسدون، المال شحيح، لا أستحق</li>
+    <li>إعادة البرمجة: تشخيص + اعتراض + تغيير بيئة + فعل يتعارض مع المعتقد</li>
+    <li>المال أداة أخلاقياً محايدة — قيمتها في كيفية كسبها وإنفاقها</li>
+    <li>عقلية الوفرة: المال فرصة تُنشئ فرصاً — لا موارد محدودة يتنافس عليها الجميع</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: غيِّر عقلك قبل أن تُغيِّر حسابك</h2>
+<p>كل تقنية مالية — توفير، استثمار، بناء مصادر دخل — تعمل على أرضية معتقداتك. إذا كانت الأرضية متصدعة، كل بناء عليها مُعرَّض للانهيار. أصلح الأرضية أولاً — ليس لأن هذا أسهل (هو في الحقيقة الأصعب) بل لأنه الأهم.</p>
+<p>عقلية الثروة لا تعني حب المال بأكثر مما يستحق — تعني فهم المال كأداة حقيقية لتحقيق حياة أفضل، وعدم السماح لمعتقدات موروثة غير مُفحَصة بإغلاق باب هذه الحياة.</p>`
+},
+en:{
+  dir:'ltr',title:'Wealth Mindset: Reprogram Your Relationship with Money and Launch',
+  cat:'Money',date:'July 2026',readTime:'12 min read',
+  excerpt:'Before learning any financial technique, the foundation must be fixed: how you think about money. Financial beliefs inherited from your childhood determine your financial ceiling far more than your skills do.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Financial Independence','Multiple Income Streams','Value Gap'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>Why Financial Knowledge Alone Isn't Enough</h2>
+<p>Studies on lottery winners reveal a striking phenomenon: over 70% return to the same financial level (or below) within 5 years. The reason isn't lack of money — it's lack of a mindset capable of preserving and growing it. <strong>Unconscious beliefs about money control our financial decisions far more deeply than our conscious knowledge does</strong>.</p>
+
+<h2>Toxic Financial Beliefs and Their Origins</h2>
+
+<h3>1. "Money Doesn't Bring Happiness"</h3>
+<p>Contains a partial truth but is typically used to justify not seriously pursuing money. The full truth: <strong>money doesn't bring happiness but its absence brings considerable misery</strong>. Money is a tool — its ethical value is determined by how it's earned and spent, not by its existence.</p>
+
+<h3>2. "Rich People Are Greedy and Corrupt"</h3>
+<p>If your unconscious believes wealth is linked to corruption, you won't pursue wealth because it will seem threatening to your moral self-image. The unconscious will sabotage every attempt.</p>
+
+<h3>3. "Never Enough — Money Is Always Scarce"</h3>
+<p>Scarcity mindset makes your decisions contracting: avoiding investment out of fear of loss, hesitating to ask for a raise, refusing opportunities requiring initial investment. Abundance mindset doesn't mean spending what you don't have — it means believing opportunities are sufficient if you seek them.</p>
+
+<h3>4. "I Don't Deserve Much"</h3>
+<p>Unworthiness shows in concrete behaviors: hesitating to negotiate, accepting offers below your value, feeling guilty when earning more than those around you.</p>
+
+<h2>Wealth Mindset vs. Poverty Mindset</h2>
+<ul>
+  <li>Poverty: "How do I save?" — Wealth: "How do I earn more?"</li>
+  <li>Poverty: "Money is spent" — Wealth: "Money is deployed"</li>
+  <li>Poverty: "Wealth is luck" — Wealth: "Wealth is a learnable system"</li>
+  <li>Poverty: "Success is zero-sum" — Wealth: "Wealth creates wealth for everyone"</li>
+  <li>Poverty: "I wish I had money" — Wealth: "What can I do to earn more?"</li>
+</ul>
+
+<div class="callout"><p><strong>The Magic Number:</strong> Research in Nature Human Behaviour found personal happiness rises with income up to ~$75,000-$100,000 annually. Beyond this, quality of life improves but daily happiness roughly plateaus. Money solves money problems — not identity and meaning problems.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Unconscious beliefs control financial decisions more than conscious knowledge</li>
+    <li>The internal financial ceiling is real — and changeable</li>
+    <li>Toxic beliefs: money=evil, wealthy=corrupt, money is scarce, I don't deserve</li>
+    <li>Reprogramming: diagnose + challenge + change environment + act against the belief</li>
+    <li>Money is an ethically neutral tool — its value lies in how it's earned and spent</li>
+    <li>Abundance mindset: money creates opportunities — not limited resources everyone competes over</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Mentalidad de Riqueza: Reprograma tu Relación con el Dinero y Despega',
+  cat:'Dinero',date:'Julio 2026',readTime:'12 min',
+  excerpt:'Antes de aprender cualquier técnica financiera, se debe arreglar la base: cómo piensas en el dinero. Las creencias financieras heredadas de tu infancia determinan tu techo financiero mucho más que tus habilidades.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Independencia Financiera','Múltiples Fuentes de Ingresos','Brecha de Valor'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>Por Qué el Conocimiento Financiero Solo No Es Suficiente</h2>
+<p>Estudios sobre ganadores de lotería revelan un fenómeno llamativo: más del 70% vuelven al mismo nivel financiero (o inferior) en 5 años. La razón no es falta de dinero — es falta de una mentalidad capaz de preservarlo y hacerlo crecer. <strong>Las creencias inconscientes controlan nuestras decisiones financieras mucho más profundamente que nuestro conocimiento consciente.</strong></p>
+
+<h2>Creencias Financieras Tóxicas</h2>
+<ul>
+  <li><strong>"El dinero no trae felicidad":</strong> Verdad parcial usada para justificar no buscar dinero seriamente. La verdad completa: el dinero no trae felicidad pero su ausencia trae considerable miseria</li>
+  <li><strong>"Los ricos son codiciosos y corruptos":</strong> Si tu inconsciente cree esto, saboteará cada intento de crear riqueza</li>
+  <li><strong>"Nunca es suficiente — el dinero siempre es escaso":</strong> La mentalidad de escasez hace que tus decisiones sean contrayentes</li>
+  <li><strong>"No merezco mucho":</strong> Se muestra en comportamientos concretos: dudar en negociar, aceptar ofertas por debajo de tu valor</li>
+</ul>
+
+<h2>Mentalidad de Riqueza vs. Mentalidad de Pobreza</h2>
+<ul>
+  <li>Pobreza: "¿Cómo ahorro?" — Riqueza: "¿Cómo gano más?"</li>
+  <li>Pobreza: "El dinero se gasta" — Riqueza: "El dinero se despliega"</li>
+  <li>Pobreza: "La riqueza es suerte" — Riqueza: "La riqueza es un sistema que se puede aprender"</li>
+</ul>
+
+<div class="callout"><p><strong>El Número Mágico:</strong> Investigaciones en Nature Human Behaviour encontraron que la felicidad personal aumenta con los ingresos hasta ~$75.000-$100.000 anuales. El dinero resuelve problemas de dinero — no problemas de identidad y significado.</p></div>
+
+<h2>Conclusión</h2>
+<p>Cada técnica financiera funciona sobre la base de tus creencias. Si los cimientos están agrietados, cualquier edificio sobre ellos es vulnerable. <strong>Arregla los cimientos primero — porque es lo más importante, no porque sea lo más fácil.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Mentalité de Richesse: Reprogrammez Votre Relation avec l\'Argent et Décolllez',
+  cat:'Argent',date:'Juillet 2026',readTime:'12 min',
+  excerpt:'Avant d\'apprendre toute technique financière, il faut corriger la base: comment vous pensez à l\'argent. Les croyances financières héritées de votre enfance déterminent votre plafond financier bien plus que vos compétences.',
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:["Indépendance Financière",'Sources de Revenus Multiples','Écart de Valeur'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Pourquoi la Seule Connaissance Financière Ne Suffit Pas</h2>
+<p>Des études sur les gagnants de loterie révèlent un phénomène frappant: plus de 70% reviennent au même niveau financier (ou inférieur) en 5 ans. La raison n'est pas le manque d'argent — c'est le manque d'une mentalité capable de le préserver et de le faire croître.</p>
+
+<h2>Croyances Financières Toxiques</h2>
+<ul>
+  <li><strong>"L'argent ne rend pas heureux":</strong> Vérité partielle utilisée pour justifier de ne pas sérieusement rechercher l'argent</li>
+  <li><strong>"Les riches sont cupides et corrompus":</strong> Si votre inconscient croit cela, il sabotera chaque tentative de créer de la richesse</li>
+  <li><strong>"Jamais assez — l'argent est toujours rare":</strong> La mentalité de rareté rend vos décisions contractantes</li>
+  <li><strong>"Je ne mérite pas beaucoup":</strong> Se manifeste dans des comportements concrets: hésiter à négocier, accepter des offres inférieures à votre valeur</li>
+</ul>
+
+<h2>Mentalité de Richesse vs. Mentalité de Pauvreté</h2>
+<ul>
+  <li>Pauvreté: "Comment économiser?" — Richesse: "Comment gagner plus?"</li>
+  <li>Pauvreté: "L'argent se dépense" — Richesse: "L'argent se déploie"</li>
+  <li>Pauvreté: "La richesse est chance" — Richesse: "La richesse est un système qui s'apprend"</li>
+</ul>
+
+<div class="callout"><p><strong>Le Chiffre Magique:</strong> Des recherches dans Nature Human Behaviour ont trouvé que le bonheur personnel augmente avec le revenu jusqu'à ~75.000-100.000$/an. L'argent résout les problèmes d'argent — pas les problèmes d'identité et de sens.</p></div>
+
+<h2>Conclusion</h2>
+<p>Chaque technique financière fonctionne sur la base de vos croyances. Si les fondations sont fissurées, tout édifice dessus est vulnérable. <strong>Réparez les fondations d'abord — parce que c'est le plus important, pas parce que c'est le plus facile.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'धन की मानसिकता: पैसे के साथ अपने रिश्ते को फिर से प्रोग्राम करें और आगे बढ़ें',
+  cat:'पैसा',date:'जुलाई 2026',readTime:'12 मिनट',
+  excerpt:'कोई भी वित्तीय तकनीक सीखने से पहले नींव को ठीक करना होगा: आप पैसे के बारे में कैसे सोचते हैं। बचपन से विरासत में मिली वित्तीय मान्यताएं आपके कौशल से कहीं अधिक आपकी वित्तीय सीमा निर्धारित करती हैं।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['वित्तीय स्वतंत्रता','आय के कई स्रोत','मूल्य का अंतर'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>वित्तीय ज्ञान अकेले क्यों पर्याप्त नहीं है</h2>
+<p>लॉटरी विजेताओं पर अध्ययन एक दिलचस्प घटना प्रकट करते हैं: 70% से अधिक 5 वर्षों में उसी वित्तीय स्तर (या उससे नीचे) पर वापस आ जाते हैं। कारण पैसे की कमी नहीं है — एक ऐसी मानसिकता की कमी है जो इसे संरक्षित और बढ़ा सके।</p>
+
+<h2>विषाक्त वित्तीय मान्यताएं</h2>
+<ul>
+  <li><strong>"पैसा खुशी नहीं लाता":</strong> आंशिक सत्य जिसका उपयोग पैसे को गंभीरता से खोजने को उचित न ठहराने के लिए किया जाता है</li>
+  <li><strong>"अमीर लोग लालची और भ्रष्ट हैं":</strong> यदि आपका अचेतन मन इस पर विश्वास करता है, तो यह धन बनाने के हर प्रयास को बाधित करेगा</li>
+  <li><strong>"कभी पर्याप्त नहीं — पैसा हमेशा दुर्लभ है":</strong> अभाव की मानसिकता आपके निर्णयों को संकुचित बनाती है</li>
+  <li><strong>"मैं ज्यादा के योग्य नहीं हूं":</strong> ठोस व्यवहारों में दिखता है: बातचीत करने में हिचकिचाना, अपने मूल्य से कम प्रस्तावों को स्वीकार करना</li>
+</ul>
+
+<h2>निष्कर्ष</h2>
+<p>हर वित्तीय तकनीक आपकी मान्यताओं की नींव पर काम करती है। यदि नींव में दरारें हैं, तो उस पर कोई भी इमारत कमजोर है। <strong>पहले नींव ठीक करें — क्योंकि यह सबसे महत्वपूर्ण है, इसलिए नहीं कि यह सबसे आसान है।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="السيطرة على الإطار: كيف تحدد من يضبط حقيقة الموقف الاجتماعي. تعلّم قراءة أُطر الآخرين والسيطرة على الإطار في كل تفاعل.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>السيطرة على الإطار: من يضبط حقيقة الموقف يربح | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/frame-control.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="frame-relationships.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel1">الإطار في العلاقات</span></a>
+      <a class="related-card" href="frame-silence.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel2">قوة الصمت</span></a>
+      <a class="related-card" href="smv-pillars.html"><span class="related-cat">SMV</span><span class="related-title" id="rel3">أعمدة القيمة الاجتماعية</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'السيطرة على الإطار: من يضبط حقيقة الموقف يربح دائماً',
+  cat:'الإطار',date:'يوليو 2026',readTime:'12 دقيقة قراءة',
+  excerpt:'الإطار هو العدسة التي من خلالها يُفسَّر الموقف الاجتماعي. من يُحدِّد تلك العدسة يُحدِّد الحقيقة — ومن يُحدِّد الحقيقة يُحدِّد النتيجة. تعلّم كيف تقرأ الأُطر وتسيطر عليها.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الإطار في العلاقات','قوة الصمت','أعمدة القيمة الاجتماعية'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>ما هو الإطار؟</h2>
+<p>الإطار (Frame) هو السياق الذي يُفسِّر من خلاله شخصان أو أكثر ما يجري بينهما. هو "قانون اللعبة" الضمني الذي يُحدِّد من في موضع التقييم ومن في موضع التقييم، من يملك التأييد ومن يسعى للحصول عليه، من يضبط الإيقاع ومن يتبعه.</p>
+<p>في كل تفاعل اجتماعي — مقابلة عمل، محادثة رومانسية، نقاش تجاري، لقاء اجتماعي — هناك إطار سائد. الإطار لا يُعلَن عنه دائماً، لكنه موجود دائماً. والجانب الأهم: <strong>الإطار الذي يسود في التفاعل يُشكِّل النتيجة بشكل أعمق بكثير من محتوى الكلام</strong>.</p>
+<p>مثال صارخ: شخصان يقولان نفس الجملة بالضبط — "أنا مهتم بهذه الفرصة." إذا قالها الشخص الأول من إطار "أنا أُقيِّم إذا كانت هذه الفرصة تستحق وقتي"، فهي إطار قوة. إذا قالها الشخص الثاني من إطار "أرجو أن يُوافِق عليّ الطرف الآخر"، فهي إطار ضعف. نفس الكلمات، عالمان مختلفان تماماً.</p>
+
+<h2>أنواع الأُطر الرئيسية</h2>
+
+<h3>1. إطار القوة مقابل إطار الضعف</h3>
+<p>إطار القوة ينبع من داخل الشخص — قيمه، ومعاييره، ومعرفته بما يستحقه. إطار الضعف ينبع من الحاجة للموافقة الخارجية. الفرق ليس في الكلمات — هو في من يُشعِر من بحاجته.</p>
+
+<h3>2. إطار التحقيق مقابل إطار الخضوع</h3>
+<p>إطار التحقيق: "أُقيِّمك لأرى إذا كنت مناسباً." إطار الخضوع: "أُحاوِل إثبات أنني مناسب لك." من يدخل التفاعل في إطار التحقيق يُشعِر الطرف الآخر بأنه في موضع الطالب — وهذا يُعطيه قيمة تلقائية.</p>
+
+<h3>3. إطار الإيقاع</h3>
+<p>من يُحدِّد إيقاع التفاعل — متى يبدأ، متى يتوقف، متى يُصعِّد ومتى يُهدِّئ — يملك إطاراً ضمنياً. القائد الذي يُطيل الصمت قبل الإجابة يُحدِّد إيقاعاً مختلفاً عن من يُسرِع للرد.</p>
+
+<h3>4. إطار التعريف</h3>
+<p>من يُعرِّف الموقف هو من يملك الإطار. إذا عرّفت لقاءً تجارياً بأنه "مشاركة لوجهة نظري لتقييمك"، أنت في إطار مختلف عمّن يعرِّفه بـ"أنا هنا لأطلب منك شيئاً".</p>
+
+<h2>كيف تقرأ الإطار في التفاعل</h2>
+<p>قراءة الإطار تتطلب مراقبة إشارات دقيقة:</p>
+<ul>
+  <li><strong>من يبدأ الحديث عادةً؟</strong> البادئ دائماً في موضع الطالب بشكل أولي</li>
+  <li><strong>من يُوضِّح ويشرح لمن؟</strong> المُوضِّح في موضع أدنى عادةً</li>
+  <li><strong>من يتكيف مع توقيت الآخر؟</strong> التكيف المستمر دليل على قبول إطار الآخر</li>
+  <li><strong>من يطلب الموافقة؟</strong> طلب الموافقة الضمني أو الصريح يُظهِر الإطار</li>
+  <li><strong>من يشعر بـ"الضغط" للحفاظ على انتباه الآخر؟</strong> هذا الضغط هو إطار الضعف بعينه</li>
+</ul>
+
+<h2>التقنيات الست للسيطرة على الإطار</h2>
+
+<h3>التقنية الأولى: رفض الإطار المفروض</h3>
+<p>حين يحاول شخص ما فرض إطار عليك — مثل وضعك في موضع المُثبِت لقيمته — لا تقبله ولا تعترض عليه مباشرة. فقط تصرّف كما لو أن إطاره لم يكن. استمر بإطارك الخاص.</p>
+<p>مثال: إذا سألك شخص في مقابلة عمل "لماذا يجب أن نختارك؟" — الإطار المفروض هو أنت تُثبِت نفسك لهم. رد ممكن: "أنا في الحقيقة هنا لأرى إذا كانت شركتكم المكان الصحيح لما أريد بناءه. ما الذي يجعلكم تعتقدون أنني سأجد هنا ما أبحث عنه؟"</p>
+
+<h3>التقنية الثانية: إعادة تأطير الموقف</h3>
+<p>بدلاً من القبول بالأرضية التي يُحدِّدها الآخر، أعِد تعريف ما يجري. التأطير: تغيير السؤال من "هل أنت جيد بما يكفي؟" إلى "هل هذا الشيء جيد بما يكفي لي؟"</p>
+
+<h3>التقنية الثالثة: الغموض الاستراتيجي</h3>
+<p>من يُفسِّر كل شيء، يُوضِّح كل شيء، يُبرِّر كل قرار — يُفقِد إطاره. الغموض الاستراتيجي (عدم الشرح المستمر) يُحافِظ على قوة الإطار. لا يجب أن تُبرِّر كل موقف لكل شخص.</p>
+
+<h3>التقنية الرابعة: إطار الوفرة</h3>
+<p>الشخص الذي يتصرف من إطار "هذا أو ذاك سيكون جيداً بالنسبة لي" يبدو في موضع أقوى من "أحتاج هذا بالضرورة." إطار الوفرة — الشعور بأن هناك خيارات دائماً — يغير طريقة انعكاسك الكامل.</p>
+
+<h3>التقنية الخامسة: صبر الصمت</h3>
+<p>الصمت بعد سؤال صعب هو إطار في حد ذاته. من يملأ الصمت بالشرح والتبرير يقبل إطار الضعف. من يُبقي الصمت حاضراً يُرسِل إشارة قوة لا يمكن إنكارها.</p>
+
+<h3>التقنية السادسة: موضع المُقيِّم</h3>
+<p>في كل موقف، ضع نفسك في موضع من يُقيِّم لا من يُقيَّم. هذا لا يعني الغطرسة — يعني الثقة الهادئة بمعاييرك الخاصة.</p>
+
+<div class="callout"><p><strong>المبدأ الذهبي:</strong> الإطار لا يُكسَب بالكلام — يُكسَب بالموقف الداخلي. يمكن قراءة الإطار الداخلي على الطاولة، في طريقة الجلوس، في التوقيت، في ما لا يُقال. الإطار الخارجي مجرد انعكاس للداخل.</p></div>
+
+<h2>الأخطاء الأكثر شيوعاً في السيطرة على الإطار</h2>
+<ul>
+  <li><strong>محاولة السيطرة بالعدوانية:</strong> السيطرة الحقيقية على الإطار هادئة وواثقة — ليست صراخاً أو تسلطاً</li>
+  <li><strong>الدفاع عن الإطار لفظياً:</strong> كلما دافعت عن إطارك بالكلام أكثر، ظهرت أضعف. أفعالك هي دفاعك</li>
+  <li><strong>الصراع المباشر على الإطار:</strong> الصراع المباشر يُفقِدك الإطار. بدلاً منه، تصرف كأن إطارك هو الطبيعي دون الحاجة للإعلان عنه</li>
+  <li><strong>الإطار الصناعي:</strong> محاولة تقليد إطار شخص آخر لا تعمل على المدى البعيد. الإطار الحقيقي يجب أن يكون انعكاساً لهوية حقيقية، لا أداءً مُصطنَعاً</li>
+</ul>
+
+<h2>الإطار والتسلسل الهرمي الاجتماعي</h2>
+<p>في أي مجموعة اجتماعية، الشخص الذي يُحدِّد إطار الموقف عادةً يُعامَل كالأعلى في التسلسل غير الرسمي. هذا ليس تلاعباً بالمعنى السلبي — هو ديناميكية اجتماعية حقيقية موجودة في كل مجتمع بشري عُرِف في التاريخ.</p>
+<p>الرجل الذي يدخل حفلاً ولا يُسرِع لتقديم نفسه لكل شخص، بل ينتظر باهتمام هادئ حتى يأتيه الناس — يُحدِّد الإطار بحركاته لا بكلماته.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الإطار هو السياق الضمني الذي يُفسِّر الموقف الاجتماعي — من يُحدِّده يربح</li>
+    <li>الأُطر الرئيسية: قوة/ضعف، تحقيق/خضوع، إيقاع، تعريف</li>
+    <li>اقرأ الإطار من: من يُوضِّح، من يتكيف، من يطلب الموافقة</li>
+    <li>رفض الإطار المفروض + موضع المُقيِّم = الأقوى في معظم المواقف</li>
+    <li>الغموض الاستراتيجي يُحافِظ على الإطار أكثر مما يفعله الشرح المستمر</li>
+    <li>الإطار الحقيقي ينبع من هوية داخلية راسخة — ليس أداءً خارجياً</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الإطار ليس لعبة — هو الواقع</h2>
+<p>السيطرة على الإطار لا تعني التلاعب بالآخرين. تعني معرفة ديناميكيات الواقع الاجتماعي كما هي، لا كما نتمنى أن تكون. كل إنسان يُحاوِل السيطرة على الإطار باستمرار — الفرق بين الواعي وغير الواعي هو أن الواعي يفعل ذلك بوضوح ومن قيم أصيلة، بينما غير الواعي يفعله عشوائياً أو لا يفعله أصلاً.</p>
+<p>ابنِ هويتك الداخلية أولاً، وسيعتني الإطار بنفسه.</p>`
+},
+en:{
+  dir:'ltr',title:'Frame Control: Who Sets the Reality of the Situation Always Wins',
+  cat:'Frame',date:'July 2026',readTime:'12 min read',
+  excerpt:'The frame is the lens through which a social situation is interpreted. Who defines that lens defines the reality — and who defines the reality defines the outcome. Learn to read and control frames.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Frame in Relationships','The Power of Silence','SMV Pillars'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>What Is a Frame?</h2>
+<p>A frame is the context through which two or more people interpret what is happening between them. It is the implicit "rule of the game" that determines who is in the position of evaluating and who is being evaluated, who sets the pace and who follows. In every social interaction, there is a prevailing frame — and <strong>the frame that prevails shapes the outcome far more deeply than the content of the words spoken</strong>.</p>
+
+<h2>The Main Types of Frames</h2>
+<ul>
+  <li><strong>Power vs. Weakness Frame:</strong> Strength comes from internal values; weakness from needing external approval</li>
+  <li><strong>Investigation vs. Submission Frame:</strong> "I'm evaluating whether you're suitable" vs. "I'm trying to prove I'm suitable for you"</li>
+  <li><strong>Pace Frame:</strong> Who determines the rhythm — when to start, pause, escalate, de-escalate</li>
+  <li><strong>Definition Frame:</strong> Who defines what is happening in the interaction</li>
+</ul>
+
+<h2>How to Read the Frame</h2>
+<ul>
+  <li>Who usually initiates conversation? The initiator is initially in the position of the asker</li>
+  <li>Who explains and clarifies for whom? The explainer is usually in a lower position</li>
+  <li>Who adapts to the other's timing? Constant adaptation signals accepting the other's frame</li>
+  <li>Who seeks approval? Implicit or explicit approval-seeking reveals the frame</li>
+</ul>
+
+<h2>Six Techniques for Frame Control</h2>
+
+<h3>Technique 1: Reject the Imposed Frame</h3>
+<p>When someone tries to impose a frame on you, don't accept it or directly oppose it. Simply act as if their frame didn't exist. Continue with your own frame. Example: When asked "Why should we choose you?" — respond: "I'm actually here to see if your company is the right place for what I want to build."</p>
+
+<h3>Technique 2: Reframe the Situation</h3>
+<p>Instead of accepting the ground defined by the other, redefine what is happening. Change the question from "Are you good enough?" to "Is this thing good enough for me?"</p>
+
+<h3>Technique 3: Strategic Ambiguity</h3>
+<p>Those who explain everything, justify every decision, lose their frame. Strategic ambiguity — not constantly explaining — preserves frame strength.</p>
+
+<h3>Technique 4: Abundance Frame</h3>
+<p>The person who acts from "this or that will be fine for me" seems in a stronger position than "I absolutely need this." The abundance frame changes your entire projection.</p>
+
+<h3>Technique 5: Silence Patience</h3>
+<p>Silence after a difficult question is a frame in itself. Who fills silence with explanation and justification accepts the weak frame. Who keeps silence present sends an undeniable strength signal.</p>
+
+<h3>Technique 6: Evaluator Position</h3>
+<p>In every situation, place yourself in the position of the one who evaluates rather than the one being evaluated. Not arrogance — quiet confidence in your own standards.</p>
+
+<div class="callout"><p><strong>The Golden Principle:</strong> The frame is not won through speech — it is won through inner posture. The inner frame is readable in how you sit, in timing, in what is left unsaid. The outer frame is merely a reflection of the inner.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Frame is the implicit context interpreting the social situation — who defines it wins</li>
+    <li>Main frames: power/weakness, investigation/submission, pace, definition</li>
+    <li>Read frames from: who explains, who adapts, who seeks approval</li>
+    <li>Rejecting the imposed frame + evaluator position = strongest in most situations</li>
+    <li>Strategic ambiguity preserves the frame more than constant explanation</li>
+    <li>The true frame stems from a solid inner identity — not an artificial performance</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Control del Marco: Quien Establece la Realidad de la Situación Siempre Gana',
+  cat:'Marco',date:'Julio 2026',readTime:'12 min',
+  excerpt:'El marco es la lente a través de la cual se interpreta la situación social. Quien define esa lente define la realidad — y quien define la realidad define el resultado.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['El Marco en las Relaciones','El Poder del Silencio','Pilares del SMV'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Qué es un Marco?</h2>
+<p>Un marco es el contexto a través del cual dos o más personas interpretan lo que sucede entre ellas. Es la "regla del juego" implícita que determina quién está en posición de evaluar y quién está siendo evaluado. En cada interacción social hay un marco predominante — y <strong>el marco que prevalece moldea el resultado mucho más profundamente que el contenido de las palabras</strong>.</p>
+
+<h2>Seis Técnicas para el Control del Marco</h2>
+
+<h3>Técnica 1: Rechazar el Marco Impuesto</h3>
+<p>Cuando alguien intenta imponerte un marco, no lo aceptes ni lo opongas directamente. Simplemente actúa como si su marco no existiera. Continúa con el tuyo.</p>
+
+<h3>Técnica 2: Reencuadrar la Situación</h3>
+<p>En lugar de aceptar el terreno definido por el otro, redefine lo que está sucediendo. Cambia la pregunta de "¿Eres suficientemente bueno?" a "¿Es esto suficientemente bueno para mí?"</p>
+
+<h3>Técnica 3: Ambigüedad Estratégica</h3>
+<p>Quien explica todo, justifica cada decisión, pierde su marco. La ambigüedad estratégica preserva la fuerza del marco más que la explicación constante.</p>
+
+<h3>Técnica 4: Marco de Abundancia</h3>
+<p>La persona que actúa desde "esto o aquello estará bien para mí" parece en una posición más fuerte que "necesito esto absolutamente."</p>
+
+<h3>Técnicas 5 y 6: Paciencia del Silencio y Posición de Evaluador</h3>
+<p>El silencio después de una pregunta difícil es un marco en sí mismo. Colócate siempre en la posición del que evalúa, no del que es evaluado.</p>
+
+<div class="callout"><p><strong>El Principio de Oro:</strong> El marco no se gana con palabras — se gana con postura interior. El marco interior es legible en cómo te sientas, en los tiempos, en lo que no se dice. El marco exterior es simplemente un reflejo del interior.</p></div>
+
+<h2>Conclusión</h2>
+<p>El control del marco no significa manipular a los demás. Significa conocer las dinámicas de la realidad social tal como son. <strong>Construye tu identidad interior primero, y el marco se cuidará a sí mismo.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Contrôle du Cadre: Celui qui Définit la Réalité de la Situation Gagne Toujours',
+  cat:'Cadre',date:'Juillet 2026',readTime:'12 min',
+  excerpt:"Le cadre est la lentille à travers laquelle la situation sociale est interprétée. Celui qui définit cette lentille définit la réalité — et celui qui définit la réalité définit le résultat.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:['Le Cadre dans les Relations','Le Pouvoir du Silence','Piliers du SMV'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Qu'est-ce qu'un Cadre?</h2>
+<p>Un cadre est le contexte à travers lequel deux personnes ou plus interprètent ce qui se passe entre elles. C'est la "règle du jeu" implicite qui détermine qui est en position d'évaluer et qui est évalué. Dans chaque interaction sociale, il y a un cadre prédominant — et <strong>le cadre qui prévaut façonne le résultat bien plus profondément que le contenu des mots</strong>.</p>
+
+<h2>Six Techniques pour le Contrôle du Cadre</h2>
+
+<h3>Technique 1: Rejeter le Cadre Imposé</h3>
+<p>Quand quelqu'un essaie de vous imposer un cadre, ne l'acceptez pas et ne vous y opposez pas directement. Agissez simplement comme si son cadre n'existait pas.</p>
+
+<h3>Technique 2: Recadrer la Situation</h3>
+<p>Au lieu d'accepter le terrain défini par l'autre, redéfinissez ce qui se passe. Changez la question de "Êtes-vous assez bon?" à "Est-ce assez bon pour moi?"</p>
+
+<h3>Technique 3: Ambiguïté Stratégique</h3>
+<p>Ceux qui expliquent tout, justifient chaque décision, perdent leur cadre. L'ambiguïté stratégique préserve la force du cadre.</p>
+
+<h3>Techniques 4, 5 et 6</h3>
+<p>Le cadre d'abondance ("ceci ou cela me conviendra"), la patience du silence après une question difficile, et la position d'évaluateur — ces trois éléments construisent un cadre de force naturel.</p>
+
+<div class="callout"><p><strong>Le Principe d'Or:</strong> Le cadre ne se gagne pas par les mots — il se gagne par la posture intérieure. Construisez votre identité intérieure d'abord, et le cadre prendra soin de lui-même.</p></div>
+
+<h2>Conclusion</h2>
+<p>Le contrôle du cadre ne signifie pas manipuler les autres. Cela signifie connaître les dynamiques de la réalité sociale telles qu'elles sont. <strong>Construisez votre identité intérieure d'abord, et le cadre se gérera lui-même.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'फ्रेम नियंत्रण: जो स्थिति की वास्तविकता निर्धारित करता है वह हमेशा जीतता है',
+  cat:'फ्रेम',date:'जुलाई 2026',readTime:'12 मिनट',
+  excerpt:'फ्रेम वह लेंस है जिसके माध्यम से सामाजिक स्थिति की व्याख्या की जाती है। जो उस लेंस को परिभाषित करता है वह वास्तविकता को परिभाषित करता है — और जो वास्तविकता को परिभाषित करता है वह परिणाम निर्धारित करता है।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['रिश्तों में फ्रेम','मौन की शक्ति','SMV के स्तंभ'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>फ्रेम क्या है?</h2>
+<p>फ्रेम वह संदर्भ है जिसके माध्यम से दो या अधिक लोग जो उनके बीच हो रहा है उसकी व्याख्या करते हैं। यह अंतर्निहित "खेल का नियम" है जो निर्धारित करता है कि कौन मूल्यांकन की स्थिति में है और कौन मूल्यांकन किया जा रहा है। <strong>जो फ्रेम बातचीत में प्रबल होता है वह बोले गए शब्दों की सामग्री की तुलना में परिणाम को कहीं अधिक गहराई से आकार देता है।</strong></p>
+
+<h2>फ्रेम नियंत्रण की छह तकनीकें</h2>
+<ul>
+  <li><strong>थोपे गए फ्रेम को अस्वीकार करें:</strong> जब कोई आप पर फ्रेम थोपने की कोशिश करे, तो इसे स्वीकार न करें और सीधे विरोध न करें। बस ऐसे कार्य करें जैसे उनका फ्रेम अस्तित्व में नहीं था।</li>
+  <li><strong>स्थिति को री-फ्रेम करें:</strong> प्रश्न बदलें "क्या आप पर्याप्त अच्छे हैं?" से "क्या यह मेरे लिए पर्याप्त अच्छा है?"</li>
+  <li><strong>रणनीतिक अस्पष्टता:</strong> जो सब कुछ समझाता है, हर निर्णय को उचित ठहराता है, अपना फ्रेम खो देता है।</li>
+  <li><strong>प्रचुरता फ्रेम:</strong> "यह या वह मेरे लिए ठीक रहेगा" की स्थिति से कार्य करना "मुझे यह बिल्कुल चाहिए" से अधिक शक्तिशाली दिखता है।</li>
+  <li><strong>मौन का धैर्य:</strong> कठिन प्रश्न के बाद का मौन अपने आप में एक फ्रेम है।</li>
+  <li><strong>मूल्यांकनकर्ता की स्थिति:</strong> हर स्थिति में, खुद को मूल्यांकन करने वाले की स्थिति में रखें।</li>
+</ul>
+
+<h2>निष्कर्ष</h2>
+<p>फ्रेम नियंत्रण का मतलब दूसरों को हेरफेर करना नहीं है। इसका मतलब है सामाजिक वास्तविकता की गतिशीलता को जानना जैसी वह है। <strong>पहले अपनी आंतरिक पहचान बनाएं, और फ्रेम अपना ख्याल खुद रखेगा।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

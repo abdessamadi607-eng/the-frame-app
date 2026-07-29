@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الهوية الراسخة: كيف تبني نفسك الداخلية بحيث لا يهزّها رأي الآخرين ولا الفشل ولا التغيرات. الفرق بين هوية تعتمد على النتائج وهوية تعتمد على القيم والمبادئ.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الهوية الراسخة: ابنِ نفسك من الداخل | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/logic-identity.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="frame-antifragile.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel1">الرجل غير القابل للكسر</span></a>
+      <a class="related-card" href="discipline-no-excuses.html"><span class="related-cat">الانضباط</span><span class="related-title" id="rel2">لا أعذار</span></a>
+      <a class="related-card" href="frame-control.html"><span class="related-cat">الإطار</span><span class="related-title" id="rel3">السيطرة على الإطار</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'الهوية الراسخة: ابنِ نفسك من الداخل بحيث لا يهزّك ما يأتي من الخارج',
+  cat:'المنطق',date:'يوليو 2026',readTime:'15 دقيقة قراءة',
+  excerpt:'الرجل الذي لا يعرف من هو يُعرَّف بالخارج: برأي الآخرين، بنتائجه، بمكانته. الهوية الراسخة لا تعني الغرور — تعني امتلاك مرجع داخلي ثابت لا يتزعزع بالنقد ولا بالإطراء ولا بالفشل.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الرجل غير القابل للكسر','لا أعذار','السيطرة على الإطار'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الهوية المعتمِدة على الخارج: التشخيص</h2>
+<p>قبل أن نتحدث عن الهوية الراسخة، يجب تشخيص ضدها: <strong>هوية تعتمد على الخارج</strong>. علاماتها:</p>
+<ul>
+  <li>قيمتك الذاتية تتأثر بشكل كبير بموافقة الآخرين أو رفضهم</li>
+  <li>النقد يُؤلِمك بشكل غير متناسب مع حجمه</li>
+  <li>الإطراء يُسعِدك بشكل غير متناسب ويدفعك لتعديل سلوكك للحصول على المزيد</li>
+  <li>الفشل في مجال واحد يُشعِرك بأنك فاشل كشخص — لا فقط في هذا المجال</li>
+  <li>قراراتك الكبرى تتأثر كثيراً بما سيقوله الناس</li>
+  <li>تشعر بعدم يقين في من أنت حين تُغيِّر بيئتك أو تفقد منصبك أو علاقة مهمة</li>
+</ul>
+<p>هذه ليست صفات أشخاص ضعفاء أو غير ناضجين بالضرورة — هي نتيجة طبيعية لمجتمع يُقيِّم الناس بما ينجزون وما يملكون. المشكلة أن هذه الهوية هشّة بطبيعتها: <strong>كل ما يبنيها خارجياً يمكن أن يُهدَم خارجياً</strong>.</p>
+
+<h2>ما هي الهوية الراسخة؟</h2>
+<p>الهوية الراسخة ليست غروراً ولا ادعاء كمال. هي:</p>
+<blockquote style="border-right:4px solid #FF003C;padding-right:1rem;margin:1.5rem 0;font-style:italic;">"معرفة من أنت، ما تقف من أجله، وما لن تتفاوض فيه — بشكل لا يعتمد على تأكيد الآخرين لتثبيته."</blockquote>
+<p>الشخص ذو الهوية الراسخة:</p>
+<ul>
+  <li>يستمع للنقد ويُحلِّله بموضوعية — لا يتجاهله ولا ينهار أمامه</li>
+  <li>يُقيِّم الإطراء بنفس الموضوعية — لا يُسكِره ولا يُعدِّل سلوكه لاجتذابه</li>
+  <li>يُفرِّق بين "أنا فشلت في هذه المهمة" و"أنا شخص فاشل"</li>
+  <li>قراراته مبنية على قيمه الداخلية لا على الصورة التي يريد تقديمها</li>
+  <li>هويته لا تنهار حين يتغير منصبه أو علاقاته أو ظروفه المادية</li>
+</ul>
+
+<h2>الهوية القائمة على النتائج vs. الهوية القائمة على القيم</h2>
+
+<h3>هوية النتائج: الهشّة</h3>
+<p>الهوية المبنية على النتائج تبدو قوية حين الأمور تسير بشكل جيد. "أنا ناجح" حين العمل يسير. "أنا محبوب" حين العلاقات تسير. "أنا لائق" حين الجسم يبدو جيداً.</p>
+<p>لكنها تتزعزع بشدة حين يتغير شيء: فقدان وظيفة، نهاية علاقة، إصابة جسدية. وهذا التزعزع ليس مجرد حزن طبيعي على خسارة — هو أزمة هوية كاملة لأن النتيجة كانت هي الهوية.</p>
+
+<h3>هوية القيم: الراسخة</h3>
+<p>الهوية المبنية على القيم والمبادئ مختلفة جوهرياً: "أنا شخص يسعى للنمو" — هذه الهوية لا تتزعزع بخسارة وظيفة لأن السعي للنمو لا يعتمد على منصب. "أنا شخص يلتزم بكلمته" — لا يتزعزع بانتقاد لأنه يعرف ما فعله وما لم يفعله.</p>
+
+<h2>المنطق الخاطئ في بناء الهوية</h2>
+
+<h3>المنطق الخاطئ 1: "سأكون واثقاً حين أنجح"</h3>
+<p>كثيرون ينتظرون النجاح الخارجي لبناء الثقة الداخلية. لكن هذه المعادلة معكوسة: <strong>الثقة الداخلية تُنتِج النجاح أكثر مما ينتجها النجاح</strong>. الشخص الذي ينتظر أن ينجح ليثق بنفسه سيجد دائماً سبباً للانتظار أكثر.</p>
+
+<h3>المنطق الخاطئ 2: "رأيهم فيّ يُخبِرني بالحقيقة عني"</h3>
+<p>رأي الآخرين فيك يُخبِرك بثلاثة أشياء في الواقع: (1) ما يرونه من خارجك — جزء من الصورة، (2) مرجعياتهم ومعاييرهم، (3) مزاجهم ولحظتهم. يُخبِرك بحقيقتهم أكثر مما يُخبِرك بحقيقتك الكاملة. الاستفادة منه كمعلومة مفيدة — صحيح. بناء هويتك عليه — خطأ.</p>
+
+<h3>المنطق الخاطئ 3: "التواضع يعني التقليل من قيمة نفسي"</h3>
+<p>التواضع الحقيقي هو معرفة نقاط قوتك ونقاط ضعفك بدقة — لا التقليل من الأولى ولا المبالغة في الثانية. الشخص المتواضع حقاً يستطيع أن يقول "أنا جيد في هذا ولا أزال أتعلم ذاك" بدون تردد — لأن تقييمه لنفسه مبني على الواقع لا على الحاجة لإرضاء أحد.</p>
+
+<h2>بناء الهوية الراسخة: العملية</h2>
+
+<h3>الخطوة 1: تحديد قيمك الجوهرية — لا الموروثة</h3>
+<p>اكتب قائمة بالقيم التي تريد أن تُبني عليها هويتك. المحك: هذه القيم يجب أن تكون قيمك أنت — لا ما تعتقد أن الآخرين يريدون أن تكونه. اسأل نفسك: "ما الذي سيهمني في اللحظات الهادئة حين لا يراني أحد؟" هذه إجاباتك الحقيقية.</p>
+
+<h3>الخطوة 2: التطابق بين القيم والأفعال</h3>
+<p>الهوية لا تُبنى بالتفكير — تُبنى بالفعل المتكرر. إذا أردت هوية شخص ملتزم بكلمته: ابدأ بالأشياء الصغيرة. وعدت بشيء لنفسك — نفّذه. وعدت بشيء لأحد — نفّذه. كل تطابق صغير يُرسِّخ هذه الهوية، كل إخفاق يُضعِفها.</p>
+
+<h3>الخطوة 3: تأسيس المرجع الداخلي</h3>
+<p>تطوير عادة التقييم الذاتي الهادئ بعد كل موقف مهم: لا بعيون الآخرين، بل بعيون قيمك. "هل تصرفت بما يتوافق مع من أريد أن أكون؟" هذا السؤال ببطء يُرسِّخ المرجع الداخلي.</p>
+
+<h3>الخطوة 4: التدريب على التعامل مع النقد</h3>
+<p>النقد اختبار عملي للهوية الراسخة. بروتوكول صحي:</p>
+<ul>
+  <li>توقف ولا تُجِب فوراً</li>
+  <li>اسأل: "هل هذا النقد دقيق؟" — ليس "هل يُؤلِمني؟"</li>
+  <li>إذا كان دقيقاً: خذه كمعلومة لتحسين، لا كحكم على قيمتك</li>
+  <li>إذا لم يكن دقيقاً: اعترض بهدوء أو اتركه دون أن تشعر بالحاجة للدفاع</li>
+  <li>في كلا الحالين: تذكر أن ردّ فعلك العاطفي لا يُحدِّد حقيقتك</li>
+</ul>
+
+<div class="callout"><p><strong>تمييز دقيق:</strong> الهوية الراسخة لا تعني عدم التأثر بالنقد — تعني عدم تحديد قيمتك الذاتية بناءً عليه. الألم موجود، الحزن موجود — لكنهما لا يُدمِّران الإحساس بالنفس. الفرق بين "هذا مؤلم ولكنني لا أزال أعرف من أنا" و"هذا مؤلم وأشك في كل شيء عني."</p></div>
+
+<h2>الهوية والتغيير: لا تناقض</h2>
+<p>قد يبدو أن الهوية الراسخة تعني الجمود — وهذا فهم خاطئ. الهوية الراسخة <em>تُتيح</em> التغيير الحقيقي بشكل أفضل لأنك تُغيِّر من موضع قوة ووضوح لا من موضع خوف أو ضغط خارجي.</p>
+<p>الفرق:</p>
+<ul>
+  <li><strong>تغيير من ضعف:</strong> "أُغيِّر نفسي لأن الآخرين يريدونني هكذا / لأنني أخاف من نبذهم"</li>
+  <li><strong>تغيير من قوة:</strong> "أُغيِّر هذا الجانب لأنه يتعارض مع قيمي ويجعلني شخصاً أقل جيداً مما أريد أن أكون"</li>
+</ul>
+<p>الأول تغيير مُوجَّه من الخارج يُقوِّض الهوية. الثاني تغيير مُوجَّه من الداخل يُعمِّقها.</p>
+
+<h2>الهوية والعلاقات: الجانب الذي يُغفِله كثيرون</h2>
+<p>هويتك تُحدِّد نوع العلاقات التي تجذبها وتُتيحها. الشخص ذو الهوية الهشّة يجذب علاقات تعتمد على التأكيد المتبادل — وهي علاقات هشّة بدورها. الشخص ذو الهوية الراسخة يجذب علاقات تقوم على الاحترام الحقيقي والاختيار الحر لا الحاجة.</p>
+<p>الهوية الراسخة أيضاً تجعل حدودك طبيعية وواضحة — لا تحتاج كثيراً من التفسير لأنها تنبع من معرفة صافية بما تقبله وما لا تقبله في حياتك.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الهوية المعتمِدة على الخارج هشّة — كل ما يبنيها يمكن أن يُهدِمها</li>
+    <li>الهوية الراسخة: مرجع داخلي لا يعتمد على تأكيد الآخرين لتثبيته</li>
+    <li>هوية القيم تتفوق على هوية النتائج في الاستقرار والمرونة</li>
+    <li>الثقة تُنتِج النجاح أكثر مما ينتجها النجاح — لا تنتظر</li>
+    <li>رأي الآخرين معلومة مفيدة لا حكم نهائي على قيمتك</li>
+    <li>التغيير الحقيقي يأتي من القوة الداخلية لا من الخوف من الخارج</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الهوية الأساس الذي يُحمَل عليه كل شيء آخر</h2>
+<p>كل ما تعلمناه عن SMV والانضباط والإطار والمال واللياقة — هو مجرد أدوات. الأدوات تحتاج لمن يحملها. ذلك الحامل هو أنت — هويتك الداخلية. بدون هوية راسخة، أفضل الأدوات تنقلب ضد صاحبها: الثروة تُولِّد قلقاً، الجسم المُدرَّب يتحول لوسيلة انتزاع موافقة، الانضباط يتحول لعقاب ذاتي.</p>
+<p>مع هوية راسخة، حتى النقص في بعض الأدوات لا يكسرك — لأن من أنت لا يتوقف على ما تملك أو ما تحقق أو ما يعتقده الآخرون.</p>
+<p>ابدأ بالداخل. دائماً.</p>`
+},
+en:{
+  dir:'ltr',title:'Anchored Identity: Build Yourself from Within So External Forces Cannot Shake You',
+  cat:'Logic',date:'July 2026',readTime:'15 min read',
+  excerpt:"The man who doesn't know who he is gets defined from outside: by others' opinions, by his results, by his status. Anchored identity doesn't mean arrogance — it means having a stable internal reference that isn't shaken by criticism, praise, or failure.",
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['The Antifragile Man','No Excuses','Frame Control'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>External-Dependent Identity: The Diagnosis</h2>
+<p>Signs of an externally-dependent identity:</p>
+<ul>
+  <li>Your self-worth is significantly affected by others' approval or rejection</li>
+  <li>Criticism hurts disproportionately to its size</li>
+  <li>Praise makes you disproportionately happy and drives you to modify behavior to get more</li>
+  <li>Failure in one area makes you feel like a failure as a person — not just in that area</li>
+  <li>Your major decisions are heavily influenced by what people will say</li>
+</ul>
+<p>The problem is that this identity is inherently fragile: <strong>everything that builds it externally can be demolished externally</strong>.</p>
+
+<h2>What Is Anchored Identity?</h2>
+<p>Anchored identity is not arrogance or claiming perfection. It is: "knowing who you are, what you stand for, and what you will not negotiate — in a way that doesn't depend on others' confirmation to stabilize it."</p>
+
+<h2>Values-Based Identity vs. Results-Based Identity</h2>
+<p><strong>Results-based identity</strong> seems strong when things go well but shakes badly when something changes — losing a job, ending a relationship, a physical injury. It's not just normal grief over a loss — it's a full identity crisis because the result was the identity.</p>
+<p><strong>Values-based identity</strong> is fundamentally different: "I am someone who seeks growth" — this identity doesn't shake with job loss because seeking growth doesn't depend on a position.</p>
+
+<h2>Building Anchored Identity: The Process</h2>
+<ul>
+  <li><strong>Define your core values — not inherited ones:</strong> Ask: "What matters to me in quiet moments when no one is watching?" These are your real answers</li>
+  <li><strong>Align values with actions:</strong> Identity is built through repeated action, not thinking. If you want an identity as someone who keeps their word: start with small things</li>
+  <li><strong>Establish the internal reference:</strong> After every significant situation: "Did I act in alignment with who I want to be?" This question slowly anchors the internal reference</li>
+  <li><strong>Practice dealing with criticism:</strong> Stop and don't respond immediately → Ask "Is this accurate?" not "Does this hurt?" → Take it as information or leave it without needing to defend</li>
+</ul>
+
+<div class="callout"><p><strong>Subtle Distinction:</strong> Anchored identity doesn't mean not being affected by criticism — it means not determining your self-worth based on it. The difference between "This is painful but I still know who I am" and "This is painful and I doubt everything about myself."</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Externally-dependent identity is fragile — everything that builds it can demolish it</li>
+    <li>Anchored identity: internal reference that doesn't depend on others' confirmation</li>
+    <li>Values-based identity beats results-based identity in stability and flexibility</li>
+    <li>Confidence produces success more than success produces confidence — don't wait</li>
+    <li>Others' opinions are useful information, not a final verdict on your worth</li>
+    <li>Real change comes from internal strength, not fear of the external</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Identidad Anclada: Constrúyete desde Dentro para que las Fuerzas Externas No Te Sacudan',
+  cat:'Lógica',date:'Julio 2026',readTime:'15 min',
+  excerpt:"El hombre que no sabe quién es se define desde afuera: por las opiniones ajenas, sus resultados, su estatus. La identidad anclada no significa arrogancia — significa tener una referencia interna estable que no se sacude por la crítica, el elogio o el fracaso.",
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['El Hombre Antifrágil','Sin Excusas','Control del Marco'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>El Diagnóstico: Identidad Dependiente del Exterior</h2>
+<p>Señales de una identidad dependiente del exterior: tu autoestima se afecta significativamente por la aprobación o el rechazo ajenos; la crítica duele desproporcionadamente; el fracaso en un área te hace sentir fracasado como persona. El problema: <strong>todo lo que la construye externamente puede demolerla externamente</strong>.</p>
+
+<h2>Identidad Basada en Valores vs. Identidad Basada en Resultados</h2>
+<p>La <strong>identidad basada en resultados</strong> parece fuerte cuando las cosas van bien pero se sacude cuando algo cambia — perder un trabajo, el fin de una relación. Es una crisis de identidad completa porque el resultado era la identidad.</p>
+<p>La <strong>identidad basada en valores</strong> es fundamentalmente diferente: "Soy alguien que busca el crecimiento" — esta identidad no se sacude con la pérdida de empleo porque buscar el crecimiento no depende de un puesto.</p>
+
+<h2>Construir la Identidad Anclada: El Proceso</h2>
+<ul>
+  <li>Define tus valores fundamentales — los tuyos, no los heredados</li>
+  <li>Alinea valores con acciones: la identidad se construye a través de la acción repetida, no del pensamiento</li>
+  <li>Establece la referencia interna: "¿Actué en alineación con quien quiero ser?"</li>
+  <li>Practica lidiar con la crítica: ¿Es esto preciso? (no ¿Me duele?) — tómalo como información o déjalo sin necesidad de defenderte</li>
+</ul>
+
+<div class="callout"><p><strong>Distinción Sutil:</strong> La identidad anclada no significa no ser afectado por la crítica — significa no determinar tu autoestima basándote en ella. La diferencia entre "Esto duele pero aún sé quién soy" y "Esto duele y dudo de todo sobre mí mismo."</p></div>
+
+<h2>Conclusión</h2>
+<p>Todo lo demás — SMV, disciplina, marco, dinero, fitness — son herramientas. Las herramientas necesitan a alguien que las lleve. Ese portador eres tú — tu identidad interior. <strong>Empieza desde dentro. Siempre.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Identité Ancrée: Construis-toi de l\'Intérieur pour que les Forces Externes ne te Ébranlent Pas',
+  cat:'Logique',date:'Juillet 2026',readTime:'15 min',
+  excerpt:"L'homme qui ne sait pas qui il est se définit de l'extérieur: par les opinions des autres, ses résultats, son statut. L'identité ancrée ne signifie pas arrogance — elle signifie avoir une référence interne stable qui n'est pas ébranlée par la critique, les louanges ou l'échec.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:["L'Homme Antifragile","Sans Excuses",'Contrôle du Cadre'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Le Diagnostic: Identité Dépendante de l'Extérieur</h2>
+<p>Signes d'une identité dépendante de l'extérieur: ton estime de toi est significativement affectée par l'approbation ou le rejet des autres; la critique fait mal de manière disproportionnée; l'échec dans un domaine te fait te sentir comme un échec en tant que personne. Le problème: <strong>tout ce qui la construit extérieurement peut la démolir extérieurement</strong>.</p>
+
+<h2>Identité Basée sur les Valeurs vs. Identité Basée sur les Résultats</h2>
+<p>L'<strong>identité basée sur les résultats</strong> semble forte quand les choses vont bien mais se secoue fortement quand quelque chose change. C'est une crise d'identité complète parce que le résultat était l'identité.</p>
+<p>L'<strong>identité basée sur les valeurs</strong> est fondamentalement différente: "Je suis quelqu'un qui cherche la croissance" — cette identité ne se secoue pas avec la perte d'emploi car chercher la croissance ne dépend pas d'un poste.</p>
+
+<h2>Construire l'Identité Ancrée: Le Processus</h2>
+<ul>
+  <li>Définis tes valeurs fondamentales — les tiennes, pas les héritées</li>
+  <li>Aligne les valeurs avec les actions: l'identité se construit à travers l'action répétée, pas la réflexion</li>
+  <li>Établis la référence interne: "Ai-je agi en accord avec qui je veux être?"</li>
+  <li>Pratique face à la critique: Est-ce précis? (pas Est-ce que ça fait mal?) — prends-le comme information ou laisse-le sans besoin de te défendre</li>
+</ul>
+
+<div class="callout"><p><strong>Distinction Subtile:</strong> L'identité ancrée ne signifie pas ne pas être affecté par la critique — elle signifie ne pas déterminer ton estime de toi sur la base de celle-ci. La différence entre "Ça fait mal mais je sais encore qui je suis" et "Ça fait mal et je doute de tout sur moi-même."</p></div>
+
+<h2>Conclusion</h2>
+<p>Tout le reste — SMV, discipline, cadre, argent, fitness — sont des outils. Les outils ont besoin de quelqu'un pour les porter. Ce porteur, c'est toi — ton identité intérieure. <strong>Commence de l'intérieur. Toujours.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'स्थिर पहचान: भीतर से खुद को बनाओ ताकि बाहरी ताकतें तुम्हें हिला न सकें',
+  cat:'तर्क',date:'जुलाई 2026',readTime:'15 मिनट',
+  excerpt:'जो आदमी नहीं जानता वो कौन है, उसे बाहर से परिभाषित किया जाता है: दूसरों की राय से, उसके परिणामों से, उसकी स्थिति से। स्थिर पहचान का मतलब घमंड नहीं है — इसका मतलब है एक स्थिर आंतरिक संदर्भ होना जो आलोचना, प्रशंसा या विफलता से नहीं हिलता।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['एंटीफ्रेजाइल व्यक्ति','कोई बहाना नहीं','फ्रेम नियंत्रण'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>निदान: बाहरी-निर्भर पहचान</h2>
+<p>बाहरी-निर्भर पहचान के संकेत: तुम्हारा आत्म-मूल्य दूसरों की स्वीकृति या अस्वीकृति से महत्वपूर्ण रूप से प्रभावित होता है; आलोचना असंगत रूप से चोट पहुंचाती है; एक क्षेत्र में विफलता तुम्हें एक व्यक्ति के रूप में असफल महसूस कराती है। समस्या: <strong>जो कुछ भी बाहरी रूप से इसे बनाता है वह बाहरी रूप से इसे नष्ट कर सकता है</strong>।</p>
+
+<h2>मूल्य-आधारित पहचान vs. परिणाम-आधारित पहचान</h2>
+<p><strong>परिणाम-आधारित पहचान</strong> तब मजबूत लगती है जब चीजें अच्छी तरह से चलती हैं लेकिन जब कुछ बदलता है — नौकरी खोना, रिश्ते का खत्म होना — तो यह बुरी तरह हिल जाती है।</p>
+<p><strong>मूल्य-आधारित पहचान</strong> मौलिक रूप से अलग है: "मैं वह व्यक्ति हूं जो विकास की तलाश करता है" — यह पहचान नौकरी खोने से नहीं हिलती क्योंकि विकास की तलाश किसी पद पर निर्भर नहीं है।</p>
+
+<h2>स्थिर पहचान बनाना: प्रक्रिया</h2>
+<ul>
+  <li>अपने मूल मूल्यों को परिभाषित करो — विरासत में मिले नहीं, तुम्हारे अपने</li>
+  <li>मूल्यों को कार्यों के साथ संरेखित करो: पहचान बार-बार की जाने वाली क्रिया से बनती है</li>
+  <li>आंतरिक संदर्भ स्थापित करो: "क्या मैंने उस व्यक्ति के अनुरूप काम किया जो मैं बनना चाहता हूं?"</li>
+  <li>आलोचना से निपटने का अभ्यास: क्या यह सटीक है? (क्या यह दर्द देता है? नहीं) — इसे जानकारी के रूप में लो या बिना बचाव की ज़रूरत के छोड़ दो</li>
+</ul>
+
+<div class="callout"><p><strong>सूक्ष्म अंतर:</strong> स्थिर पहचान का मतलब आलोचना से प्रभावित न होना नहीं है — इसका मतलब है इसके आधार पर अपना आत्म-मूल्य न निर्धारित करना। "यह दर्दनाक है लेकिन मैं अभी भी जानता हूं मैं कौन हूं" और "यह दर्दनाक है और मुझे खुद के बारे में सब कुछ पर संदेह है" के बीच का अंतर।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>बाकी सब — SMV, अनुशासन, फ्रेम, पैसा, फिटनेस — उपकरण हैं। उपकरणों को ले जाने वाले की जरूरत होती है। वह ले जाने वाला तुम हो — तुम्हारी आंतरिक पहचान। <strong>भीतर से शुरू करो। हमेशा।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

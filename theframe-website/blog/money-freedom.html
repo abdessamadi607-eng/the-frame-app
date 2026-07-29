@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الاستقلال المالي: ما هو، وكيف تحسبه، وما الخطوات العملية للوصول إليه. الفرق بين الثروة والدخل وكيف تبني حريتك المالية.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>الاستقلال المالي: الحرية التي لا تشتريها بالراتب | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/money-freedom.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="money-mindset.html"><span class="related-cat">المال</span><span class="related-title" id="rel1">عقلية الثروة</span></a>
+      <a class="related-card" href="money-income.html"><span class="related-cat">المال</span><span class="related-title" id="rel2">مصادر الدخل المتعددة</span></a>
+      <a class="related-card" href="money-investing.html"><span class="related-cat">المال</span><span class="related-title" id="rel3">الاستثمار للمبتدئ</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'الاستقلال المالي: الحرية الحقيقية التي لا يمكنك شراؤها بالراتب',
+  cat:'المال',date:'يوليو 2026',readTime:'13 دقيقة قراءة',
+  excerpt:'الاستقلال المالي لا يعني الثراء الفاحش — يعني أن دخلك السلبي يُغطي نفقاتك. اكتشف المعادلة الدقيقة، وكيف تحسب رقمك الشخصي، والخطوات العملية للوصول إليه.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['عقلية الثروة','مصادر الدخل المتعددة','الاستثمار للمبتدئ'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الاستقلال المالي: ما هو بالضبط؟</h2>
+<p>يختلط على كثيرين تعريف الاستقلال المالي — يظنون أنه يعني الثراء الفاحش أو الملايين في البنك. الحقيقة أدق وأكثر قابلية للتحقيق: <strong>الاستقلال المالي يُحقَّق حين يُغطي دخلك السلبي (الذي لا يتطلب وقت عملك المباشر) نفقاتك الشهرية الكاملة</strong>.</p>
+<p>هذا يعني: إذا كانت نفقاتك الشهرية 5000 درهم، وكان دخلك السلبي من الاستثمارات أو الملكية أو أي مصدر لا يتطلب حضورك اليومي يُغطي هذا المبلغ — فأنت ماليًا مستقل. بغض النظر عن حجم الرقم الإجمالي في حسابك.</p>
+<p>هذا الفهم يُغير كل شيء: الاستقلال المالي ليس عن حجم الثروة — هو عن العلاقة بين دخلك السلبي ونفقاتك.</p>
+
+<h2>الفرق الجوهري: الثروة مقابل الدخل مقابل الاستقلال</h2>
+<ul>
+  <li><strong>الدخل العالي:</strong> تكسب كثيراً لكن تُنفِق أكثر — لا استقلال. الطبيب الذي يكسب 50,000 درهم شهرياً وينفق 55,000 ليس مستقلاً مالياً</li>
+  <li><strong>الثروة الجامدة:</strong> رصيد كبير في البنك لكن لا دخل سلبي يُنتِجه — يتضاءل مع الزمن</li>
+  <li><strong>الاستقلال المالي الحقيقي:</strong> أصول تُنتِج دخلاً سلبياً يُغطي النفقات — بغض النظر عن وقت عملك</li>
+</ul>
+
+<h2>حساب "رقمك" الشخصي للاستقلال</h2>
+<p>المعادلة الأشهر في عالم الاستقلال المالي تأتي من نظرية FIRE (Financial Independence, Retire Early):</p>
+<p style="text-align:center;font-size:1.3em;font-weight:700;color:#FF003C;">رقم الاستقلال = النفقات السنوية × 25</p>
+<p>هذا الرقم يُمثِّل المبلغ الذي — إذا استثمرته في محفظة متنوعة — يُنتِج عادةً دخلاً سلبياً كافياً يُغطي نفقاتك السنوية بناءً على معدل سحب 4% سنوياً (قاعدة الـ 4% المبنية على بيانات تاريخية من الأسواق الأمريكية).</p>
+<p><strong>مثال:</strong> نفقاتك الشهرية 5,000 درهم = 60,000 سنوياً × 25 = 1,500,000 درهم هو رقم استقلالك المالي.</p>
+
+<h2>المسارات الثلاثة للاستقلال المالي</h2>
+
+<h3>المسار الأول: تقليص النفقات</h3>
+<p>كل درهم تُخفِّضه من نفقاتك الشهرية يُؤثِّر مضاعفاً على رقم استقلالك: يُقلِّل ما تحتاج توفيره من المحفظة (بـ×25) ويزيد ما يمكنك توفيره شهرياً في نفس الوقت.</p>
+<p>هذا لا يعني الحرمان — يعني <strong>القضاء على الإنفاق على ما لا يعطيك قيمة حقيقية</strong>. تحليل النفقات يُظهِر دائماً مجالات ضخمة غير ملحوظة: اشتراكات نسيتها، طعام هدر، مظاهر اجتماعية لا تُسعِد.</p>
+
+<h3>المسار الثاني: زيادة الدخل</h3>
+<p>تقليص النفقات وحده له سقف — لا يمكنك تقليص أكثر من 100%. لكن زيادة الدخل لا سقف لها. الجمع بين الاثنين هو أسرع مسار للاستقلال المالي.</p>
+<p>زيادة الدخل تأتي من: الارتقاء في المسيرة المهنية، تطوير مهارات ذات قيمة سوقية أعلى، مصادر دخل إضافية.</p>
+
+<h3>المسار الثالث: الاستثمار الفعال</h3>
+<p>كل ما تُوفِّره يجب أن يُستثمَر — لا يُودَع في حساب جارٍ يأكله التضخم. الاستثمار هو ما يُحوِّل التوفير من مجرد تراكم لأصل نشط يُنتِج دخلاً.</p>
+
+<h2>خطوات عملية نحو الاستقلال المالي</h2>
+
+<h3>الخطوة الأولى: احسب صافي ثروتك الحالية</h3>
+<p>صافي الثروة = إجمالي أصولك (ما تملكه) − إجمالي التزاماتك (ما تديِنه). هذا الرقم هو نقطة البداية الحقيقية. كثيرون يتجنبون حساب هذا الرقم لأنه مزعج — لكن لا يمكن قيادة رحلة بدون معرفة نقطة البداية.</p>
+
+<h3>الخطوة الثانية: حدِّد رقم استقلالك</h3>
+<p>احسب نفقاتك السنوية الحالية، ثم اضربها بـ25. هذا هو هدفك المحفظي. حدِّد أيضاً نسبة التوفير الحالية: كم تُوفِّر من دخلك كل شهر؟</p>
+
+<h3>الخطوة الثالثة: بنِ صندوق الطوارئ أولاً</h3>
+<p>قبل أي استثمار: وفِّر مبلغاً يُغطي 3-6 أشهر من نفقاتك في حساب متاح فوراً. هذا الصندوق يمنعك من الاضطرار لبيع استثماراتك في أسوأ الأوقات (انهيار السوق، فقدان الوظيفة).</p>
+
+<h3>الخطوة الرابعة: تخلَّص من الديون ذات الفائدة العالية</h3>
+<p>لا يمكنك بناء ثروة بينما تتسرب جزء كبير منها لفوائد بطاقات ائتمان أو قروض شخصية بفوائد مرتفعة. هذه الديون تعمل ضدك بنفس مبدأ الاهتمام المركّب — لكن في الاتجاه العكسي.</p>
+
+<h3>الخطوة الخامسة: ابدأ الاستثمار فوراً بمبالغ صغيرة</h3>
+<p>لا تنتظر المبلغ "الكافي" للاستثمار. حتى 500 درهم شهرياً مستثمرة باستمرار تُنتِج تراكماً هائلاً على مدى عشر سنوات أو أكثر بسبب مبدأ الاهتمام المركّب.</p>
+
+<div class="callout"><p><strong>حقيقة صادمة:</strong> الاستقلال المالي ليس عن مدى ما تكسب — هو عن مدى الفجوة بين ما تكسب وما تُنفِق، وكيف تستثمر هذه الفجوة. شخص يكسب 10,000 درهم ويُوفِّر 30% يتقدم أسرع ماليًا من شخص يكسب 30,000 ويُنفِق كل قرش.</p></div>
+
+<h2>مستويات الاستقلال المالي: ليست إجابة ثنائية</h2>
+<p>الاستقلال المالي ليس "إما أو" — هو طيف:</p>
+<ul>
+  <li><strong>مستوى 1 - الاستقرار:</strong> لديك صندوق طوارئ وأنت خالٍ من ديون الفائدة العالية</li>
+  <li><strong>مستوى 2 - الأمان:</strong> دخلك السلبي يُغطي نفقاتك الأساسية (إيجار، طعام، مواصلات)</li>
+  <li><strong>مستوى 3 - الحرية:</strong> دخلك السلبي يُغطي نمط حياتك الكامل المطلوب</li>
+  <li><strong>مستوى 4 - الوفرة:</strong> دخلك السلبي يتجاوز نفقاتك بهامش كبير</li>
+</ul>
+<p>كل مستوى يُعطيك حرية وخيارات أكبر — لا يجب الانتظار للمستوى الرابع لتبدأ في تجربة الحرية.</p>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الاستقلال المالي = دخل سلبي يُغطي النفقات — ليس مبلغاً محدداً</li>
+    <li>رقمك = نفقاتك السنوية × 25 (قاعدة الـ 4%)</li>
+    <li>المسارات الثلاثة: تقليص النفقات + زيادة الدخل + استثمار الفرق</li>
+    <li>صندوق الطوارئ أولاً قبل أي استثمار</li>
+    <li>الديون ذات الفائدة العالية تعمل ضدك — أزِلها أولاً</li>
+    <li>الاستقلال طيف — كل مستوى يمنحك حرية وخيارات أكبر</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: الاستقلال المالي هو استقلال عن الحاجة — لا استقلال عن العمل</h2>
+<p>كثيرون يُفهَمون الاستقلال المالي خطأً كـ"لا تعمل أبداً." الحقيقة أن الاستقلال المالي هو امتلاك الخيار. حين تملك الخيار، يتحول العمل من ضرورة للبقاء إلى اختيار لأهداف أكبر. هذا الفرق — بين العمل لأنك مضطر والعمل لأنك تختار — هو ما يُغير كل شيء في جودة حياتك وعلاقتك بعملك ومع نفسك.</p>`
+},
+en:{
+  dir:'ltr',title:'Financial Independence: The Real Freedom You Cannot Buy with a Salary',
+  cat:'Money',date:'July 2026',readTime:'13 min read',
+  excerpt:"Financial independence doesn't mean extreme wealth — it means your passive income covers your expenses. Discover the precise formula, how to calculate your personal number, and practical steps to reach it.",
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Wealth Mindset','Multiple Income Streams','Investing for Beginners'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>What Is Financial Independence, Exactly?</h2>
+<p>Many confuse financial independence with extreme wealth. The reality is more precise and more achievable: <strong>financial independence is achieved when your passive income (which doesn't require your direct work time) covers your full monthly expenses</strong>.</p>
+<p>This means: if your monthly expenses are $1,500 and your passive income from investments, ownership, or any source that doesn't require your daily presence covers this amount — you are financially independent. Regardless of the total number in your account.</p>
+
+<h2>Calculate Your Personal Independence Number</h2>
+<p>The most famous formula from the FIRE (Financial Independence, Retire Early) movement:</p>
+<p style="text-align:center;font-size:1.3em;font-weight:700;color:#FF003C;">Independence Number = Annual Expenses × 25</p>
+<p>This represents the amount that — if invested in a diversified portfolio — typically produces enough passive income to cover your annual expenses based on a 4% annual withdrawal rate.</p>
+<p><strong>Example:</strong> Monthly expenses of $2,000 = $24,000 annually × 25 = $600,000 is your financial independence number.</p>
+
+<h2>The Three Paths to Financial Independence</h2>
+<ul>
+  <li><strong>Reduce expenses:</strong> Every dollar cut has a multiplier effect — reduces what you need to save (by ×25) and increases what you can save monthly simultaneously</li>
+  <li><strong>Increase income:</strong> Cutting expenses has a ceiling (100%). Increasing income has none. Combining both is the fastest path</li>
+  <li><strong>Invest effectively:</strong> Everything you save must be invested — not deposited in a current account that inflation eats</li>
+</ul>
+
+<h2>Practical Steps Toward Financial Independence</h2>
+<ol>
+  <li><strong>Calculate your current net worth:</strong> Net Worth = Total Assets − Total Liabilities. This is your true starting point</li>
+  <li><strong>Define your independence number:</strong> Calculate annual expenses × 25</li>
+  <li><strong>Build an emergency fund first:</strong> 3-6 months of expenses in an immediately accessible account</li>
+  <li><strong>Eliminate high-interest debt:</strong> Credit card debt works against you with the same compound interest principle — in reverse</li>
+  <li><strong>Start investing immediately with small amounts:</strong> Even $100/month invested consistently produces massive accumulation over 10+ years</li>
+</ol>
+
+<div class="callout"><p><strong>Shocking Truth:</strong> Financial independence is not about how much you earn — it's about the gap between what you earn and what you spend, and how you invest that gap. Someone earning $3,000 and saving 30% advances faster financially than someone earning $10,000 and spending every cent.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Financial independence = passive income covering expenses — not a specific amount</li>
+    <li>Your number = annual expenses × 25 (the 4% rule)</li>
+    <li>Three paths: reduce expenses + increase income + invest the difference</li>
+    <li>Emergency fund first before any investment</li>
+    <li>High-interest debt works against you — eliminate it first</li>
+    <li>Independence is a spectrum — each level gives you more freedom and choices</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Independencia Financiera: La Verdadera Libertad que No Puedes Comprar con un Salario',
+  cat:'Dinero',date:'Julio 2026',readTime:'13 min',
+  excerpt:'La independencia financiera no significa riqueza extrema — significa que tus ingresos pasivos cubren tus gastos. Descubre la fórmula precisa y los pasos prácticos para alcanzarla.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Mentalidad de Riqueza','Múltiples Fuentes de Ingresos','Inversión para Principiantes'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>¿Qué es la Independencia Financiera, Exactamente?</h2>
+<p>La independencia financiera se logra cuando tus ingresos pasivos cubren todos tus gastos mensuales. No se trata de riqueza extrema — se trata de la relación entre tu ingreso pasivo y tus gastos.</p>
+
+<h2>Calcula tu Número de Independencia Personal</h2>
+<p style="text-align:center;font-size:1.3em;font-weight:700;color:#FF003C;">Número de Independencia = Gastos Anuales × 25</p>
+<p>Basado en la regla del 4%, este número representa la cartera que genera suficientes ingresos pasivos para cubrir tus gastos. <strong>Ejemplo:</strong> Gastos mensuales de €2.000 = €24.000 anuales × 25 = €600.000 es tu número de independencia financiera.</p>
+
+<h2>Los Tres Caminos hacia la Independencia Financiera</h2>
+<ul>
+  <li><strong>Reducir gastos:</strong> Cada euro cortado tiene un efecto multiplicador en tu número objetivo</li>
+  <li><strong>Aumentar ingresos:</strong> Reducir gastos tiene un techo (100%). Aumentar ingresos no tiene techo</li>
+  <li><strong>Invertir eficientemente:</strong> Todo lo que ahorras debe invertirse, no depositarse en una cuenta corriente que la inflación come</li>
+</ul>
+
+<h2>Pasos Prácticos</h2>
+<ol>
+  <li>Calcula tu patrimonio neto actual: Activos − Pasivos</li>
+  <li>Define tu número de independencia: gastos anuales × 25</li>
+  <li>Construye un fondo de emergencia: 3-6 meses de gastos</li>
+  <li>Elimina deudas de alto interés</li>
+  <li>Comienza a invertir inmediatamente con pequeñas cantidades</li>
+</ol>
+
+<div class="callout"><p><strong>Verdad Impactante:</strong> La independencia financiera no se trata de cuánto ganas — se trata de la brecha entre lo que ganas y lo que gastas, y cómo inviertes esa brecha.</p></div>
+
+<h2>Conclusión</h2>
+<p>La independencia financiera es independencia de la necesidad — no independencia del trabajo. Cuando tienes la opción, el trabajo se transforma de necesidad de supervivencia en elección hacia objetivos más grandes. <strong>Esta diferencia — entre trabajar porque debes y trabajar porque eliges — cambia todo en tu calidad de vida.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:"Indépendance Financière: La Vraie Liberté que Vous Ne Pouvez Pas Acheter avec un Salaire",
+  cat:'Argent',date:'Juillet 2026',readTime:'13 min',
+  excerpt:"L'indépendance financière ne signifie pas une richesse extrême — cela signifie que vos revenus passifs couvrent vos dépenses. Découvrez la formule précise et les étapes pratiques pour l'atteindre.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:["Mentalité de Richesse",'Sources de Revenus Multiples','Investissement pour Débutants'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>Qu'est-ce que l'Indépendance Financière, Exactement?</h2>
+<p>L'indépendance financière est atteinte quand vos revenus passifs couvrent toutes vos dépenses mensuelles. Il ne s'agit pas de richesse extrême — il s'agit de la relation entre votre revenu passif et vos dépenses.</p>
+
+<h2>Calculez Votre Nombre d'Indépendance Personnel</h2>
+<p style="text-align:center;font-size:1.3em;font-weight:700;color:#FF003C;">Nombre d'Indépendance = Dépenses Annuelles × 25</p>
+<p>Basé sur la règle des 4%, ce nombre représente le portefeuille qui génère suffisamment de revenus passifs pour couvrir vos dépenses.</p>
+
+<h2>Les Trois Chemins vers l'Indépendance Financière</h2>
+<ul>
+  <li><strong>Réduire les dépenses:</strong> Chaque euro coupé a un effet multiplicateur sur votre objectif</li>
+  <li><strong>Augmenter les revenus:</strong> Réduire les dépenses a un plafond. Augmenter les revenus n'en a pas</li>
+  <li><strong>Investir efficacement:</strong> Tout ce que vous épargnez doit être investi</li>
+</ul>
+
+<h2>Étapes Pratiques</h2>
+<ol>
+  <li>Calculez votre valeur nette actuelle: Actifs − Passifs</li>
+  <li>Définissez votre nombre d'indépendance: dépenses annuelles × 25</li>
+  <li>Constituez d'abord un fonds d'urgence: 3-6 mois de dépenses</li>
+  <li>Éliminez les dettes à taux d'intérêt élevé</li>
+  <li>Commencez à investir immédiatement avec de petits montants</li>
+</ol>
+
+<div class="callout"><p><strong>Vérité Choquante:</strong> L'indépendance financière ne concerne pas combien vous gagnez — elle concerne l'écart entre ce que vous gagnez et ce que vous dépensez, et comment vous investissez cet écart.</p></div>
+
+<h2>Conclusion</h2>
+<p>L'indépendance financière est l'indépendance par rapport au besoin — pas l'indépendance par rapport au travail. <strong>Quand vous avez le choix, le travail se transforme d'une nécessité de survie en un choix vers des objectifs plus grands.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'वित्तीय स्वतंत्रता: वह असली आज़ादी जो आप वेतन से नहीं खरीद सकते',
+  cat:'पैसा',date:'जुलाई 2026',readTime:'13 मिनट',
+  excerpt:'वित्तीय स्वतंत्रता का मतलब अत्यधिक धन नहीं है — इसका मतलब है कि आपकी निष्क्रिय आय आपके खर्चों को कवर करती है। सटीक सूत्र और व्यावहारिक कदम खोजें।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['धन की मानसिकता','आय के कई स्रोत','शुरुआती लोगों के लिए निवेश'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>वित्तीय स्वतंत्रता वास्तव में क्या है?</h2>
+<p>वित्तीय स्वतंत्रता तब प्राप्त होती है जब आपकी निष्क्रिय आय आपके सभी मासिक खर्चों को कवर करती है। यह अत्यधिक धन के बारे में नहीं है — यह आपकी निष्क्रिय आय और खर्चों के बीच संबंध के बारे में है।</p>
+
+<h2>अपना व्यक्तिगत स्वतंत्रता नंबर गणना करें</h2>
+<p style="text-align:center;font-size:1.3em;font-weight:700;color:#FF003C;">स्वतंत्रता संख्या = वार्षिक खर्च × 25</p>
+<p>4% नियम के आधार पर, यह संख्या उस पोर्टफोलियो का प्रतिनिधित्व करती है जो आपके खर्चों को कवर करने के लिए पर्याप्त निष्क्रिय आय उत्पन्न करती है।</p>
+
+<h2>वित्तीय स्वतंत्रता के तीन रास्ते</h2>
+<ul>
+  <li><strong>खर्च कम करें:</strong> हर रुपया जो आप काटते हैं उसका आपके लक्ष्य पर गुणात्मक प्रभाव होता है</li>
+  <li><strong>आय बढ़ाएं:</strong> खर्च कम करने की एक सीमा है। आय बढ़ाने की कोई सीमा नहीं है</li>
+  <li><strong>प्रभावी ढंग से निवेश करें:</strong> जो कुछ भी आप बचाते हैं उसे निवेश किया जाना चाहिए</li>
+</ul>
+
+<h2>निष्कर्ष</h2>
+<p>वित्तीय स्वतंत्रता आवश्यकता से स्वतंत्रता है — काम से नहीं। <strong>जब आपके पास विकल्प होता है, तो काम जीवित रहने की आवश्यकता से बड़े लक्ष्यों की ओर एक विकल्प में बदल जाता है।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مصادر الدخل المتعددة: لماذا دخل واحد خطر، وكيف تبني 3 مصادر دخل عملية في عام واحد. دليل شامل لتنويع دخلك.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://theframeapp.site/assets/logo.png">
+  <title>مصادر الدخل المتعددة: لماذا دخل واحد كافٍ للمتوسط فقط | The Frame</title>
+  <link rel="canonical" href="https://theframeapp.site/blog/money-income.html">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<nav>
+  <a href="../ar.html" class="nav-brand" id="nav-home-link"><img src="../assets/logo.png" alt="The Frame" class="nav-logo"></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../blog.html" class="nav-back" id="nav-blog">← المدونة</a>
+      <a href="../ar.html" id="nav-home">الرئيسية</a>
+    </div>
+    <div class="lang-picker" id="lang-picker">
+      <button class="lang-btn" id="lang-btn-toggle"><span id="lang-flag">🇸🇦</span><span id="lang-label">العربية</span><span>▾</span></button>
+      <div class="lang-dropdown">
+        <button class="lang-option active" onclick="setLang('ar')">🇸🇦 العربية</button>
+        <button class="lang-option" onclick="setLang('en')">🇺🇸 English</button>
+        <button class="lang-option" onclick="setLang('es')">🇪🇸 Español</button>
+        <button class="lang-option" onclick="setLang('fr')">🇫🇷 Français</button>
+        <button class="lang-option" onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="article-hero" id="article-hero"></div>
+<div class="article-wrap">
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="article-body" id="article-body"></div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+  <div class="related-section">
+    <h2 id="related-title">مقالات ذات صلة</h2>
+    <div class="related-grid">
+      <a class="related-card" href="money-freedom.html"><span class="related-cat">المال</span><span class="related-title" id="rel1">الاستقلال المالي</span></a>
+      <a class="related-card" href="money-mindset.html"><span class="related-cat">المال</span><span class="related-title" id="rel2">عقلية الثروة</span></a>
+      <a class="related-card" href="money-investing.html"><span class="related-cat">المال</span><span class="related-title" id="rel3">الاستثمار للمبتدئ</span></a>
+    </div>
+  </div>
+  <div class="article-cta">
+    <h2 id="cta-title">طبّق ما تعلمته الآن</h2>
+    <p id="cta-desc">المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.</p>
+    <a href="../ar.html#download" class="btn-primary" id="cta-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.67.18 1.01 0l11.2-6.47L12 14l-8.82 9.76zM.5 1.63C.19 1.97 0 2.51 0 3.22v17.56c0 .71.19 1.25.5 1.59L.62 22.5 12.36 10.76v-.28L.62 1.5.5 1.63zM19.58 10.34L15.4 7.93l-3.63 3.63 3.63 3.63 4.2-2.43c1.2-.69 1.2-1.83-.02-2.42zM4.19.24L15.4 6.71l-3.39 3.39L.62 1.5c.35-.4.9-.48 1.37-.21l2.2 1.26v-2.3z"/></svg>
+      <span id="cta-btn-text">تحميل The Frame مجاناً</span>
+    </a>
+  </div>
+  <div class="ad-unit">ADVERTISEMENT</div>
+</div>
+<footer>
+  <p class="footer-logo">The Frame</p>
+  <div class="footer-links">
+    <a href="../privacy.html" id="f-privacy">سياسة الخصوصية</a>
+    <a href="../terms.html" id="f-terms">شروط الاستخدام</a>
+    <a href="../blog.html" id="f-blog">المدونة</a>
+  </div>
+  <p class="footer-copy" id="footer-copy">© 2026 The Frame. جميع الحقوق محفوظة.</p>
+</footer>
+<script>
+const FLAGS={ar:'🇸🇦',en:'🇺🇸',es:'🇪🇸',fr:'🇫🇷',hi:'🇮🇳'};
+const NAMES={ar:'العربية',en:'English',es:'Español',fr:'Français',hi:'हिन्दी'};
+const CONTENT={
+ar:{
+  dir:'rtl',title:'مصادر الدخل المتعددة: لماذا دخل واحد كافٍ للمتوسط فقط',
+  cat:'المال',date:'يوليو 2026',readTime:'12 دقيقة قراءة',
+  excerpt:'الاعتماد على مصدر دخل وحيد هو خطر استراتيجي في عالم متقلب. تعلّم كيف تبني 3 مصادر دخل متعددة خلال عام واحد بدون التخلي عن عملك الحالي.',
+  backLabel:'← المدونة',homeLabel:'الرئيسية',homeHref:'../ar.html',
+  relatedTitle:'مقالات ذات صلة',
+  rel:['الاستقلال المالي','عقلية الثروة','الاستثمار للمبتدئ'],
+  ctaTitle:'طبّق ما تعلمته الآن',ctaDesc:'المعرفة بدون تطبيق لا قيمة لها. The Frame يحوّل الأفكار إلى خطة عمل يومية مخصصة لك.',ctaBtn:'تحميل The Frame مجاناً',
+  footerPrivacy:'سياسة الخصوصية',footerTerms:'شروط الاستخدام',footerBlog:'المدونة',
+  footerCopy:'© 2026 The Frame. جميع الحقوق محفوظة.',
+  body:`
+<h2>الوظيفة الواحدة: أخطر مخطط مالي</h2>
+<p>اسمح لي بطرح سؤال صادم: إذا فقدت وظيفتك الآن، كم من الوقت ستعيش على مدخراتك الحالية؟ أسبوع؟ شهر؟ ثلاثة أشهر؟ هذا الاختبار البسيط يكشف مدى هشاشتك المالية الحقيقية.</p>
+<p>معظم الناس لديهم مصدر دخل واحد: الراتب. وهذا المصدر يعتمد على شيء واحد فقط: استمرار علاقتهم بصاحب العمل. وظيفة واحدة تعني: قرار واحد (من شخص آخر) يمكنه إعادة ميزانيتك الكاملة للصفر.</p>
+<p>دراسة من IRS الأمريكية وجدت أن متوسط أثرياء أمريكا لديهم 7 مصادر دخل. هذا الرقم ليس مصادفة — هو استراتيجية واعية.</p>
+
+<h2>أنواع مصادر الدخل: الخريطة الكاملة</h2>
+
+<h3>1. الدخل النشط (Active Income)</h3>
+<p>يتطلب وقتك وجهدك المباشر. تتوقف حين تتوقف.</p>
+<ul>
+  <li>الراتب الوظيفي</li>
+  <li>العمل الحر (Freelancing)</li>
+  <li>الاستشارات المهنية</li>
+  <li>الدوام الجزئي</li>
+</ul>
+
+<h3>2. الدخل شبه السلبي (Semi-Passive Income)</h3>
+<p>يتطلب جهداً مقدماً كبيراً ثم جهداً أقل للصيانة.</p>
+<ul>
+  <li>المنتجات الرقمية (كتب إلكترونية، دورات)</li>
+  <li>المدونات والمحتوى</li>
+  <li>القنوات (YouTube, Podcast)</li>
+  <li>التسويق بالعمولة (Affiliate)</li>
+</ul>
+
+<h3>3. الدخل السلبي الحقيقي (Passive Income)</h3>
+<p>يُنتِج دخلاً بحد أدنى من الجهد المستمر بعد الاستثمار الأولي.</p>
+<ul>
+  <li>أرباح الاستثمارات والأسهم</li>
+  <li>إيجار العقارات</li>
+  <li>حقوق الملكية الفكرية</li>
+  <li>تمويل المشاريع (Lending)</li>
+</ul>
+
+<h2>لماذا تعتقد أنك "لا وقت لديك"؟ التشخيص الحقيقي</h2>
+<p>الحجة الأشهر ضد بناء مصادر دخل إضافية: "لا وقت لديّ." لكن إذا تتبعت وقتك لأسبوع واحد بصدق، ستجد على الأرجح 10-15 ساعة أسبوعياً تذهب لأنشطة قيمتها قريبة من الصفر: تصفح عشوائي، مشاهدة بلا هدف، محادثات فارغة.</p>
+<p>10 ساعات أسبوعياً = 520 ساعة في السنة. هذا كافٍ لبناء مصدر دخل إضافي من الصفر.</p>
+
+<h2>ثلاثة مصادر دخل يمكنك بناؤها هذا العام</h2>
+
+<h3>المصدر الأول: تحقيق الدخل من مهارتك الحالية</h3>
+<p>لديك مهارة تستخدمها في عملك — كتابة، برمجة، تصميم، محاسبة، تسويق، تعليم. هذه المهارة نفسها يمكن تقديمها كخدمة مستقلة خارج إطار وظيفتك. هذا هو أسرع مصدر دخل إضافي يمكن بناؤه لأنه لا يتطلب تعلم مهارة جديدة.</p>
+<p><strong>الخطة العملية:</strong> حدِّد مهارتك الأعلى قيمة سوقياً. ابحث عن 3 أشخاص أو مشاريع تحتاجها. قدِّم خدمة بسعر أقل من السوق في البداية لبناء محفظة وتقييمات.</p>
+
+<h3>المصدر الثاني: المحتوى الرقمي</h3>
+<p>المحتوى الرقمي — سواء كان مقالات، مقاطع فيديو، بودكاست، أو دورات — له ميزة استثنائية: تصنعه مرة واحدة ويستمر في توليد القيمة (وربما الدخل) لسنوات بعد إنشائه.</p>
+<p>السوق العربي تحديداً يعاني من شح المحتوى العالي الجودة في أغلب المجالات — هذا يعني فرص أقل منافسة لمن يقدم محتوى متميزاً.</p>
+<p><strong>الخطة العملية:</strong> اختر مجالاً تملك فيه معرفة مميزة. ابدأ بكتابة مقالات. بعد 3 أشهر من الاتساق، ابدأ التفكير في دورة أو منتج.</p>
+
+<h3>المصدر الثالث: الاستثمار المنتظم</h3>
+<p>حتى لو كانت المبالغ صغيرة، الاستثمار المنتظم يُبني مصدر دخل سلبياً مع الزمن. 500 درهم شهرياً × 10 سنوات × معدل عائد 8% = ما يزيد عن 90,000 درهم.</p>
+
+<h2>خريطة طريق السنة الأولى</h2>
+<ul>
+  <li><strong>الشهور 1-3:</strong> ابحث عن الفرصة، طوِّر عرضك، احصل على أول عميل أو أول محتوى</li>
+  <li><strong>الشهور 4-6:</strong> ثبِّت الإيقاع، طوِّر النتائج، ابدأ الاستثمار بما تجنيه</li>
+  <li><strong>الشهور 7-9:</strong> توسَّع فيما نجح، أضف مصدراً ثالثاً، قيِّم وعدِّل</li>
+  <li><strong>الشهور 10-12:</strong> انظر إلى الأرقام — كم مصادر دخل لديك الآن؟ ما الذي تحتاج للتوسع؟</li>
+</ul>
+
+<div class="callout"><p><strong>قاعدة ذهبية:</strong> لا تبنِ المصدر الثاني على حساب المصدر الأول. وظيفتك هي تمويل تجاربك بينما تبني. الخطأ هو ترك الوظيفة قبل أن تُثبِت المصادر الجديدة نفسها بدخل مستقر.</p></div>
+
+<h2>الأخطاء الأكثر شيوعاً في بناء مصادر الدخل</h2>
+<ul>
+  <li><strong>الانتشار الزائد:</strong> محاولة بناء 5 مصادر في نفس الوقت = فشل الجميع. ابدأ بواحد، ثبِّته، ثم أضف</li>
+  <li><strong>التركيز على الدخل السلبي فقط:</strong> الدخل السلبي يتطلب رأس مال أو جهداً ضخماً مقدماً. ابدأ بالنشط ثم انتقل للسلبي</li>
+  <li><strong>التوقف مبكراً:</strong> معظم المصادر لا تُنتِج عائداً لائقاً قبل 6-12 شهراً. من يتوقف قبل ذلك يرى "الفشل" قبل أن يرى "النجاح"</li>
+</ul>
+
+<div class="key-takeaways">
+  <h3>✦ نقاط مفتاحية</h3>
+  <ul>
+    <li>الاعتماد على مصدر واحد هو خطر استراتيجي — قرار واحد من غيرك يُصفِّر دخلك</li>
+    <li>أثرياء أمريكا يملكون في المتوسط 7 مصادر دخل</li>
+    <li>10 ساعات أسبوعياً كافية لبناء مصدر دخل إضافي</li>
+    <li>أسرع مصدر: تسييل مهارتك الحالية خارج الوظيفة</li>
+    <li>المحتوى الرقمي: تصنعه مرة ويستمر في توليد قيمة لسنوات</li>
+    <li>لا تترك الوظيفة قبل أن تُثبِت المصادر الجديدة دخلاً مستقراً</li>
+  </ul>
+</div>
+
+<h2>الخلاصة: التنويع ليس جشعاً — هو حكمة</h2>
+<p>بناء مصادر دخل متعددة لا يعني أنك جشع — يعني أنك تفهم قواعد اللعبة المالية الحديثة. العالم تغير: الوظائف أقل أماناً، الاقتصادات أكثر تقلباً، والفرص المتاحة عبر الإنترنت لم تكن موجودة قبل 20 عاماً. من يفهم هذا يبني — من لا يفهمه يتمنى.</p>`
+},
+en:{
+  dir:'ltr',title:'Multiple Income Streams: Why One Income Is Only Enough for Average',
+  cat:'Money',date:'July 2026',readTime:'12 min read',
+  excerpt:'Depending on a single income source is a strategic risk in a volatile world. Learn how to build 3 multiple income streams within one year without giving up your current job.',
+  backLabel:'← Blog',homeLabel:'Home',homeHref:'../index.html',
+  relatedTitle:'Related Articles',
+  rel:['Financial Independence','Wealth Mindset','Investing for Beginners'],
+  ctaTitle:'Apply What You Learned',ctaDesc:'Knowledge without action is just entertainment. The Frame turns ideas into a personalized daily action plan.',ctaBtn:'Download The Frame Free',
+  footerPrivacy:'Privacy Policy',footerTerms:'Terms of Use',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. All rights reserved.',
+  body:`
+<h2>The Single Job: The Most Dangerous Financial Plan</h2>
+<p>A simple test: if you lost your job today, how long would you live on your current savings? A week? A month? This reveals your real financial fragility. One job means: one decision (from someone else) can reset your entire income to zero.</p>
+<p>An IRS study found that average American millionaires have 7 income streams. This is not a coincidence — it's a deliberate strategy.</p>
+
+<h2>Types of Income Sources: The Complete Map</h2>
+<ul>
+  <li><strong>Active Income:</strong> Requires your direct time and effort. Stops when you stop. (Salary, freelancing, consulting)</li>
+  <li><strong>Semi-Passive Income:</strong> Requires large upfront effort then less maintenance effort. (Digital products, content, channels, affiliate marketing)</li>
+  <li><strong>True Passive Income:</strong> Produces income with minimal ongoing effort after initial investment. (Investment returns, rental income, intellectual property royalties)</li>
+</ul>
+
+<h2>Three Income Streams You Can Build This Year</h2>
+
+<h3>Stream 1: Monetize Your Current Skill</h3>
+<p>You have a skill you use at your job — writing, coding, design, accounting, marketing, teaching. This same skill can be offered as an independent service outside your employment. This is the fastest additional income stream because it requires no new skill to learn.</p>
+<p><strong>Practical plan:</strong> Identify your highest market-value skill. Find 3 people or projects that need it. Offer the service below market price initially to build a portfolio and reviews.</p>
+
+<h3>Stream 2: Digital Content</h3>
+<p>Digital content — whether articles, videos, podcasts, or courses — has an exceptional advantage: you create it once and it continues generating value (and potentially income) for years after creation.</p>
+<p><strong>Practical plan:</strong> Choose a field where you have distinctive knowledge. Start by writing articles. After 3 months of consistency, start thinking about a course or product.</p>
+
+<h3>Stream 3: Regular Investment</h3>
+<p>Even with small amounts, regular investment builds a passive income source over time. Even $200/month × 10 years × 8% return rate = over $36,000.</p>
+
+<div class="callout"><p><strong>Golden Rule:</strong> Don't build the second stream at the expense of the first. Your job is funding your experiments while you build. The mistake is leaving the job before new streams have proven stable income.</p></div>
+
+<div class="key-takeaways">
+  <h3>✦ Key Takeaways</h3>
+  <ul>
+    <li>Depending on one source is a strategic risk — one decision from someone else zeros your income</li>
+    <li>Average American millionaires have 7 income streams on average</li>
+    <li>10 hours per week is enough to build an additional income stream</li>
+    <li>Fastest stream: monetize your current skill outside your job</li>
+    <li>Digital content: create it once, it keeps generating value for years</li>
+    <li>Don't leave the job before new streams prove stable income</li>
+  </ul>
+</div>`
+},
+es:{
+  dir:'ltr',title:'Múltiples Fuentes de Ingresos: Por Qué Una Sola Fuente Solo Alcanza para los Promedio',
+  cat:'Dinero',date:'Julio 2026',readTime:'12 min',
+  excerpt:'Depender de una sola fuente de ingresos es un riesgo estratégico en un mundo volátil. Aprende a construir 3 fuentes de ingresos múltiples en un año sin dejar tu trabajo actual.',
+  backLabel:'← Blog',homeLabel:'Inicio',homeHref:'../es.html',
+  relatedTitle:'Artículos relacionados',
+  rel:['Independencia Financiera','Mentalidad de Riqueza','Inversión para Principiantes'],
+  ctaTitle:'Aplica lo que aprendiste',ctaDesc:'El conocimiento sin acción es solo entretenimiento. The Frame convierte las ideas en un plan de acción diario personalizado.',ctaBtn:'Descargar The Frame gratis',
+  footerPrivacy:'Política de Privacidad',footerTerms:'Términos de Uso',footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Todos los derechos reservados.',
+  body:`
+<h2>El Trabajo Único: El Plan Financiero Más Peligroso</h2>
+<p>Una prueba simple: si perdieras tu trabajo hoy, ¿cuánto tiempo vivirías con tus ahorros actuales? Un trabajo significa: una decisión (de otra persona) puede resetear todos tus ingresos a cero. Un estudio del IRS encontró que el promedio de los millonarios estadounidenses tiene 7 fuentes de ingresos.</p>
+
+<h2>Tres Fuentes de Ingresos que Puedes Construir Este Año</h2>
+
+<h3>Fuente 1: Monetiza tu Habilidad Actual</h3>
+<p>Tienes una habilidad que usas en tu trabajo — escritura, programación, diseño, contabilidad, marketing. Esta misma habilidad puede ofrecerse como servicio independiente fuera de tu empleo.</p>
+
+<h3>Fuente 2: Contenido Digital</h3>
+<p>El contenido digital tiene una ventaja excepcional: lo creas una vez y sigue generando valor durante años. El mercado hispanohablante tiene escasez de contenido de alta calidad en muchos campos — una oportunidad enorme.</p>
+
+<h3>Fuente 3: Inversión Regular</h3>
+<p>Incluso con cantidades pequeñas, la inversión regular construye una fuente de ingresos pasivos con el tiempo.</p>
+
+<div class="callout"><p><strong>Regla de Oro:</strong> No construyas la segunda fuente a expensas de la primera. Tu trabajo financia tus experimentos mientras construyes. El error es dejar el trabajo antes de que las nuevas fuentes hayan demostrado ingresos estables.</p></div>
+
+<h2>Conclusión</h2>
+<p>Construir múltiples fuentes de ingresos no significa codicia — significa que entiendes las reglas del juego financiero moderno. <strong>El mundo cambió: los trabajos son menos seguros, las economías más volátiles. Quien entiende esto construye — quien no, desea.</strong></p>`
+},
+fr:{
+  dir:'ltr',title:'Sources de Revenus Multiples: Pourquoi Une Seule Source Ne Suffit que pour la Moyenne',
+  cat:'Argent',date:'Juillet 2026',readTime:'12 min',
+  excerpt:"Dépendre d'une seule source de revenus est un risque stratégique dans un monde volatil. Apprenez à construire 3 sources de revenus multiples en un an sans quitter votre emploi actuel.",
+  backLabel:'← Blog',homeLabel:'Accueil',homeHref:'../fr.html',
+  relatedTitle:'Articles connexes',
+  rel:["Indépendance Financière","Mentalité de Richesse",'Investissement pour Débutants'],
+  ctaTitle:'Appliquez ce que vous avez appris',ctaDesc:"La connaissance sans action n'est que du divertissement. The Frame transforme les idées en plan d'action quotidien personnalisé.",ctaBtn:'Télécharger The Frame gratuitement',
+  footerPrivacy:'Politique de Confidentialité',footerTerms:"Conditions d'utilisation",footerBlog:'Blog',
+  footerCopy:'© 2026 The Frame. Tous droits réservés.',
+  body:`
+<h2>L'Emploi Unique: Le Plan Financier le Plus Dangereux</h2>
+<p>Un test simple: si vous perdiez votre emploi aujourd'hui, combien de temps vivriez-vous sur vos économies actuelles? Un emploi signifie: une décision (de quelqu'un d'autre) peut remettre tous vos revenus à zéro. Une étude de l'IRS a révélé que les millionnaires américains ont en moyenne 7 sources de revenus.</p>
+
+<h2>Trois Sources de Revenus que Vous Pouvez Construire Cette Année</h2>
+
+<h3>Source 1: Monétisez votre Compétence Actuelle</h3>
+<p>Vous avez une compétence que vous utilisez au travail — écriture, programmation, design, comptabilité, marketing. Cette même compétence peut être offerte comme service indépendant en dehors de votre emploi.</p>
+
+<h3>Source 2: Contenu Numérique</h3>
+<p>Le contenu numérique a un avantage exceptionnel: vous le créez une fois et il continue à générer de la valeur pendant des années.</p>
+
+<h3>Source 3: Investissement Régulier</h3>
+<p>Même avec de petits montants, l'investissement régulier construit une source de revenus passifs avec le temps.</p>
+
+<div class="callout"><p><strong>Règle d'Or:</strong> Ne construisez pas la deuxième source au détriment de la première. Votre emploi finance vos expériences pendant que vous construisez. L'erreur est de quitter l'emploi avant que les nouvelles sources aient prouvé des revenus stables.</p></div>
+
+<h2>Conclusion</h2>
+<p>Construire plusieurs sources de revenus ne signifie pas l'avidité — cela signifie que vous comprenez les règles du jeu financier moderne. <strong>Le monde a changé: les emplois sont moins sûrs, les économies plus volatiles. Celui qui comprend cela construit — celui qui ne comprend pas désire.</strong></p>`
+},
+hi:{
+  dir:'ltr',title:'आय के कई स्रोत: एक ही स्रोत केवल औसत के लिए क्यों पर्याप्त है',
+  cat:'पैसा',date:'जुलाई 2026',readTime:'12 मिनट',
+  excerpt:'एक ही आय स्रोत पर निर्भर रहना एक अस्थिर दुनिया में एक रणनीतिक जोखिम है। अपना वर्तमान काम छोड़े बिना एक साल में 3 आय स्रोत बनाना सीखें।',
+  backLabel:'← ब्लॉग',homeLabel:'होम',homeHref:'../hi.html',
+  relatedTitle:'संबंधित लेख',
+  rel:['वित्तीय स्वतंत्रता','धन की मानसिकता','शुरुआती लोगों के लिए निवेश'],
+  ctaTitle:'जो सीखा उसे लागू करें',ctaDesc:'बिना कार्रवाई के ज्ञान केवल मनोरंजन है। The Frame विचारों को व्यक्तिगत दैनिक कार्य योजना में बदलता है।',ctaBtn:'The Frame मुफ्त डाउनलोड करें',
+  footerPrivacy:'गोपनीयता नीति',footerTerms:'उपयोग की शर्तें',footerBlog:'ब्लॉग',
+  footerCopy:'© 2026 The Frame. सभी अधिकार सुरक्षित।',
+  body:`
+<h2>एकल नौकरी: सबसे खतरनाक वित्तीय योजना</h2>
+<p>एक सरल परीक्षण: यदि आपने आज अपनी नौकरी खो दी, तो आप अपनी वर्तमान बचत से कितने समय तक जी सकते हैं? एक IRS अध्ययन में पाया गया कि औसत अमेरिकी करोड़पतियों की 7 आय धाराएं हैं।</p>
+
+<h2>तीन आय स्रोत जो आप इस साल बना सकते हैं</h2>
+
+<h3>स्रोत 1: अपने मौजूदा कौशल से पैसे कमाएं</h3>
+<p>आपके पास एक कौशल है जो आप काम पर उपयोग करते हैं। यही कौशल आपके रोजगार के बाहर एक स्वतंत्र सेवा के रूप में प्रदान किया जा सकता है।</p>
+
+<h3>स्रोत 2: डिजिटल सामग्री</h3>
+<p>डिजिटल सामग्री का एक असाधारण लाभ है: आप इसे एक बार बनाते हैं और यह वर्षों तक मूल्य उत्पन्न करता रहता है।</p>
+
+<h3>स्रोत 3: नियमित निवेश</h3>
+<p>छोटी राशि के साथ भी, नियमित निवेश समय के साथ एक निष्क्रिय आय स्रोत बनाता है।</p>
+
+<div class="callout"><p><strong>सुनहरा नियम:</strong> दूसरा स्रोत पहले की कीमत पर न बनाएं। आपकी नौकरी आपके प्रयोगों को वित्त पोषित करती है। गलती नौकरी छोड़ना है इससे पहले कि नए स्रोतों ने स्थिर आय साबित की हो।</p></div>
+
+<h2>निष्कर्ष</h2>
+<p>आय के कई स्रोत बनाने का मतलब लालच नहीं है — इसका मतलब है कि आप आधुनिक वित्तीय खेल के नियमों को समझते हैं। <strong>दुनिया बदल गई है: नौकरियां कम सुरक्षित हैं, अर्थव्यवस्थाएं अधिक अस्थिर हैं। जो इसे समझता है वह बनाता है — जो नहीं समझता वह इच्छा करता है।</strong></p>`
+}
+};
+const LANGS_ORDER=['ar','en','es','fr','hi'];
+let currentLang=localStorage.getItem('tf_lang')||'ar';
+function setLang(lang){currentLang=lang;localStorage.setItem('tf_lang',lang);document.getElementById('lang-flag').textContent=FLAGS[lang];document.getElementById('lang-label').textContent=NAMES[lang];document.querySelectorAll('.lang-option').forEach((el,i)=>{el.classList.toggle('active',LANGS_ORDER[i]===lang);});document.getElementById('lang-picker').classList.remove('open');renderPage();}
+function renderPage(){const c=CONTENT[currentLang]||CONTENT['ar'];const root=document.getElementById('html-root');root.lang=currentLang;root.dir=c.dir;document.body.style.fontFamily=currentLang==='ar'?"'Cairo',sans-serif":"'Oswald',sans-serif";document.title=c.title+' | The Frame';document.querySelector('meta[name="description"]').content=c.excerpt;document.getElementById('nav-blog').textContent=c.backLabel;document.getElementById('nav-home').textContent=c.homeLabel;document.getElementById('nav-home').href=c.homeHref;document.getElementById('nav-home-link').href=c.homeHref;document.getElementById('article-hero').innerHTML=`<div class="breadcrumb"><a href="${c.homeHref}">${c.homeLabel}</a><span>›</span><a href="../blog.html">${c.backLabel.replace('←','').replace('→','').trim()}</a><span>›</span><span>${c.cat}</span></div><span class="article-cat">${c.cat}</span><h1 class="article-title">${c.title}</h1><div class="article-meta"><span>${c.date}</span><span class="read-time">${c.readTime}</span></div><p class="article-excerpt">${c.excerpt}</p>`;document.getElementById('article-body').innerHTML=c.body;const rels=c.rel||[];document.getElementById('related-title').textContent=c.relatedTitle;['rel1','rel2','rel3'].forEach((id,i)=>{const el=document.getElementById(id);if(el&&rels[i])el.textContent=rels[i];});document.getElementById('cta-title').textContent=c.ctaTitle;document.getElementById('cta-desc').textContent=c.ctaDesc;document.getElementById('cta-btn-text').textContent=c.ctaBtn;document.getElementById('f-privacy').textContent=c.footerPrivacy;document.getElementById('f-terms').textContent=c.footerTerms;document.getElementById('f-blog').textContent=c.footerBlog;document.getElementById('footer-copy').textContent=c.footerCopy;}
+document.getElementById('lang-btn-toggle').addEventListener('click',()=>{document.getElementById('lang-picker').classList.toggle('open');});
+document.addEventListener('click',e=>{if(!document.getElementById('lang-picker').contains(e.target))document.getElementById('lang-picker').classList.remove('open');});
+window.addEventListener('scroll',()=>{const h=document.documentElement;const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;document.getElementById('progress-bar').style.width=pct+'%';});
+setLang(currentLang);
+</script>
+</body>
+</html>
